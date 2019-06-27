@@ -1,3 +1,4 @@
+Tracking file by folder pattern:  migrations
 [
 {
   "model": "divulgacion_cientifica.articulodivulgacion",
@@ -16,7 +17,7 @@
     "fecha_publicado": null,
     "pagina_inicio": 10,
     "pagina_fin": 12,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -40,7 +41,7 @@
     "fecha_publicado": "1999-01-01",
     "pagina_inicio": 22,
     "pagina_fin": 31,
-    "numero": "",
+    "numero": 0,
     "autores": [
       274,
       32,
@@ -66,7 +67,7 @@
     "fecha_publicado": "1999-01-01",
     "pagina_inicio": 7,
     "pagina_fin": 16,
-    "numero": "59",
+    "numero": 0,
     "autores": [
       274,
       32,
@@ -92,7 +93,7 @@
     "fecha_publicado": "2009-12-01",
     "pagina_inicio": 6,
     "pagina_fin": 7,
-    "numero": "34",
+    "numero": 0,
     "autores": [
       954,
       32,
@@ -119,7 +120,7 @@
     "fecha_publicado": "2009-11-01",
     "pagina_inicio": 29,
     "pagina_fin": 37,
-    "numero": "",
+    "numero": 0,
     "autores": [
       954,
       32,
@@ -145,7 +146,7 @@
     "fecha_publicado": "2009-01-01",
     "pagina_inicio": 28,
     "pagina_fin": 37,
-    "numero": "96",
+    "numero": 0,
     "autores": [
       1524,
       32,
@@ -171,7 +172,7 @@
     "fecha_publicado": "2011-08-01",
     "pagina_inicio": 1,
     "pagina_fin": 3,
-    "numero": "33",
+    "numero": 0,
     "autores": [
       171,
       32,
@@ -199,7 +200,7 @@
     "fecha_publicado": "2011-11-01",
     "pagina_inicio": 1,
     "pagina_fin": 3,
-    "numero": "35",
+    "numero": 0,
     "autores": [
       32
     ],
@@ -223,7 +224,7 @@
     "fecha_publicado": "2016-01-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       32
     ],
@@ -247,7 +248,7 @@
     "fecha_publicado": "2009-01-01",
     "pagina_inicio": 77,
     "pagina_fin": 79,
-    "numero": "107",
+    "numero": 0,
     "autores": [
       1524,
       32,
@@ -274,7 +275,7 @@
     "fecha_publicado": "2011-01-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       32,
       1524,
@@ -300,7 +301,7 @@
     "fecha_publicado": "2013-01-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       325,
       346,
@@ -328,7 +329,7 @@
     "fecha_publicado": "2012-03-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       32
     ],
@@ -352,7 +353,7 @@
     "fecha_publicado": "2007-01-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       15
     ],
@@ -376,7 +377,7 @@
     "fecha_publicado": "2010-01-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "27",
+    "numero": 0,
     "autores": [
       33,
       15
@@ -401,7 +402,7 @@
     "fecha_publicado": "1996-01-01",
     "pagina_inicio": 387,
     "pagina_fin": 392,
-    "numero": "",
+    "numero": 0,
     "autores": [
       17
     ],
@@ -425,7 +426,7 @@
     "fecha_publicado": "2014-01-01",
     "pagina_inicio": 14,
     "pagina_fin": 19,
-    "numero": "17",
+    "numero": 0,
     "autores": [
       30,
       133,
@@ -455,7 +456,7 @@
     "fecha_publicado": "2013-01-01",
     "pagina_inicio": 3,
     "pagina_fin": 5,
-    "numero": "10",
+    "numero": 0,
     "autores": [
       1043,
       162,
@@ -482,7 +483,7 @@
     "fecha_publicado": "2013-01-01",
     "pagina_inicio": 11,
     "pagina_fin": 14,
-    "numero": "",
+    "numero": 0,
     "autores": [
       1668,
       1669,
@@ -511,7 +512,7 @@
     "fecha_publicado": "2012-08-31",
     "pagina_inicio": 64,
     "pagina_fin": 70,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30,
       727,
@@ -537,7 +538,7 @@
     "fecha_publicado": "2010-01-01",
     "pagina_inicio": 93,
     "pagina_fin": 142,
-    "numero": "2",
+    "numero": 0,
     "autores": [
       30,
       376,
@@ -563,7 +564,7 @@
     "fecha_publicado": "2001-01-01",
     "pagina_inicio": 40,
     "pagina_fin": 46,
-    "numero": "217",
+    "numero": 0,
     "autores": [
       30,
       1662
@@ -588,7 +589,7 @@
     "fecha_publicado": "2000-01-01",
     "pagina_inicio": 32,
     "pagina_fin": 38,
-    "numero": "95",
+    "numero": 0,
     "autores": [
       30,
       1654,
@@ -615,7 +616,7 @@
     "fecha_publicado": "2000-01-01",
     "pagina_inicio": 41,
     "pagina_fin": 45,
-    "numero": "95",
+    "numero": 0,
     "autores": [
       30,
       1654,
@@ -642,7 +643,7 @@
     "fecha_publicado": "2000-01-01",
     "pagina_inicio": 23,
     "pagina_fin": 30,
-    "numero": "95",
+    "numero": 0,
     "autores": [
       30,
       1654,
@@ -669,7 +670,7 @@
     "fecha_publicado": "2000-01-01",
     "pagina_inicio": 31,
     "pagina_fin": 37,
-    "numero": "95",
+    "numero": 0,
     "autores": [
       30,
       1654,
@@ -696,7 +697,7 @@
     "fecha_publicado": "2000-01-01",
     "pagina_inicio": 22,
     "pagina_fin": 27,
-    "numero": "215",
+    "numero": 0,
     "autores": [
       30,
       315,
@@ -722,7 +723,7 @@
     "fecha_publicado": "2017-10-04",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -746,7 +747,7 @@
     "fecha_publicado": "2017-08-29",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -770,7 +771,7 @@
     "fecha_publicado": "2017-06-15",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -794,7 +795,7 @@
     "fecha_publicado": "2018-05-13",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -818,7 +819,7 @@
     "fecha_publicado": "2018-05-13",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -842,7 +843,7 @@
     "fecha_publicado": "2018-04-27",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -866,7 +867,7 @@
     "fecha_publicado": "2017-04-11",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -890,7 +891,7 @@
     "fecha_publicado": "2017-02-04",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -914,7 +915,7 @@
     "fecha_publicado": "2017-01-28",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -938,7 +939,7 @@
     "fecha_publicado": "2018-01-11",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -962,7 +963,7 @@
     "fecha_publicado": "2009-01-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -986,7 +987,7 @@
     "fecha_publicado": "2008-01-01",
     "pagina_inicio": 21,
     "pagina_fin": 27,
-    "numero": "2",
+    "numero": 0,
     "autores": [
       30,
       16,
@@ -1012,7 +1013,7 @@
     "fecha_publicado": "2008-01-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1036,7 +1037,7 @@
     "fecha_publicado": "2000-01-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       1662,
       30
@@ -1061,7 +1062,7 @@
     "fecha_publicado": "1999-01-01",
     "pagina_inicio": 37,
     "pagina_fin": 43,
-    "numero": "17",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1085,7 +1086,7 @@
     "fecha_publicado": "1996-01-01",
     "pagina_inicio": 4,
     "pagina_fin": 12,
-    "numero": "5",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1109,7 +1110,7 @@
     "fecha_publicado": "1994-01-01",
     "pagina_inicio": 35,
     "pagina_fin": 40,
-    "numero": "2",
+    "numero": 0,
     "autores": [
       507,
       30,
@@ -1136,7 +1137,7 @@
     "fecha_publicado": "2016-03-14",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1160,7 +1161,7 @@
     "fecha_publicado": "2016-02-13",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1184,7 +1185,7 @@
     "fecha_publicado": "2016-01-28",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1208,7 +1209,7 @@
     "fecha_publicado": "2016-01-25",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1232,7 +1233,7 @@
     "fecha_publicado": "2015-12-23",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1256,7 +1257,7 @@
     "fecha_publicado": "2015-02-11",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1280,7 +1281,7 @@
     "fecha_publicado": "2015-10-18",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1304,7 +1305,7 @@
     "fecha_publicado": "2015-10-16",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1328,7 +1329,7 @@
     "fecha_publicado": "2015-10-04",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1352,7 +1353,7 @@
     "fecha_publicado": "2015-09-16",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1376,7 +1377,7 @@
     "fecha_publicado": "2015-08-30",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1400,7 +1401,7 @@
     "fecha_publicado": "2015-08-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1424,7 +1425,7 @@
     "fecha_publicado": "2015-07-10",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1448,7 +1449,7 @@
     "fecha_publicado": "2015-07-07",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1472,7 +1473,7 @@
     "fecha_publicado": "2015-06-22",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1496,7 +1497,7 @@
     "fecha_publicado": "2015-06-13",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1520,7 +1521,7 @@
     "fecha_publicado": "2015-06-08",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1544,7 +1545,7 @@
     "fecha_publicado": "2015-05-28",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1568,7 +1569,7 @@
     "fecha_publicado": "2015-04-23",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1592,7 +1593,7 @@
     "fecha_publicado": "2015-04-13",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1616,7 +1617,7 @@
     "fecha_publicado": "2015-03-14",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1640,7 +1641,7 @@
     "fecha_publicado": "2015-03-08",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1664,7 +1665,7 @@
     "fecha_publicado": "2015-03-05",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1688,7 +1689,7 @@
     "fecha_publicado": "2015-02-12",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1712,7 +1713,7 @@
     "fecha_publicado": "2015-01-14",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1736,7 +1737,7 @@
     "fecha_publicado": "2014-12-26",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1760,7 +1761,7 @@
     "fecha_publicado": "2014-12-11",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1784,7 +1785,7 @@
     "fecha_publicado": "2014-11-28",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1808,7 +1809,7 @@
     "fecha_publicado": "2014-11-18",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1832,7 +1833,7 @@
     "fecha_publicado": "2014-10-31",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1856,7 +1857,7 @@
     "fecha_publicado": "2014-10-13",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1880,7 +1881,7 @@
     "fecha_publicado": "2014-10-05",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1904,7 +1905,7 @@
     "fecha_publicado": "2014-10-05",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1928,7 +1929,7 @@
     "fecha_publicado": "2014-09-20",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1952,7 +1953,7 @@
     "fecha_publicado": "2014-08-29",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -1976,7 +1977,7 @@
     "fecha_publicado": "2014-08-13",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2000,7 +2001,7 @@
     "fecha_publicado": "2014-07-20",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2024,7 +2025,7 @@
     "fecha_publicado": "2014-07-08",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2048,7 +2049,7 @@
     "fecha_publicado": "2014-07-03",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2072,7 +2073,7 @@
     "fecha_publicado": "2014-06-21",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2096,7 +2097,7 @@
     "fecha_publicado": "2014-06-10",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2120,7 +2121,7 @@
     "fecha_publicado": "2014-06-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2144,7 +2145,7 @@
     "fecha_publicado": "2014-05-30",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2168,7 +2169,7 @@
     "fecha_publicado": "2014-05-18",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2192,7 +2193,7 @@
     "fecha_publicado": "2014-04-22",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2216,7 +2217,7 @@
     "fecha_publicado": "2014-04-11",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2240,7 +2241,7 @@
     "fecha_publicado": "2014-04-04",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2264,7 +2265,7 @@
     "fecha_publicado": "2014-03-27",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2288,7 +2289,7 @@
     "fecha_publicado": "2014-03-23",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2312,7 +2313,7 @@
     "fecha_publicado": "2014-03-07",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2336,7 +2337,7 @@
     "fecha_publicado": "2014-02-10",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2360,7 +2361,7 @@
     "fecha_publicado": "2014-02-03",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2384,7 +2385,7 @@
     "fecha_publicado": "2014-01-27",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2408,7 +2409,7 @@
     "fecha_publicado": "2014-01-20",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2432,7 +2433,7 @@
     "fecha_publicado": "2014-01-14",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2456,7 +2457,7 @@
     "fecha_publicado": "2013-11-12",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2480,7 +2481,7 @@
     "fecha_publicado": "2013-10-16",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2504,7 +2505,7 @@
     "fecha_publicado": "2013-10-02",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2528,7 +2529,7 @@
     "fecha_publicado": "2013-09-25",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2552,7 +2553,7 @@
     "fecha_publicado": "2013-09-23",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2576,7 +2577,7 @@
     "fecha_publicado": "2013-09-12",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2600,7 +2601,7 @@
     "fecha_publicado": "2013-09-06",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2624,7 +2625,7 @@
     "fecha_publicado": "2013-09-05",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2648,7 +2649,7 @@
     "fecha_publicado": "2013-08-28",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2672,7 +2673,7 @@
     "fecha_publicado": "2013-08-26",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2696,7 +2697,7 @@
     "fecha_publicado": "2016-04-02",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2720,7 +2721,7 @@
     "fecha_publicado": "2016-03-17",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2744,7 +2745,7 @@
     "fecha_publicado": "2016-03-03",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2768,7 +2769,7 @@
     "fecha_publicado": "2016-02-23",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2792,7 +2793,7 @@
     "fecha_publicado": "2016-02-14",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2816,7 +2817,7 @@
     "fecha_publicado": "2016-01-21",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2840,7 +2841,7 @@
     "fecha_publicado": "2016-02-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2864,7 +2865,7 @@
     "fecha_publicado": "2016-01-18",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2888,7 +2889,7 @@
     "fecha_publicado": "2016-01-15",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2912,7 +2913,7 @@
     "fecha_publicado": "2016-01-12",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2936,7 +2937,7 @@
     "fecha_publicado": "2016-01-08",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2960,7 +2961,7 @@
     "fecha_publicado": "2015-12-25",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -2984,7 +2985,7 @@
     "fecha_publicado": "2015-12-18",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3008,7 +3009,7 @@
     "fecha_publicado": "2015-12-08",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3032,7 +3033,7 @@
     "fecha_publicado": "2015-12-04",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3056,7 +3057,7 @@
     "fecha_publicado": "2015-11-23",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3080,7 +3081,7 @@
     "fecha_publicado": "2015-11-30",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3104,7 +3105,7 @@
     "fecha_publicado": "2015-11-20",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3128,7 +3129,7 @@
     "fecha_publicado": "2015-11-17",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3152,7 +3153,7 @@
     "fecha_publicado": "2015-11-13",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3176,7 +3177,7 @@
     "fecha_publicado": "2015-11-10",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3200,7 +3201,7 @@
     "fecha_publicado": "2018-10-20",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3224,7 +3225,7 @@
     "fecha_publicado": "2015-10-29",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3248,7 +3249,7 @@
     "fecha_publicado": "2015-10-09",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3272,7 +3273,7 @@
     "fecha_publicado": "2015-10-05",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3296,7 +3297,7 @@
     "fecha_publicado": "2015-10-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3320,7 +3321,7 @@
     "fecha_publicado": "2015-09-29",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3344,7 +3345,7 @@
     "fecha_publicado": "2015-09-24",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3368,7 +3369,7 @@
     "fecha_publicado": "2015-09-18",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3392,7 +3393,7 @@
     "fecha_publicado": "2015-09-15",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3416,7 +3417,7 @@
     "fecha_publicado": "2018-09-08",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3440,7 +3441,7 @@
     "fecha_publicado": "2015-09-07",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3464,7 +3465,7 @@
     "fecha_publicado": "2015-08-31",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3488,7 +3489,7 @@
     "fecha_publicado": "2015-08-19",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3512,7 +3513,7 @@
     "fecha_publicado": "2015-07-08",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3536,7 +3537,7 @@
     "fecha_publicado": "2015-07-03",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3560,7 +3561,7 @@
     "fecha_publicado": "2015-06-24",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3584,7 +3585,7 @@
     "fecha_publicado": "2015-06-20",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3608,7 +3609,7 @@
     "fecha_publicado": "2015-06-08",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3632,7 +3633,7 @@
     "fecha_publicado": "2015-06-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3656,7 +3657,7 @@
     "fecha_publicado": "2018-05-19",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3680,7 +3681,7 @@
     "fecha_publicado": "2015-05-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3704,7 +3705,7 @@
     "fecha_publicado": "2015-04-26",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3728,7 +3729,7 @@
     "fecha_publicado": "2015-04-21",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3752,7 +3753,7 @@
     "fecha_publicado": "2015-04-16",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3776,7 +3777,7 @@
     "fecha_publicado": "2015-04-14",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3800,7 +3801,7 @@
     "fecha_publicado": "2015-04-10",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3824,7 +3825,7 @@
     "fecha_publicado": "2015-04-01",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3848,7 +3849,7 @@
     "fecha_publicado": "2015-03-28",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3872,7 +3873,7 @@
     "fecha_publicado": "2015-03-19",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3896,7 +3897,7 @@
     "fecha_publicado": "2015-02-15",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3920,7 +3921,7 @@
     "fecha_publicado": "2015-02-02",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3944,7 +3945,7 @@
     "fecha_publicado": "2015-01-15",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3968,7 +3969,7 @@
     "fecha_publicado": "2014-12-25",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -3992,7 +3993,7 @@
     "fecha_publicado": "2014-09-10",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "",
+    "numero": 0,
     "autores": [
       30
     ],
@@ -4016,7 +4017,7 @@
     "fecha_publicado": null,
     "pagina_inicio": 1,
     "pagina_fin": 18,
-    "numero": "128",
+    "numero": 0,
     "autores": [
       31,
       46
@@ -4041,7 +4042,7 @@
     "fecha_publicado": "2018-04-30",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "N/A",
+    "numero": 0,
     "autores": [
       22
     ],
@@ -4065,7 +4066,7 @@
     "fecha_publicado": "2018-10-02",
     "pagina_inicio": 1,
     "pagina_fin": 1,
-    "numero": "N/A",
+    "numero": 0,
     "autores": [
       22
     ],
@@ -4089,7 +4090,7 @@
     "fecha_publicado": "2015-01-01",
     "pagina_inicio": 17,
     "pagina_fin": 18,
-    "numero": "0",
+    "numero": 0,
     "autores": [
       24
     ],
@@ -4113,7 +4114,7 @@
     "fecha_publicado": "2017-03-01",
     "pagina_inicio": 92,
     "pagina_fin": 93,
-    "numero": "92",
+    "numero": 0,
     "autores": [
       331,
       2203,
@@ -4141,7 +4142,7 @@
     "fecha_publicado": "2014-01-01",
     "pagina_inicio": 657,
     "pagina_fin": 657,
-    "numero": "1",
+    "numero": 0,
     "autores": [
       24
     ],
@@ -4165,7 +4166,7 @@
     "fecha_publicado": "2017-08-18",
     "pagina_inicio": 1,
     "pagina_fin": 10,
-    "numero": "93",
+    "numero": 0,
     "autores": [
       2247,
       29,
@@ -4191,7 +4192,7 @@
     "fecha_publicado": "2018-10-01",
     "pagina_inicio": 1,
     "pagina_fin": 13,
-    "numero": "0960-3115",
+    "numero": 0,
     "autores": [
       2248,
       39
@@ -4216,7 +4217,7 @@
     "fecha_publicado": null,
     "pagina_inicio": 1,
     "pagina_fin": 2,
-    "numero": "1",
+    "numero": 0,
     "autores": [
       858,
       39

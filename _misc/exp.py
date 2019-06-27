@@ -2,15 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 r = 2 # growth rate / yr
-t = 40 # number of years
 
-xnum = list(range(t))
-ynum = list(range(t))
-ynum[0] = 0
-ynum[1] = 1*r
+xnum = [0]
+ynum = [300]
 
-for i in range(1, t-1):
-    ynum[i+1] = ynum[i]*r
+while ynum[-1] < 4000:
+    xnum.append(xnum[-1] + 1)
+    ynum.append(ynum[-1] * r)
+
 
 plt.plot(xnum,ynum, 'b')
 print(xnum)
