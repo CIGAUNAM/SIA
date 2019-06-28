@@ -150,7 +150,7 @@ class MMcQueue(object):
         return firstTerm * secondTerm
 
 if __name__ == '__main__':
-    thisQueue = MMcQueue(3,3,6)
+    thisQueue = MMcQueue(35,70,1)
     queueTime = 0.001
     # print "rou = ", thisQueue._rou
     # print "probSum = ", thisQueue._probSum
