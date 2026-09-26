@@ -1,11 +1,11 @@
 from django.contrib import admin
 
 # Register your models here.
-from . models import ActividadApoyo, ComisionInstitucional, Representacion, LaborDirectivaCoordinacion, \
+from . models import ActividadApoyo, Comision, Representacion, LaborDirectivaCoordinacion, \
     RepresentacionOrganoColegiadoUNAM, ComisionInstitucionalCIGA, ApoyoTecnico, ApoyoOtraActividad
 
 admin.site.register(ActividadApoyo)
-admin.site.register(ComisionInstitucional)
+admin.site.register(Comision)
 admin.site.register(Representacion)
 admin.site.register(LaborDirectivaCoordinacion)
 admin.site.register(RepresentacionOrganoColegiadoUNAM)

@@ -8,7 +8,6 @@ from . models import Pais, InstitucionSimple, Dependencia, Departamento, \
     ProgramaMaestria, ProgramaDoctorado, TipoEvento, Evento, ProblemaNacionalConacyt, Nombramiento, \
     Indice, Editorial, Coleccion, Libro, Revista, Asignatura, MedioDivulgacion, Distincion
 
-admin.site.register(Pais)
 admin.site.register(InstitucionSimple)
 admin.site.register(Dependencia)
 admin.site.register(Departamento)

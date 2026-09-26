@@ -291,7 +291,7 @@ class ProgramaLicenciaturaForm(forms.ModelForm):
         model = ProgramaLicenciatura
         exclude = ['programalicenciatura_regverificado', 'programalicenciatura_regfechacreado', 'programalicenciatura_regfechaactualizado', 'programalicenciatura_regusuario']
         widgets = {
-            'programalicenciatura_nombre': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'style': 'width: 100%', 'class': 'form-control pull-right'}),
         }
 
 
@@ -310,7 +310,7 @@ class ProgramaMaestriaForm(forms.ModelForm):
         model = ProgramaMaestria
         exclude = ['programamaestria_regverificado', 'programamaestria_regfechacreado', 'programamaestria_regfechaactualizado', 'programamaestria_regusuario']
         widgets = {
-            'programamaestria_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 
@@ -329,7 +329,7 @@ class ProgramaDoctoradoForm(forms.ModelForm):
         model = ProgramaDoctorado
         exclude = ['programadoctorado_regverificado', 'programadoctorado_regfechacreado', 'programadoctorado_regfechaactualizado', 'programadoctorado_regusuario']
         widgets = {
-            'programadoctorado_nombre': TextInput(attrs={'class': 'form-control pull-right'}),
+            'nombre': TextInput(attrs={'class': 'form-control pull-right'}),
         }
 
 

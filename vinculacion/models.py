@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
-from nucleo.models import User, Institucion, Dependencia, Revista, Indice, Financiamiento, \
-    ProyectoInsvestigacionArbitrado, InstitucionSimple
+from nucleo.models import User, Institucion, Dependencia, Revista, Indice, Financiamiento, InstitucionSimple
 from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, LibroInvestigacion, CapituloLibroInvestigacion
 from django.urls import reverse
 from sortedm2m.fields import SortedManyToManyField

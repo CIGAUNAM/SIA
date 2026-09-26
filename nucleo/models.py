@@ -20,30 +20,38 @@ CLASIFICACION_PROYECTO = getattr(settings,
                                                             ('OTRO', 'Otro')))
 ORGANIZACION_PROYECTO = getattr(settings,
                                 'ORGANIZACION_PROYECTO', (('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo')))
+
 MODALIDAD_PROYECTO = getattr(settings, 'MODALIDAD_PROYECTO', (('DISCIPLINARIO', 'Disciplinario'),
                                                               ('MULTIDISCIPLINARIO', 'Multidisciplinario'),
                                                               ('INTERDISCIPLINARIO', 'Interisciplinario'),
                                                               ('TRANSDISCIPLINARIO', 'Transdisciplinario'),
                                                               ('OTRA', 'Otra')))
+
 FINANCIAMIENTO_UNAM = getattr(settings,
                               'FINANCIAMIENTO_UNAM', (('ASIGNADO', 'Presupuesto asignado a la entidad'),
                                                       ('CONCURSADO', 'Presupuesto concursado por la entidad'),
                                                       ('AUTOGENERADO', 'Recursos autogenerados (extraordinarios)'),
                                                       ('OTRO', 'Otro')))
+
 FINANCIAMIENTO_EXTERNO = getattr(settings, 'FINANCIAMIENTO_EXTERNO', (('ESTATAL', 'Gubernamental Estatal'),
                                                                       ('FEDERAL', 'Gubernamental Federal'),
                                                                       ('LUCRATIVO', 'Privado lucrativo'),
                                                                       ('NO_LUCRATIVO', 'Privado no lucrativo'),
                                                                       ('EXTRANJERO', 'Recursos del extranjero'),
                                                                       ('OTRO', 'Otro')))
+
 FINANCIAMIENTO_TIPO = getattr(settings, 'FINANCIAMIENTO_TIPO', (('UNAM', FINANCIAMIENTO_UNAM),
                                                                 ('Externo', FINANCIAMIENTO_EXTERNO)))
+
 CARGO__TIPO_CARGO = getattr(settings, 'CARGO__TIPO_CARGO',
                             (('ACADEMICO', 'Académico'), ('ADMINISTRATIVO', 'Administrativo')))
+
 NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO',
                           (('LICENCIATURA', 'licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+
 STATUS_PUBLICACION = getattr(settings, 'STATUS_PUBLICACION', (('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'),
                                                               ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado')))
+
 ENTIDAD_CLASIFICACION = getattr(settings, 'ENTIDAD_CLASIFICACION', (('', '-------'),
                                                                     ('ACADEMICA', 'Académica'),
                                                                     ('FEDERAL', 'Gubernamental federal'),
@@ -471,119 +479,75 @@ class Metodologia(models.Model):
 
 class Beca(models.Model):
     nombre = models.CharField(max_length=200, unique=True)
-    descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nombre
 
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('beca_detalle', kwargs={'pk': self.pk})
+    class Meta:
+        ordering = ['nombre']
+        verbose_name = 'Beca'
+        verbose_name_plural = 'Becas'
 
 
 class Reconocimiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('reconocimiento_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
+        verbose_name = 'Reconocimiento'
+        verbose_name_plural = 'Reconocimientos'
 
 
 class ProgramaLicenciatura(models.Model):
-    programalicenciatura_nombre = models.CharField(max_length=255, unique=True)
-    programalicenciatura_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
-    programalicenciatura_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
-    programalicenciatura_regfechacreado = models.DateField(auto_now_add=True, blank=True, null=True)
-    programalicenciatura_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
-    programalicenciatura_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
+    nombre = models.CharField(max_length=255)
+    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.programalicenciatura_nombre
-
-    def natural_key(self):
-        return self.programalicenciatura_nombre
-
-    def get_absolute_url(self):
-        return reverse('programa_licenciatura_detalle', kwargs={'pk': self.pk})
+        return self.nombre
 
     class Meta:
-        ordering = ['programalicenciatura_nombre']
+        ordering = ['nombre']
         verbose_name = 'Programa de licenciatura'
         verbose_name_plural = 'Programas de licenciatura'
 
 
 class ProgramaMaestria(models.Model):
-    programamaestria_nombre = models.CharField(max_length=255, unique=True)
-    programamaestria_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
-    programamaestria_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
-    programamaestria_regfechacreado = models.DateField(auto_now_add=True, blank=True, null=True)
-    programamaestria_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
-    programamaestria_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
+    nombre = models.CharField(max_length=255, unique=True)
+    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.programamaestria_nombre
-
-    def natural_key(self):
-        return self.programamaestria_nombre
-
-    def get_absolute_url(self):
-        return reverse('programa_maestria_detalle', kwargs={'pk': self.pk})
+        return self.nombre
 
     class Meta:
-        ordering = ['programamaestria_nombre']
+        ordering = ['nombre']
         verbose_name = 'Programa de maestria'
         verbose_name_plural = 'Programas de maestria'
 
 
 class ProgramaDoctorado(models.Model):
-    programadoctorado_nombre = models.CharField(max_length=255, unique=True)
-    programadoctorado_areaconocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
-    programadoctorado_regverificado = models.BooleanField(default=False, verbose_name='Este registro se encuentra validado y verificado. Cuando un registro está marcado como verificado ya no es posible editar ni eliminar por otros usuarios')
-    programadoctorado_regfechacreado = models.DateField(auto_now_add=True, blank=True, null=True)
-    programadoctorado_regfechaactualizado = models.DateField(auto_now=True, blank=True, null=True)
-    programadoctorado_regusuario = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Usuario que creó el registro de esta entrada')
+    nombre = models.CharField(max_length=255, unique=True)
+    area_conocimiento = models.ForeignKey(AreaConocimiento, verbose_name='Área de conocimiento', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.programadoctorado_nombre
-
-    def natural_key(self):
-        return self.programadoctorado_nombre
-
-    def get_absolute_url(self):
-        return reverse('programa_doctorado_detalle', kwargs={'pk': self.pk})
+        return self.nombre
 
     class Meta:
-        ordering = ['programadoctorado_nombre']
+        ordering = ['nombre']
         verbose_name = 'Programa de doctorado'
         verbose_name_plural = 'Programas de doctorado'
 
 
 class TipoEvento(models.Model):
-    tipoevento_nombre = models.CharField(max_length=100, unique=True)
+    nombre = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
-        return self.tipoevento_nombre
-
-    def natural_key(self):
-        return self.tipoevento_nombre
-
-    def get_absolute_url(self):
-        return reverse('tipo_evento_detalle', kwargs={'pk': self.pk})
+        return self.nombre
 
     class Meta:
+        ordering = ['nombre']
         verbose_name = 'Tipo de evento'
         verbose_name_plural = 'Tipos de eventos'
 
@@ -602,12 +566,6 @@ class Evento(models.Model):
 
     def __str__(self):
         return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('evento_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['fecha_inicio', 'nombre']
@@ -641,20 +599,13 @@ class Distincion(models.Model):
 
 class ProblemaNacionalConacyt(models.Model):
     nombre = models.CharField(max_length=200, unique=True)
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
 
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('problema_nacional_conacyt_detalle', kwargs={'pk': self.pk})
-
     class Meta:
-        verbose_name = ['Problemática Nacional CONACYT']
-        verbose_name_plural = ['Problemáticas Nacionales CONACYT']
+        verbose_name = ['Problema Nacional CONACYT']
+        verbose_name_plural = ['Problemas Nacionales CONACYT']
 
 
 ###################
@@ -662,33 +613,18 @@ class ProblemaNacionalConacyt(models.Model):
 
 class Indice(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('indice_detalle', kwargs={'pk': self.pk})
 
 
 class Editorial(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT)
-    # ciudad = models.ForeignKey(Ciudad, on_delete=models.PROTECT)
     ciudad = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('editorial_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -697,16 +633,9 @@ class Editorial(models.Model):
 
 class Coleccion(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('coleccion_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -807,16 +736,9 @@ class RevistaDivulgacion(models.Model):
 
 class Asignatura(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('asignatura_detalle', kwargs={'pk': self.pk})
 
 
 class MedioDivulgacion(models.Model):
@@ -846,16 +768,9 @@ class MedioDivulgacion(models.Model):
 
 class TipoCurso(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('tipo_curso_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']
@@ -887,16 +802,9 @@ class ProyectoInsvestigacionArbitrado(models.Model):
 
 class ConvocatoriaArbitraje(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField(blank=True)
 
     def __str__(self):
         return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('convocatoria_atrbitraje_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['nombre']

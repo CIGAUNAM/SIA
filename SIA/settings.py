@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from decouple import config
 
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -31,6 +32,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.10.2.203', '10.1.11.2', '201.144.
 STATUS_PUBLICACION_ARTICULO = (('', '-------'), ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'))
 STATUS_PUBLICACION_LIBRO = (('', '-------'), ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'))
 STATUS_PUBLICACION = (('', '-------'), ('PUBLICADO', 'Publicado'), ('EN_PRENSA', 'En prensa'), ('ACEPTADO', 'Aceptado'), ('ENVIADO', 'Enviado'))
+
+
 STATUS_PROYECTO = (('', '-------'), ('NUEVO', 'Nuevo'), ('EN_PROCESO', 'En proceso'), ('CONCLUIDO', 'Concluído'))
 CLASIFICACION_PROYECTO = (('', '-------'), ('BASICO', 'Básico'), ('APLICADO', 'Aplicado'), ('DESARROLLO_TECNOLOGICO', 'Desarrollo tecnológico'),('INNOVACION', 'Innovación'), ('INVESTIGACION_FRONTERA', 'Investigación de frontera'))
 ORGANIZACION_PROYECTO = (('', '-------'), ('INDIVIDUAL', 'Individual'), ('COLECTIVO', 'Colectivo'))
@@ -63,28 +66,22 @@ INSTALLED_APPS = [
 
     'django.contrib.admin',
 
-    'nucleo.apps.NucleoConfig',
-    'investigacion.apps.InvestigacionConfig',
-    'formacion_academica.apps.FormacionAcademicaConfig',
-    'experiencia_profesional.apps.ExperienciaLaboralConfig',
-    'difusion_cientifica.apps.DifusionCientificaConfig',
-    'divulgacion_cientifica.apps.DivulgacionCientificaConfig',
-    'vinculacion.apps.VinculacionConfig',
-    'compromiso_institucional.apps.ApoyoInstitucionalConfig',
-    'movilidad_academica.apps.MovilidadAcademicaConfig',
-    'docencia.apps.DocenciaConfig',
-    'formacion_recursos_humanos.apps.FormacionRecursosHumanosConfig',
-    'desarrollo_tecnologico.apps.DesarrolloTecnologicoConfig',
-    'distinciones.apps.DistincionesConfig',
-    'formatos.apps.FormatoConfig',
+    'nucleo',
+    'investigacion',
+    'formacion_academica',
+    'experiencia_profesional',
+    'difusion_cientifica',
+    'divulgacion_cientifica',
+    'vinculacion',
+    'compromiso_institucional',
+    'movilidad_academica',
+    'docencia',
+    'formacion_recursos_humanos',
+    'desarrollo_tecnologico',
+    'distinciones',
+    'formatos',
 
     'rest_framework',
-    'django_adminlte',
-    'sortedm2m',
-    'table',
-    'django_select2',
-    'graphos',
-
 ]
 
 #MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -144,13 +141,12 @@ WSGI_APPLICATION = 'SIA.wsgi.application'
 
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'NAME': 'sia',
-        'PASSWORD': '',
-        'PORT': '3306',
-        'USER': 'root'
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'HOST': config('DB_HOST', default='localhost'),
+        'NAME': config('DB_NAME', default='sia'),
+        'PORT': config('DB_PORT', default='5432'),
+        'USER': config('DB_USER', default=''),
+        'PASSWORD': config('DB_PASSWORD', default=''),
     }
 }
 
