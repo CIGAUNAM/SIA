@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 
 
-class FormatoConfig(AppConfig):
+class FormatosConfig(AppConfig):
     name = 'formatos'
+    verbose_name = 'Formatos administrativos'

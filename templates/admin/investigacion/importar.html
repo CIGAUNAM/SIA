@@ -1,0 +1,55 @@
+{% extends "admin/base_site.html" %}
+{% load unfold %}
+
+{% block content %}
+<div id="content-main" class="max-w-4xl flex flex-col gap-5">
+  {% include "unfold/helpers/messages/info.html" with message="Los datos se usan para llenar el formulario de alta: revísalos antes de guardar. Los autores que no estén en el catálogo se agregan como personas sin verificar." %}
+
+  {% component "unfold/components/card.html" with title="Por DOI" title_icon="link" %}
+    <form method="post" class="flex gap-3 items-end">{% csrf_token %}
+      <input name="doi" required placeholder="10.1016/j.ejrs.2020.01.003 o https://doi.org/…" class="grow border border-base-200 rounded-default px-3 py-2 dark:bg-base-900 dark:border-base-700">
+      {% component "unfold/components/button.html" with submit=1 %}Buscar en Crossref{% endcomponent %}
+    </form>
+  {% endcomponent %}
+
+  {% component "unfold/components/card.html" with title="Desde BibTeX" title_icon="data_object" %}
+    <form method="post">{% csrf_token %}
+      <textarea name="bibtex" rows="6" placeholder="@article{clave, title={…}, author={Apellido, Nombre and …}, journal={…}, year={2024}, …}" class="w-full border border-base-200 rounded-default px-3 py-2 mb-3 font-mono text-sm dark:bg-base-900 dark:border-base-700">{{ bibtex }}</textarea>
+      {% component "unfold/components/button.html" with submit=1 %}Leer BibTeX{% endcomponent %}
+    </form>
+    {% if entradas %}
+      <p class="mt-4 mb-2 font-semibold">El texto tiene {{ entradas|length }} entradas; elige cuál importar:</p>
+      <ul class="flex flex-col gap-2">
+        {% for entrada in entradas %}
+          <li><form method="post" class="flex gap-3 items-center">{% csrf_token %}
+            <input type="hidden" name="bibtex" value="{{ bibtex }}"><input type="hidden" name="entrada" value="{{ forloop.counter0 }}">
+            {% component "unfold/components/button.html" with submit=1 size="sm" variant="default" %}Importar{% endcomponent %}
+            <span>{{ entrada.titulo }}{% if entrada.fecha %} ({{ entrada.fecha.year }}){% endif %}</span>
+          </form></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endcomponent %}
+
+  {% component "unfold/components/card.html" with title="Desde mi ORCID" title_icon="badge" %}
+    <form method="get" class="flex gap-3 items-end">
+      <input name="orcid" required value="{{ orcid|default:'' }}" placeholder="0000-0002-1825-0097" class="grow border border-base-200 rounded-default px-3 py-2 dark:bg-base-900 dark:border-base-700">
+      {% component "unfold/components/button.html" with submit=1 %}Ver mis obras{% endcomponent %}
+    </form>
+    {% if obras %}
+      <ul class="mt-4 flex flex-col gap-2">
+        {% for titulo, anio, doi, registrado in obras %}
+          <li class="flex gap-3 items-center">
+            {% if registrado %}<span class="text-green-600 whitespace-nowrap">✓ ya registrado</span>
+            {% elif doi %}<form method="post">{% csrf_token %}<input type="hidden" name="doi" value="{{ doi }}">{% component "unfold/components/button.html" with submit=1 size="sm" variant="default" %}Importar{% endcomponent %}</form>
+            {% else %}<span class="text-font-subtle-light whitespace-nowrap">sin DOI</span>{% endif %}
+            <span>{{ titulo }}{% if anio %} ({{ anio }}){% endif %}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% elif orcid %}
+      <p class="mt-3">No se encontraron obras públicas para ese ORCID.</p>
+    {% endif %}
+  {% endcomponent %}
+</div>
+{% endblock %}

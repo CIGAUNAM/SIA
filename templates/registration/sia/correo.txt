@@ -1,0 +1,11 @@
+{% autoescape off %}Hola {{ user.get_full_name|default:user.get_username }}:
+
+Recibimos una solicitud para crear una contraseña nueva en el Sistema de Información Académica (SIA).
+Abre este enlace para hacerlo:
+
+{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}
+
+Tu nombre de usuario es: {{ user.get_username }}
+
+Si no lo solicitaste, ignora este mensaje: tu contraseña no cambiará.
+{% endautoescape %}

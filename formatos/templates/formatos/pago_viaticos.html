@@ -1,0 +1,25 @@
+{% extends "formatos/base.html" %}
+{% block nombre_formato %}Solicitud de pago de viáticos{% endblock %}
+{% block nombre_formato_encabezado %}Solicitud de pago de viáticos y autorización de salida{% endblock %}
+{% block cuerpo %}
+<p class="campo"><b>Académico solicitante:</b> {{ formato.usuario }}</p>
+<p class="campo"><b>Evento:</b></p>
+<div class="campo-recuadro">{{ formato.evento.nombre }}{% if formato.evento.descripcion %}
+{{ formato.evento.descripcion }}{% endif %}</div>
+<p class="campo"><b>Lugar:</b> {% if formato.evento.ciudad %}{{ formato.evento.ciudad }}, {% endif %}{{ formato.evento.pais }}</p>
+<p class="campo"><b>Fecha de salida:</b> {{ formato.fecha_salida|date:"d/m/Y" }} &nbsp; <b>Fecha de regreso:</b> {{ formato.fecha_regreso|date:"d/m/Y" }}</p>
+<p class="campo"><b>Actividades a realizar:</b></p>
+<div class="campo-recuadro">{{ formato.actividades }}</div>
+<p class="campo"><b>Importe solicitado:</b> ${{ formato.importe }} MXN &nbsp; <b>Acta de consejo interno:</b> {{ formato.num_acta|default:"—" }}</p>
+<p class="campo"><b>Cheque a nombre de:</b> {{ formato.beneficiario }}</p>
+<p class="campo casillas"><b>Con cargo a:</b>
+  <span>{% if formato.cargo_papiit %}☒{% else %}☐{% endif %} PAPIIT</span>
+  <span>{% if formato.cargo_conacyt %}☒{% else %}☐{% endif %} CONAHCYT</span>
+  <span>{% if formato.cargo_papime %}☒{% else %}☐{% endif %} PAPIME</span>
+  <span>{% if formato.cargo_ie %}☒{% else %}☐{% endif %} I.E.</span>
+  <span>{% if formato.cargo_po %}☒{% else %}☐{% endif %} P.O.</span>
+  <span>{% if formato.cargo_paep %}☒{% else %}☐{% endif %} PAEP</span>
+  <span>{% if formato.cargo_otro %}☒{% else %}☐{% endif %} Otro</span>
+</p>
+{% if formato.proyecto %}<p class="campo"><b>Proyecto:</b> {{ formato.proyecto.nombre }}</p>{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "admin/base_site.html" %}
+{% load unfold %}
+
+{% block content %}
+<div id="content-main" class="max-w-5xl">
+  {% include "unfold/helpers/messages/info.html" with message="Pares de registros con nombres muy parecidos (se muestran hasta 100). Si son el mismo, elige cuál conservar: sus referencias (autorías, participaciones, evidencias…) pasan al conservado y el otro se elimina." %}
+  {% for par in pares %}
+    <form method="post" class="bg-white border border-base-200 rounded-default shadow-xs p-3 mb-3 flex flex-wrap items-center gap-4 dark:bg-base-900 dark:border-base-800">{% csrf_token %}
+      {% for registro, referencias in par %}
+        <label class="flex items-start gap-2 grow basis-64">
+          <input type="radio" name="conservar" value="{{ registro.pk }}" {% if forloop.first %}checked{% endif %} class="mt-1"
+                 onchange="this.form.eliminar.value = '{% if forloop.first %}{{ par.1.0.pk }}{% else %}{{ par.0.0.pk }}{% endif %}'">
+          <span><span class="font-medium text-important">{{ registro }}</span>
+            <span class="block text-font-subtle-light dark:text-font-subtle-dark">
+              #{{ registro.pk }}{% if registro.usuario_id %} · con cuenta{% endif %}{% if registro.verificado %} · verificado{% endif %} ·
+              {% for tipo, total in referencias.items %}{{ total }} {{ tipo }}{% if not forloop.last %}, {% endif %}{% empty %}sin referencias{% endfor %}
+            </span></span>
+        </label>
+      {% endfor %}
+      <input type="hidden" name="eliminar" value="{{ par.1.0.pk }}">
+      {% component "unfold/components/button.html" with submit=1 variant="danger" size="sm" %}Fusionar{% endcomponent %}
+    </form>
+  {% empty %}
+    {% include "unfold/helpers/messages/success.html" with message="No se encontraron posibles duplicados." %}
+  {% endfor %}
+</div>
+{% endblock %}

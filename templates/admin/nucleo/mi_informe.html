@@ -1,0 +1,52 @@
+{% extends "admin/base_site.html" %}
+{% load unfold %}
+
+{% block content %}
+<div id="content-main" class="max-w-5xl">
+  {% if not periodo %}
+    {% include "unfold/helpers/messages/info.html" with message="Aún no hay periodos de informe. Un administrador debe crearlos en Catálogos y personas → Periodos de informe." %}
+  {% else %}
+    <form method="get" class="flex flex-wrap items-center gap-3 mb-4">
+      {% if request.GET.usuario %}<input type="hidden" name="usuario" value="{{ request.GET.usuario }}">{% endif %}
+      <label for="anio" class="font-semibold text-important">Periodo</label>
+      <select id="anio" name="anio" onchange="this.form.submit()" class="border border-base-200 bg-white px-3 py-2 rounded-default shadow-xs dark:bg-base-900 dark:border-base-700">
+        {% for p in periodos %}<option value="{{ p.anio }}"{% if p == periodo %} selected{% endif %}>{{ p.anio }}{% if p.cerrado %} (cerrado){% endif %}</option>{% endfor %}
+      </select>
+      <span class="text-font-subtle-light dark:text-font-subtle-dark">
+        {% if usuario_informe != request.user %}Informe de <strong>{{ usuario_informe }}</strong> · {% endif %}
+        {{ total }} registro{{ total|pluralize }} en {{ periodo.anio }}
+        {% if periodo.cerrado %} · Periodo cerrado{% elif dias_restantes is not None %} · Fecha límite: {{ periodo.fecha_limite|date:"j \d\e F" }}{% if dias_restantes >= 0 %} ({{ dias_restantes }} día{{ dias_restantes|pluralize }}){% else %} (vencida){% endif %}{% endif %}
+      </span>
+    </form>
+
+    {% if mensaje_confirmacion %}
+      {% include "unfold/helpers/messages/success.html" with message=mensaje_confirmacion %}
+    {% endif %}
+
+    {% for clave, titulo, subsecciones in secciones %}
+      {% component "unfold/components/card.html" with title=titulo class="mb-5" %}
+        {% for subtitulo, entradas in subsecciones %}
+          <h3 class="font-semibold text-important mt-3 mb-2">{{ subtitulo }} <span class="text-font-subtle-light dark:text-font-subtle-dark font-normal">({{ entradas|length }})</span></h3>
+          <ol class="list-decimal pl-6 space-y-1">
+            {% for entrada in entradas %}
+              <li>{% if entrada.url %}<a href="{{ entrada.url }}" class="hover:text-primary-600">{% endif %}{% for texto, estilo in entrada.segmentos %}{% if estilo == 'b' %}<strong>{{ texto }}</strong>{% elif estilo == 'i' %}<em>{{ texto }}</em>{% else %}{{ texto }}{% endif %}{% endfor %}{% if entrada.url %}</a>{% endif %}</li>
+            {% endfor %}
+          </ol>
+        {% endfor %}
+      {% endcomponent %}
+    {% empty %}
+      {% include "unfold/helpers/messages/info.html" with message="No hay registros para este año. Captúralos en las secciones del menú y vuelve a revisar aquí." %}
+    {% endfor %}
+
+    {% if usuario_informe == request.user and not periodo.cerrado %}
+      <form method="post" class="mt-6">{% csrf_token %}
+        {% component "unfold/components/card.html" with title="Confirmar mi informe" %}
+          <p class="mb-3">Confirma que revisaste que lo anterior está completo y es correcto. Puedes seguir corrigiendo registros hasta que el periodo se cierre.</p>
+          <textarea name="comentario" rows="2" placeholder="Comentario para la coordinación (opcional)" class="w-full border border-base-200 rounded-default px-3 py-2 mb-3 dark:bg-base-900 dark:border-base-700">{{ confirmacion.comentario }}</textarea>
+          {% component "unfold/components/button.html" with submit=1 %}{% if confirmacion %}Actualizar confirmación{% else %}Confirmar informe {{ periodo.anio }}{% endif %}{% endcomponent %}
+        {% endcomponent %}
+      </form>
+    {% endif %}
+  {% endif %}
+</div>
+{% endblock %}

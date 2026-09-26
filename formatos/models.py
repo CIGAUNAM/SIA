@@ -1,103 +1,114 @@
+from django.conf import settings
 from django.db import models
-from nucleo.models import User, Ciudad, Evento
-from investigacion.models import ProyectoInvestigacion
-from django.urls import reverse
+
+from nucleo.models import Evento, validar_periodo
 
 
-# Create your models here.
+class Formato(models.Model):
+    """Base de las solicitudes administrativas que se imprimen en PDF."""
+    fecha = models.DateField('fecha de solicitud', auto_now_add=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='+')
+
+    plantilla_pdf = None
+
+    class Meta:
+        abstract = True
+        ordering = ['-fecha', '-pk']
 
 
-class FormatoServicioTransporte(models.Model):
-    fecha = models.DateField(auto_now_add=True)
-    uso = models.CharField(max_length=20, choices=(('', '-------'), ('DOCENCIA', 'Docencia'),
-                                                   ('INVESTIGACION', 'Investigación')))
-    num_pasajeros = models.PositiveIntegerField()
-    tipo = models.CharField(max_length=10, choices=(('', '-------'), ('LOCAL', 'Local'), ('FORANEO', 'Foraneo')))
-    # ciudad = models.ForeignKey(Ciudad, on_delete=models.DO_NOTHING)
-    km_aprox = models.PositiveIntegerField()
-    gasto_casetas = models.DecimalField(max_digits=20, decimal_places=2, blank=True, null=True)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    salidas_diarias = models.PositiveIntegerField(blank=True, null=True)
-    tiempo_completo = models.PositiveIntegerField(blank=True, null=True)
+class ServicioTransporte(Formato):
+    class Uso(models.TextChoices):
+        DOCENCIA = 'DOCENCIA', 'Docencia'
+        INVESTIGACION = 'INVESTIGACION', 'Investigación'
+
+    class Tipo(models.TextChoices):
+        LOCAL = 'LOCAL', 'Local'
+        FORANEO = 'FORANEO', 'Foráneo'
+
+    uso = models.CharField(max_length=20, choices=Uso.choices)
+    tipo = models.CharField(max_length=10, choices=Tipo.choices)
+    num_pasajeros = models.PositiveIntegerField('número de pasajeros')
+    km_aprox = models.PositiveIntegerField('kilómetros aproximados')
+    gasto_casetas = models.DecimalField('gasto en casetas', max_digits=12, decimal_places=2, null=True, blank=True)
+    fecha_inicio = models.DateField('fecha de inicio')
+    fecha_fin = models.DateField('fecha de término')
+    salidas_diarias = models.PositiveIntegerField(null=True, blank=True)
+    tiempo_completo = models.PositiveIntegerField('días de tiempo completo', null=True, blank=True)
     objetivo = models.TextField()
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
+    plantilla_pdf = 'formatos/servicio_transporte.html'
+
+    class Meta(Formato.Meta):
+        verbose_name = 'solicitud de servicio de transporte'
+        verbose_name_plural = 'solicitudes de servicio de transporte'
 
     def __str__(self):
-        return "{} : {}".format(self.fecha_inicio, self.usuario)
+        return f'Transporte {self.fecha_inicio:%d/%m/%Y} — {self.usuario}'
 
-    def natural_key(self):
-        return "{} : {}".format(self.fecha_inicio, self.usuario)
-
-    def get_absolute_url(self):
-        return reverse('formato_servicio_transporte_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['fecha_inicio', 'usuario']
-        verbose_name = 'Formato de solicitud de servicio de transporte'
-        verbose_name_plural = 'Formatos de solicitud de servicio de transporte'
+    def clean(self):
+        super().clean()
+        validar_periodo(self.fecha_inicio, self.fecha_fin)
 
 
-class FormatoLicenciaGoceSueldo(models.Model):
-    fecha = models.DateField(auto_now_add=True)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
-    tipo_participacion = models.CharField(max_length=255)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    importancia = models.TextField()
-    costo = models.DecimalField(max_digits=20, decimal_places=2)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
+class LicenciaGoceSueldo(Formato):
+    evento = models.ForeignKey(Evento, on_delete=models.PROTECT)
+    tipo_participacion = models.CharField('tipo de participación', max_length=255)
+    fecha_inicio = models.DateField('fecha de inicio')
+    fecha_fin = models.DateField('fecha de término')
+    importancia = models.TextField('importancia para la entidad')
+    costo = models.DecimalField('costo total (MXN)', max_digits=12, decimal_places=2)
+    proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
     presupuesto_personal = models.BooleanField(default=False)
-    carta_invitacion = models.BooleanField(default=False)
-    aceptacion_ponencia = models.BooleanField(default=False)
-    otro_anexo = models.CharField(max_length=255, blank=True, null=True)
+    carta_invitacion = models.BooleanField('anexa carta de invitación', default=False)
+    aceptacion_ponencia = models.BooleanField('anexa aceptación de ponencia', default=False)
+    otro_anexo = models.CharField(max_length=255, blank=True)
+
+    plantilla_pdf = 'formatos/licencia_goce_sueldo.html'
+
+    class Meta(Formato.Meta):
+        verbose_name = 'solicitud de licencia con goce de sueldo'
+        verbose_name_plural = 'solicitudes de licencia con goce de sueldo'
 
     def __str__(self):
-        return "{} : {}".format(self.fecha_inicio, self.usuario)
+        return f'Licencia: {self.evento} — {self.usuario}'
 
-    def natural_key(self):
-        return "{} : {}".format(self.fecha_inicio, self.usuario)
-
-    def get_absolute_url(self):
-        return reverse('formato_licencia_goce_sueldo_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['fecha', 'usuario']
-        verbose_name = 'Formato de licencia con goce de sueldo'
-        verbose_name_plural = 'Formatos de licencia con goce de sueldo'
+    def clean(self):
+        super().clean()
+        validar_periodo(self.fecha_inicio, self.fecha_fin)
 
 
-class FormatoPagoViatico(models.Model):
-    fecha = models.DateField(auto_now_add=True)
-    usuario = models.ForeignKey(User, related_name='formato_pago_viatico_usuario', on_delete=models.DO_NOTHING)
-    evento = models.ForeignKey(Evento, on_delete=models.DO_NOTHING)
+class PagoViaticos(Formato):
+    evento = models.ForeignKey(Evento, on_delete=models.PROTECT)
     fecha_salida = models.DateField()
     fecha_regreso = models.DateField()
-    actividades = models.TextField()
-    importe = models.DecimalField(max_digits=20, decimal_places=2)
-    num_acta = models.PositiveIntegerField()
-    nombre_cheque = models.ForeignKey(User, related_name='formato_pago_viatico_nombre_cheque_usuario',
-                                      on_delete=models.DO_NOTHING)
-    cargo_papiit = models.BooleanField(default=False)
-    cargo_conacyt = models.BooleanField(default=False)
-    cargo_papime = models.BooleanField(default=False)
-    cargo_ie = models.BooleanField(default=False)
-    cargo_po = models.BooleanField(default=False)
-    cargo_paep = models.BooleanField(default=False)
-    cargo_otro = models.BooleanField(default=False)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
+    actividades = models.TextField('actividades a realizar')
+    importe = models.DecimalField('importe solicitado (MXN)', max_digits=12, decimal_places=2)
+    num_acta = models.CharField('acta de consejo interno', max_length=30, blank=True)
+    beneficiario = models.CharField('nombre del cheque', max_length=255,
+                                    help_text='Persona a cuyo nombre se expide el cheque.')
+    cargo_papiit = models.BooleanField('con cargo a PAPIIT', default=False)
+    cargo_conacyt = models.BooleanField('con cargo a CONAHCYT', default=False)
+    cargo_papime = models.BooleanField('con cargo a PAPIME', default=False)
+    cargo_ie = models.BooleanField('con cargo a ingresos extraordinarios', default=False)
+    cargo_po = models.BooleanField('con cargo a presupuesto operativo', default=False)
+    cargo_paep = models.BooleanField('con cargo a PAEP', default=False)
+    cargo_otro = models.BooleanField('con cargo a otro', default=False)
+    proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
+
+    plantilla_pdf = 'formatos/pago_viaticos.html'
+
+    class Meta(Formato.Meta):
+        verbose_name = 'solicitud de pago de viáticos'
+        verbose_name_plural = 'solicitudes de pago de viáticos'
 
     def __str__(self):
-        return "{} : {}".format(self.fecha_salida, self.usuario)
+        return f'Viáticos: {self.evento} — {self.usuario}'
 
-    def natural_key(self):
-        return "{} : {}".format(self.fecha_salida, self.usuario)
+    def clean(self):
+        super().clean()
+        validar_periodo(self.fecha_salida, self.fecha_regreso, 'fecha_regreso')
 
-    def get_absolute_url(self):
-        return reverse('formato_pago_viatico_detalle', kwargs={'pk': self.pk})
 
-    class Meta:
-        ordering = ['fecha_salida', 'usuario']
-        verbose_name = 'Formato de pago de viaticos'
-        verbose_name_plural = 'Formatos de pago de viaticos'
+from nucleo.historial import registrar_historial  # noqa: E402
+
+registrar_historial(globals())

@@ -1,67 +1,37 @@
 from django.db import models
-from django.urls import reverse
-from nucleo.models import User
-from investigacion.models import ProyectoInvestigacion
 
-
-# Create your models here.
-
-
-class TipoDesarrollo(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField()
-
-    def __str__(self):
-        return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('tipo_desarrollo_tecnologico_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['nombre']
-        verbose_name = 'Tipo de desarrollo'
-        verbose_name_plural = 'Tipos de desarrollo'
-
-
-class Licencia(models.Model):
-    nombre = models.CharField(max_length=255, unique=True)
-    descripcion = models.TextField()
-    url = models.URLField()
-
-    def __str__(self):
-        return self.nombre
-
-    def natural_key(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('licencia_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['nombre']
+from nucleo.models import Participante, Persona
 
 
 class DesarrolloTecnologico(models.Model):
     nombre = models.CharField(max_length=254, unique=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField()
-    version = models.CharField(max_length=100, blank=True, null=True)
-    patente = models.CharField(max_length=255, blank=True, null=True)
-    licencia_text = models.CharField(max_length=254, blank=True, null=True)
-    url = models.URLField(blank=True)
-    autores = models.ManyToManyField(User, related_name='desarrollo_tecnologico_autores')
-    fecha = models.DateField(blank=True, null=True)
+    descripcion = models.TextField('descripción')
+    version = models.CharField('versión', max_length=100, blank=True)
+    patente = models.CharField(max_length=255, blank=True)
+    licencia = models.CharField(max_length=254, blank=True)
+    url = models.URLField('URL', blank=True)
+    fecha = models.DateField(null=True, blank=True)
+    proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
+    autores = models.ManyToManyField(Persona, through='DesarrolloTecnologicoAutor', related_name='desarrollos_tecnologicos')
+
+    class Meta:
+        ordering = ['-fecha', 'nombre']
+        verbose_name = 'desarrollo tecnológico'
+        verbose_name_plural = 'desarrollos tecnológicos'
 
     def __str__(self):
         return self.nombre
 
-    def get_absolute_url(self):
-        return reverse('desarrollo_tecnologico_detalle', kwargs={'pk': self.pk})
 
-    class Meta:
-        ordering = ['nombre']
-        get_latest_by = ['fecha', 'nombre']
-        verbose_name_plural = 'Desarrollos Tecnológicos'
+class DesarrolloTecnologicoAutor(Participante):
+    desarrollo = models.ForeignKey(DesarrolloTecnologico, on_delete=models.CASCADE)
+
+    class Meta(Participante.Meta):
+        verbose_name = 'autor'
+        verbose_name_plural = 'autores'
+        constraints = [models.UniqueConstraint(fields=['desarrollo', 'persona'], name='desarrollo_autor_unico')]
+
+
+from nucleo.historial import registrar_historial  # noqa: E402
+
+registrar_historial(globals())

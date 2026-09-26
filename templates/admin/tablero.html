@@ -1,0 +1,138 @@
+{% extends "admin/index.html" %}
+{% load unfold %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+  .tablero-encabezado { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+  .tablero-periodo { display: flex; align-items: center; gap: 10px; }
+  .tablero-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-bottom: 32px; }
+  .tablero-grafica { position: relative; height: 200px; }
+  .tablero-avisos { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; margin-bottom: 24px; }
+  .tablero-lista { list-style: none; margin: 0; padding: 0; }
+  .tablero-lista li { padding: 6px 0; border-bottom: 1px dashed var(--color-base-200); }
+  .tablero-lista li:last-child { border-bottom: 0; }
+  .tablero-lista a:hover { color: var(--color-primary-600); }
+  .altas { display: flex; flex-wrap: wrap; gap: 8px; }
+  .etiqueta-seccion { font-weight: 600; margin: 10px 0 4px; }
+</style>
+{% endblock %}
+
+{% block content %}
+{% url 'admin:cv' as cv_url %}
+<div class="tablero-encabezado">
+  <p class="text-font-default-light dark:text-font-default-dark">
+    {% if es_administrador %}Producción de la entidad (barras, eje derecho) comparada con el promedio y el máximo por académico.
+    {% else %}Tu producción comparada con el promedio y el máximo de los académicos de la entidad.{% endif %}
+  </p>
+  <form method="get" class="tablero-periodo">
+    <label for="hasta" class="text-font-important-light dark:text-font-important-dark font-semibold">Hasta</label>
+    <select id="hasta" name="hasta" onchange="this.form.submit()"
+            class="border border-base-200 bg-white font-medium px-3 py-2 rounded-default shadow-xs text-font-default-light dark:bg-base-900 dark:border-base-700 dark:text-font-default-dark">
+      {% for anio in tablero.anios_disponibles %}
+        <option value="{{ anio }}"{% if anio == tablero.hasta %} selected{% endif %}>{{ anio }}</option>
+      {% endfor %}
+    </select>
+    {% component "unfold/components/button.html" with href=cv_url %}Mi currículum{% endcomponent %}
+  </form>
+</div>
+
+<div class="tablero-avisos">
+  {% with p=pendientes %}
+  {% component "unfold/components/card.html" with title="Pendientes" title_icon="task_alt" %}
+    {% if p.periodo %}
+      <p class="mb-2">
+        <strong>Informe {{ p.periodo.anio }}</strong>:
+        {% if p.periodo_confirmado %}ya lo confirmaste. {% else %}fecha límite {{ p.periodo.fecha_limite|date:"j \d\e F" }}{% if p.dias_restantes >= 0 %} ({{ p.dias_restantes }} día{{ p.dias_restantes|pluralize }}){% else %} (vencida){% endif %}. {% endif %}
+        <a class="text-primary-600" href="{% url 'admin:informe' %}">Revisar mi informe</a>
+      </p>
+    {% endif %}
+    {% if p.perfil_faltante %}
+      <p class="mb-2">A tu perfil le falta: {{ p.perfil_faltante|join:", " }}. <a class="text-primary-600" href="{{ p.perfil_url }}">Completarlo</a></p>
+    {% endif %}
+    {% if p.publicaciones %}
+      <p class="etiqueta-seccion">Publicaciones sin actualizar desde hace más de 6 meses</p>
+      <ul class="tablero-lista">{% for item in p.publicaciones %}<li><a href="{{ item.url }}">{{ item.texto }}</a></li>{% endfor %}</ul>
+    {% endif %}
+    {% if p.tesis %}
+      <p class="etiqueta-seccion">Tesis en proceso con fecha de término vencida</p>
+      <ul class="tablero-lista">{% for item in p.tesis %}<li><a href="{{ item.url }}">{{ item.texto }}</a></li>{% endfor %}</ul>
+    {% endif %}
+    {% if not p.periodo and not p.perfil_faltante and not p.publicaciones and not p.tesis %}
+      <p>No tienes pendientes. 🎉</p>
+    {% endif %}
+  {% endcomponent %}
+  {% endwith %}
+
+  <div class="flex flex-col gap-5">
+    {% component "unfold/components/card.html" with title="Registrar rápido" title_icon="add_circle" %}
+      <div class="altas">
+        {% for alta in altas_rapidas %}
+          {% component "unfold/components/button.html" with href=alta.url icon=alta.icono variant="default" size="sm" %}{{ alta.texto }}{% endcomponent %}
+        {% endfor %}
+      </div>
+    {% endcomponent %}
+
+    {% if es_administrador %}
+      {% component "unfold/components/card.html" with title="Por verificar" title_icon="verified" %}
+        {% if cola_verificacion %}
+          <ul class="tablero-lista">{% for item in cola_verificacion %}<li><a href="{{ item.url }}">{{ item.texto }}: <strong>{{ item.total }}</strong></a></li>{% endfor %}</ul>
+        {% else %}
+          <p>No hay catálogos pendientes de verificar.</p>
+        {% endif %}
+      {% endcomponent %}
+    {% endif %}
+  </div>
+</div>
+
+<div class="tablero-grid">
+  {% for serie in tablero.series %}
+    {% component "unfold/components/card.html" with title=serie.titulo %}
+      <div class="tablero-grafica"><canvas id="grafica-{{ forloop.counter }}" role="img" aria-label="{{ serie.titulo }}"></canvas></div>
+    {% endcomponent %}
+  {% endfor %}
+</div>
+
+{% include "unfold/helpers/dashboard_default.html" %}
+
+{{ tablero.series|json_script:"datos-tablero" }}
+<script>
+  window.addEventListener('load', function () {
+    if (typeof Chart === 'undefined') return;
+    const estilo = getComputedStyle(document.documentElement);
+    const color = (nombre, respaldo) => (estilo.getPropertyValue(nombre) || respaldo).trim();
+    const colores = {
+      mios: color('--color-primary-500', '#3b82f6'),
+      total: color('--color-primary-300', '#93c5fd'),
+      promedio: color('--color-base-500', '#6b7280'),
+      maximo: color('--color-base-400', '#9ca3af'),
+    };
+    const series = JSON.parse(document.getElementById('datos-tablero').textContent);
+    series.forEach((serie, i) => {
+      const datasets = [];
+      if (serie.total) {
+        datasets.push({ type: 'bar', label: 'Total entidad', data: serie.total, backgroundColor: colores.total,
+                        borderRadius: 4, yAxisID: 'total', order: 2 });
+      } else {
+        datasets.push({ type: 'bar', label: 'Míos', data: serie.mios, backgroundColor: colores.mios, borderRadius: 4, order: 2 });
+      }
+      datasets.push({ type: 'line', label: 'Promedio por académico', data: serie.promedio, borderColor: colores.promedio,
+                      backgroundColor: colores.promedio, tension: 0.3, order: 1 });
+      datasets.push({ type: 'line', label: 'Máximo', data: serie.maximo, borderColor: colores.maximo,
+                      backgroundColor: colores.maximo, borderDash: [4, 4], tension: 0.3, order: 1 });
+      new Chart(document.getElementById('grafica-' + (i + 1)), {
+        data: { labels: serie.anios, datasets: datasets },
+        options: {
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom', labels: { boxWidth: 8, usePointStyle: true } } },
+          scales: {
+            y: { beginAtZero: true, ticks: { precision: 0 } },
+            total: { display: !!serie.total, position: 'right', beginAtZero: true, ticks: { precision: 0 },
+                     grid: { drawOnChartArea: false } },
+          },
+        },
+      });
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.idea/
+.vscode/
+.DS_Store
+
+db.sqlite3
+media/
+staticfiles/
+
+# Dumps legacy y fixtures convertidos: contienen datos personales y hashes de contraseñas
+datos/
+privado/

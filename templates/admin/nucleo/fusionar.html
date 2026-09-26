@@ -1,0 +1,42 @@
+{% extends "admin/base_site.html" %}
+{% load unfold admin_urls %}
+
+{% block content %}
+<div id="content-main" class="max-w-4xl">
+  {% include "unfold/helpers/messages/info.html" with message="Elige el registro que se conserva. Todas las referencias de los demás (autorías, participaciones, evidencias...) pasarán a él y los demás se eliminarán. Esta acción no se puede deshacer." %}
+  <form method="post">{% csrf_token %}
+    <div class="bg-white border border-base-200 rounded-default shadow-xs overflow-hidden mb-6 dark:bg-base-900 dark:border-base-800">
+      <table class="w-full border-separate border-spacing-none">
+        <thead><tr class="bg-base-50 dark:bg-base-900">
+          <th class="border-b border-base-200 font-semibold px-3 py-2 text-left dark:border-base-800">Conservar</th>
+          <th class="border-b border-base-200 font-semibold px-3 py-2 text-left dark:border-base-800">Registro</th>
+          <th class="border-b border-base-200 font-semibold px-3 py-2 text-left dark:border-base-800">Referencias</th>
+        </tr></thead>
+        <tbody>
+        {% for registro, referencias in registros %}
+          <tr>
+            <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">
+              <input type="radio" name="conservar" value="{{ registro.pk }}" {% if forloop.first %}checked{% endif %}>
+              <input type="hidden" name="{{ action_checkbox_name }}" value="{{ registro.pk }}">
+            </td>
+            <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">
+              <span class="font-medium text-important">{{ registro }}</span>
+              <span class="text-font-subtle-light dark:text-font-subtle-dark">#{{ registro.pk }}{% if registro.verificado %} · verificado{% endif %}</span>
+            </td>
+            <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">
+              {% for tipo, total in referencias.items %}{{ total }} {{ tipo }}{% if not forloop.last %}, {% endif %}{% empty %}—{% endfor %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <input type="hidden" name="action" value="fusionar_registros">
+    <div class="flex gap-3 justify-end">
+      {% url opts|admin_urlname:'changelist' as volver %}
+      {% component "unfold/components/button.html" with href=volver variant="default" %}Cancelar{% endcomponent %}
+      {% component "unfold/components/button.html" with submit=1 variant="danger" %}Fusionar{% endcomponent %}
+    </div>
+  </form>
+</div>
+{% endblock %}

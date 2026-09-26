@@ -1,124 +1,81 @@
-from django.db import models
 from django.conf import settings
-from django.urls import reverse
-from nucleo.models import User, Dependencia, Institucion, InstitucionSimple, AreaConocimiento, ProgramaLicenciatura, ProgramaMaestria, ProgramaDoctorado
-from investigacion.models import ProyectoInvestigacion
+from django.db import models
 
-CURSO_ESPECIALIZACION_TIPO = getattr(settings, 'CURSO_ESPECIALIZACION_TIPO', (('', ''), ('', ''), ('CURSO', 'Curso'),
-                                                                              ('DIPLOMADO', 'Diplomado'),
-                                                                              ('CERTIFICACION', 'Certificación'),
-                                                                              ('OTRO', 'Otro')))
-CURSO_ESPECIALIZACION_MODALIDAD = getattr(settings, 'CURSO_ESPECIALIZACION_MODALIDAD', (('PRESENCIAL', 'Presencial'),
-                                                                                        ('EN_LINEA', 'En línea'),
-                                                                                        ('MIXTO', 'Mixto'),
-                                                                                        ('OTRO', 'Otro')))
+from nucleo.models import Institucion, Modalidad, NivelAcademico, Periodo, Persona, requerido_si
 
 
-# Create your models here.
+class CursoEspecializacion(Periodo):
+    class Tipo(models.TextChoices):
+        CURSO = 'CURSO', 'Curso'
+        DIPLOMADO = 'DIPLOMADO', 'Diplomado'
+        CERTIFICACION = 'CERTIFICACION', 'Certificación'
+        OTRO = 'OTRO', 'Otro'
 
-
-
-
-class CursoEspecializacion(models.Model):
-    nombre = models.CharField(max_length=255, verbose_name='Nombre del curso',
-                              help_text='Nombre del curso texto de ayuda')
-    tipo = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_TIPO, verbose_name='Tipo de curso')
-    horas = models.PositiveIntegerField(verbose_name='Número de horas')
-    fecha_inicio = models.DateField('Fecha de inicio')
-    fecha_fin = models.DateField('Fecha de finalización')
-    modalidad = models.CharField(max_length=20, choices=CURSO_ESPECIALIZACION_MODALIDAD)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
-    usuario = models.ForeignKey(User, related_name='cursos_especializacion', on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} de {}".format(self.tipo, self.nombre)
-
-    def get_absolute_url(self):
-        return reverse('curso_especializacion_detalle', kwargs={'pk': self.pk})
+    nombre = models.CharField('nombre del curso', max_length=255)
+    tipo = models.CharField(max_length=20, choices=Tipo.choices)
+    horas = models.PositiveIntegerField('número de horas')
+    modalidad = models.CharField(max_length=20, choices=Modalidad.choices)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='cursos_especializacion')
 
     class Meta:
-        ordering = ['fecha_inicio']
-        verbose_name = 'Curso de especialización'
-        verbose_name_plural = 'Cursos de especialización'
-        unique_together = ['nombre', 'usuario', 'fecha_fin']
-
-
-class Licenciatura(models.Model):
-    titulo_obtenido = models.CharField(max_length=255)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
-    titulo_tesis = models.CharField(max_length=255)
-    fecha_grado = models.DateField('Fecha de obtención de grado de licenciatura')
-    distincion_obtenida = models.CharField(max_length=255, null=True, blank=True)
-    usuario = models.ForeignKey(User, related_name='licenciaturas', on_delete=models.DO_NOTHING)
+        ordering = ['-fecha_inicio']
+        verbose_name = 'curso de especialización'
+        verbose_name_plural = 'cursos de especialización'
 
     def __str__(self):
-        return "{}, {}, {}".format(str(self.titulo_obtenido), self.titulo_tesis, self.institucion)
+        return f'{self.get_tipo_display()}: {self.nombre}'
 
-    def get_absolute_url(self):
-        return reverse('licenciatura_detalle', kwargs={'pk': self.pk})
+
+class Grado(models.Model):
+    """Grado académico (licenciatura, maestría o doctorado) obtenido por el académico."""
+    nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
+    titulo_obtenido = models.CharField('título obtenido', max_length=255)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    titulo_tesis = models.CharField('título de la tesis', max_length=255, blank=True)
+    fecha_grado = models.DateField('fecha de obtención del grado')
+    distincion_obtenida = models.CharField('distinción obtenida', max_length=255, blank=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='grados')
 
     class Meta:
-        ordering = ['titulo_obtenido', 'titulo_tesis']
-        unique_together = ['titulo_obtenido', 'usuario']
-
-
-class Maestria(models.Model):
-    titulo_obtenido = models.CharField(max_length=255)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
-    titulo_tesis = models.CharField(max_length=255)
-    fecha_grado = models.DateField('Fecha de obtención de grado de maestría')
-    distincion_obtenida = models.CharField(max_length=255, null=True, blank=True)
-    usuario = models.ForeignKey(User, related_name='maestrias', on_delete=models.DO_NOTHING)
+        ordering = ['-fecha_grado']
+        verbose_name = 'grado académico'
+        verbose_name_plural = 'grados académicos'
+        constraints = [models.UniqueConstraint(fields=['usuario', 'nivel', 'titulo_obtenido'], name='grado_unico')]
 
     def __str__(self):
-        return "{}, {}, {}".format(str(self.titulo_obtenido), self.titulo_tesis, self.institucion)
+        return f'{self.titulo_obtenido} ({self.institucion})'
 
-    def get_absolute_url(self):
-        return reverse('maestria_detalle', kwargs={'pk': self.pk})
+
+class Postdoctorado(Periodo):
+    class Financiamiento(models.TextChoices):
+        CONACYT = 'CONACYT', 'CONAHCYT'
+        SRE = 'SRE', 'SRE'
+        DGAPA = 'DGAPA', 'DGAPA'
+        OTRA = 'OTRA', 'Otra'
+
+    titulo_proyecto = models.CharField('título del proyecto', max_length=255)
+    tutor = models.ForeignKey(Persona, on_delete=models.PROTECT, null=True, blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
+    financiamiento = models.CharField(max_length=20, choices=Financiamiento.choices, blank=True)
+    financiamiento_otro = models.CharField('otra entidad de financiamiento', max_length=160, blank=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='postdoctorados')
 
     class Meta:
-        ordering = ['titulo_obtenido', 'titulo_tesis']
-        unique_together = ['titulo_obtenido', 'usuario']
-
-
-class Doctorado(models.Model):
-    titulo_obtenido = models.CharField(max_length=255)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING)
-    titulo_tesis = models.CharField(max_length=255)
-    fecha_grado = models.DateField('Fecha de obtención de grado de doctorado')
-    distincion_obtenida = models.CharField(max_length=255, null=True, blank=True)
-    usuario = models.ForeignKey(User, related_name='doctorados', on_delete=models.DO_NOTHING)
+        ordering = ['-fecha_inicio']
+        verbose_name = 'postdoctorado'
+        verbose_name_plural = 'postdoctorados'
 
     def __str__(self):
-        return "{}, {}".format(self.titulo_obtenido, self.usuario)
+        return self.titulo_proyecto
 
-    def get_absolute_url(self):
-        return reverse('doctorado_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['titulo_obtenido', 'usuario']
-        unique_together = ['titulo_obtenido', 'usuario']
+    def clean(self):
+        super().clean()
+        requerido_si(self.financiamiento == self.Financiamiento.OTRA, self, 'financiamiento_otro',
+                     'Indica la entidad que financió el postdoctorado.')
 
 
-class PostDoctorado(models.Model):
-    titulo_proyecto = models.CharField(max_length=255)
-    tutor = models.ForeignKey(User, related_name='postdoctorado_tutor', on_delete=models.DO_NOTHING)
+from nucleo.historial import registrar_historial  # noqa: E402
 
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING, blank=True, null=True)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING, blank=True, null=True)
-    entidad_financiamiento = models.CharField(max_length=20, blank=True, null=True, choices=(('', '-------'), ('CONACYT', 'CONACYT'), ('SRE', 'SRE'), ('DGAPA', 'DGAPA'), ('OTRA', 'Otra')))
-    otra_entidad_financiamiento = models.CharField(max_length=160, blank=True, null=True)
-    fecha_inicio = models.DateField('Fecha de inicio de postdoctorado')
-    fecha_fin = models.DateField('Fecha de terminación de postdoctorado')
-    usuario = models.ForeignKey(User, related_name='postdoctorado_usuario', on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(self.titulo_proyecto, self.institucion)
-
-    def get_absolute_url(self):
-        return reverse('postdoctorado_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['fecha_fin', ]
-        unique_together = ['titulo_proyecto', 'usuario']
+registrar_historial(globals())

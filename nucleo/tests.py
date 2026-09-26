@@ -1,3 +1,314 @@
-from django.test import TestCase
+import io
+import json
+import tempfile
+from datetime import date
+from pathlib import Path
 
-# Create your tests here.
+from django.contrib.auth.models import Group
+from django.core.management import call_command
+from django.test import TestCase
+from django.urls import reverse
+
+from formatos.models import PagoViaticos
+from investigacion.models import ArticuloCientifico, ArticuloCientificoAutor
+from nucleo.admin_base import es_administrador
+from nucleo.models import Evento, Institucion, Pais, Persona, Revista, TipoEvento, User
+from nucleo.permisos import GRUPO_INVESTIGADORES
+from SIA.tablero import construir_tablero
+
+
+SIN_EVIDENCIAS = {'nucleo-evidencia-content_type-object_id-TOTAL_FORMS': 0,
+                  'nucleo-evidencia-content_type-object_id-INITIAL_FORMS': 0}
+
+
+class Datos(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.mexico = Pais.objects.create(nombre='México', codigo='MX')
+        cls.institucion = Institucion.objects.create(nombre='UNAM', pais=cls.mexico, verificado=True)
+        cls.revista = Revista.objects.create(nombre='Investigaciones Geográficas', pais=cls.mexico, verificado=True)
+        grupo = Group.objects.get(name=GRUPO_INVESTIGADORES)
+        cls.ana = User.objects.create_user('ana', password='x', first_name='Ana', last_name='López Pérez',
+                                           is_staff=True, tipo=User.Tipo.INVESTIGADOR)
+        cls.beto = User.objects.create_user('beto', password='x', first_name='Beto', last_name='Ruiz',
+                                            is_staff=True, tipo=User.Tipo.INVESTIGADOR)
+        cls.ana.groups.add(grupo)
+        cls.beto.groups.add(grupo)
+        cls.admin = User.objects.create_superuser('admin', password='x')
+        cls.externo = Persona.objects.create(nombre='Carla', apellidos='Externa')
+
+    def articulo(self, titulo, *personas, **extra):
+        articulo = ArticuloCientifico.objects.create(
+            titulo=titulo, revista=self.revista, status='PUBLICADO', fecha_publicado=date(2018, 5, 1), **extra)
+        for orden, persona in enumerate(personas, start=1):
+            ArticuloCientificoAutor.objects.create(articulo=articulo, persona=persona, orden=orden)
+        return articulo
+
+
+class PersonaTests(Datos):
+    def test_cada_cuenta_tiene_persona_sincronizada(self):
+        self.assertEqual(self.ana.persona.apellidos, 'López Pérez')
+        self.ana.last_name = 'López'
+        self.ana.save()
+        self.ana.persona.refresh_from_db()
+        self.assertEqual(self.ana.persona.apellidos, 'López')
+
+    def test_nombre_cita(self):
+        self.assertEqual(self.ana.persona.nombre_cita, 'López-Pérez, A.')
+
+    def test_grupo_investigadores_incluye_modelos_de_inlines(self):
+        permisos = set(Group.objects.get(name=GRUPO_INVESTIGADORES).permissions.values_list('codename', flat=True))
+        self.assertIn('add_articulocientificoautor', permisos)
+        self.assertIn('view_pais', permisos)
+        self.assertNotIn('change_pais', permisos)
+        self.assertNotIn('add_user', permisos)
+        self.assertFalse(es_administrador(self.ana))
+
+
+class PropietarioAdminTests(Datos):
+    def test_lista_solo_registros_propios(self):
+        propio = self.articulo('Propio', self.ana.persona, self.externo)
+        ajeno = self.articulo('Ajeno', self.beto.persona)
+        self.client.force_login(self.ana)
+        respuesta = self.client.get(reverse('admin:investigacion_articulocientifico_changelist'))
+        self.assertEqual(list(respuesta.context['cl'].result_list), [propio])
+        respuesta = self.client.get(reverse('admin:investigacion_articulocientifico_change', args=[ajeno.pk]))
+        self.assertEqual(respuesta.status_code, 302)  # El admin redirige cuando el objeto no está en su queryset.
+
+    def test_administrador_ve_todo(self):
+        self.articulo('Uno', self.ana.persona)
+        self.articulo('Dos', self.beto.persona)
+        self.client.force_login(self.admin)
+        respuesta = self.client.get(reverse('admin:investigacion_articulocientifico_changelist'))
+        self.assertEqual(respuesta.context['cl'].result_count, 2)
+
+    def test_usuario_se_asigna_y_no_se_puede_suplantar(self):
+        self.client.force_login(self.ana)
+        respuesta = self.client.post(reverse('admin:experiencia_profesional_capacidadpotencialidad_add'), {
+            'nombre': 'Percepción remota', 'fecha_inicio': '2018-01-01', 'usuario': self.beto.pk, **SIN_EVIDENCIAS})
+        self.assertEqual(respuesta.status_code, 302)
+        self.assertEqual(self.ana.capacidades.get().nombre, 'Percepción remota')
+        self.assertFalse(self.beto.capacidades.exists())
+
+    def test_se_agrega_como_autor_si_no_figura(self):
+        self.client.force_login(self.ana)
+        prefijo = 'articulocientificoautor_set'
+        respuesta = self.client.post(reverse('admin:investigacion_articulocientifico_add'), {
+            'titulo': 'Sin mí', 'revista': self.revista.pk, 'status': 'ENVIADO', 'fecha_enviado': '2020-01-01',
+            f'{prefijo}-TOTAL_FORMS': 1, f'{prefijo}-INITIAL_FORMS': 0,
+            f'{prefijo}-0-persona': self.externo.pk, f'{prefijo}-0-orden': '', **SIN_EVIDENCIAS,
+        })
+        self.assertEqual(respuesta.status_code, 302)
+        articulo = ArticuloCientifico.objects.get(titulo='Sin mí')
+        autores = list(articulo.articulocientificoautor_set.values_list('persona', 'orden'))
+        self.assertEqual(autores, [(self.externo.pk, 1), (self.ana.persona.pk, 2)])
+
+    def test_orden_de_autores_se_renumera(self):
+        self.client.force_login(self.ana)
+        prefijo = 'articulocientificoautor_set'
+        self.client.post(reverse('admin:investigacion_articulocientifico_add'), {
+            'titulo': 'Orden', 'revista': self.revista.pk, 'status': 'ENVIADO', 'fecha_enviado': '2020-01-01',
+            f'{prefijo}-TOTAL_FORMS': 2, f'{prefijo}-INITIAL_FORMS': 0,
+            f'{prefijo}-0-persona': self.externo.pk, f'{prefijo}-0-orden': '5',
+            f'{prefijo}-1-persona': self.ana.persona.pk, f'{prefijo}-1-orden': '2', **SIN_EVIDENCIAS,
+        })
+        articulo = ArticuloCientifico.objects.get(titulo='Orden')
+        autores = list(articulo.articulocientificoautor_set.values_list('persona', 'orden'))
+        self.assertEqual(autores, [(self.ana.persona.pk, 1), (self.externo.pk, 2)])
+
+    def test_autocomplete_de_proyectos_es_compartido(self):
+        from investigacion.models import ProyectoInvestigacion, ProyectoResponsable
+        proyecto = ProyectoInvestigacion.objects.create(
+            nombre='Proyecto de Beto', fecha_inicio=date(2018, 1, 1), status='EN_PROCESO', clasificacion='BASICO',
+            organizacion='INDIVIDUAL', modalidad='DISCIPLINARIO')
+        ProyectoResponsable.objects.create(proyecto=proyecto, persona=self.beto.persona)
+        self.client.force_login(self.ana)
+        respuesta = self.client.get(reverse('admin:autocomplete'), {
+            'app_label': 'investigacion', 'model_name': 'articulocientifico', 'field_name': 'proyecto', 'term': ''})
+        self.assertEqual([r['text'] for r in respuesta.json()['results']], ['Proyecto de Beto'])
+
+
+class VerificableAdminTests(Datos):
+    def test_catalogo_verificado_solo_lo_edita_un_administrador(self):
+        url = reverse('admin:nucleo_revista_change', args=[self.revista.pk])
+        self.client.force_login(self.ana)
+        respuesta = self.client.post(url, {'nombre': 'Otra', 'tipo': 'CIENTIFICA', 'pais': self.mexico.pk})
+        self.assertEqual(respuesta.status_code, 403)
+        self.client.force_login(self.admin)
+        self.assertEqual(self.client.get(url).status_code, 200)
+
+    def test_quien_crea_un_registro_no_verificado_puede_editarlo(self):
+        self.client.force_login(self.ana)
+        self.client.post(reverse('admin:nucleo_institucion_add'), {
+            'nombre': 'Instituto Nuevo', 'pais': self.mexico.pk, 'ciudad': 'Morelia'})
+        nueva = Institucion.objects.get(nombre='Instituto Nuevo')
+        self.assertEqual(nueva.creado_por, self.ana)
+        self.assertFalse(nueva.verificado)
+        url = reverse('admin:nucleo_institucion_change', args=[nueva.pk])
+        self.assertEqual(self.client.post(url, {'nombre': 'Instituto Renombrado', 'pais': self.mexico.pk,
+                                                'ciudad': 'Morelia'}).status_code, 302)
+        self.client.force_login(self.beto)
+        self.assertEqual(self.client.post(url, {'nombre': 'X', 'pais': self.mexico.pk}).status_code, 403)
+
+
+    def test_participantes_pueden_corregir_su_libro_no_verificado(self):
+        from nucleo.models import Libro, LibroParticipante
+        libro = Libro.objects.create(titulo='Atlas', tipo='INVESTIGACION', pais=self.mexico, status='PUBLICADO',
+                                     fecha_publicado=date(2018, 1, 1))
+        LibroParticipante.objects.create(libro=libro, persona=self.ana.persona, orden=1)
+        url = reverse('admin:nucleo_libro_change', args=[libro.pk])
+        self.client.force_login(self.ana)
+        self.assertTrue(self.client.get(url).context['has_change_permission'])
+        self.client.force_login(self.beto)
+        self.assertFalse(self.client.get(url).context['has_change_permission'])
+
+
+class PerfilTests(Datos):
+    def test_investigador_solo_edita_su_perfil(self):
+        self.client.force_login(self.ana)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_user_change', args=[self.ana.pk])).status_code, 200)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_user_change', args=[self.beto.pk])).status_code, 302)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_user_add')).status_code, 403)
+
+    def test_cuenta_nueva_entra_como_investigador(self):
+        self.client.force_login(self.admin)
+        self.client.post(reverse('admin:nucleo_user_add'), {
+            'username': 'nueva', 'password1': 'Clave-de-prueba-9', 'password2': 'Clave-de-prueba-9',
+            'usable_password': 'true'})
+        nueva = User.objects.get(username='nueva')
+        self.assertTrue(nueva.is_staff)
+        self.assertTrue(nueva.groups.filter(name=GRUPO_INVESTIGADORES).exists())
+        self.assertTrue(Persona.objects.filter(usuario=nueva).exists())
+
+
+class DocumentosTests(Datos):
+    def test_cv_en_html_escapa_y_formatea(self):
+        self.articulo('Suelos & agua <al 100%>', self.ana.persona, self.externo)
+        self.client.force_login(self.ana)
+        respuesta = self.client.get(reverse('admin:cv'), {'generar': 1, 'formato': 'html'})
+        self.assertContains(respuesta, '<strong>Suelos &amp; agua &lt;al 100%&gt;</strong>', html=False)
+        self.assertContains(respuesta, 'López-Pérez, A., Externa, C. (2018)')
+
+    def test_cv_filtra_por_periodo_y_seccion(self):
+        self.articulo('Artículo 2018', self.ana.persona)
+        self.client.force_login(self.ana)
+        fuera = self.client.get(reverse('admin:cv'), {'generar': 1, 'formato': 'html', 'desde': 2019})
+        self.assertNotContains(fuera, 'Artículo 2018')
+        otra_seccion = self.client.get(reverse('admin:cv'), {'generar': 1, 'formato': 'html', 'secciones': 'docencia'})
+        self.assertNotContains(otra_seccion, 'Artículo 2018')
+
+    def test_cv_en_pdf_y_word(self):
+        self.articulo('Artículo', self.ana.persona)
+        self.client.force_login(self.ana)
+        pdf = self.client.get(reverse('admin:cv'), {'generar': 1, 'formato': 'pdf'})
+        self.assertEqual(pdf['Content-Type'], 'application/pdf')
+        self.assertTrue(pdf.content.startswith(b'%PDF'))
+        docx = self.client.get(reverse('admin:cv'), {'generar': 1, 'formato': 'docx'})
+        self.assertTrue(docx.content.startswith(b'PK'))
+
+    def test_pagina_de_opciones_del_cv(self):
+        self.client.force_login(self.ana)
+        respuesta = self.client.get(reverse('admin:cv'))
+        self.assertContains(respuesta, 'Generar currículum')
+        self.assertNotIn('usuario', respuesta.context['form'].fields)
+
+    def test_cv_de_otro_usuario_requiere_ser_administrador(self):
+        self.client.force_login(self.ana)
+        self.assertEqual(self.client.get(reverse('admin:cv_usuario', args=[self.beto.pk])).status_code, 403)
+
+    def test_formato_solo_para_su_dueno(self):
+        evento = Evento.objects.create(nombre='Congreso', tipo=TipoEvento.objects.create(nombre='Congreso'),
+                                       fecha_inicio=date(2026, 5, 1), fecha_fin=date(2026, 5, 3), pais=self.mexico)
+        formato = PagoViaticos.objects.create(
+            usuario=self.ana, evento=evento, fecha_salida=date(2026, 5, 1), fecha_regreso=date(2026, 5, 3),
+            actividades='Ponencia', importe='1500.00', beneficiario='Ana López', cargo_papiit=True)
+        url = reverse('admin:formatos_pagoviaticos_descargar_pdf', args=[formato.pk])
+        self.client.force_login(self.ana)
+        self.assertContains(self.client.get(url, {'formato': 'html'}), '☒ PAPIIT')
+        self.assertTrue(self.client.get(url).content.startswith(b'%PDF'))
+        self.client.force_login(self.beto)
+        self.assertEqual(self.client.get(url).status_code, 403)
+
+
+class NavegacionTests(Datos):
+    def titulos_menu(self, usuario):
+        from django.test import RequestFactory
+
+        from SIA.navegacion import menu
+        request = RequestFactory().get('/admin/')
+        request.user = usuario
+        return {item['title'] for grupo in menu(request) for item in grupo['items']}
+
+    def test_investigador_no_ve_catalogos_de_solo_consulta(self):
+        titulos = self.titulos_menu(self.ana)
+        self.assertIn('Artículos científicos', titulos)
+        self.assertIn('Personas', titulos)
+        self.assertNotIn('Países', titulos)
+        self.assertNotIn('Grupos', titulos)
+
+    def test_administrador_ve_todo_el_menu(self):
+        titulos = self.titulos_menu(self.admin)
+        self.assertIn('Países', titulos)
+        self.assertIn('Grupos', titulos)
+
+
+class TableroTests(Datos):
+    def test_cuenta_articulos_con_coautores_externos(self):
+        self.articulo('Con externo', self.ana.persona, self.externo)
+        self.articulo('Solo Beto', self.beto.persona)
+        tablero = construir_tablero(self.ana, hasta=2018, ver_total=True)
+        articulos = tablero['series'][0]
+        self.assertEqual(articulos['anios'][-1], 2018)
+        self.assertEqual(articulos['mios'][-1], 1)
+        self.assertEqual(articulos['maximo'][-1], 1)
+        self.assertEqual(articulos['total'][-1], 2)
+
+    def test_inicio_del_admin(self):
+        self.client.force_login(self.ana)
+        respuesta = self.client.get(reverse('admin:index'))
+        self.assertContains(respuesta, 'Artículos científicos publicados')
+
+
+class ConvertirLegacyTests(TestCase):
+    LEGACY = [
+        {'model': 'nucleo.pais', 'pk': 1, 'fields': {'pais_nombre': 'México', 'pais_nombre_extendido': 'Estados Unidos '
+                                                     'Mexicanos', 'pais_codigo': 'mx', 'pais_zona': 'AMERICA_NORTE'}},
+        {'model': 'nucleo.user', 'pk': 10, 'fields': {
+            'password': 'pbkdf2_sha256$1$a$b', 'last_login': '2019-01-01T00:00:00Z', 'is_superuser': False,
+            'username': 'ana', 'first_name': 'Ana', 'last_name': 'López', 'email': '', 'is_staff': False,
+            'is_active': True, 'date_joined': '2018-01-01', 'grado': None, 'descripcion': '', 'tipo': 'INVESTIGADOR',
+            'fecha_nacimiento': None, 'genero': None, 'pais_origen': 1, 'rfc': '', 'curp': '', 'direccion': '',
+            'direccion_continuacion': '', 'pais': 1, 'ciudad': 1, 'telefono': '', 'celular': '', 'url': None,
+            'sni': 1, 'pride': '-', 'ingreso_unam': None, 'ingreso_entidad': None, 'egreso_entidad': None,
+            'ultimo_contrato': None, 'avatar': '', 'sic': False, 'groups': [], 'user_permissions': []}},
+        {'model': 'nucleo.user', 'pk': 11, 'fields': {
+            'password': '123', 'last_login': None, 'is_superuser': False, 'username': 'externo', 'first_name': 'Eva',
+            'last_name': 'Externa', 'email': '', 'is_staff': False, 'is_active': True, 'date_joined': '2018-01-01',
+            'tipo': 'OTRO'}},
+        {'model': 'nucleo.revista', 'pk': 5, 'fields': {
+            'revista_nombre': 'Revista', 'revista_nombreabreviadowos': None, 'revista_pais': 1, 'revista_indices': [],
+            'revista_issn_impreso': None, 'revista_issn_online': None, 'revista_regverificado': True,
+            'revista_regfechacreado': '2018-01-01', 'revista_regfechaactualizado': None, 'revista_regusuario': 10}},
+        {'model': 'investigacion.articulocientifico', 'pk': 7, 'fields': {
+            'titulo': 'Artículo', 'revista': 5, 'volumen': None, 'numero': None, 'fecha_enviado': None,
+            'fecha_aceptado': None, 'fecha_enprensa': None, 'fecha_publicado': '2018-03-01', 'status': 'PUBLICADO',
+            'solo_electronico': False, 'autores': [11, 10], 'autores_todos': 'Externa, E., López, A.', 'alumnos': [],
+            'agradecimientos': [], 'factor_impacto': '1.500', 'url': '', 'pagina_inicio': 1, 'pagina_fin': 9,
+            'id_doi': None, 'proyecto': None}},
+    ]
+
+    def test_conversion_y_carga(self):
+        with tempfile.TemporaryDirectory() as directorio:
+            entrada = Path(directorio) / 'legacy.json'
+            salida = Path(directorio) / 'fixture.json'
+            entrada.write_text(json.dumps(self.LEGACY), encoding='utf-8')
+            call_command('convertir_legacy', str(entrada), str(salida), stdout=io.StringIO())
+            call_command('loaddata', str(salida), verbosity=0)
+
+        self.assertTrue(User.objects.get(username='ana').groups.filter(name=GRUPO_INVESTIGADORES).exists())
+        self.assertFalse(User.objects.filter(username='externo').exists())
+        self.assertEqual(str(Persona.objects.get(pk=11)), 'Eva Externa')
+        articulo = ArticuloCientifico.objects.get(pk=7)
+        autores = [a.persona_id for a in articulo.articulocientificoautor_set.all()]
+        self.assertEqual(autores, [11, 10])
+        self.assertEqual(Pais.objects.get().codigo, 'MX')

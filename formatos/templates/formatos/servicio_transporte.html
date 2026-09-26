@@ -1,0 +1,13 @@
+{% extends "formatos/base.html" %}
+{% block nombre_formato %}Solicitud de servicio de transporte{% endblock %}
+{% block nombre_formato_encabezado %}Solicitud de servicio de transporte{% endblock %}
+{% block cuerpo %}
+<p class="campo"><b>Académico solicitante:</b> {{ formato.usuario }}</p>
+<p class="campo"><b>Uso:</b> {{ formato.get_uso_display }} &nbsp; <b>Tipo de viaje:</b> {{ formato.get_tipo_display }}</p>
+<p class="campo"><b>Periodo:</b> del {{ formato.fecha_inicio|date:"d/m/Y" }} al {{ formato.fecha_fin|date:"d/m/Y" }}</p>
+<p class="campo"><b>Número de pasajeros:</b> {{ formato.num_pasajeros }} &nbsp; <b>Kilómetros aproximados:</b> {{ formato.km_aprox }}</p>
+<p class="campo"><b>Gasto estimado en casetas:</b> {% if formato.gasto_casetas is not None %}${{ formato.gasto_casetas }} MXN{% else %}—{% endif %}</p>
+<p class="campo"><b>Salidas diarias:</b> {{ formato.salidas_diarias|default:"—" }} &nbsp; <b>Días de tiempo completo:</b> {{ formato.tiempo_completo|default:"—" }}</p>
+<p class="campo"><b>Objetivo:</b></p>
+<div class="campo-recuadro">{{ formato.objetivo }}</div>
+{% endblock %}

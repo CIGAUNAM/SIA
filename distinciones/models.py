@@ -1,137 +1,75 @@
-from django.db import models
 from django.conf import settings
-from django.urls import reverse
-from nucleo.models import User, Institucion, InstitucionSimple, Distincion, Libro
-from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion
+from django.db import models
 
-NIVEL_ACADEMICO = (('', '-------'), ('LICENCIATURA', 'Licenciatura'), ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado'))
-
-
-# Create your models here.
+from nucleo.models import Ambito, Distincion, Institucion, NivelAcademico, Periodo, Persona
 
 
 class DistincionAcademico(models.Model):
-    distincion = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    tipo = models.CharField(max_length=30, choices=(('', '-------'), ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
-                                                    ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
-                                                    ('GUGGENHEIM', 'Beca Guggenheim'), ('DIPLOMA', 'Diploma'),
-                                                    ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
-    distincion_text = models.CharField(max_length=254, null=True, blank=True)
+    distincion = models.ForeignKey(Distincion, on_delete=models.PROTECT, verbose_name='distinción')
     fecha = models.DateField()
-    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
-    ambito = models.CharField(max_length=50,
-                              choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'),
-                                       ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
-    usuario = models.ForeignKey(User, related_name='distincion_academico_usuario', on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {} : {}".format(self.distincion, self.distincion.institucion2, self.fecha)
-
-    def get_absolute_url(self):
-        return reverse('distincion_academico_detalle', kwargs={'pk': self.pk})
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='distinciones')
 
     class Meta:
         ordering = ['-fecha']
-        verbose_name = 'Distinción recibida por académico'
-        verbose_name_plural = 'Distinciones recibidas por académicos'
+        verbose_name = 'distinción recibida'
+        verbose_name_plural = 'distinciones recibidas'
+
+    def __str__(self):
+        return f'{self.distincion} ({self.fecha:%Y})'
 
 
 class DistincionAlumno(models.Model):
-    distincion = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    tipo = models.CharField(max_length=30, choices=(('', '-------'), ('PREMIO', 'Premio'), ('DISTINCION', 'Distinción'),
-                                                    ('RECONOCIMIENTO', 'Reconocimiento'), ('MEDALLA', 'Medalla'),
-                                                    ('GUGGENHEIM', 'Beca Guggenheim'), ('DIPLOMA', 'Diploma'),
-                                                    ('HONORIS_CAUSA', 'Doctorado Honoris Causa'), ('OTRO', 'Otro')))
-    distincion_text = models.CharField(max_length=254, null=True, blank=True)
-    alumno = models.ForeignKey(User, related_name='distincion_alumno_alumno', on_delete=models.DO_NOTHING)
-    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
-    tutores = models.ManyToManyField(User, related_name='distincion_alumno_tutores')
+    distincion = models.ForeignKey(Distincion, on_delete=models.PROTECT, verbose_name='distinción')
+    alumno = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='distinciones_alumno')
+    nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
+    tutores = models.ManyToManyField(Persona, related_name='distinciones_alumnos_tutorados')
     fecha = models.DateField()
-    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
-    ambito = models.CharField(max_length=50,
-                              choices=(('', '-------'), ('INSTITUCIONAL', 'Institucional'), ('REGIONAL', 'Regional'),
-                                       ('NACIONAL', 'Nacional'), ('INTERNACIONAL', 'Internacional')))
-
-    def __str__(self):
-        return "{} : {} : {}".format(self.distincion, self.distincion.institucion2, self.fecha)
-
-    def get_absolute_url(self):
-        return reverse('distincion_alumno_detalle', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-fecha']
-        verbose_name = 'Distinción recibida por alumno'
-        verbose_name_plural = 'Distinciones recibidas por alumnos'
+        verbose_name = 'distinción recibida por alumno'
+        verbose_name_plural = 'distinciones recibidas por alumnos'
+
+    def __str__(self):
+        return f'{self.distincion} — {self.alumno}'
 
 
-class ParticipacionComisionExpertos(models.Model):
+class ComisionExpertos(Periodo):
     nombre = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    institucion2 = models.ForeignKey(Institucion, blank=True, null=True, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    descripcion = models.TextField('descripción', blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='comisiones_expertos')
+
+    class Meta:
+        ordering = ['-fecha_inicio']
+        verbose_name = 'participación en comisión de expertos'
+        verbose_name_plural = 'participaciones en comisiones de expertos'
 
     def __str__(self):
         return self.nombre
 
-    def get_absolute_url(self):
-        return reverse('comision_expertos_detalle', kwargs={'pk': self.pk})
+
+class SociedadCientifica(Periodo):
+    class Tipo(models.TextChoices):
+        INVITACION = 'INVITACION', 'Por invitación'
+        ELECCION = 'ELECCION', 'Por elección'
+
+    nombre = models.CharField(max_length=255)
+    descripcion = models.TextField('descripción', blank=True)
+    tipo = models.CharField(max_length=20, choices=Tipo.choices)
+    ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='sociedades')
 
     class Meta:
         ordering = ['-fecha_inicio']
-        verbose_name = 'Participación en comisión de expertos'
-        verbose_name_plural = 'Participaciones en comisiones de expertos'
-
-
-class ParticipacionSociedadCientifica(models.Model):
-    nombre = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    tipo = models.CharField(max_length=20, choices=(('', '-------'), ('INVITACION', 'Por invitación'),
-                                                    ('ELECCION', 'Por elección')))
-    ambito = models.CharField(max_length=20, choices=(('', '-------'), ('NACIONAL', 'Nacional'),
-                                                    ('INTERNACIONAL', 'Internacional')))
-
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+        verbose_name = 'participación en sociedad científica'
+        verbose_name_plural = 'participaciones en sociedades científicas'
 
     def __str__(self):
         return self.nombre
 
-    def get_absolute_url(self):
-        return reverse('sociedad_cientifica_detalle', kwargs={'pk': self.pk})
 
-    class Meta:
-        ordering = ['-fecha_inicio']
-        verbose_name = 'Participación en sociedad científica'
-        verbose_name_plural = 'Participaciones en sociedades científicas'
+from nucleo.historial import registrar_historial  # noqa: E402
 
-
-class CitaPublicacion(models.Model):
-    tipo_trabajo_citado = models.CharField(max_length=20, choices=(('', '-------'), ('ARTICULO', 'Artículo'),
-                                                                   ('LIBRO', 'Libro'),
-                                                                   ('CAPITULO_LIBRO', 'Capítulo de libro')))
-    articulo_citado = models.ForeignKey(ArticuloCientifico, blank=True, null=True,
-                                        related_name='cita_publicacion_articulo_citado', on_delete=models.DO_NOTHING)
-    libro_citado = models.ForeignKey(Libro, blank=True, null=True, related_name='cita_publicacion_libro_citado',
-                                     on_delete=models.DO_NOTHING)
-    capitulo_libro_citado = models.ForeignKey(CapituloLibroInvestigacion, blank=True, null=True,
-                                              on_delete=models.DO_NOTHING)
-    citado_en_articulos = models.ManyToManyField(ArticuloCientifico, blank=True,
-                                                 related_name='cita_publicacion_citado_en_articulos')
-    citado_en_libros = models.ManyToManyField(Libro, blank=True, related_name='cita_publicacion_citado_en_libros')
-    citado_en_tesis = models.TextField(blank=True)
-    citado_en_otras_publicaciones = models.TextField(blank=True)
-    usuarios = models.ManyToManyField(User, related_name='cita_publicacion_autores', verbose_name='Autores')
-
-    def __str__(self):
-        return self.pk
-
-    def get_absolute_url(self):
-        return reverse('cita_publicacion_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        verbose_name = 'Cita de publicación'
-        verbose_name_plural = 'Citas de publicaciones'
+registrar_historial(globals())

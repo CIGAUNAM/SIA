@@ -1,0 +1,14 @@
+{% extends 'registration/sia/base.html' %}
+{% load unfold %}
+{% block cuerpo %}
+  {% if validlink %}
+    <form method="post">{% csrf_token %}
+      {% include "unfold/helpers/messages/errornote.html" with errors=form.errors %}
+      {% include "unfold/helpers/field.html" with field=form.new_password1 %}
+      {% include "unfold/helpers/field.html" with field=form.new_password2 %}
+      {% component "unfold/components/button.html" with submit=1 class="w-full" %}Guardar contraseña{% endcomponent %}
+    </form>
+  {% else %}
+    <p>El enlace ya no es válido (quizá ya se usó o expiró). Solicita uno nuevo.</p>
+  {% endif %}
+{% endblock %}

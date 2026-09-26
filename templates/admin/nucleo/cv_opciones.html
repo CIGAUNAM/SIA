@@ -1,0 +1,26 @@
+{% extends "admin/base_site.html" %}
+{% load unfold %}
+
+{% block content %}
+<div id="content-main" class="max-w-3xl">
+  <form method="get" novalidate>
+    <input type="hidden" name="generar" value="1">
+    {% include "unfold/helpers/messages/errornote.html" with errors=form.errors %}
+    {% include "unfold/helpers/messages/info.html" with message="Elige el periodo, las secciones y el formato. El PDF y el Word usan tus registros capturados en el sistema." %}
+
+    <fieldset class="fieldset group border border-base-200 mb-6 rounded-default shadow-xs p-3 dark:border-base-800 *:last:mb-0">
+      {% if form.usuario %}{% include "unfold/helpers/field.html" with field=form.usuario %}{% endif %}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6">
+        {% include "unfold/helpers/field.html" with field=form.desde %}
+        {% include "unfold/helpers/field.html" with field=form.hasta %}
+      </div>
+      {% include "unfold/helpers/field.html" with field=form.secciones %}
+      {% include "unfold/helpers/field.html" with field=form.formato %}
+
+      <div class="border-t border-base-200 flex justify-end -mx-3 pt-3 px-3 dark:border-base-800">
+        {% component "unfold/components/button.html" with submit=1 %}Generar currículum{% endcomponent %}
+      </div>
+    </fieldset>
+  </form>
+</div>
+{% endblock %}

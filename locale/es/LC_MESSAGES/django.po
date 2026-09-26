@@ -1,0 +1,217 @@
+#
+msgid ""
+msgstr ""
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Select record"
+msgstr "Seleccionar registro"
+
+msgid "Select action"
+msgstr "Seleccionar acción"
+
+msgid "Select action to run"
+msgstr "Selecciona la acción a ejecutar"
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user’s "
+"password, but you can change the password using <a href=\"{}\" class=\"text-"
+"primary-600 dark:text-primary-500\">this form</a>."
+msgstr ""
+"Las contraseñas no se guardan en claro, así que no hay forma de ver la "
+"contraseña de este usuario, pero puedes cambiarla con <a href=\"{}\" "
+"class=\"text-primary-600 dark:text-primary-500\">este formulario</a>."
+
+msgid "Dataset not found. No action performed."
+msgstr "No se encontró el conjunto de datos. No se realizó ninguna acción."
+
+msgid "Select value"
+msgstr "Seleccionar valor"
+
+msgid ""
+"Field <strong class=\"font-semibold\">{field_name}</strong> is not an "
+"autocomplete field. Please add it to the `autocomplete_fields` list."
+msgstr ""
+"El campo <strong class=\"font-semibold\">{field_name}</strong> no es de "
+"autocompletado. Agrégalo a la lista `autocomplete_fields`."
+
+msgid "You can not create nested object without parent"
+msgstr "No se puede crear un objeto anidado sin su registro principal"
+
+msgid "Run"
+msgstr "Ejecutar"
+
+msgid "After you've created a user, you’ll be able to edit more user options."
+msgstr "Después de crear el usuario podrás editar más opciones."
+
+msgid "Welcome back to"
+msgstr "Bienvenido(a) a"
+
+msgid "Type to search"
+msgstr "Escribe para buscar"
+
+msgid "You have been successfully logged out from the administration"
+msgstr "Cerraste sesión correctamente"
+
+msgid "No data"
+msgstr "Sin datos"
+
+msgid "All applications"
+msgstr "Todas las aplicaciones"
+
+msgid "True"
+msgstr "Sí"
+
+msgid "False"
+msgstr "No"
+
+msgid "Apply Filters"
+msgstr "Aplicar filtros"
+
+msgid "Filters"
+msgstr "Filtros"
+
+msgid "Navigate"
+msgstr "Navegar"
+
+msgid "Select"
+msgstr "Seleccionar"
+
+msgid "Recent searches"
+msgstr "Búsquedas recientes"
+
+msgid "Nothing matched your search"
+msgstr "No hubo coincidencias"
+
+msgid ""
+"\n"
+"            Found <span class=\"font-medium text-important\">%(counter)s</span> result in %(time)s seconds\n"
+"        "
+msgid_plural ""
+"\n"
+"            Found <span class=\"font-medium text-important\">%(counter)s</span> results in %(time)s seconds\n"
+"        "
+msgstr[0] ""
+"\n"
+"            Se encontró <span class=\"font-medium text-important\">%(counter)s</span> resultado en %(time)s segundos\n"
+"        "
+msgstr[1] ""
+"\n"
+"            Se encontraron <span class=\"font-medium text-important\">%(counter)s</span> resultados en %(time)s segundos\n"
+"        "
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Record picture"
+msgstr "Imagen del registro"
+
+msgid "This item will be deleted."
+msgstr "Este elemento se eliminará."
+
+msgid "Click to cancel"
+msgstr "Clic para cancelar"
+
+msgid "No results found"
+msgstr "No se encontraron resultados"
+
+msgid ""
+"This page yielded into no results. Create a new item or reset your filters."
+msgstr "No hay resultados. Crea un registro nuevo o limpia los filtros."
+
+msgid "Reset filters"
+msgstr "Limpiar filtros"
+
+msgid "Image preview"
+msgstr "Vista previa de la imagen"
+
+msgid "Click to download"
+msgstr "Clic para descargar"
+
+msgid "Go back"
+msgstr "Regresar"
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Next"
+msgstr "Siguiente"
+
+msgid "Search apps and models..."
+msgstr "Buscar secciones y registros..."
+
+msgid "Available shortcuts"
+msgstr "Atajos disponibles"
+
+msgid "Global shortcuts"
+msgstr "Atajos generales"
+
+msgid "Open command tool"
+msgstr "Abrir la búsqueda rápida"
+
+msgid "Open shortcuts list"
+msgstr "Ver lista de atajos"
+
+msgid "Toggle sidebar"
+msgstr "Mostrar u ocultar el menú"
+
+msgid "Toggle dark/light mode"
+msgstr "Cambiar entre modo claro y oscuro"
+
+msgid "Changelist shortcuts"
+msgstr "Atajos de listados"
+
+msgid "Toggle filter"
+msgstr "Mostrar u ocultar filtros"
+
+msgid "Create new record"
+msgstr "Crear registro nuevo"
+
+msgid "Command tool shortcuts"
+msgstr "Atajos de la búsqueda rápida"
+
+msgid "Open selection"
+msgstr "Abrir selección"
+
+msgid "Open selection in new tab"
+msgstr "Abrir selección en otra pestaña"
+
+msgid "General"
+msgstr "General"
+
+msgid "Light"
+msgstr "Claro"
+
+msgid "Dark"
+msgstr "Oscuro"
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "Return to site"
+msgstr "Volver al sitio"
+
+msgid "Choose file to upload"
+msgstr "Elegir archivo"
+
+msgid "Toggle password visibility"
+msgstr "Mostrar u ocultar la contraseña"
+
+msgid "Add row"
+msgstr "Agregar fila"
+
+msgid "Welcome"
+msgstr "Bienvenido(a)"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Select currency"
+msgstr "Seleccionar moneda"
+
+msgid "- Select an option -"
+msgstr "- Selecciona una opción -"

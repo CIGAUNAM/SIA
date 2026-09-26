@@ -1,0 +1,44 @@
+{% extends "nucleo/documento_base.html" %}
+{% block titulo %}CV — {{ usuario }}{% endblock %}
+{% block estilos %}
+  h2.seccion { font-size: 13pt; border-bottom: 1px solid #333; padding-bottom: .15em; margin: 1.4em 0 .5em; break-after: avoid; }
+  h3.subseccion { font-size: 11pt; margin: 1em 0 .3em; break-after: avoid; }
+  ol { margin: 0 0 .5em; padding-left: 2.2em; }
+  ol li { margin-bottom: .3em; break-inside: avoid; }
+  .encabezado h1 { string-set: pie content() " — Currículum vitae"; }
+  .semblanza { text-align: justify; white-space: pre-line; }
+{% endblock %}
+{% block contenido %}
+<header class="encabezado">
+  <h1>{% if usuario.grado %}{{ usuario.grado }} {% endif %}{{ usuario }}</h1>
+  <p>{{ entidad.nombre }}, UNAM</p>
+  <p>{{ subtitulo }} · Generado el {{ hoy|date:"j \d\e F \d\e Y"|lower }}</p>
+</header>
+
+{% if datos %}
+<table class="datos">
+  {% for etiqueta, valor in datos %}<tr><th>{{ etiqueta }}</th><td>{{ valor }}</td></tr>{% endfor %}
+</table>
+{% endif %}
+
+{% if usuario.semblanza %}
+<h3 class="subseccion">Semblanza</h3>
+<p class="semblanza">{{ usuario.semblanza }}</p>
+{% endif %}
+
+{% for clave, titulo, subsecciones in secciones %}
+  {% with numero=forloop.counter %}
+  <h2 class="seccion">{{ numero }}. {{ titulo }}</h2>
+  {% for subtitulo, entradas in subsecciones %}
+    <h3 class="subseccion">{{ numero }}.{{ forloop.counter }}. {{ subtitulo }}</h3>
+    <ol>
+      {% for entrada in entradas %}
+        <li>{% for texto, estilo in entrada.segmentos %}{% if estilo == 'b' %}<strong>{{ texto }}</strong>{% elif estilo == 'i' %}<em>{{ texto }}</em>{% else %}{{ texto }}{% endif %}{% endfor %}</li>
+      {% endfor %}
+    </ol>
+  {% endfor %}
+  {% endwith %}
+{% empty %}
+  <p><em>No hay registros para el periodo y las secciones seleccionadas.</em></p>
+{% endfor %}
+{% endblock %}

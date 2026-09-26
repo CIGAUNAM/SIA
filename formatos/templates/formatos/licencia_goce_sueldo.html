@@ -1,0 +1,25 @@
+{% extends "formatos/base.html" %}
+{% block nombre_formato %}Solicitud de licencia con goce de sueldo{% endblock %}
+{% block nombre_formato_encabezado %}Solicitud de licencia con goce de sueldo{% endblock %}
+{% block cuerpo %}
+<p>{% if entidad.director %}<strong>{{ entidad.director }}</strong><br>{% endif %}
+<strong>Director(a) del {{ entidad.nombre }}</strong><br><strong>P r e s e n t e</strong></p>
+<p>Por medio del presente solicito a usted que, de acuerdo con los artículos 97 b), 98 b) y 100 del Estatuto del Personal Académico, se sirva tramitar ante el Consejo Técnico de la Investigación Científica una licencia con goce de sueldo. Para tal efecto hago de su conocimiento los siguientes datos:</p>
+
+<p class="campo"><b>Nombre:</b> {{ formato.usuario }} &nbsp; <b>RFC:</b> {{ formato.usuario.rfc|default:"—" }}</p>
+<p class="campo"><b>Ingreso a la UNAM:</b> {{ formato.usuario.ingreso_unam|date:"d/m/Y"|default:"—" }} &nbsp; <b>Último contrato:</b> {{ formato.usuario.ultimo_contrato|date:"d/m/Y"|default:"—" }}</p>
+<p class="campo"><b>Evento:</b></p>
+<div class="campo-recuadro">{{ formato.evento.nombre }}</div>
+<p class="campo"><b>Lugar:</b> {% if formato.evento.ciudad %}{{ formato.evento.ciudad }}, {% endif %}{{ formato.evento.pais }}</p>
+<p class="campo"><b>Tipo de participación:</b> {{ formato.tipo_participacion }}</p>
+<p class="campo"><b>Periodo:</b> del {{ formato.fecha_inicio|date:"d/m/Y" }} al {{ formato.fecha_fin|date:"d/m/Y" }}</p>
+<p class="campo"><b>Importancia para la entidad:</b></p>
+<div class="campo-recuadro">{{ formato.importancia }}</div>
+<p class="campo"><b>Costo total:</b> ${{ formato.costo }} MXN{% if formato.presupuesto_personal %} (con presupuesto personal){% endif %}</p>
+<p class="campo"><b>Proyecto:</b> {{ formato.proyecto|default:"—" }}</p>
+<p class="campo casillas"><b>Anexos:</b>
+  <span>{% if formato.carta_invitacion %}☒{% else %}☐{% endif %} Carta de invitación</span>
+  <span>{% if formato.aceptacion_ponencia %}☒{% else %}☐{% endif %} Aceptación de ponencia</span>
+  {% if formato.otro_anexo %}<span>☒ {{ formato.otro_anexo }}</span>{% endif %}
+</p>
+{% endblock %}

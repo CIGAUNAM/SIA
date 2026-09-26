@@ -1,195 +1,186 @@
-from django.db import models
-from django.urls import reverse
 from django.conf import settings
-from nucleo.models import User, Institucion, InstitucionSimple, Dependencia, Beca, ProgramaLicenciatura, ProgramaMaestria, \
-    ProgramaDoctorado, Pais, Distincion, Libro as LibroInvestigacion
-from investigacion.models import ProyectoInvestigacion, ArticuloCientifico, CapituloLibroInvestigacion
-from sortedm2m.fields import SortedManyToManyField
+from django.core.exceptions import ValidationError
+from django.db import models
 
-NIVEL_ACADEMICO = getattr(settings, 'NIVEL_ACADEMICO', (('', '-------'), ('LICENCIATURA', 'Licenciatura'),
-                                                        ('MAESTRIA', 'Maestría'), ('DOCTORADO', 'Doctorado')))
+from nucleo.models import (Beca, Distincion, Institucion, NivelAcademico, Pais, Participante, Periodo, Persona,
+                           ProgramaAcademico, requerido_si, validar_programa)
 
 
-# Create your models here.
+class AsesoriaEstudiante(Periodo):
+    class Tipo(models.TextChoices):
+        RESIDENCIA = 'RESIDENCIA', 'Residencia'
+        PRACTICA = 'PRACTICA', 'Prácticas profesionales'
+        ESTANCIA = 'ESTANCIA', 'Estancia de investigación'
+        ASESORIA_TECNICA = 'ASESORIA_TECNICA', 'Asesoría técnica'
+        SERVICIO_SOCIAL = 'SERVICIO_SOCIAL', 'Servicio social'
 
-
-class AsesoriaEstudiante(models.Model):
-    asesorado = models.ForeignKey(User, related_name='asesoria_estudiante_asesorado', on_delete=models.DO_NOTHING)
-    tipo = models.CharField(max_length=30, choices=(('', 'Seleccionar tipo de Asesoría'), ('RESIDENCIA', 'Residencia'),
-                                                    ('PRACTICA', 'Prácticas profesionales'),
-                                                    ('ESTANCIA', 'Estancia de investigación'),
-                                                    ('ASESORIA_TECNICA', 'Asesoría técnica'),
-                                                    ('SERVICIO_SOCIAL', 'Servicio Social')))
-    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
-    programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True, on_delete=models.DO_NOTHING)
-    programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True, on_delete=models.DO_NOTHING)
-    programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
-    programa = models.CharField(max_length=255)
-    beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
-    proyecto = models.ForeignKey(ProyectoInvestigacion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-    periodo_academico = models.CharField(max_length=200)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    usuario = models.ForeignKey(User, related_name='asesoria_estudiante_usuario', on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(str(self.asesorado), self.fecha_inicio)
-
-    def get_absolute_url(self):
-        return reverse('asesor_estancia_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['-fecha_inicio', '-fecha_fin']
-        verbose_name = 'Asesoría en residencias / prácticas / estancias / servicio social'
-        verbose_name_plural = 'Asesorías en residencias / prácticas / estancias / servicio social'
-        unique_together = ['usuario', 'asesorado', 'nivel_academico', 'periodo_academico']
-
-
-class SupervisionInvestigadorPostDoctoral(models.Model):
-    investigador = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_investigador',
-                                     on_delete=models.DO_NOTHING)
-    titulo_proyecto = models.CharField(max_length=200)
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-
-    proyecto = models.ForeignKey(ProyectoInvestigacion, on_delete=models.DO_NOTHING)
-    beca = models.ForeignKey(Beca, on_delete=models.DO_NOTHING)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-
-    usuario = models.ForeignKey(User, related_name='supervision_investigador_postdoctoral_usuario',
-                                on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {} : {}".format(self.investigador, self.usuario, self.fecha_inicio)
-
-    def get_absolute_url(self):
-        return reverse('supervision_investigador_postdoctoral_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['-fecha_inicio', '-fecha_fin']
-        verbose_name = 'Supervisión de investigador postdoctoral'
-        verbose_name_plural = 'Supervisiones de investigadores postdoctorales'
-
-
-class DesarrolloGrupoInvestigacionInterno(models.Model):
-    nombre = models.CharField(max_length=255)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    pais = models.ForeignKey(Pais, on_delete=models.DO_NOTHING)
-    usuarios = models.ManyToManyField(User)
-
-    def __str__(self):
-        return self.nombre
-
-    def get_absolute_url(self):
-        return reverse('grupo_investigacion_interno_detalle', kwargs={'pk': self.pk})
-
-    def natural_key(self):
-        return self.nombre
-
-    class Meta:
-        ordering = ['nombre']
-        verbose_name = 'Área o grupo de investigación interno'
-        verbose_name_plural = 'Áreas o grupos de investigación internos'
-
-
-class DireccionTesis(models.Model):
-    titulo_tesis = models.CharField(max_length=255, unique=True)
-    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
-    programa = models.CharField(max_length=255)
-    asesorado = models.ForeignKey(User, related_name='direccion_tesis_asesorado', on_delete=models.DO_NOTHING)
-    status = models.CharField(max_length=255, choices=(
-        ('', '-------'), ('EN_PROCESO', 'Tesis en proceso'), ('TERMINADA', 'Tesis terminada')))
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    fecha_examen = models.DateField(null=True, blank=True)
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-
-    beca = models.ForeignKey(Beca, null=True, blank=True, on_delete=models.DO_NOTHING)
-    reconocimiento = models.ForeignKey(Distincion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    reconocimiento_text = models.CharField(max_length=255, null=True, blank=True,)
-    director = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_director', on_delete=models.DO_NOTHING)
-    codirector = models.ForeignKey(User, null=True, blank=True, related_name='direccion_tesis_codirector', on_delete=models.DO_NOTHING)
-    tutores = SortedManyToManyField(User, blank=True, related_name='direccion_tesis_usuarios', verbose_name='Tutores')
-
-
-    def __str__(self):
-        return "{} : {}".format(self.titulo_tesis, self.asesorado, self.nivel_academico)
-
-    def get_absolute_url(self):
-        return reverse('direccion_tesis_detalle', kwargs={'pk': self.pk})
-
-    def natural_key(self):
-        return self.titulo_tesis
-
-    class Meta:
-        ordering = ['-fecha_examen']
-        verbose_name = 'Dirección de tesis'
-        verbose_name_plural = 'Direcciones de tesis'
-
-
-class ComiteTutoral(models.Model):
-    estudiante = models.ForeignKey(User, related_name='comite_tutoral_estudiante', on_delete=models.DO_NOTHING)
-    nivel_academico = models.CharField(max_length=20, choices=NIVEL_ACADEMICO)
-    programa_licenciatura = models.ForeignKey(ProgramaLicenciatura, null=True, blank=True, on_delete=models.DO_NOTHING)
-    programa_maestria = models.ForeignKey(ProgramaMaestria, null=True, blank=True, on_delete=models.DO_NOTHING)
-    programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
-    programa = models.CharField(max_length=255, null=True, blank=True)
-
-    titulo_tesis = models.CharField(max_length=255, null=True, blank=True)
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField(null=True, blank=True)
-    fecha_examen = models.DateField(null=True, blank=True)
-    miembros_comite = SortedManyToManyField(User, related_name='comite_tutoral_miembros_comite', verbose_name='Miembros de comité tutoral')
-
-    def __str__(self):
-        return "{} : {}".format(str(self.estudiante), self.fecha_inicio)
-
-    def get_absolute_url(self):
-        return reverse('comite_tutoral_detalle', kwargs={'pk': self.pk})
+    asesorado = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='asesorias_recibidas')
+    tipo = models.CharField(max_length=20, choices=Tipo.choices)
+    nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
+    programa = models.ForeignKey(ProgramaAcademico, on_delete=models.PROTECT, null=True, blank=True)
+    beca = models.ForeignKey(Beca, on_delete=models.PROTECT, null=True, blank=True)
+    proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    periodo_academico = models.CharField('periodo académico', max_length=200, blank=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='asesorias')
 
     class Meta:
         ordering = ['-fecha_inicio']
-        verbose_name = 'Comité tutoral'
-        verbose_name_plural = 'Comités tutorales'
+        verbose_name = 'asesoría de estudiante'
+        verbose_name_plural = 'asesorías de estudiantes (residencias, prácticas, estancias, servicio social)'
+
+    def __str__(self):
+        return f'{self.asesorado} — {self.get_tipo_display()}'
+
+    def clean(self):
+        super().clean()
+        validar_programa(self)
+
+
+class SupervisionPostdoctoral(Periodo):
+    investigador = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='supervisiones_recibidas')
+    titulo_proyecto = models.CharField('título del proyecto', max_length=200)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
+    beca = models.ForeignKey(Beca, on_delete=models.PROTECT, null=True, blank=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='supervisiones')
+
+    class Meta:
+        ordering = ['-fecha_inicio']
+        verbose_name = 'supervisión de investigador postdoctoral'
+        verbose_name_plural = 'supervisiones de investigadores postdoctorales'
+
+    def __str__(self):
+        return f'{self.investigador} — {self.titulo_proyecto}'
+
+
+class GrupoInvestigacionInterno(Periodo):
+    nombre = models.CharField(max_length=255)
+    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    integrantes = models.ManyToManyField(Persona, related_name='grupos_investigacion')
+
+    class Meta:
+        ordering = ['nombre']
+        verbose_name = 'área o grupo de investigación interno'
+        verbose_name_plural = 'áreas o grupos de investigación internos'
+
+    def __str__(self):
+        return self.nombre
+
+
+class DireccionTesis(Periodo):
+    class Status(models.TextChoices):
+        EN_PROCESO = 'EN_PROCESO', 'En proceso'
+        TERMINADA = 'TERMINADA', 'Terminada'
+
+    titulo_tesis = models.CharField('título de la tesis', max_length=255, unique=True)
+    nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
+    programa = models.ForeignKey(ProgramaAcademico, on_delete=models.PROTECT, null=True, blank=True)
+    asesorado = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='tesis')
+    status = models.CharField('estado', max_length=20, choices=Status.choices)
+    fecha_examen = models.DateField('fecha del examen', null=True, blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    beca = models.ForeignKey(Beca, on_delete=models.PROTECT, null=True, blank=True)
+    reconocimiento = models.ForeignKey(Distincion, on_delete=models.PROTECT, null=True, blank=True)
+    director = models.ForeignKey(Persona, on_delete=models.PROTECT, null=True, blank=True,
+                                 related_name='tesis_dirigidas')
+    codirector = models.ForeignKey(Persona, on_delete=models.PROTECT, null=True, blank=True,
+                                   related_name='tesis_codirigidas')
+    tutores = models.ManyToManyField(Persona, through='DireccionTesisTutor', related_name='tesis_tutoradas')
+
+    class Meta:
+        ordering = ['-fecha_inicio']
+        verbose_name = 'dirección de tesis'
+        verbose_name_plural = 'direcciones de tesis'
+
+    def __str__(self):
+        return self.titulo_tesis
+
+    def clean(self):
+        super().clean()
+        validar_programa(self)
+        requerido_si(self.status == self.Status.TERMINADA, self, 'fecha_examen',
+                     'Una tesis terminada debe tener la fecha del examen.')
+
+
+class DireccionTesisTutor(Participante):
+    tesis = models.ForeignKey(DireccionTesis, on_delete=models.CASCADE)
+
+    class Meta(Participante.Meta):
+        verbose_name = 'tutor'
+        verbose_name_plural = 'tutores'
+        constraints = [models.UniqueConstraint(fields=['tesis', 'persona'], name='tesis_tutor_unico')]
+
+
+class ComiteTutoral(Periodo):
+    estudiante = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='comites_tutorales_estudiante')
+    nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
+    programa = models.ForeignKey(ProgramaAcademico, on_delete=models.PROTECT, null=True, blank=True)
+    titulo_tesis = models.CharField('título de la tesis', max_length=255, blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    fecha_examen = models.DateField('fecha del examen', null=True, blank=True)
+    miembros = models.ManyToManyField(Persona, through='ComiteTutoralMiembro', related_name='comites_tutorales')
+
+    class Meta:
+        ordering = ['-fecha_inicio']
+        verbose_name = 'comité tutoral'
+        verbose_name_plural = 'comités tutorales'
+
+    def __str__(self):
+        return f'{self.estudiante} ({self.fecha_inicio:%Y})'
+
+    def clean(self):
+        super().clean()
+        validar_programa(self)
+
+
+class ComiteTutoralMiembro(Participante):
+    comite = models.ForeignKey(ComiteTutoral, on_delete=models.CASCADE)
+
+    class Meta(Participante.Meta):
+        verbose_name = 'miembro'
+        verbose_name_plural = 'miembros'
+        constraints = [models.UniqueConstraint(fields=['comite', 'persona'], name='comite_tutoral_miembro_unico')]
 
 
 class ComiteCandidaturaDoctoral(models.Model):
-    candidato = models.ForeignKey(User, related_name='comite_candidatura_doctoral_candidato',
-                                  on_delete=models.DO_NOTHING)
-    titulo_tesis = models.CharField(max_length=255, null=True, blank=True)
-    programa = models.CharField(max_length=255, null=True, blank=True)
-    especialidad = models.CharField(max_length=255, null=True, blank=True)
-
-    asesores = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_asesores', blank=True)
-    programa_doctorado = models.ForeignKey(ProgramaDoctorado, null=True, blank=True, on_delete=models.DO_NOTHING)
-    institucion2 = models.ForeignKey(Institucion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-
-    fecha_defensa = models.DateField()
-    miembros_comite = SortedManyToManyField(User, related_name='comite_candidatura_doctoral_sinodales', blank=True)
-    director = models.ForeignKey(User, null=True, blank=True, related_name='comite_candidatura_doctoral_director', on_delete=models.DO_NOTHING)
-    codirector = models.ForeignKey(User, null=True, blank=True, related_name='comite_candidatura_doctoral_codirector', on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(str(self.candidato), self.fecha_defensa)
-
-    def get_absolute_url(self):
-        return reverse('comite_candidatura_doctoral_detalle', kwargs={'pk': self.pk})
+    candidato = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='candidaturas')
+    titulo_tesis = models.CharField('título de la tesis', max_length=255, blank=True)
+    programa = models.ForeignKey(ProgramaAcademico, on_delete=models.PROTECT, null=True, blank=True)
+    especialidad = models.CharField(max_length=255, blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución')
+    fecha_defensa = models.DateField('fecha de la defensa')
+    director = models.ForeignKey(Persona, on_delete=models.PROTECT, null=True, blank=True,
+                                 related_name='candidaturas_dirigidas')
+    codirector = models.ForeignKey(Persona, on_delete=models.PROTECT, null=True, blank=True,
+                                   related_name='candidaturas_codirigidas')
+    asesores = models.ManyToManyField(Persona, blank=True, related_name='candidaturas_asesoradas')
+    miembros = models.ManyToManyField(Persona, through='ComiteCandidaturaMiembro', related_name='candidaturas_sinodal')
 
     class Meta:
         ordering = ['-fecha_defensa']
-        verbose_name = 'Comité de examen de candidatura doctoral'
-        verbose_name_plural = 'Comités de exámenes de candidatura doctoral'
+        verbose_name = 'comité de candidatura doctoral'
+        verbose_name_plural = 'comités de candidatura doctoral'
+
+    def __str__(self):
+        return f'{self.candidato} ({self.fecha_defensa:%Y})'
+
+    def clean(self):
+        super().clean()
+        if self.programa_id and self.programa.nivel != NivelAcademico.DOCTORADO:
+            raise ValidationError({'programa': 'Elige un programa de doctorado.'})
+
+
+class ComiteCandidaturaMiembro(Participante):
+    comite = models.ForeignKey(ComiteCandidaturaDoctoral, on_delete=models.CASCADE)
+
+    class Meta(Participante.Meta):
+        verbose_name = 'sinodal'
+        verbose_name_plural = 'sinodales'
+        constraints = [models.UniqueConstraint(fields=['comite', 'persona'], name='comite_candidatura_miembro_unico')]
+
+
+from nucleo.historial import registrar_historial  # noqa: E402
+
+registrar_historial(globals())

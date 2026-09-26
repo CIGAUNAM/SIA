@@ -1,0 +1,9 @@
+{% extends 'registration/sia/base.html' %}
+{% load unfold %}
+{% block cuerpo %}
+  <p class="mb-4">Escribe el correo de tu cuenta y te enviaremos un enlace para crear una contraseña nueva.</p>
+  <form method="post">{% csrf_token %}
+    {% include "unfold/helpers/field.html" with field=form.email %}
+    {% component "unfold/components/button.html" with submit=1 class="w-full" %}Enviar enlace{% endcomponent %}
+  </form>
+{% endblock %}

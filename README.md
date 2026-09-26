@@ -1,12 +1,136 @@
-# SIA
-Sistema de Información Académica
+# SIA — Sistema de Información Académica
 
-Django==2.0.2
-django-adminlte2==0.2.3
-django-appconf==1.0.2
-django-datatable==0.3.1
-django-graphos==0.3.41
-django-rest-framework==0.1.0
-django-select2==6.0.1
-django-sortedm2m==1.5.0
-djangorestframework==3.7.7
+Registro de la producción académica del personal de la entidad (CIGA, UNAM): formación, investigación,
+difusión, divulgación, docencia, formación de recursos humanos, vinculación, distinciones y formatos
+administrativos. La interfaz es el **admin de Django** con el tema [Unfold](https://unfoldadmin.com): cada académico entra con su
+cuenta y solo ve y edita sus propios registros; los administradores ven todo.
+
+## Requisitos
+
+- Python 3.12+ y Django 6.1
+- PostgreSQL (en desarrollo también funciona con SQLite)
+- Pango (biblioteca de sistema que usa WeasyPrint para los PDF): `brew install pango` en macOS,
+  `apt install libpango-1.0-0 libpangoft2-1.0-0` en Debian/Ubuntu
+
+## Instalación
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cp .env.example .env        # y edita SECRET_KEY y los datos de la base de datos
+.venv/bin/python manage.py migrate
+.venv/bin/python manage.py createsuperuser
+.venv/bin/python manage.py runserver
+```
+
+`migrate` crea también el grupo **Investigadores** con sus permisos (se resincroniza en cada `migrate`).
+
+### Variables de entorno (`.env`)
+
+| Variable | Descripción |
+| --- | --- |
+| `SECRET_KEY` | Obligatoria. Cadena larga y aleatoria. |
+| `DEBUG` | `True` solo en desarrollo. |
+| `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS` | Separados por comas. |
+| `DB_ENGINE` | `postgresql` (por defecto) o `sqlite`. |
+| `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` | Conexión a PostgreSQL. |
+| `ENTIDAD_NOMBRE`, `ENTIDAD_SIGLAS`, `ENTIDAD_DIRECTOR`, `ENTIDAD_CIUDAD`, `ENTIDAD_DIRECCION` | Datos impresos en el CV y los formatos. |
+| `EMAIL_BACKEND`, `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD`, `EMAIL_USE_TLS`, `DEFAULT_FROM_EMAIL` | Correo para recuperar contraseñas. Por defecto se imprime en la consola. |
+| `PRIVATE_MEDIA_ROOT` | Carpeta de las evidencias adjuntas (fuera de `MEDIA_ROOT`; se descargan solo con permiso). |
+
+## Importar los datos del SIA anterior
+
+Los volcados legacy (`dumpdata` de la versión Django 2.0) se convierten al esquema actual y se cargan con
+`loaddata`. La carpeta `datos/` está en `.gitignore` porque contiene datos personales y hashes de contraseñas.
+
+```bash
+.venv/bin/python manage.py convertir_legacy datos/legacy/sia_legacy.json datos/fixtures/sia.json
+.venv/bin/python manage.py loaddata datos/fixtures/sia.json
+.venv/bin/python manage.py normalizar_datos
+```
+
+`datos/legacy/sia_legacy.json` combina los volcados de `_misc/json*` (se eliminaron del repositorio), tomando la
+versión más reciente de cada modelo. Qué hace la conversión:
+
+- Los ~2,200 "usuarios" legacy se vuelven **Personas**. Solo ~60 son **cuentas** (quienes iniciaron sesión, el
+  personal académico y los dueños de registros); conservan su contraseña y quedan en el grupo Investigadores.
+- Se fusionan catálogos duplicados: `Institucion` + `InstitucionSimple` + `Dependencia` → `Institucion`;
+  `Evento` + `EventoDifusion` + `EventoDivulgacion` → `Evento`; `Revista` + `RevistaDivulgacion` → `Revista`;
+  programas de licenciatura, maestría y doctorado → `ProgramaAcademico`.
+- Se fusionan modelos equivalentes: licenciatura/maestría/doctorado → `Grado`; los tres tipos de movilidad →
+  `MovilidadAcademica`; apoyos técnicos y otras actividades → `ApoyoInstitucional`.
+- Se omiten las 25 reseñas (el modelo ya no existía en el código legacy) y el proyecto marcador "Ninguno".
+
+`normalizar_datos` (idempotente) separa dependencias de su institución padre ("Facultad de Ciencias, UNAM"),
+recalcula el ámbito nacional/internacional a partir del país, limpia los DOIs y pasa el factor de impacto capturado en
+cada artículo a las métricas por año de su revista.
+
+## Funciones para la operación diaria
+
+- **Captura asistida**: en *Artículos científicos → Importar* se llena el alta desde un DOI (Crossref), un BibTeX o
+  la lista de obras de un ORCID. Los autores se reconocen en el catálogo de personas (o se agregan sin verificar).
+- **Evidencias**: cada registro de producción tiene una pestaña para adjuntar constancias o PDF (máx. 15 MB).
+  Se guardan en `PRIVATE_MEDIA_ROOT` y solo las descarga quien puede ver el registro.
+- **Guardar como nuevo** para duplicar registros recurrentes (p. ej. el mismo curso cada semestre) y **filtro por
+  año** en las listas.
+- **Validaciones**: fechas en un rango razonable, campos obligatorios según el caso (p. ej. "Otro" exige descripción,
+  una tesis terminada exige fecha de examen, el programa debe ser del mismo nivel), páginas y periodos coherentes.
+- **Duplicados**: al crear personas, instituciones, revistas, artículos, etc. se avisa si ya existe algo parecido.
+  Los administradores tienen *Revisar duplicados* (pares probables) y la acción *Fusionar*, que reasigna todas las
+  referencias al registro que se conserva.
+- **Inicio**: pendientes del académico (publicaciones sin actualizar en 6 meses, tesis vencidas, perfil incompleto,
+  informe por confirmar), altas rápidas y, para administradores, la cola de catálogos por verificar.
+- **Bitácora**: cada cambio queda registrado (botón *Historial* en cada registro), con quién y qué cambió.
+
+## Informe anual
+
+1. Un administrador crea el **periodo de informe** (año y fecha límite) en *Catálogos y personas → Periodos de informe*.
+2. Cada académico revisa **Mi informe** (lo capturado en ese año, con enlaces para corregir) y lo **confirma**.
+3. Los administradores siguen el **Avance de captura** (registros y confirmación por académico) y descargan el
+   **informe en Excel** (resumen de indicadores, avance y una hoja por sección sin duplicar coautorías).
+4. Al **cerrar** el periodo, los académicos ya no pueden crear ni modificar registros de ese año: publicaciones
+   publicadas ese año, actividades que terminaron ese año o registros fechados ese año. Los administradores sí.
+
+## Roles y permisos
+
+- **Administradores**: superusuarios o usuarios con el permiso `nucleo.ver_todo`. Ven y editan todo, verifican
+  catálogos y administran cuentas.
+- **Investigadores**: cuentas del grupo *Investigadores*. Ven solo sus registros (los que tienen su usuario o en los
+  que figuran como autor, responsable, tutor, etc.) y editan su perfil. Pueden ampliar los catálogos compartidos
+  (instituciones, revistas, eventos, personas...); un registro de catálogo **verificado** solo lo modifica un
+  administrador. Las cuentas nuevas creadas desde el admin entran automáticamente a este grupo.
+
+Los permisos del grupo se declaran en cada `ModelAdmin` (`permisos_investigador`) y se aplican con
+`nucleo.permisos.sincronizar_grupo_investigadores`.
+
+## Arquitectura
+
+```
+SIA/            configuración, sitio admin (Unfold), menú lateral y tablero del inicio
+nucleo/         Persona/User, catálogos compartidos, bases abstractas y utilidades
+  admin_base.py   PropietarioAdmin, VerificableAdmin, CatalogoAdmin, inlines de personas ordenadas
+  cv.py           CV en PDF, Word o HTML, con filtro por periodo y secciones
+  documentos.py   HTML → PDF con WeasyPrint (CV y formatos)
+  management/commands/convertir_legacy.py
+<secciones>/    una app por sección del informe: modelos + admin
+formatos/       solicitudes administrativas con descarga en PDF
+locale/         traducciones al español de Unfold (no trae las suyas)
+```
+
+- **Persona vs. User**: `Persona` es cualquier persona que aparece en la producción (coautores externos,
+  estudiantes, invitados); `User` es una cuenta con el perfil académico. Cada cuenta tiene su Persona.
+- **Autores ordenados**: las relaciones donde importa el orden (autores, responsables, tutores, sinodales) usan
+  tablas intermedias con `orden` y se capturan como inlines que se reordenan arrastrando las filas.
+- **Bases abstractas**: `EstadoPublicacion` (estado editorial y fechas), `Periodo` (fecha de inicio/fin con
+  validación), `Verificable` (catálogos ampliables) y `Participante` (tablas intermedias ordenadas).
+
+## Traducciones
+
+Unfold no incluye traducción al español; `locale/es/LC_MESSAGES/django.po` la agrega. Si una actualización de Unfold
+trae textos nuevos, agrégalos al `.po` y compílalo (`django-admin compilemessages`, requiere GNU gettext).
+
+## Pruebas
+
+```bash
+DB_ENGINE=sqlite SECRET_KEY=pruebas .venv/bin/python manage.py test
+```

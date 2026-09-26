@@ -1,64 +1,60 @@
+from django.conf import settings
 from django.db import models
-from django.urls import reverse
-from nucleo.models import User, Cargo, Nombramiento, Dependencia, Institucion, InstitucionSimple
+
+from nucleo.models import Institucion, Nombramiento, Periodo
 
 
-# Create your models here.
-
-
-class ExperienciaProfesional(models.Model):
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-    cargo_text = models.CharField(max_length=254, blank=True, null=True)
-    nombramiento = models.ForeignKey(Nombramiento, blank=True, null=True, on_delete=models.DO_NOTHING)
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField(blank=True, null=True)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {} : {}".format(self.usuario, self.institucion, self.cargo_text)
-
-    def get_absolute_url(self):
-        return reverse('experiencia_laboral_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['fecha_inicio']
-        verbose_name = "Experiencia Laboral"
-        verbose_name_plural = "Experiencias Laborales"
-
-class LineaInvestigacion(models.Model):
-    linea_investigacion = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-    fecha_inicio = models.DateField()
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(self.usuario, self.linea_investigacion)
-
-    def get_absolute_url(self):
-        return reverse('linea_investigacion_detalle', kwargs={'pk': self.pk})
+class ExperienciaProfesional(Periodo):
+    cargo = models.CharField(max_length=254)
+    nombramiento = models.ForeignKey(Nombramiento, on_delete=models.PROTECT, null=True, blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución')
+    descripcion = models.TextField('descripción', blank=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='experiencias')
 
     class Meta:
         ordering = ['-fecha_inicio']
-        verbose_name = "Línea de investigación"
-        verbose_name_plural = "Líneas de investigación"
-        unique_together = ['linea_investigacion', 'fecha_inicio', 'usuario']
+        verbose_name = 'experiencia profesional'
+        verbose_name_plural = 'experiencias profesionales'
+
+    def __str__(self):
+        return f'{self.cargo} — {self.institucion}' if self.institucion else self.cargo
+
+
+class LineaInvestigacion(models.Model):
+    nombre = models.CharField('línea de investigación', max_length=255)
+    descripcion = models.TextField('descripción', blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución')
+    fecha_inicio = models.DateField('fecha de inicio')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='lineas_investigacion')
+
+    class Meta:
+        ordering = ['-fecha_inicio']
+        verbose_name = 'línea de investigación'
+        verbose_name_plural = 'líneas de investigación'
+        constraints = [models.UniqueConstraint(fields=['usuario', 'nombre'], name='linea_investigacion_unica')]
+
+    def __str__(self):
+        return self.nombre
 
 
 class CapacidadPotencialidad(models.Model):
-    nombre = models.CharField(max_length=255, verbose_name='Capacidad o potencialidad')
-    descripcion = models.TextField(blank=True)
-    fecha_inicio = models.DateField()
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(self.usuario, self.nombre)
-
-    def get_absolute_url(self):
-        return reverse('capacidad_potencialidad_detalle', kwargs={'pk': self.pk})
+    nombre = models.CharField('capacidad o potencialidad', max_length=255)
+    descripcion = models.TextField('descripción', blank=True)
+    fecha_inicio = models.DateField('fecha de inicio')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='capacidades')
 
     class Meta:
         ordering = ['nombre']
-        verbose_name = "Capacidad y potencialid"
-        verbose_name_plural = "Capacidades y potencialidades"
-        unique_together = ['nombre', 'usuario']
+        verbose_name = 'capacidad o potencialidad'
+        verbose_name_plural = 'capacidades y potencialidades'
+        constraints = [models.UniqueConstraint(fields=['usuario', 'nombre'], name='capacidad_unica')]
+
+    def __str__(self):
+        return self.nombre
+
+
+from nucleo.historial import registrar_historial  # noqa: E402
+
+registrar_historial(globals())

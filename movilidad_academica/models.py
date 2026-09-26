@@ -1,108 +1,41 @@
+from django.conf import settings
 from django.db import models
-from nucleo.models import User, Institucion, InstitucionSimple, Dependencia, Financiamiento
-from investigacion.models import ProyectoInvestigacion
-from vinculacion.models import RedAcademica
-from django.urls import reverse
 
-# Create your models here.
+from nucleo.models import Institucion, Periodo
 
 
-class MovilidadAcademica(models.Model):
-    tipo = models.CharField(max_length=30, choices=(('INVITACION', 'Invitación'),
-                                                    ('ESTANCIA', 'Estancia de colaboración'),
-                                                    ('SABATICO', 'Sabático')))
-    academico = models.ForeignKey(User, related_name='movilidad_academica_academico', on_delete=models.DO_NOTHING)
-    descripcion = models.TextField(blank=True)
-    institucion2 = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
+class MovilidadAcademica(Periodo):
+    class Tipo(models.TextChoices):
+        INVITACION = 'INVITACION', 'Académico invitado'
+        ESTANCIA = 'ESTANCIA', 'Estancia académica'
+        SABATICO = 'SABATICO', 'Sabático'
+
+    class Financiamiento(models.TextChoices):
+        PROGRAMAS_UNAM = 'PROGRAMAS_UNAM', 'Programas UNAM'
+        POR_PROYECTO = 'POR_PROYECTO', 'Por proyecto'
+        PRESUPUESTO_OPERATIVO = 'PRESUPUESTO_OPERATIVO', 'Presupuesto operativo'
+        OTRO = 'OTRO', 'Otro'
+
+    tipo = models.CharField(max_length=20, choices=Tipo.choices)
+    academico = models.CharField('académico invitado o anfitrión', max_length=255)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución')
     actividades = models.TextField()
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    intercambio_unam = models.BooleanField(default=False)
-    financiamiento = models.ForeignKey(Financiamiento, on_delete=models.DO_NOTHING)
-    redes_academicas = models.ManyToManyField(RedAcademica, related_name='vinculacion_redes_academicas', blank=True)
-    proyecto_investigacion = models.ForeignKey(ProyectoInvestigacion, blank=True, null=True,
-                                               on_delete=models.DO_NOTHING)
-    usuario = models.ForeignKey(User, related_name='movilidad_academica_usuario', on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(str(self.academico), str(self.dependencia))
+    intercambio_unam = models.BooleanField('intercambio UNAM', default=False)
+    financiamiento = models.CharField(max_length=30, choices=Financiamiento.choices, blank=True)
+    redes_academicas = models.ManyToManyField('vinculacion.RedAcademica', blank=True, verbose_name='redes académicas')
+    proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='movilidades')
 
     class Meta:
         ordering = ['-fecha_inicio']
-        verbose_name = 'Actividad de vinculación'
-        verbose_name_plural = 'Actividades de vinculación'
-
-
-class InvitadoMovilidad(models.Model):
-    invitado = models.CharField(max_length=255)
-    dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
-    actividades = models.TextField()
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    intercambio_unam = models.BooleanField(default=False)
-    financiamiento = models.CharField(max_length=50, choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'), ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
-    redes_academicas = models.ManyToManyField(RedAcademica, blank=True)
-    proyecto = models.CharField(max_length=255, blank=True, null=True)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+        verbose_name = 'movilidad académica'
+        verbose_name_plural = 'movilidad académica'
 
     def __str__(self):
-        return "{} : {}".format(self.invitado, str(self.dependencia))
-
-    def get_absolute_url(self):
-        return reverse('invitado_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['-fecha_inicio']
-        verbose_name = 'Invitado'
-        verbose_name_plural = 'Invitados'
+        return f'{self.get_tipo_display()}: {self.academico}'
 
 
-class EstanciaAcademica(models.Model):
-    anfitrion = models.CharField(max_length=255)
-    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
-    actividades = models.TextField()
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    intercambio_unam = models.BooleanField(default=False)
-    financiamiento = models.CharField(max_length=50, choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'), ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
-    redes_academicas = models.ManyToManyField(RedAcademica, blank=True)
-    proyecto = models.CharField(max_length=255, blank=True, null=True)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+from nucleo.historial import registrar_historial  # noqa: E402
 
-    def __str__(self):
-        return "{} : {}".format(str(self.anfitrion), str(self.dependencia))
-
-    def get_absolute_url(self):
-        return reverse('estancia_academica_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['-fecha_inicio']
-        verbose_name = 'Estancia'
-        verbose_name_plural = 'Estancias'
-
-
-class SabaticoMovilidad(models.Model):
-    anfitrion = models.CharField(max_length=255)
-    institucion = models.ForeignKey(InstitucionSimple, blank=True, null=True, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, blank=True, null=True, on_delete=models.DO_NOTHING)
-    actividades = models.TextField()
-    fecha_inicio = models.DateField()
-    fecha_fin = models.DateField()
-    financiamiento = models.CharField(max_length=50, choices=(('', '-------'), ('PROGRAMAS_UNAM', 'Programas UNAM'), ('POR_PROYECTO', 'Por proyecto'), ('PRESUPUESTO_OPERATIVO', 'Presupuesto operativo')))
-    redes_academicas = models.ManyToManyField(RedAcademica, blank=True)
-    proyecto = models.CharField(max_length=255, blank=True, null=True)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "{} : {}".format(str(self.anfitrion), str(self.dependencia))
-
-    def get_absolute_url(self):
-        return reverse('sabatico_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        ordering = ['-fecha_inicio']
-        verbose_name = 'Sabático'
-        verbose_name_plural = 'Sabático'
+registrar_historial(globals())

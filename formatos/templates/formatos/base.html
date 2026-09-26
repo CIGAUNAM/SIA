@@ -1,0 +1,28 @@
+{% extends "nucleo/documento_base.html" %}
+{% block titulo %}{% block nombre_formato %}{% endblock %} — Folio {{ formato.pk }}{% endblock %}
+{% block estilos %}
+  .encabezado h2 { font-size: 13pt; margin: .6em 0 0; letter-spacing: .02em; }
+  .folio { text-align: right; margin-bottom: 1.2em; }
+  .campo { margin: .35em 0; }
+  .campo b { font-weight: 600; }
+  .casillas span { margin-right: 1.2em; white-space: nowrap; }
+  .firmas { display: flex; justify-content: space-between; margin-top: 4em; text-align: center; }
+  .firmas div { width: 45%; border-top: 1px solid #333; padding-top: .3em; }
+  .pie-entidad { position: fixed; bottom: -1.2cm; font-size: 8pt; color: #555; }
+{% endblock %}
+{% block contenido %}
+<header class="encabezado">
+  <p><strong>Universidad Nacional Autónoma de México</strong></p>
+  <p>{{ entidad.nombre }}</p>
+  <h2>{% block nombre_formato_encabezado %}{% endblock %}</h2>
+</header>
+<p class="folio">Folio: <strong>{{ formato.pk }}</strong><br>{{ entidad.ciudad }}, a {{ formato.fecha|date:"j \d\e F \d\e Y"|lower }}</p>
+
+{% block cuerpo %}{% endblock %}
+
+<div class="firmas">
+  <div>{{ formato.usuario }}<br>Solicitante</div>
+  <div>Vo.Bo. {{ entidad.director|default:"Director(a) de la entidad" }}<br>{{ entidad.siglas }}</div>
+</div>
+<p class="pie-entidad">{{ entidad.nombre }}. {{ entidad.direccion }}</p>
+{% endblock %}

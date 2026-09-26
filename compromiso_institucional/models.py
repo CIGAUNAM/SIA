@@ -1,163 +1,125 @@
+from django.conf import settings
 from django.db import models
-from nucleo.models import User, Institucion, Dependencia, Cargo, InstitucionSimple
-from django.urls import reverse
+
+from nucleo.models import Cargo, Institucion, Periodo, Verificable, requerido_si
 
 
-# Create your models here.
-
-
-class Comision(models.Model):
-    nombre = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.nombre
+class Comision(Verificable):
+    nombre = models.CharField(max_length=255, unique=True)
 
     class Meta:
         ordering = ['nombre']
-        verbose_name = 'Comisión Institucional'
-        verbose_name_plural = 'Comisiones Institucionales'
+        verbose_name = 'comisión (catálogo)'
+        verbose_name_plural = 'comisiones (catálogo)'
+
+    def __str__(self):
+        return self.nombre
 
 
 class ActividadApoyo(models.Model):
-    nombre = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
+    nombre = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField('descripción', blank=True)
+
+    class Meta:
+        ordering = ['nombre']
+        verbose_name = 'actividad de apoyo'
+        verbose_name_plural = 'actividades de apoyo'
 
     def __str__(self):
         return self.nombre
 
-    class Meta:
-        ordering = ['nombre']
-        verbose_name = 'Actividad de apoyo'
-        verbose_name_plural = 'Actividades de apoyo'
 
-
-class Representacion(models.Model):
-    nombre = models.CharField(max_length=255)
-    descripcion = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.nombre
+class LaborDirectivaCoordinacion(Periodo):
+    cargo = models.ForeignKey(Cargo, on_delete=models.PROTECT)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='labores_directivas')
 
     class Meta:
-        ordering = ['nombre']
-        verbose_name = 'Representación'
-        verbose_name_plural = 'Representaciones'
-
-
-class LaborDirectivaCoordinacion(models.Model):
-    cargo = models.ForeignKey(Cargo, on_delete=models.DO_NOTHING, null=True, blank=True)
-    tipo_cargo = models.CharField(max_length=255) # sacar el texto de cargo
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-    fecha_inicio = models.DateField(auto_now=False)
-    fecha_fin = models.DateField(auto_now=False)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return "[{} : {}] : {} : {}".format(self.tipo_cargo, self.institucion, self.fecha_inicio, self.fecha_fin)
-
-    def get_absolute_url(self):
-        return reverse('labor_directiva_coordinacion_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        verbose_name_plural = 'Labores Directivaa y de Coordinación'
-        unique_together = ('tipo_cargo', 'usuario', 'institucion', 'fecha_inicio')
         ordering = ['-fecha_inicio']
-        get_latest_by = ['user', 'tipo_cargo']
-
-
-class RepresentacionOrganoColegiadoUNAM(models.Model):
-    tipo_representacion = models.CharField(max_length=30, choices=(('', '-------'), ('DENTRO', 'Dentro de la UNAM'), ('REPRESENTACION', 'Con representacion UNAM (Solo por designación)')))
-    representacion_dentro_unam = models.CharField(max_length=30, choices=(('', '-------'), ('PRIDE', 'PRIDE'), ('CAACS', 'CAACS'), ('CONSEJO_INTERNO', 'Consejo interno'),
-                                                                          ('COMISION_DICTAMINADORA', 'Comisión dictaminadora'), ('COMISION_EVALUADORA', 'Comisiòn evaluadora'),
-                                                                          ('OTRA', 'Otra')), blank=True, null=True)
-    representacion_dentro_unam_otra = models.CharField(max_length=250, blank=True, null=True)
-    representacion_fuera_unam = models.CharField(max_length=250, blank=True, null=True)
-
-    institucion_dentro_unam = models.ForeignKey(InstitucionSimple, blank=True, null=True, related_name='representacion_organo_colegiado_dentrounam', on_delete=models.DO_NOTHING)
-    institucion_fuera_unam = models.ForeignKey(InstitucionSimple, blank=True, null=True, related_name='representacion_organo_colegiado_fueraunam', on_delete=models.DO_NOTHING)
-
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-    fecha_inicio = models.DateField(auto_now=False)
-    fecha_fin = models.DateField(blank=True, null=True)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+        verbose_name = 'labor directiva o de coordinación'
+        verbose_name_plural = 'labores directivas y de coordinación'
 
     def __str__(self):
-        return "{} : {} : {} ".format(self.usuario, self.tipo_representacion, self.fecha_fin)
+        return f'{self.cargo} ({self.fecha_inicio:%Y})'
 
-    def get_absolute_url(self):
-        return reverse('representacion_organo_colegiado_unam_detalle', kwargs={'pk': self.pk})
+
+class RepresentacionOrganoColegiado(Periodo):
+    class Tipo(models.TextChoices):
+        DENTRO = 'DENTRO', 'Dentro de la UNAM'
+        REPRESENTACION = 'REPRESENTACION', 'Con representación UNAM (solo por designación)'
+
+    class Organo(models.TextChoices):
+        PRIDE = 'PRIDE', 'PRIDE'
+        CAACS = 'CAACS', 'CAACS'
+        CONSEJO_INTERNO = 'CONSEJO_INTERNO', 'Consejo interno'
+        COMISION_DICTAMINADORA = 'COMISION_DICTAMINADORA', 'Comisión dictaminadora'
+        COMISION_EVALUADORA = 'COMISION_EVALUADORA', 'Comisión evaluadora'
+        OTRA = 'OTRA', 'Otra'
+
+    tipo = models.CharField(max_length=20, choices=Tipo.choices)
+    organo = models.CharField('órgano colegiado', max_length=30, choices=Organo.choices, blank=True)
+    organo_descripcion = models.CharField('descripción del órgano', max_length=250, blank=True,
+                                          help_text='Obligatoria si el órgano es "Otra" o está fuera de la UNAM.')
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='representaciones')
 
     class Meta:
-        verbose_name_plural = 'Representantes Ante Organos Colegiados'
-        unique_together = ('usuario', 'tipo_representacion', 'fecha_inicio')
         ordering = ['-fecha_inicio']
-
-
-class ComisionInstitucionalCIGA(models.Model):
-    comision_academica = models.ForeignKey(Comision, null=True, blank=True, on_delete=models.DO_NOTHING)
-    tipo_comision = models.CharField(max_length=255) # sacar el texto de comision_academica
-    tipo_institucion = models.CharField(max_length=30, choices=(('', '-------'), ('INTERIOR', 'Al interior del CIGA'), ('EXTERIOR', 'Al exterior del CIGA')))
-    institucion2 = models.ForeignKey(Institucion, null=True, blank=True, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, null=True, blank=True, on_delete=models.DO_NOTHING)
-    institucion = models.ForeignKey(InstitucionSimple, on_delete=models.DO_NOTHING, null=True, blank=True)
-
-    fecha_inicio = models.DateField(auto_now=False)
-    fecha_fin = models.DateField(auto_now=False)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+        verbose_name = 'representación ante órgano colegiado'
+        verbose_name_plural = 'representaciones ante órganos colegiados'
 
     def __str__(self):
-        return "[{}] : {} : {} : {}".format(self.usuario, self.comision_academica, self.fecha_inicio, self.fecha_fin)
+        return self.organo_descripcion or self.get_organo_display()
 
-    def get_absolute_url(self):
-        return reverse('comision_institucional_detalle', kwargs={'pk': self.pk})
-
-    class Meta:
-        verbose_name_plural = 'Comisiones Académicas'
-        unique_together = ('comision_academica', 'usuario', 'fecha_inicio')
-        ordering = ['fecha_inicio']
-        get_latest_by = ['user', 'comision_academica']
+    def clean(self):
+        super().clean()
+        requerido_si(self.tipo == self.Tipo.DENTRO, self, 'organo', 'Elige el órgano colegiado.')
+        requerido_si(self.organo == self.Organo.OTRA or self.tipo == self.Tipo.REPRESENTACION, self,
+                     'organo_descripcion', 'Describe el órgano colegiado.')
 
 
-class ApoyoTecnico(models.Model):
-    actividad_apoyo = models.ForeignKey(ActividadApoyo, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField()
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    fecha_inicio = models.DateField(auto_now=False)
-    fecha_fin = models.DateField(auto_now=False)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+class ComisionInstitucional(Periodo):
+    class Ambito(models.TextChoices):
+        INTERIOR = 'INTERIOR', 'Al interior de la entidad'
+        EXTERIOR = 'EXTERIOR', 'Al exterior de la entidad'
 
-    def __str__(self):
-        return "[{}] : {} : {}".format(self.usuario, self.actividad_apoyo, self.fecha_fin)
-
-    def get_absolute_url(self):
-        return reverse('apoyo_tecnico_detalle', kwargs={'pk': self.pk})
+    comision = models.ForeignKey(Comision, on_delete=models.PROTECT, verbose_name='comisión')
+    ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='comisiones')
 
     class Meta:
-        verbose_name_plural = 'Apoyos de Técnicos'
-        unique_together = ('actividad_apoyo', 'usuario', 'dependencia', 'fecha_inicio')
         ordering = ['-fecha_inicio']
-        get_latest_by = ['usuario', 'actividad_apoyo']
-
-
-class ApoyoOtraActividad(models.Model):
-    actividad_apoyo = models.ForeignKey(ActividadApoyo, on_delete=models.DO_NOTHING)
-    descripcion = models.TextField()
-    institucion = models.ForeignKey(Institucion, on_delete=models.DO_NOTHING)
-    dependencia = models.ForeignKey(Dependencia, on_delete=models.DO_NOTHING)
-    fecha_inicio = models.DateField(auto_now=False)
-    fecha_fin = models.DateField(auto_now=False)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+        verbose_name = 'comisión institucional'
+        verbose_name_plural = 'comisiones institucionales'
 
     def __str__(self):
-        return "[{}] : {} : {}".format(self.usuario, self.actividad_apoyo, self.fecha_fin)
+        return str(self.comision)
 
-    def get_absolute_url(self):
-        return reverse('apoyo_otra_actividad_detalle', kwargs={'pk': self.pk})
+
+class ApoyoInstitucional(Periodo):
+    class Tipo(models.TextChoices):
+        TECNICO = 'TECNICO', 'Apoyo técnico'
+        OTRA = 'OTRA', 'Apoyo en otras actividades'
+
+    tipo = models.CharField(max_length=20, choices=Tipo.choices)
+    actividad = models.ForeignKey(ActividadApoyo, on_delete=models.PROTECT)
+    descripcion = models.TextField('descripción', blank=True)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='apoyos_institucionales')
 
     class Meta:
-        verbose_name_plural = 'Apoyos en Otras Actividades'
-        unique_together = ('actividad_apoyo', 'usuario', 'dependencia', 'fecha_inicio')
         ordering = ['-fecha_inicio']
-        get_latest_by = ['usuario', 'actividad_apoyo']
+        verbose_name = 'apoyo institucional'
+        verbose_name_plural = 'apoyos institucionales'
+
+    def __str__(self):
+        return f'{self.actividad} ({self.fecha_inicio:%Y})'
+
+
+from nucleo.historial import registrar_historial  # noqa: E402
+
+registrar_historial(globals())

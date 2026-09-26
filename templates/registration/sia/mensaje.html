@@ -1,0 +1,8 @@
+{% extends 'registration/sia/base.html' %}
+{% block cuerpo %}
+  {% if view.titulo == 'Revisa tu correo' %}
+    <p>Si existe una cuenta con ese correo, te enviamos las instrucciones para crear una contraseña nueva. Revisa también la carpeta de correo no deseado.</p>
+  {% else %}
+    <p>Tu contraseña se actualizó. Ya puedes iniciar sesión.</p>
+  {% endif %}
+{% endblock %}

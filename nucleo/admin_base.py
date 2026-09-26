@@ -1,0 +1,519 @@
+"""Clases base del admin del SIA.
+
+Cada `ModelAdmin` declara en `permisos_investigador` qué acciones concede al grupo
+"Investigadores"; `nucleo.permisos.sincronizar_grupo_investigadores` lee esos valores.
+
+- `PropietarioAdmin`: registros de producción académica. Un académico solo ve los
+  registros en los que participa (según `propietarios`); los administradores ven todo.
+  Los registros de un periodo de informe cerrado quedan en solo lectura para los académicos.
+- `VerificableAdmin`: catálogos que cualquier académico puede ampliar; los registros
+  verificados solo los modifican los administradores.
+- `CatalogoAdmin`: catálogos que solo mantienen los administradores.
+
+Las tres bases incluyen bitácora de cambios, validación de fechas, aviso de posibles
+duplicados y la acción "Fusionar" para administradores.
+"""
+
+from datetime import date
+
+from django import forms
+from django.contrib import admin, messages
+from django.contrib.admin import helpers
+from django.core.exceptions import PermissionDenied
+from django.db.models import DateField, Max, Q
+from django.shortcuts import get_object_or_404, redirect
+from django.template.response import TemplateResponse
+from django.urls import reverse
+from django.utils.html import format_html, format_html_join
+from simple_history.admin import SimpleHistoryAdmin
+from unfold.admin import GenericTabularInline, ModelAdmin, TabularInline
+from unfold.decorators import action
+from unfold.forms import PaginationInlineFormSet
+
+from .fusion import ErrorFusion, fusionar, resumen_referencias
+from .informe import anio_cierre
+from .models import EstadoPublicacion, Evidencia, PeriodoInforme, Persona
+from .utils import personas_ordenadas
+
+TODAS_LAS_ACCIONES = ('add', 'change', 'delete', 'view')
+ANIO_MINIMO = 1900
+ANIOS_A_FUTURO = 2
+
+
+def es_administrador(user):
+    return user.is_active and (user.is_superuser or user.has_perm('nucleo.ver_todo'))
+
+
+def persona_de(user):
+    """Persona asociada a la cuenta; se crea si aún no existe."""
+    persona, _ = Persona.objects.get_or_create(
+        usuario=user,
+        defaults={'nombre': user.first_name or user.username, 'apellidos': user.last_name, 'email': user.email,
+                  'verificado': True},
+    )
+    return persona
+
+
+def lista_personas(obj, campo, maximo=3):
+    """Resumen de una relación de personas para `list_display` (usa `prefetch_personas` si existe)."""
+    personas = personas_ordenadas(obj, campo)
+    texto = ', '.join(str(p) for p in personas[:maximo])
+    return f'{texto}…' if len(personas) > maximo else texto
+
+
+def _es_autocomplete(request):
+    return getattr(request.resolver_match, 'url_name', None) == 'autocomplete'
+
+
+def enlace_admin(obj):
+    url = reverse(f'admin:{obj._meta.app_label}_{obj._meta.model_name}_change', args=[obj.pk])
+    return format_html('<a href="{}" target="_blank">{}</a>', url, obj)
+
+
+def filtro_anio(*campos):
+    """Filtro de lista por año sobre uno o varios campos de fecha (se combinan con OR)."""
+
+    class FiltroAnio(admin.SimpleListFilter):
+        title = 'año'
+        parameter_name = 'anio'
+
+        def lookups(self, request, model_admin):
+            anios = set()
+            qs = model_admin.get_queryset(request).order_by()
+            for campo in campos:
+                anios.update(fecha.year for fecha in qs.dates(campo, 'year'))
+            return [(anio, anio) for anio in sorted(anios, reverse=True)]
+
+        def queryset(self, request, queryset):
+            if not self.value():
+                return queryset
+            filtro = Q()
+            for campo in campos:
+                filtro |= Q(**{f'{campo}__year': self.value()})
+            return queryset.filter(filtro)
+
+    return FiltroAnio
+
+
+# ---------------------------------------------------------------------------
+# Comportamiento común
+# ---------------------------------------------------------------------------
+
+class FormularioSIA(forms.ModelForm):
+    """Valida el rango de las fechas capturadas, aplica las reglas del admin y avisa de posibles duplicados."""
+    confirmar_no_duplicado = forms.BooleanField(
+        required=False, widget=forms.HiddenInput, label='Confirmo que no es un duplicado de los registros señalados')
+
+    _model_admin = None
+    _request = None
+
+    def clean(self):
+        datos = super().clean()
+        hoy = date.today()
+        for nombre, valor in list(datos.items()):
+            campo = self.fields.get(nombre)
+            if (isinstance(valor, date) and isinstance(campo, forms.DateField) and nombre in self.changed_data
+                    and not ANIO_MINIMO <= valor.year <= hoy.year + ANIOS_A_FUTURO):
+                self.add_error(nombre, f'Revisa el año: debe estar entre {ANIO_MINIMO} y {hoy.year + ANIOS_A_FUTURO}.')
+        return datos
+
+    def _post_clean(self):
+        super()._post_clean()
+        if self.errors or self._model_admin is None:
+            return
+        self._model_admin.validar_instancia(self._request, self)
+        if self.instance.pk is None and not self.cleaned_data.get('confirmar_no_duplicado'):
+            similares = self._model_admin.posibles_duplicados(self._request, self.instance)
+            if similares:
+                self.fields['confirmar_no_duplicado'].widget = forms.CheckboxInput()
+                visibles = set(self._model_admin.get_queryset(self._request).filter(
+                    pk__in=[s.pk for s in similares]).values_list('pk', flat=True))
+                elementos = [(enlace_admin(s) if s.pk in visibles
+                              else format_html('«{}» (registrado por otro académico)', s),) for s in similares]
+                self.add_error(None, format_html(
+                    'Ya existen registros parecidos: {}. Si es el mismo, no lo dupliques: si lo registró otra persona, '
+                    'pídele que te agregue como participante. Si no es el mismo, marca la casilla de confirmación al '
+                    'final del formulario y guarda de nuevo.',
+                    format_html_join('; ', '{}', elementos)))
+
+
+class BaseAdmin(SimpleHistoryAdmin, ModelAdmin):
+    """Bitácora, validación de fechas, aviso de duplicados y fusión (solo administradores)."""
+    form = FormularioSIA
+    #: Campos (en orden) cuyo texto se compara para avisar de posibles duplicados al crear.
+    campos_similitud = ()
+    list_per_page = 50
+    save_as = True
+    save_as_continue = True
+    actions = ['fusionar_registros']
+
+    # -- permisos por objeto -------------------------------------------------
+
+    def puede_modificar(self, request, obj):
+        """Regla adicional por objeto; las subclases la especializan."""
+        return True
+
+    def has_change_permission(self, request, obj=None):
+        return super().has_change_permission(request, obj) and (obj is None or self.puede_modificar(request, obj))
+
+    def has_delete_permission(self, request, obj=None):
+        return super().has_delete_permission(request, obj) and (obj is None or self.puede_modificar(request, obj))
+
+    def history_form_view(self, request, object_id, version_id, extra_context=None):
+        # simple-history carga la versión sin pasar por get_queryset: se verifica que el registro sea visible.
+        if not self.get_queryset(request).filter(pk=object_id).exists():
+            raise PermissionDenied
+        return super().history_form_view(request, object_id, version_id, extra_context)
+
+    # -- formulario ----------------------------------------------------------
+
+    def posibles_duplicados(self, request, instancia):
+        """Registros que podrían ser el mismo que `instancia` (solo se revisa al crear)."""
+        from .similitud import candidatos
+
+        if not self.campos_similitud:
+            return []
+        texto = ' '.join(str(getattr(instancia, campo) or '') for campo in self.campos_similitud)
+        return candidatos(self.model._default_manager.all(), self.campos_similitud, texto, excluir_pk=instancia.pk)
+
+    def validar_instancia(self, request, form):
+        """Validaciones del admin que necesitan la instancia ya construida (año cerrado, etc.)."""
+
+    def get_form(self, request, obj=None, **kwargs):
+        form_class = super().get_form(request, obj, **kwargs)
+        return type(form_class.__name__, (form_class,), {'_model_admin': self, '_request': request})
+
+    def get_fieldsets(self, request, obj=None):
+        fieldsets = super().get_fieldsets(request, obj)
+        campos = [c for _, opciones in fieldsets for c in opciones.get('fields', ())]
+        if obj is None and 'confirmar_no_duplicado' not in campos:
+            fieldsets = [*fieldsets, (None, {'fields': ['confirmar_no_duplicado']})]
+        return fieldsets
+
+    # -- duplicados existentes (administradores) -------------------------------
+
+    def has_revisar_duplicados_permission(self, request):
+        return es_administrador(request.user)
+
+    @action(description='Revisar duplicados', icon='join', url_path='duplicados', permissions=['revisar_duplicados'])
+    def revisar_duplicados(self, request):
+        """Pares de registros probablemente duplicados, con opción de fusionar cada par."""
+        if request.method == 'POST':
+            conservar = get_object_or_404(self.model, pk=request.POST.get('conservar'))
+            eliminar = get_object_or_404(self.model, pk=request.POST.get('eliminar'))
+            try:
+                fusionar(conservar, [eliminar])
+                self.message_user(request, f'Se fusionó "{eliminar}" en "{conservar}".')
+            except ErrorFusion as error:
+                self.message_user(request, str(error), messages.ERROR)
+            return redirect(request.get_full_path())
+        pares, vistos = [], set()
+        for obj in self.model._default_manager.all():
+            for similar in self.posibles_duplicados(request, obj):
+                llave = tuple(sorted((obj.pk, similar.pk)))
+                if llave not in vistos:
+                    vistos.add(llave)
+                    pares.append([(x, resumen_referencias(x)) for x in (obj, similar)])
+            if len(pares) >= 100:
+                break
+        contexto = {**self.admin_site.each_context(request), 'opts': self.opts, 'pares': pares,
+                    'title': f'Posibles duplicados: {self.opts.verbose_name_plural}'}
+        return TemplateResponse(request, 'admin/nucleo/duplicados.html', contexto)
+
+    # -- fusión --------------------------------------------------------------
+
+    def get_actions(self, request):
+        acciones = super().get_actions(request)
+        if not es_administrador(request.user):
+            acciones.pop('fusionar_registros', None)
+        return acciones
+
+    @admin.action(description='Fusionar registros duplicados')
+    def fusionar_registros(self, request, queryset):
+        registros = list(queryset)
+        if len(registros) < 2:
+            self.message_user(request, 'Selecciona al menos dos registros para fusionar.', messages.WARNING)
+            return None
+        if 'conservar' in request.POST:
+            conservar = next((r for r in registros if str(r.pk) == request.POST['conservar']), None)
+            if conservar is None:
+                self.message_user(request, 'Elige el registro que se conserva.', messages.ERROR)
+                return None
+            try:
+                fusionar(conservar, [r for r in registros if r.pk != conservar.pk])
+            except ErrorFusion as error:
+                self.message_user(request, str(error), messages.ERROR)
+                return None
+            self.message_user(request, f'Se fusionaron {len(registros) - 1} registro(s) en "{conservar}".')
+            return None
+        contexto = {
+            **self.admin_site.each_context(request),
+            'title': f'Fusionar {self.opts.verbose_name_plural}',
+            'opts': self.opts,
+            'registros': [(r, resumen_referencias(r)) for r in registros],
+            'action_checkbox_name': helpers.ACTION_CHECKBOX_NAME,
+        }
+        return TemplateResponse(request, 'admin/nucleo/fusionar.html', contexto)
+
+
+class EvidenciaInline(GenericTabularInline):
+    model = Evidencia
+    fields = ['archivo', 'descripcion']
+    extra = 0
+    tab = True
+    verbose_name_plural = 'evidencias (constancias, cartas, PDF)'
+
+    def _permiso_padre(self, request, obj):
+        padre = self.admin_site._registry.get(self.parent_model)
+        if padre is None:
+            return False
+        return padre.has_change_permission(request, obj) if obj else padre.has_add_permission(request)
+
+    def has_add_permission(self, request, obj=None):
+        return self._permiso_padre(request, obj)
+
+    def has_change_permission(self, request, obj=None):
+        return self._permiso_padre(request, obj)
+
+    def has_delete_permission(self, request, obj=None):
+        return self._permiso_padre(request, obj)
+
+    def has_view_permission(self, request, obj=None):
+        return True  # El registro padre ya solo es visible para quien puede verlo.
+
+
+# ---------------------------------------------------------------------------
+# Inlines de personas ordenadas (autores, responsables, tutores...)
+# ---------------------------------------------------------------------------
+
+class ParticipanteForm(forms.ModelForm):
+    # Unfold lo llena al arrastrar las filas (0, 1, 2...); vacío en filas nuevas = al final.
+    orden = forms.IntegerField(required=False, min_value=0)
+
+    def _post_clean(self):
+        super()._post_clean()
+        if self.instance.orden is None:
+            self.instance.orden = 0
+
+
+class ParticipanteFormSet(PaginationInlineFormSet):
+    def save(self, commit=True):
+        guardados = super().save(commit)
+        if commit:
+            self._renumerar()
+        return guardados
+
+    def _renumerar(self):
+        """Reasigna `orden` como 1..n respetando el orden indicado; los vacíos van al final."""
+        filas = []
+        for posicion, form in enumerate(self.forms):
+            if form.instance.pk is None or self._should_delete_form(form):
+                continue
+            orden = getattr(form, 'cleaned_data', {}).get('orden', form.instance.orden)
+            filas.append((float('inf') if orden is None else orden, posicion, form.instance))
+        for numero, (_, _, instancia) in enumerate(sorted(filas, key=lambda f: f[:2]), start=1):
+            if instancia.orden != numero:
+                instancia.orden = numero
+                instancia.save(update_fields=['orden'])
+
+
+class ParticipanteInline(TabularInline):
+    form = ParticipanteForm
+    formset = ParticipanteFormSet
+    autocomplete_fields = ['persona']
+    fields = ['persona', 'orden']
+    ordering_field = 'orden'
+    hide_ordering_field = True
+    extra = 1
+
+    def _permiso_padre(self, request, obj):
+        padre = self.admin_site._registry.get(self.parent_model)
+        return padre.has_change_permission(request, obj) if obj else padre.has_add_permission(request)
+
+    def has_add_permission(self, request, obj=None):
+        return super().has_add_permission(request, obj) and self._permiso_padre(request, obj)
+
+    def has_change_permission(self, request, obj=None):
+        return super().has_change_permission(request, obj) and self._permiso_padre(request, obj)
+
+    def has_delete_permission(self, request, obj=None):
+        return super().has_delete_permission(request, obj) and self._permiso_padre(request, obj)
+
+
+# ---------------------------------------------------------------------------
+# Registros con dueño
+# ---------------------------------------------------------------------------
+
+class PropietarioAdmin(BaseAdmin):
+    #: Lookups que, desde el modelo, llegan a la cuenta (`User`) de quien participa en el registro.
+    propietarios = ('usuario',)
+    #: Relación M2M con `Persona` a la que se agrega el académico si guarda un registro en el que no figura.
+    autoria = None
+    #: Si otros académicos pueden elegir este registro en campos de autocompletado (p. ej. proyectos).
+    compartido = False
+    #: Fecha de referencia del registro (filtro por año y cierre de registros de una sola fecha).
+    campo_fecha = None
+    #: Si los periodos de informe cerrados bloquean el registro (los formatos administrativos no).
+    sujeto_a_cierre = True
+    permisos_investigador = TODAS_LAS_ACCIONES
+
+    def _tiene_campo_usuario(self):
+        return any(f.name == 'usuario' for f in self.model._meta.fields)
+
+    def _campos_fecha_filtro(self):
+        if issubclass(self.model, EstadoPublicacion):
+            return ('fecha_publicado', 'fecha_enprensa', 'fecha_aceptado', 'fecha_enviado')
+        if self.campo_fecha:
+            return (self.campo_fecha,)
+        if any(isinstance(f, DateField) and f.name == 'fecha_inicio' for f in self.model._meta.fields):
+            return ('fecha_inicio',)
+        return ()
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if es_administrador(request.user) or (self.compartido and _es_autocomplete(request)):
+            return qs
+        filtro = Q()
+        for lookup in self.propietarios:
+            filtro |= Q(**{lookup: request.user})
+        qs = qs.filter(filtro)
+        if len(self.propietarios) > 1 or any('__' in lookup for lookup in self.propietarios):
+            qs = qs.distinct()
+        return qs
+
+    def get_inlines(self, request, obj):
+        return [*super().get_inlines(request, obj), EvidenciaInline]
+
+    def get_list_display(self, request):
+        list_display = list(super().get_list_display(request))
+        if self._tiene_campo_usuario() and es_administrador(request.user) and 'usuario' not in list_display:
+            list_display.append('usuario')
+        return list_display
+
+    def get_list_filter(self, request):
+        list_filter = list(super().get_list_filter(request))
+        campos_fecha = self._campos_fecha_filtro()
+        if campos_fecha:
+            list_filter.insert(0, filtro_anio(*campos_fecha))
+        if self._tiene_campo_usuario() and es_administrador(request.user) and 'usuario' not in list_filter:
+            list_filter.append(('usuario', admin.RelatedOnlyFieldListFilter))
+        return list_filter
+
+    def get_autocomplete_fields(self, request):
+        campos = list(super().get_autocomplete_fields(request))
+        if self._tiene_campo_usuario() and es_administrador(request.user) and 'usuario' not in campos:
+            campos.append('usuario')
+        return campos
+
+    def get_changeform_initial_data(self, request):
+        inicial = super().get_changeform_initial_data(request)
+        if self._tiene_campo_usuario():
+            inicial.setdefault('usuario', request.user.pk)
+        return inicial
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        campo = form.base_fields.get('usuario')
+        if campo is not None and not es_administrador(request.user):
+            # El académico no elige el dueño: el campo se envía oculto y se ignora lo que llegue en POST.
+            campo.disabled = True
+            campo.widget = forms.HiddenInput()
+            campo.initial = obj.usuario_id if obj else request.user.pk
+        return form
+
+    # -- periodos de informe cerrados --------------------------------------------
+
+    def anio_cierre(self, obj):
+        return anio_cierre(obj, self.campo_fecha) if self.sujeto_a_cierre else None
+
+    def puede_modificar(self, request, obj):
+        if es_administrador(request.user):
+            return True
+        anio = self.anio_cierre(obj)
+        return anio is None or anio not in PeriodoInforme.anios_cerrados()
+
+    def validar_instancia(self, request, form):
+        if es_administrador(request.user):
+            return
+        anio = self.anio_cierre(form.instance)
+        if anio is not None and anio in PeriodoInforme.anios_cerrados():
+            form.add_error(None, f'El informe {anio} ya está cerrado: no puedes registrar ni modificar actividades '
+                                 f'de ese año. Pide el cambio a un administrador.')
+
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+        obj = self.get_object(request, object_id)
+        if obj is not None and not es_administrador(request.user) and not self.puede_modificar(request, obj):
+            messages.info(request, f'Este registro pertenece al informe {self.anio_cierre(obj)}, que ya está cerrado; '
+                                   'solo puedes consultarlo.')
+        return super().change_view(request, object_id, form_url, extra_context)
+
+    # -- autoría ---------------------------------------------------------------
+
+    def save_related(self, request, form, formsets, change):
+        super().save_related(request, form, formsets, change)
+        for formset in formsets:
+            if formset.model is Evidencia:
+                for evidencia in formset.new_objects:
+                    evidencia.subido_por = request.user
+                    evidencia.save(update_fields=['subido_por'])
+        if es_administrador(request.user):
+            return
+        obj = form.instance
+        if self.get_queryset(request).filter(pk=obj.pk).exists():
+            return
+        if self.autoria:
+            relacion = getattr(obj, self.autoria)
+            through = relacion.through
+            defaults = {}
+            if any(f.name == 'orden' for f in through._meta.fields):
+                ultimo = through.objects.filter(**{relacion.source_field_name: obj}).aggregate(m=Max('orden'))['m']
+                defaults['orden'] = (ultimo or 0) + 1
+            relacion.add(persona_de(request.user), through_defaults=defaults)
+            messages.info(request, 'Se te agregó a la lista de %s para que el registro aparezca entre los tuyos.'
+                          % obj._meta.get_field(self.autoria).verbose_name)
+        else:
+            messages.warning(request, 'El registro se guardó, pero no figuras en él, así que no aparecerá en tu lista.')
+
+
+# ---------------------------------------------------------------------------
+# Catálogos
+# ---------------------------------------------------------------------------
+
+class VerificableAdmin(BaseAdmin):
+    permisos_investigador = TODAS_LAS_ACCIONES
+    campos_similitud = ('nombre',)
+    actions = ['marcar_verificados', 'fusionar_registros']
+    actions_list = ['revisar_duplicados']
+
+    def get_list_filter(self, request):
+        return [*super().get_list_filter(request), 'verificado']
+
+    def get_readonly_fields(self, request, obj=None):
+        campos = [*super().get_readonly_fields(request, obj), 'creado_por', 'creado', 'actualizado']
+        if not es_administrador(request.user):
+            campos.append('verificado')
+        return campos
+
+    def puede_modificar(self, request, obj):
+        return es_administrador(request.user) or (not obj.verificado and obj.creado_por_id == request.user.pk)
+
+    def get_actions(self, request):
+        acciones = super().get_actions(request)
+        if not es_administrador(request.user):
+            acciones.pop('marcar_verificados', None)
+        return acciones
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.creado_por = request.user
+        super().save_model(request, obj, form, change)
+
+    @admin.action(description='Marcar como verificados')
+    def marcar_verificados(self, request, queryset):
+        actualizados = queryset.update(verificado=True)
+        self.message_user(request, f'{actualizados} registro(s) marcados como verificados.')
+
+
+class CatalogoAdmin(BaseAdmin):
+    permisos_investigador = ('view',)
+    list_per_page = 100
