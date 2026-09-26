@@ -5,6 +5,8 @@ from django.contrib.auth import forms as auth_forms
 from django.contrib.auth import views as auth_views
 from unfold.widgets import INPUT_CLASSES
 
+from .models import ConfiguracionEntidad
+
 CLASES = ' '.join(INPUT_CLASSES)
 
 
@@ -34,6 +36,12 @@ class SolicitarRecuperacion(ConContextoAdmin, auth_views.PasswordResetView):
     template_name = 'registration/sia/solicitar.html'
     email_template_name = 'registration/sia/correo.txt'
     subject_template_name = 'registration/sia/asunto.txt'
+
+    def form_valid(self, form):
+        entidad = ConfiguracionEntidad.actual(self.request)
+        self.from_email = entidad.remitente_correos
+        self.extra_email_context = {'entidad': entidad}
+        return super().form_valid(form)
 
 
 class RecuperacionEnviada(ConContextoAdmin, auth_views.PasswordResetDoneView):

@@ -6,6 +6,7 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from django.core.cache import cache
 from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator, RegexValidator
 from django.db import models
@@ -39,10 +40,10 @@ class Ambito(models.TextChoices):
 
 
 def ambito_por_pais(pais):
-    """Ámbito de un evento o participación según el país donde ocurre."""
+    """Ámbito de un evento o participación según el país donde ocurre y el país sede de la entidad."""
     if pais is None:
         return ''
-    return Ambito.NACIONAL if pais.nombre == settings.PAIS_SEDE else Ambito.INTERNACIONAL
+    return Ambito.NACIONAL if pais.pk == ConfiguracionEntidad.actual().pais_sede_id else Ambito.INTERNACIONAL
 
 
 class Modalidad(models.TextChoices):
@@ -217,10 +218,6 @@ class Pais(models.Model):
 
     def __str__(self):
         return self.nombre
-
-    @property
-    def es_sede(self):
-        return self.nombre == settings.PAIS_SEDE
 
 
 class User(AbstractUser):
@@ -676,6 +673,79 @@ class CapituloLibro(models.Model):
     def clean(self):
         super().clean()
         validar_paginas(self)
+
+
+# ---------------------------------------------------------------------------
+# Configuración de la entidad
+# ---------------------------------------------------------------------------
+
+class ConfiguracionEntidad(models.Model):
+    """Datos y parámetros propios de la entidad académica.
+
+    Hoy hay un solo registro. Cuando el sistema sea multi-entidad (multitenant), cada entidad
+    tendrá el suyo: el resto del código solo debe leerla con `ConfiguracionEntidad.actual(request)`.
+    """
+    CLAVE_CACHE = 'nucleo:configuracion_entidad'
+
+    # Identidad
+    nombre = models.CharField('nombre de la entidad', max_length=255)
+    siglas = models.CharField(max_length=30, blank=True)
+    institucion_madre = models.CharField('institución a la que pertenece', max_length=255, blank=True,
+                                         default='Universidad Nacional Autónoma de México')
+    institucion_madre_siglas = models.CharField('siglas de la institución', max_length=30, blank=True, default='UNAM')
+    logo = models.ImageField(upload_to='configuracion', null=True, blank=True,
+                             help_text='Aparece en el CV y en los formatos impresos.')
+    # Dirección y contacto
+    titular = models.CharField('nombre de quien dirige', max_length=255, blank=True,
+                               help_text='Firma el visto bueno de los formatos.')
+    cargo_titular = models.CharField('cargo de quien dirige', max_length=100, default='Director(a)')
+    ciudad = models.CharField(max_length=255, blank=True)
+    direccion = models.TextField('dirección', blank=True)
+    telefono = models.CharField('teléfono', max_length=100, blank=True)
+    correo = models.EmailField('correo de contacto', blank=True)
+    sitio_web = models.URLField('sitio web', blank=True)
+    # Documentos
+    consejo_tecnico = models.CharField(
+        'consejo técnico', max_length=255, blank=True, default='Consejo Técnico de la Investigación Científica',
+        help_text='Órgano ante el que se tramitan las licencias con goce de sueldo.')
+    # Operación
+    pais_sede = models.ForeignKey(Pais, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país sede',
+                                  help_text='Define si un evento o participación es nacional o internacional.')
+    remitente = models.EmailField('remitente de los correos', blank=True,
+                                  help_text='Si se deja vacío se usa el configurado en el servidor.')
+    anios_tablero = models.PositiveSmallIntegerField('años en el tablero', default=6)
+    meses_publicacion_pendiente = models.PositiveSmallIntegerField(
+        'meses para marcar una publicación como pendiente', default=6,
+        help_text='Una publicación no publicada que no cambia de estado en este tiempo aparece en los pendientes.')
+
+    class Meta:
+        verbose_name = 'configuración de la entidad'
+        verbose_name_plural = 'configuración de la entidad'
+
+    def __str__(self):
+        return self.siglas or self.nombre
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        cache.delete(self.CLAVE_CACHE)
+
+    @classmethod
+    def actual(cls, request=None):
+        """Configuración vigente. Punto único de acceso: con multitenant se resolverá a partir de `request`."""
+        configuracion = cache.get(cls.CLAVE_CACHE)
+        if configuracion is None:
+            configuracion = cls.objects.select_related('pais_sede').first() or cls(nombre='Entidad académica')
+            cache.set(cls.CLAVE_CACHE, configuracion, 60)
+        return configuracion
+
+    @property
+    def nombre_completo(self):
+        """"Centro de ..., UNAM"."""
+        return f'{self.nombre}, {self.institucion_madre_siglas}' if self.institucion_madre_siglas else self.nombre
+
+    @property
+    def remitente_correos(self):
+        return self.remitente or settings.DEFAULT_FROM_EMAIL
 
 
 # ---------------------------------------------------------------------------

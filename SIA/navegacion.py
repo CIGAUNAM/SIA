@@ -54,6 +54,9 @@ def menu(request):
     ]
     if administrador:
         principales.append({'title': 'Avance de captura', 'icon': 'monitoring', 'link': reverse('admin:informe_avance')})
+    if request.user.has_perm('nucleo.change_configuracionentidad'):
+        principales.append({'title': 'Configuración de la entidad', 'icon': 'settings',
+                            'link': reverse('admin:nucleo_configuracionentidad_changelist')})
     grupos = [{'items': principales}]
     for app_label, icono in SECCIONES:
         app = apps.get(app_label)

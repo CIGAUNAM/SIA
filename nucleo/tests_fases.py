@@ -241,8 +241,47 @@ class NormalizacionTests(Datos):
         from django.apps import apps
         Institucion.objects.create(nombre='Facultad de Ciencias, UNAM', pais=self.mexico)
         self.articulo('Con URL como DOI', self.ana.persona, doi='http://revista.mx/articulo')
-        normalizar(apps.get_model, 'México')
+        normalizar(apps.get_model, self.mexico.pk)
         facultad = Institucion.objects.get(nombre='Facultad de Ciencias')
         self.assertEqual(facultad.padre, self.institucion)
         articulo = ArticuloCientifico.objects.get(titulo='Con URL como DOI')
         self.assertEqual((articulo.doi, articulo.url), ('', 'http://revista.mx/articulo'))
+
+
+class ConfiguracionEntidadTests(Datos):
+    def test_documentos_usan_la_configuracion(self):
+        from nucleo.models import ConfiguracionEntidad, Evento, TipoEvento
+        from formatos.models import LicenciaGoceSueldo
+        configuracion = ConfiguracionEntidad.actual()
+        configuracion.consejo_tecnico = 'Consejo Técnico de Prueba'
+        configuracion.save()
+        evento = Evento.objects.create(nombre='Congreso', tipo=TipoEvento.objects.create(nombre='Congreso'),
+                                       fecha_inicio=date(2026, 5, 1), fecha_fin=date(2026, 5, 3), pais=self.mexico)
+        licencia = LicenciaGoceSueldo.objects.create(
+            usuario=self.ana, evento=evento, tipo_participacion='Ponente', fecha_inicio=date(2026, 5, 1),
+            fecha_fin=date(2026, 5, 3), importancia='Alta', costo='100.00')
+        self.client.force_login(self.ana)
+        html = self.client.get(reverse('admin:formatos_licenciagocesueldo_descargar_pdf', args=[licencia.pk]),
+                               {'formato': 'html'})
+        self.assertContains(html, 'Dra. Titular Prueba')
+        self.assertContains(html, 'Consejo Técnico de Prueba')
+
+    def test_ambito_segun_pais_sede(self):
+        from nucleo.models import Evento, Pais, TipoEvento
+        tipo = TipoEvento.objects.create(nombre='Congreso')
+        nacional = Evento.objects.create(nombre='A', tipo=tipo, fecha_inicio=date(2020, 1, 1),
+                                         fecha_fin=date(2020, 1, 2), pais=self.mexico)
+        chile = Pais.objects.create(nombre='Chile', codigo='CL')
+        internacional = Evento.objects.create(nombre='B', tipo=tipo, fecha_inicio=date(2020, 1, 1),
+                                              fecha_fin=date(2020, 1, 2), pais=chile)
+        self.assertEqual((nacional.ambito, internacional.ambito), ('NACIONAL', 'INTERNACIONAL'))
+
+    def test_solo_administradores_y_un_registro(self):
+        from nucleo.models import ConfiguracionEntidad
+        self.client.force_login(self.admin)
+        lista = self.client.get(reverse('admin:nucleo_configuracionentidad_changelist'))
+        self.assertRedirects(lista, reverse('admin:nucleo_configuracionentidad_change',
+                                            args=[ConfiguracionEntidad.objects.get().pk]))
+        self.assertEqual(self.client.get(reverse('admin:nucleo_configuracionentidad_add')).status_code, 403)
+        self.client.force_login(self.ana)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_configuracionentidad_changelist')).status_code, 403)

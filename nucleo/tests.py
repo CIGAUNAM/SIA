@@ -5,6 +5,7 @@ from datetime import date
 from pathlib import Path
 
 from django.contrib.auth.models import Group
+from django.core.cache import cache
 from django.core.management import call_command
 from django.test import TestCase
 from django.urls import reverse
@@ -12,7 +13,7 @@ from django.urls import reverse
 from formatos.models import PagoViaticos
 from investigacion.models import ArticuloCientifico, ArticuloCientificoAutor
 from nucleo.admin_base import es_administrador
-from nucleo.models import Evento, Institucion, Pais, Persona, Revista, TipoEvento, User
+from nucleo.models import ConfiguracionEntidad, Evento, Institucion, Pais, Persona, Revista, TipoEvento, User
 from nucleo.permisos import GRUPO_INVESTIGADORES
 from SIA.tablero import construir_tablero
 
@@ -36,6 +37,10 @@ class Datos(TestCase):
         cls.beto.groups.add(grupo)
         cls.admin = User.objects.create_superuser('admin', password='x')
         cls.externo = Persona.objects.create(nombre='Carla', apellidos='Externa')
+        ConfiguracionEntidad.objects.update(pais_sede=cls.mexico, titular='Dra. Titular Prueba')
+
+    def setUp(self):
+        cache.clear()  # La configuración de la entidad se guarda en caché; la BD se revierte en cada prueba.
 
     def articulo(self, titulo, *personas, **extra):
         articulo = ArticuloCientifico.objects.create(

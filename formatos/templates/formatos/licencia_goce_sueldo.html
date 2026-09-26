@@ -2,9 +2,9 @@
 {% block nombre_formato %}Solicitud de licencia con goce de sueldo{% endblock %}
 {% block nombre_formato_encabezado %}Solicitud de licencia con goce de sueldo{% endblock %}
 {% block cuerpo %}
-<p>{% if entidad.director %}<strong>{{ entidad.director }}</strong><br>{% endif %}
-<strong>Director(a) del {{ entidad.nombre }}</strong><br><strong>P r e s e n t e</strong></p>
-<p>Por medio del presente solicito a usted que, de acuerdo con los artículos 97 b), 98 b) y 100 del Estatuto del Personal Académico, se sirva tramitar ante el Consejo Técnico de la Investigación Científica una licencia con goce de sueldo. Para tal efecto hago de su conocimiento los siguientes datos:</p>
+<p>{% if entidad.titular %}<strong>{{ entidad.titular }}</strong><br>{% endif %}
+<strong>{{ entidad.cargo_titular }} del {{ entidad.nombre }}</strong><br><strong>P r e s e n t e</strong></p>
+<p>Por medio del presente solicito a usted que, de acuerdo con los artículos 97 b), 98 b) y 100 del Estatuto del Personal Académico, se sirva tramitar ante el {{ entidad.consejo_tecnico|default:"consejo técnico correspondiente" }} una licencia con goce de sueldo. Para tal efecto hago de su conocimiento los siguientes datos:</p>
 
 <p class="campo"><b>Nombre:</b> {{ formato.usuario }} &nbsp; <b>RFC:</b> {{ formato.usuario.rfc|default:"—" }}</p>
 <p class="campo"><b>Ingreso a la UNAM:</b> {{ formato.usuario.ingreso_unam|date:"d/m/Y"|default:"—" }} &nbsp; <b>Último contrato:</b> {{ formato.usuario.ultimo_contrato|date:"d/m/Y"|default:"—" }}</p>

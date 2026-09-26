@@ -10,8 +10,9 @@
 {% endblock %}
 {% block contenido %}
 <header class="encabezado">
+  {% include "nucleo/logo.html" %}
   <h1>{% if usuario.grado %}{{ usuario.grado }} {% endif %}{{ usuario }}</h1>
-  <p>{{ entidad.nombre }}, UNAM</p>
+  <p>{{ entidad.nombre_completo }}</p>
   <p>{{ subtitulo }} · Generado el {{ hoy|date:"j \d\e F \d\e Y"|lower }}</p>
 </header>
 

@@ -34,9 +34,18 @@ cp .env.example .env        # y edita SECRET_KEY y los datos de la base de datos
 | `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS` | Separados por comas. |
 | `DB_ENGINE` | `postgresql` (por defecto) o `sqlite`. |
 | `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` | Conexión a PostgreSQL. |
-| `ENTIDAD_NOMBRE`, `ENTIDAD_SIGLAS`, `ENTIDAD_DIRECTOR`, `ENTIDAD_CIUDAD`, `ENTIDAD_DIRECCION` | Datos impresos en el CV y los formatos. |
-| `EMAIL_BACKEND`, `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD`, `EMAIL_USE_TLS`, `DEFAULT_FROM_EMAIL` | Correo para recuperar contraseñas. Por defecto se imprime en la consola. |
+| `EMAIL_BACKEND`, `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD`, `EMAIL_USE_TLS`, `DEFAULT_FROM_EMAIL` | Servidor de correo (recuperar contraseñas). Por defecto se imprime en la consola. |
 | `PRIVATE_MEDIA_ROOT` | Carpeta de las evidencias adjuntas (fuera de `MEDIA_ROOT`; se descargan solo con permiso). |
+
+### Configuración de la entidad
+
+Los datos propios de la entidad **no van en `.env`**: se editan en el admin, en *Configuración de la entidad*
+(nombre, siglas, institución a la que pertenece, logo, titular y su cargo, dirección, consejo técnico, país sede,
+remitente de correos, años del tablero y meses para marcar publicaciones pendientes). `.env` queda solo para lo que
+depende del despliegue (base de datos, clave secreta, servidor de correo).
+
+El código lee esos datos únicamente con `ConfiguracionEntidad.actual(request)`. Hoy hay un solo registro; cuando el
+sistema atienda a varias entidades (multitenant), ese será el punto donde se resuelva la entidad de cada petición.
 
 ## Importar los datos del SIA anterior
 

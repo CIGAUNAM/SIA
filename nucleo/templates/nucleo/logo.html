@@ -1,0 +1,1 @@
+{% if entidad.logo %}<img class="logo" alt="" src="{% if para_pdf %}file://{{ entidad.logo.path }}{% else %}{{ entidad.logo.url }}{% endif %}">{% endif %}

@@ -12,7 +12,8 @@
 {% endblock %}
 {% block contenido %}
 <header class="encabezado">
-  <p><strong>Universidad Nacional Autónoma de México</strong></p>
+  {% include "nucleo/logo.html" %}
+  {% if entidad.institucion_madre %}<p><strong>{{ entidad.institucion_madre }}</strong></p>{% endif %}
   <p>{{ entidad.nombre }}</p>
   <h2>{% block nombre_formato_encabezado %}{% endblock %}</h2>
 </header>
@@ -22,7 +23,7 @@
 
 <div class="firmas">
   <div>{{ formato.usuario }}<br>Solicitante</div>
-  <div>Vo.Bo. {{ entidad.director|default:"Director(a) de la entidad" }}<br>{{ entidad.siglas }}</div>
+  <div>Vo.Bo. {{ entidad.titular }}<br>{{ entidad.cargo_titular }} {% if entidad.siglas %}del {{ entidad.siglas }}{% endif %}</div>
 </div>
-<p class="pie-entidad">{{ entidad.nombre }}. {{ entidad.direccion }}</p>
+<p class="pie-entidad">{{ entidad.nombre }}. {{ entidad.direccion }}{% if entidad.telefono %} · Tel. {{ entidad.telefono }}{% endif %}</p>
 {% endblock %}

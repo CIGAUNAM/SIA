@@ -1,8 +1,8 @@
 from django.apps import apps
-from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
+from nucleo.models import ConfiguracionEntidad
 from nucleo.normalizacion import normalizar
 
 
@@ -11,6 +11,6 @@ class Command(BaseCommand):
 
     def handle(self, **options):
         with transaction.atomic():
-            resultado = normalizar(apps.get_model, settings.PAIS_SEDE)
+            resultado = normalizar(apps.get_model, ConfiguracionEntidad.actual().pais_sede_id)
         for concepto, total in resultado.items():
             self.stdout.write(f'  {concepto}: {total}')

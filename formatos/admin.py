@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.contrib import admin, messages
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import redirect
@@ -7,6 +6,7 @@ from unfold.decorators import action
 
 from nucleo.admin_base import PropietarioAdmin
 from nucleo.documentos import ErrorDocumento, respuesta_documento
+from nucleo.models import ConfiguracionEntidad
 
 from .models import LicenciaGoceSueldo, PagoViaticos, ServicioTransporte
 
@@ -23,7 +23,7 @@ class FormatoAdmin(PropietarioAdmin):
         obj = self.get_object(request, object_id)
         if obj is None or not self.has_view_permission(request, obj):
             raise PermissionDenied
-        contexto = {'formato': obj, 'entidad': settings.ENTIDAD}
+        contexto = {'formato': obj, 'entidad': ConfiguracionEntidad.actual(request)}
         try:
             return respuesta_documento(request, obj.plantilla_pdf, contexto, f'{self.opts.model_name}-{obj.pk}',
                                        request.GET.get('formato', 'pdf'))

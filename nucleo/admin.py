@@ -2,17 +2,20 @@ from django.contrib import admin
 from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
+from django.core.exceptions import PermissionDenied
 from django.db.models import Count
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import format_html
+from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin, TabularInline
 from unfold.forms import AdminPasswordChangeForm, UserChangeForm, UserCreationForm
 
 from .admin_base import CatalogoAdmin, ParticipanteInline, VerificableAdmin, es_administrador, persona_de
-from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfirmacionInforme, Distincion, Evento, Indice,
-                     Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista, Nombramiento, Pais,
-                     PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
+from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
+                     Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
+                     Nombramiento, Pais, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
 from .permisos import GRUPO_INVESTIGADORES
 
 PERFIL = ('Perfil académico', {'fields': (
@@ -303,3 +306,31 @@ class ConfirmacionInformeAdmin(CatalogoAdmin):
 
     def has_add_permission(self, request):
         return False
+
+
+@admin.register(ConfiguracionEntidad)
+class ConfiguracionEntidadAdmin(SimpleHistoryAdmin, ModelAdmin):
+    """Un solo registro por entidad: la lista lleva directo a editarlo."""
+    permisos_investigador = ()
+    autocomplete_fields = ['pais_sede']
+    fieldsets = (
+        ('Identidad', {'fields': ('nombre', 'siglas', 'institucion_madre', 'institucion_madre_siglas', 'logo')}),
+        ('Dirección y contacto', {'fields': ('titular', 'cargo_titular', 'ciudad', 'direccion', 'telefono', 'correo',
+                                             'sitio_web')}),
+        ('Documentos', {'fields': ('consejo_tecnico',)}),
+        ('Operación', {'fields': ('pais_sede', 'remitente', 'anios_tablero', 'meses_publicacion_pendiente')}),
+    )
+
+    def has_add_permission(self, request):
+        return super().has_add_permission(request) and not ConfiguracionEntidad.objects.exists()
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def changelist_view(self, request, extra_context=None):
+        if not self.has_view_or_change_permission(request):
+            raise PermissionDenied
+        configuracion = ConfiguracionEntidad.objects.first()
+        if configuracion is None:
+            return redirect('admin:nucleo_configuracionentidad_add')
+        return redirect('admin:nucleo_configuracionentidad_change', configuracion.pk)

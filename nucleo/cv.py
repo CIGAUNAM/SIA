@@ -10,7 +10,6 @@ from dataclasses import dataclass
 from datetime import date
 
 from django import forms
-from django.conf import settings
 from django.contrib import admin, messages
 from django.core.exceptions import PermissionDenied
 from django.db.models import Q
@@ -24,7 +23,7 @@ from unfold.widgets import (UnfoldAdminCheckboxSelectMultipleWidget, UnfoldAdmin
 
 from .admin_base import es_administrador, persona_de
 from .documentos import ErrorDocumento, respuesta_documento
-from .models import Libro, LibroParticipante, NivelAcademico, StatusPublicacion, User
+from .models import ConfiguracionEntidad, Libro, LibroParticipante, NivelAcademico, StatusPublicacion, User
 from .utils import personas_ordenadas, prefetch_personas
 
 
@@ -426,7 +425,7 @@ def datos_generales(usuario):
 # Salidas
 # ---------------------------------------------------------------------------
 
-def cv_docx(usuario, secciones, subtitulo):
+def cv_docx(usuario, secciones, subtitulo, entidad):
     from docx import Document
     from docx.shared import Pt
 
@@ -434,7 +433,7 @@ def cv_docx(usuario, secciones, subtitulo):
     documento.styles['Normal'].font.name = 'Calibri'
     documento.styles['Normal'].font.size = Pt(10.5)
     documento.add_heading(f'{usuario.grado} {usuario}'.strip(), level=0)
-    documento.add_paragraph(f"{settings.ENTIDAD['nombre']}, UNAM · {subtitulo}")
+    documento.add_paragraph(f'{entidad.nombre_completo} · {subtitulo}')
     for etiqueta, valor in datos_generales(usuario):
         parrafo = documento.add_paragraph()
         parrafo.add_run(f'{etiqueta}: ').bold = True
@@ -501,12 +500,12 @@ def cv_view(request, usuario_id=None):
         nombre_archivo = f'cv-{usuario.username}'
         if datos['formato'] == 'docx':
             respuesta = HttpResponse(
-                cv_docx(usuario, secciones, subtitulo),
+                cv_docx(usuario, secciones, subtitulo, ConfiguracionEntidad.actual(request)),
                 content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
             respuesta['Content-Disposition'] = f'attachment; filename="{nombre_archivo}.docx"'
             return respuesta
         contexto = {'usuario': usuario, 'datos': datos_generales(usuario), 'secciones': secciones,
-                    'subtitulo': subtitulo, 'entidad': settings.ENTIDAD, 'hoy': date.today()}
+                    'subtitulo': subtitulo, 'entidad': ConfiguracionEntidad.actual(request), 'hoy': date.today()}
         try:
             return respuesta_documento(request, 'nucleo/cv.html', contexto, nombre_archivo, datos['formato'])
         except ErrorDocumento as error:

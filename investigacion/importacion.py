@@ -12,9 +12,8 @@ import urllib.request
 from dataclasses import dataclass, field
 from datetime import date
 
-from django.conf import settings
 
-from nucleo.models import Persona, Revista, normalizar_doi, normalizar_issn
+from nucleo.models import ConfiguracionEntidad, Persona, Revista, normalizar_doi, normalizar_issn
 from nucleo.similitud import normalizar, personas_parecidas
 
 TIEMPO_ESPERA = 12
@@ -41,7 +40,7 @@ class DatosArticulo:
 
 def _obtener_json(url, encabezados=None):
     solicitud = urllib.request.Request(url, headers={
-        'User-Agent': f"SIA/1.0 (mailto:{settings.DEFAULT_FROM_EMAIL.split('<')[-1].rstrip('>')})",
+        'User-Agent': f"SIA/1.0 (mailto:{ConfiguracionEntidad.actual().remitente_correos.split('<')[-1].rstrip('>')})",
         **(encabezados or {})})
     try:
         with urllib.request.urlopen(solicitud, timeout=TIEMPO_ESPERA) as respuesta:

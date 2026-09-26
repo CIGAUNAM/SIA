@@ -131,29 +131,19 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=False, cast=bool)
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='SIA <no-responder@localhost>')
 
-# Nombre del país sede; se usa para distinguir producción nacional de internacional.
-PAIS_SEDE = config('PAIS_SEDE', default='México')
 
 if not DEBUG:
     SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default=True, cast=bool)
     CSRF_COOKIE_SECURE = SESSION_COOKIE_SECURE
     SECURE_CONTENT_TYPE_NOSNIFF = True
 
-# Datos de la entidad que aparecen en el CV y en los formatos impresos.
-ENTIDAD = {
-    'nombre': config('ENTIDAD_NOMBRE', default='Centro de Investigaciones en Geografía Ambiental'),
-    'siglas': config('ENTIDAD_SIGLAS', default='CIGA'),
-    'director': config('ENTIDAD_DIRECTOR', default=''),
-    'ciudad': config('ENTIDAD_CIUDAD', default='Morelia, Michoacán'),
-    'direccion': config('ENTIDAD_DIRECCION', default=(
-        'Antigua carretera a Pátzcuaro 8701, Col. Ex Hacienda de San José de la Huerta, C.P. 58190, '
-        'Morelia, Michoacán, México')),
-}
+# Los datos de la entidad (nombre, titular, dirección, país sede...) se configuran en el admin:
+# nucleo.ConfiguracionEntidad. Aquí solo va lo que depende del despliegue.
 
 UNFOLD = {
     'SITE_TITLE': 'SIA',
     'SITE_HEADER': 'SIA',
-    'SITE_SUBHEADER': 'Sistema de Información Académica',
+    'SITE_SUBHEADER': 'nucleo.configuracion_sitio.subtitulo',
     'SITE_SYMBOL': 'school',
     'SHOW_HISTORY': True,
     'SHOW_VIEW_ON_SITE': False,

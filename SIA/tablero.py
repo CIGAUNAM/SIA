@@ -15,7 +15,6 @@ from django.urls import reverse
 
 from nucleo.models import StatusPublicacion, User
 
-ANIOS = 6
 MIN_INDICADORES = 3
 TIPOS_ACADEMICOS = [User.Tipo.INVESTIGADOR, User.Tipo.TECNICO, User.Tipo.POSTDOCTORADO]
 
@@ -113,10 +112,13 @@ def anios_con_datos():
 
 
 def construir_tablero(usuario, hasta=None, ver_total=False):
-    """Series de los indicadores para los `ANIOS` años que terminan en `hasta` (o el último año con datos)."""
+    """Series de los indicadores para los años (configurables) que terminan en `hasta` o en el último año con datos."""
+    from nucleo.models import ConfiguracionEntidad
+
     primero, ultimo = anios_con_datos()
     hasta = hasta if hasta and primero <= hasta <= date.today().year else ultimo
-    anios = list(range(hasta - ANIOS + 1, hasta + 1))
+    num_anios = max(ConfiguracionEntidad.actual().anios_tablero, 1)
+    anios = list(range(hasta - num_anios + 1, hasta + 1))
     activos = academicos_activos(anios)
     series = [_serie(indicador, anios, activos, usuario, ver_total) for indicador in INDICADORES]
     return {'series': series, 'hasta': hasta,
@@ -130,11 +132,12 @@ def _url_cambio(obj):
 def pendientes(usuario):
     """Cosas que el académico debería revisar: publicaciones estancadas, tesis vencidas, perfil incompleto."""
     from nucleo.admin_base import persona_de
-    from nucleo.models import ConfirmacionInforme, PeriodoInforme
+    from nucleo.models import ConfiguracionEntidad, ConfirmacionInforme, PeriodoInforme
 
     persona = persona_de(usuario)
     hoy = date.today()
-    hace_seis_meses = hoy - timedelta(days=182)
+    meses = ConfiguracionEntidad.actual().meses_publicacion_pendiente
+    limite = hoy - timedelta(days=round(meses * 30.4))
     publicaciones = []
     for etiqueta in ('investigacion.ArticuloCientifico', 'divulgacion_cientifica.ArticuloDivulgacion',
                      'docencia.ArticuloDocencia', 'investigacion.MapaArbitrado', 'investigacion.PublicacionTecnica',
@@ -142,7 +145,7 @@ def pendientes(usuario):
         modelo = apps.get_model(etiqueta)
         campo = 'participantes' if etiqueta == 'nucleo.Libro' else 'autores'
         qs = (modelo.objects.filter(**{campo: persona}).exclude(status=StatusPublicacion.PUBLICADO).con_fecha()
-              .filter(fecha_orden__lt=hace_seis_meses).distinct())
+              .filter(fecha_orden__lt=limite).distinct())
         publicaciones += [{'texto': f'{obj} — {obj.get_status_display().lower()} desde {obj.fecha_orden:%m/%Y}',
                            'url': _url_cambio(obj)} for obj in qs[:10]]
 
@@ -157,6 +160,7 @@ def pendientes(usuario):
     periodo = PeriodoInforme.abierto_actual()
     return {
         'publicaciones': publicaciones,
+        'meses_publicacion_pendiente': meses,
         'tesis': [{'texto': f'{t} — debía terminar en {t.fecha_fin:%m/%Y}', 'url': _url_cambio(t)} for t in tesis[:10]],
         'perfil_faltante': faltantes,
         'perfil_url': reverse('admin:nucleo_user_change', args=[usuario.pk]),

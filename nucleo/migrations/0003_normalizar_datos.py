@@ -1,11 +1,11 @@
-from django.conf import settings
 from django.db import migrations
 
 from nucleo.normalizacion import normalizar
 
 
 def aplicar(apps, schema_editor):
-    normalizar(apps.get_model, settings.PAIS_SEDE)
+    sede = apps.get_model('nucleo', 'Pais').objects.filter(nombre='México').values_list('pk', flat=True).first()
+    normalizar(apps.get_model, sede)
 
 
 class Migration(migrations.Migration):

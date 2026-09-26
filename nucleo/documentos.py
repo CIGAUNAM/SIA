@@ -19,6 +19,7 @@ def html_a_pdf(html):
 
 def respuesta_documento(request, plantilla, contexto, nombre_archivo, formato='pdf'):
     """Responde con el documento en PDF, o con el HTML (vista previa) si `formato == 'html'`."""
+    contexto = {**contexto, 'para_pdf': formato != 'html'}  # El PDF lee imágenes del disco; el HTML, por URL.
     html = render_to_string(plantilla, contexto, request=request)
     if formato == 'html':
         return HttpResponse(html)

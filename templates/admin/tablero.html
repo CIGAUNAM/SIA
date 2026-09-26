@@ -51,7 +51,7 @@
       <p class="mb-2">A tu perfil le falta: {{ p.perfil_faltante|join:", " }}. <a class="text-primary-600" href="{{ p.perfil_url }}">Completarlo</a></p>
     {% endif %}
     {% if p.publicaciones %}
-      <p class="etiqueta-seccion">Publicaciones sin actualizar desde hace más de 6 meses</p>
+      <p class="etiqueta-seccion">Publicaciones sin actualizar desde hace más de {{ p.meses_publicacion_pendiente }} meses</p>
       <ul class="tablero-lista">{% for item in p.publicaciones %}<li><a href="{{ item.url }}">{{ item.texto }}</a></li>{% endfor %}</ul>
     {% endif %}
     {% if p.tesis %}
