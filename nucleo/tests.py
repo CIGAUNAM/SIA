@@ -186,6 +186,14 @@ class PerfilTests(Datos):
         self.assertTrue(Persona.objects.filter(usuario=nueva).exists())
 
 
+    def test_perfil_ofrece_copiar_domicilio_de_la_entidad(self):
+        ConfiguracionEntidad.objects.update(direccion='Antigua carretera a Pátzcuaro 8701')
+        cache.clear()
+        self.client.force_login(self.ana)
+        respuesta = self.client.get(reverse('admin:nucleo_user_change', args=[self.ana.pk]))
+        self.assertContains(respuesta, 'data-domicilio="Antigua carretera a Pátzcuaro 8701"')
+        self.assertNotContains(respuesta, 'name="celular"')
+
     def test_entra_con_correo_sin_distinguir_mayusculas(self):
         self.assertTrue(self.client.login(username='ANA@ciga.unam.mx', password='x'))
         respuesta = self.client.post(reverse('admin:login'), {'username': 'Beto@Ciga.unam.mx', 'password': 'x'})

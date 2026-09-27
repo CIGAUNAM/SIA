@@ -1,0 +1,8 @@
+{% include "unfold/widgets/textarea.html" %}
+{% if domicilio_entidad %}
+    <button type="button" class="mt-2 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+            data-domicilio="{{ domicilio_entidad }}"
+            onclick="document.getElementById('{{ widget.attrs.id }}').value = this.dataset.domicilio">
+        Copiar el domicilio de la entidad
+    </button>
+{% endif %}

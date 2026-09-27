@@ -11,6 +11,7 @@ from django.utils.html import format_html
 from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin, TabularInline
 from unfold.forms import AdminPasswordChangeForm
+from unfold.widgets import UnfoldAdminTextareaWidget
 from unfold.forms import UserChangeForm as BaseUserChangeForm
 from unfold.forms import UserCreationForm as BaseUserCreationForm
 
@@ -20,14 +21,27 @@ from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEnt
                      Nombramiento, Pais, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
 from .permisos import GRUPO_INVESTIGADORES
 
-PERFIL = ('Perfil académico', {'fields': (
-    'tipo', 'grado', 'semblanza', 'avatar', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp',
-    'direccion', 'telefono', 'celular', 'url', 'sni', 'pride',
+DATOS_PERSONALES = ('Datos personales', {'fields': (
+    'grado', 'first_name', 'last_name', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp', 'telefono',
+    'domicilio',
 )})
+PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'avatar', 'url', 'sni', 'pride')})
 ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato')})
 
 
 admin.site.unregister(Group)
+
+
+class DomicilioWidget(UnfoldAdminTextareaWidget):
+    """Área de texto con un botón para copiar el domicilio de la entidad."""
+    template_name = 'nucleo/widgets/domicilio.html'
+
+    def __init__(self, domicilio_entidad='', attrs=None):
+        self.domicilio_entidad = domicilio_entidad
+        super().__init__({'rows': 3, **(attrs or {})})
+
+    def get_context(self, name, value, attrs):
+        return {**super().get_context(name, value, attrs), 'domicilio_entidad': self.domicilio_entidad}
 
 
 class UserCreationForm(BaseUserCreationForm):
@@ -63,14 +77,14 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     add_fieldsets = ((None, {'classes': ('wide',), 'fields': ('email', 'usable_password', 'password1', 'password2')}),)
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Datos personales', {'fields': ('first_name', 'last_name')}),
+        DATOS_PERSONALES,
         PERFIL,
         ADSCRIPCION,
         *BaseUserAdmin.fieldsets[2:],
     )
     fieldsets_propios = (
         (None, {'fields': ('email', 'password')}),
-        ('Datos personales', {'fields': ('first_name', 'last_name')}),
+        DATOS_PERSONALES,
         PERFIL,
         ADSCRIPCION,
     )
@@ -78,6 +92,11 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         return qs if es_administrador(request.user) else qs.filter(pk=request.user.pk)
+
+    def formfield_for_dbfield(self, db_field, request, **kwargs):
+        if db_field.name == 'domicilio':
+            kwargs['widget'] = DomicilioWidget(ConfiguracionEntidad.actual(request).direccion)
+        return super().formfield_for_dbfield(db_field, request, **kwargs)
 
     def get_fieldsets(self, request, obj=None):
         if obj is not None and not es_administrador(request.user):
