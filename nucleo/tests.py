@@ -293,6 +293,26 @@ class PerfilTests(Datos):
         self.assertIn(self.externo.pk, ids)
         self.assertNotIn(self.beto.persona_id, ids)
 
+    def test_buscar_orcid_cuentas(self):
+        User.objects.filter(pk=self.ana.pk).update(email='ana@ciga.unam.mx')
+        coautor = Persona.objects.create(nombre='López P., Ana', orcid='0000-0002-1825-0097')
+        self.articulo('Del coautor', coautor)
+
+        def respuesta(url):
+            if 'ana%40ciga' in url:
+                return {'num-found': 1, 'expanded-result': [
+                    {'orcid-id': '0000-0002-1825-0097', 'given-names': 'Ana', 'family-names': 'López Pérez'}]}
+            return {'num-found': 0, 'expanded-result': None}
+
+        with mock.patch('nucleo.externos.obtener_json', side_effect=respuesta):
+            call_command('buscar_orcid_cuentas', stdout=io.StringIO())
+            self.assertEqual(Persona.objects.get(pk=self.ana.persona_id).orcid, '')  # Sin --aplicar no cambia.
+            call_command('buscar_orcid_cuentas', '--aplicar', stdout=io.StringIO())
+        self.ana.refresh_from_db()
+        self.assertEqual(self.ana.persona.orcid, '0000-0002-1825-0097')
+        self.assertFalse(Persona.objects.filter(pk=coautor.pk).exists())
+        self.assertEqual(list(ArticuloCientifico.objects.get(titulo='Del coautor').autores.all()), [self.ana.persona])
+
     def test_completar_orcid(self):
         Persona.objects.filter(pk=self.externo.pk).update(orcid='0000-0002-1825-0097')
         orcid = {'name': {'given-names': {'value': 'Carla María'}, 'family-name': {'value': 'Externa Ruiz'}}}
