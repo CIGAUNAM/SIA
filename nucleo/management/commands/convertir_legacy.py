@@ -15,6 +15,8 @@ from pathlib import Path
 
 from django.core.management.base import BaseCommand
 
+from nucleo.models import correo_provisional
+
 REGISTRO_LEGACY = '2019-06-27T00:00:00Z'
 TIPOS_CUENTA = {'INVESTIGADOR', 'TECNICO', 'POSTDOCTORADO', 'ADMINISTRATIVO'}
 STATUS_PUBLICACION = ['ENVIADO', 'ACEPTADO', 'EN_PRENSA', 'PUBLICADO']
@@ -198,6 +200,7 @@ class Conversor:
                         if f['last_login'] or f['is_staff'] or f['is_superuser'] or f['tipo'] in TIPOS_CUENTA
                         or pk in duenos}
         ciudades = self.fuente('nucleo.ciudad')
+        correos_usados = set()
         for pk, f in usuarios.items():
             if pk in self.cuentas:
                 password = f['password'] if re.match(r'^[a-z0-9_]+\$', f['password'] or '') else '!'
@@ -205,9 +208,14 @@ class Conversor:
                     self.aviso('Cuenta sin contraseña válida (deberá restablecerla)')
                 direccion = '\n'.join(x for x in (txt(f['direccion']), txt(f['direccion_continuacion']),
                                                   txt(ciudades.get(f['ciudad'], {}).get('nombre'))) if x)
+                correo = txt(f['email']).lower()
+                if not correo or correo in correos_usados:
+                    self.aviso('Cuenta sin correo o con correo repetido (se le asignó uno provisional)')
+                    correo = correo_provisional(f['username'])
+                correos_usados.add(correo)
                 self.agregar('nucleo.user', pk, {
-                    'username': f['username'], 'password': password, 'first_name': txt(f['first_name']),
-                    'last_name': txt(f['last_name']), 'email': txt(f['email']), 'is_active': f['is_active'],
+                    'email': correo, 'password': password, 'first_name': txt(f['first_name']),
+                    'last_name': txt(f['last_name']), 'is_active': f['is_active'],
                     'is_staff': True, 'is_superuser': f['is_superuser'], 'last_login': f['last_login'],
                     'date_joined': fecha_hora(f['date_joined']),
                     'groups': [] if f['is_superuser'] else [['Investigadores']], 'user_permissions': [],

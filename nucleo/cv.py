@@ -497,7 +497,7 @@ def cv_view(request, usuario_id=None):
         desde, hasta = datos['desde'], datos['hasta']
         secciones = secciones_cv(usuario, desde, hasta, set(datos['secciones']) or None)
         subtitulo = f"Periodo {desde or 'inicio'}–{hasta or 'actual'}" if desde or hasta else 'Currículum vitae'
-        nombre_archivo = f'cv-{usuario.username}'
+        nombre_archivo = f'cv-{slugify(usuario.get_full_name()) or usuario.pk}'
         if datos['formato'] == 'docx':
             respuesta = HttpResponse(
                 cv_docx(usuario, secciones, subtitulo, ConfiguracionEntidad.actual(request)),

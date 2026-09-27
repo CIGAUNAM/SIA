@@ -29,6 +29,9 @@ SECCIONES = [
     ('auth', 'admin_panel_settings'),
 ]
 
+# Modelos que se muestran en una sección distinta a la de su app: (app, modelo) → sección.
+REUBICADOS = {('nucleo', 'user'): 'auth'}
+
 
 def _funcion_contador(modelo):
     """Unfold solo acepta insignias como ruta importable: se registra una función por catálogo en este módulo."""
@@ -57,22 +60,27 @@ def menu(request):
     if request.user.has_perm('nucleo.change_configuracionentidad'):
         principales.append({'title': 'Configuración de la entidad', 'icon': 'settings',
                             'link': reverse('admin:nucleo_configuracionentidad_changelist')})
-    grupos = [{'items': principales}]
-    for app_label, icono in SECCIONES:
-        app = apps.get(app_label)
-        if app is None:
-            continue
-        items = []
+    iconos = dict(SECCIONES)
+    items = {app_label: [] for app_label, _ in SECCIONES}
+    for app_label, app in apps.items():
         for modelo in app['models']:
+            seccion = REUBICADOS.get((app_label, modelo['object_name'].lower()), app_label)
+            if seccion not in apps:  # Sin acceso a la sección destino: se queda en la de su app.
+                seccion = app_label
+            if seccion not in items:
+                continue
             model_admin = admin.site._registry.get(modelo['model'])
             if not administrador and model_admin is not None and _solo_consulta(model_admin):
                 continue
-            item = {'title': modelo['name'], 'icon': icono, 'link': modelo['admin_url']}
+            item = {'title': modelo['name'], 'icon': iconos[seccion], 'link': modelo['admin_url']}
             if administrador and isinstance(model_admin, VerificableAdmin):
                 item['badge'] = _funcion_contador(modelo['model'])
-            items.append(item)
-        if items:
-            grupos.append({'title': app['name'], 'separator': True, 'collapsible': True, 'items': items})
+            items[seccion].append(item)
+    grupos = [{'items': principales}]
+    for app_label, _ in SECCIONES:
+        if items[app_label] and app_label in apps:
+            grupos.append({'title': apps[app_label]['name'], 'separator': True, 'collapsible': True,
+                           'items': items[app_label]})
     return grupos
 
 

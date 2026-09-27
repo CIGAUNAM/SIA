@@ -1,9 +1,11 @@
 import re
+import unicodedata
 import uuid
 from pathlib import Path
 
 from django.conf import settings
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.core.cache import cache
@@ -220,11 +222,49 @@ class Pais(models.Model):
         return self.nombre
 
 
+DOMINIO_SIN_CORREO = 'sin-correo.invalid'
+
+
+def correo_provisional(identificador):
+    """Correo para cuentas que no tienen uno (el dominio .invalid nunca recibe correo)."""
+    local = re.sub(r'[^a-z0-9._-]+', '', unicodedata.normalize('NFKD', str(identificador))
+                   .encode('ascii', 'ignore').decode().lower()) or 'cuenta'
+    return f'{local}@{DOMINIO_SIN_CORREO}'
+
+
+class UsuarioManager(UserManager):
+    """Las cuentas se identifican por correo (sin distinguir mayúsculas)."""
+
+    def _create_user_object(self, username, email, password, **extra_fields):
+        if not email:
+            raise ValueError('La cuenta necesita un correo electrónico.')
+        user = self.model(email=self.normalize_email(email).lower(), **extra_fields)
+        user.password = make_password(password)
+        return user
+
+    def create_user(self, email, password=None, **extra_fields):
+        return super().create_user(email, email, password, **extra_fields)
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        return super().create_superuser(email, email, password, **extra_fields)
+
+    def get_by_natural_key(self, email):
+        return self.get(email__iexact=email)
+
+
 class User(AbstractUser):
-    """Cuenta de acceso al sistema con el perfil del académico.
+    """Cuenta de acceso al sistema con el perfil del académico; se entra con el correo.
 
     Las personas sin cuenta (coautores, estudiantes, invitados) viven en `Persona`.
     """
+    username = None
+    email = models.EmailField('correo electrónico', unique=True)
+
+    USERNAME_FIELD = 'email'
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = UsuarioManager()
 
     class Tipo(models.TextChoices):
         INVESTIGADOR = 'INVESTIGADOR', 'Investigador'
@@ -278,7 +318,19 @@ class User(AbstractUser):
         permissions = [('ver_todo', 'Puede ver y editar los registros de todos los académicos')]
 
     def __str__(self):
-        return self.get_full_name() or self.username
+        return self.get_full_name() or self.email
+
+    def clean(self):
+        super().clean()
+        self.email = self.email.strip().lower()
+
+    def save(self, *args, **kwargs):
+        self.email = self.email.strip().lower()
+        super().save(*args, **kwargs)
+
+    @property
+    def sin_correo(self):
+        return self.email.endswith('@' + DOMINIO_SIN_CORREO)
 
     @property
     def es_administrador(self):

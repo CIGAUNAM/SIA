@@ -14,8 +14,8 @@ def sincronizar_persona(sender, instance, raw, **kwargs):
         return
     Persona.objects.update_or_create(
         usuario=instance,
-        defaults={'nombre': instance.first_name or instance.username, 'apellidos': instance.last_name,
-                  'email': instance.email, 'verificado': True},
+        defaults={'nombre': instance.first_name or instance.email.split('@')[0], 'apellidos': instance.last_name,
+                  'email': '' if instance.sin_correo else instance.email, 'verificado': True},
     )
 
 

@@ -48,7 +48,7 @@ def persona_de(user):
     """Persona asociada a la cuenta; se crea si aún no existe."""
     persona, _ = Persona.objects.get_or_create(
         usuario=user,
-        defaults={'nombre': user.first_name or user.username, 'apellidos': user.last_name, 'email': user.email,
+        defaults={'nombre': user.first_name or user.email.split('@')[0], 'apellidos': user.last_name, 'email': '' if user.sin_correo else user.email,
                   'verificado': True},
     )
     return persona

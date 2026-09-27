@@ -10,7 +10,9 @@ from django.utils import timezone
 from django.utils.html import format_html
 from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin, TabularInline
-from unfold.forms import AdminPasswordChangeForm, UserChangeForm, UserCreationForm
+from unfold.forms import AdminPasswordChangeForm
+from unfold.forms import UserChangeForm as BaseUserChangeForm
+from unfold.forms import UserCreationForm as BaseUserCreationForm
 
 from .admin_base import CatalogoAdmin, ParticipanteInline, VerificableAdmin, es_administrador, persona_de
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
@@ -28,6 +30,19 @@ ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'e
 admin.site.unregister(Group)
 
 
+class UserCreationForm(BaseUserCreationForm):
+    class Meta(BaseUserCreationForm.Meta):
+        model = User
+        fields = ('email',)
+        field_classes = {}
+
+
+class UserChangeForm(BaseUserChangeForm):
+    class Meta(BaseUserChangeForm.Meta):
+        model = User
+        field_classes = {}
+
+
 @admin.register(Group)
 class GroupAdmin(BaseGroupAdmin, ModelAdmin):
     pass
@@ -40,18 +55,22 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
     permisos_investigador = ('view', 'change')
-    list_display = ['username', 'first_name', 'last_name', 'tipo', 'is_active', 'is_staff', 'cv']
+    list_display = ['email', 'first_name', 'last_name', 'tipo', 'is_active', 'is_staff', 'cv']
     list_filter = ['tipo', 'is_active', 'is_staff', 'groups']
+    search_fields = ['email', 'first_name', 'last_name']
+    ordering = ['first_name', 'last_name']
     autocomplete_fields = ['pais_origen']
+    add_fieldsets = ((None, {'classes': ('wide',), 'fields': ('email', 'usable_password', 'password1', 'password2')}),)
     fieldsets = (
-        *BaseUserAdmin.fieldsets[:2],
+        (None, {'fields': ('email', 'password')}),
+        ('Datos personales', {'fields': ('first_name', 'last_name')}),
         PERFIL,
         ADSCRIPCION,
         *BaseUserAdmin.fieldsets[2:],
     )
     fieldsets_propios = (
-        (None, {'fields': ('username', 'password')}),
-        ('Datos personales', {'fields': ('first_name', 'last_name', 'email')}),
+        (None, {'fields': ('email', 'password')}),
+        ('Datos personales', {'fields': ('first_name', 'last_name')}),
         PERFIL,
         ADSCRIPCION,
     )
@@ -68,7 +87,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         if es_administrador(request.user):
             return super().get_readonly_fields(request, obj)
-        return ['username', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato']
+        return ['email', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato']
 
     def save_model(self, request, obj, form, change):
         if not change:
@@ -94,7 +113,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
 @admin.register(Persona)
 class PersonaAdmin(VerificableAdmin):
     list_display = ['apellidos', 'nombre', 'email', 'usuario', 'verificado']
-    search_fields = ['apellidos', 'nombre', 'email', 'orcid', 'usuario__username']
+    search_fields = ['apellidos', 'nombre', 'email', 'orcid', 'usuario__email']
     autocomplete_fields = ['usuario']
     fields = ['nombre', 'apellidos', 'email', 'orcid', 'usuario', 'verificado', 'creado_por', 'creado', 'actualizado']
 
