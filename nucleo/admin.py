@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib import admin, messages
 from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
@@ -14,7 +14,7 @@ from unfold.forms import AdminPasswordChangeForm
 from unfold.widgets import UnfoldAdminTextareaWidget
 
 from .admin_base import CatalogoAdmin, FormularioSIA, ParticipanteInline, VerificableAdmin, es_administrador
-from .externos import ErrorServicio, nombre_orcid
+from .externos import ErrorServicio, nombre_orcid, orcid_por_correo
 from .formularios import UserChangeForm, UserCreationForm
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
@@ -24,7 +24,7 @@ from .permisos import GRUPO_INVESTIGADORES
 DATOS_PERSONALES = ('Datos personales', {'fields': (
     'grado', 'first_name', 'last_name', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp', 'telefono', 'avatar',
 )})
-PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('nombre_persona', 'orcid')})
+PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona')})
 PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'domicilio', 'url', 'sni', 'pride')})
 ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato')})
 
@@ -64,13 +64,14 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     list_select_related = ['persona']
     add_fieldsets = (
         (None, {'classes': ('wide',), 'fields': ('email', 'first_name', 'last_name')}),
-        ('Nombre en publicaciones', {'fields': ('persona', 'orcid', 'nombre_persona', 'confirmar_persona_nueva')}),
+        ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona', 'es_persona')}),
         ('Contraseña', {'fields': ('usable_password', 'password1', 'password2')}),
     )
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         DATOS_PERSONALES,
-        ('Nombre en publicaciones', {'fields': ('persona', 'nombre_persona', 'orcid')}),
+        PUBLICACIONES,
+        ('Persona asociada', {'classes': ['collapse'], 'fields': ('persona',)}),
         PERFIL,
         ADSCRIPCION,
         *BaseUserAdmin.fieldsets[2:],
@@ -111,6 +112,10 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
         if not change:
             obj.is_staff = True  # Todas las cuentas usan el admin como interfaz.
         super().save_model(request, obj, form, change)
+        if getattr(form, 'orcid_encontrado', False):
+            messages.info(request, f'Se encontró su ORCID ({obj.persona.orcid}) a partir del correo.')
+        if getattr(form, 'resumen_fusion', None):
+            messages.info(request, f'El ORCID ya estaba en el catálogo: se unió {form.resumen_fusion} a esta cuenta.')
 
     def save_related(self, request, form, formsets, change):
         super().save_related(request, form, formsets, change)
@@ -129,7 +134,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
 
 
 class PersonaForm(FormularioSIA):
-    """Si se da un ORCID y no el nombre, el nombre se toma del registro público de ORCID."""
+    """Sin ORCID pero con correo, el ORCID se busca en ORCID; sin nombre, se toma del registro de ORCID."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -139,9 +144,18 @@ class PersonaForm(FormularioSIA):
 
     def clean(self):
         datos = super().clean()
+        if ('orcid' in self.fields and not datos.get('orcid') and datos.get('email')
+                and (self.instance.pk is None or 'email' in self.changed_data)):
+            try:
+                encontrado = orcid_por_correo(datos['email'])
+            except ErrorServicio:
+                encontrado = None
+            if encontrado and not Persona.objects.filter(orcid=encontrado[0]).exclude(pk=self.instance.pk).exists():
+                datos['orcid'] = encontrado[0]
+                datos['nombre'] = datos.get('nombre') or encontrado[1]
         if 'nombre' in self.fields and not datos.get('nombre'):
             if not datos.get('orcid'):
-                self.add_error('nombre', 'Escribe el nombre para mostrar o un ORCID.')
+                self.add_error('nombre', 'Escribe el nombre para mostrar, un ORCID o un correo público en ORCID.')
             else:
                 try:
                     datos['nombre'] = nombre_orcid(datos['orcid'])

@@ -15,6 +15,7 @@ from formatos.models import PagoViaticos
 from investigacion.models import ArticuloCientifico, ArticuloCientificoAutor
 from nucleo.admin_base import es_administrador
 from nucleo.models import ConfiguracionEntidad, Evento, Institucion, Pais, Persona, Revista, TipoEvento, User
+from nucleo.externos import ErrorServicio
 from nucleo.nombres import formato_cita, partes_cita
 from nucleo.permisos import GRUPO_INVESTIGADORES
 from SIA.tablero import construir_tablero
@@ -22,6 +23,27 @@ from SIA.tablero import construir_tablero
 
 SIN_EVIDENCIAS = {'nucleo-evidencia-content_type-object_id-TOTAL_FORMS': 0,
                   'nucleo-evidencia-content_type-object_id-INITIAL_FORMS': 0}
+
+
+def datos_de_formulario(formulario):
+    """Lo que el navegador enviaría con el formulario tal como se muestra (para probar un POST de cambio)."""
+    from django.forms import MultiWidget
+
+    datos = {}
+    for campo in formulario:
+        valor, widget = campo.value(), campo.field.widget
+        if valor in (None, False) or campo.name in ('password', 'avatar'):
+            continue
+        if isinstance(widget, MultiWidget):
+            for i, (sub, parte) in enumerate(zip(widget.widgets, widget.decompress(valor))):
+                datos[f'{campo.html_name}_{i}'] = sub.format_value(parte) or ''
+        elif isinstance(valor, (list, tuple)):
+            datos[campo.html_name] = [getattr(v, 'pk', v) for v in valor]
+        elif valor is True:
+            datos[campo.html_name] = 'on'
+        else:
+            datos[campo.html_name] = widget.format_value(getattr(valor, 'pk', valor)) or ''
+    return datos
 
 
 class Datos(TestCase):
@@ -43,6 +65,10 @@ class Datos(TestCase):
 
     def setUp(self):
         cache.clear()  # La configuración de la entidad se guarda en caché; la BD se revierte en cada prueba.
+        # Sin red en las pruebas: las que consultan ORCID o Crossref simulan la respuesta.
+        sin_red = mock.patch('nucleo.externos.obtener_json', side_effect=ErrorServicio('sin red'))
+        sin_red.start()
+        self.addCleanup(sin_red.stop)
 
     def articulo(self, titulo, *personas, **extra):
         articulo = ArticuloCientifico.objects.create(
@@ -191,7 +217,7 @@ class PerfilTests(Datos):
         nueva = User.objects.get(email='nueva@ciga.unam.mx')  # Se guarda en minúsculas.
         self.assertTrue(nueva.is_staff)
         self.assertTrue(nueva.groups.filter(name=GRUPO_INVESTIGADORES).exists())
-        self.assertEqual(nueva.persona.nombre, 'Cuenta Prueba, N.')
+        self.assertEqual((nueva.persona.nombre, nueva.persona.email), ('Cuenta Prueba, N.', 'nueva@ciga.unam.mx'))
 
     def alta(self, **datos):
         self.client.force_login(self.admin)
@@ -206,17 +232,52 @@ class PerfilTests(Datos):
         persona = User.objects.get(email='nuevo@ciga.unam.mx').persona
         self.assertEqual((persona.nombre, persona.orcid), ('Pérez García, J. C.', '0000-0002-1825-0097'))
 
-    def test_alta_con_persona_existente_y_aviso_de_parecidas(self):
-        respuesta = self.alta(nombre_persona='Externa, Carla')
+    def test_alta_pregunta_si_es_un_coautor_parecido(self):
+        respuesta = self.alta(first_name='Carla', last_name='Externa')
         self.assertContains(respuesta, 'Ya hay personas parecidas')
+        self.assertContains(respuesta, 'Externa, C. — sin registros')
         self.assertFalse(User.objects.filter(email='nuevo@ciga.unam.mx').exists())
-        self.alta(persona=self.externo.pk)
+        self.alta(first_name='Carla', last_name='Externa', es_persona=self.externo.pk)
         self.assertEqual(User.objects.get(email='nuevo@ciga.unam.mx').persona, self.externo)
 
-    def test_alta_no_reutiliza_persona_con_cuenta(self):
-        respuesta = self.alta(persona=self.beto.persona.pk)
-        self.assertFalse(User.objects.filter(email='nuevo@ciga.unam.mx').exists())
-        self.assertEqual(respuesta.status_code, 200)
+    def test_alta_puede_crear_persona_nueva_aunque_haya_parecidas(self):
+        self.alta(first_name='Carla', last_name='Externa', es_persona='nueva')
+        persona = User.objects.get(email='nuevo@ciga.unam.mx').persona
+        self.assertNotEqual(persona, self.externo)
+        self.assertEqual(persona.nombre, 'Externa, C.')
+
+    def test_alta_liga_por_orcid_y_no_reutiliza_persona_con_cuenta(self):
+        Persona.objects.filter(pk=self.externo.pk).update(orcid='0000-0002-1825-0097')
+        Persona.objects.filter(pk=self.beto.persona_id).update(orcid='0000-0001-5109-3700')
+        respuesta = self.alta(orcid='0000-0001-5109-3700')
+        self.assertContains(respuesta, 'que ya tiene cuenta')
+        self.alta(orcid='https://orcid.org/0000-0002-1825-0097')
+        self.assertEqual(User.objects.get(email='nuevo@ciga.unam.mx').persona, self.externo)
+
+    def test_alta_encuentra_el_orcid_por_correo(self):
+        busqueda = {'num-found': 1, 'expanded-result': [
+            {'orcid-id': '0000-0002-1825-0097', 'given-names': 'Juan Carlos', 'family-names': 'Pérez García'}]}
+        with mock.patch('nucleo.externos.obtener_json', return_value=busqueda):
+            self.alta()
+        persona = User.objects.get(email='nuevo@ciga.unam.mx').persona
+        self.assertEqual((persona.orcid, persona.nombre), ('0000-0002-1825-0097', 'Pérez García, J. C.'))
+
+    def test_orcid_de_coautor_en_perfil_une_su_produccion(self):
+        coautor = Persona.objects.create(nombre='López, A.', orcid='0000-0002-1825-0097')
+        self.articulo('Del coautor', coautor)
+        url = reverse('admin:nucleo_user_change', args=[self.ana.pk])
+        for usuario, esperado in ((self.ana, 'Pide a un administrador'), (self.admin, None)):
+            self.client.force_login(usuario)
+            datos = datos_de_formulario(self.client.get(url).context['adminform'].form)
+            datos['orcid'] = '0000-0002-1825-0097'
+            respuesta = self.client.post(url, datos)
+            if esperado:
+                self.assertContains(respuesta, esperado)
+        self.assertEqual(respuesta.status_code, 302, respuesta.context and respuesta.context['adminform'].form.errors)
+        self.ana.refresh_from_db()
+        self.assertEqual(self.ana.persona.orcid, '0000-0002-1825-0097')
+        self.assertFalse(Persona.objects.filter(pk=coautor.pk).exists())
+        self.assertEqual(list(ArticuloCientifico.objects.get(titulo='Del coautor').autores.all()), [self.ana.persona])
 
     def test_buscador_de_persona_para_cuenta_omite_personas_con_cuenta(self):
         self.client.force_login(self.admin)

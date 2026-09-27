@@ -88,10 +88,12 @@ Los nombres de las personas se convierten al formato de cita (`Pérez García, J
 
 - **Nombre en publicaciones**: cada persona tiene un solo *nombre para mostrar* en formato de cita
   (`Pérez García, J. C.`), que es también su orden alfabético. Si se captura su ORCID y no el nombre, el nombre se
-  toma del registro público de ORCID.
-- **Alta de cuentas**: el administrador elige la persona que ya existe en el catálogo (p. ej. un coautor que ahora
-  es académico), o da el ORCID o el nombre para crearla; si hay personas parecidas, se le avisa antes de crear otra.
-  En su perfil, el académico ajusta su nombre para mostrar y captura su ORCID, pero no puede cambiar de persona.
+  toma del registro público de ORCID; si falta el ORCID, se busca en ORCID por el correo (si la persona lo hizo público).
+- **Alta de cuentas**: la cuenta se liga a su persona por el ORCID: si ya está en el catálogo se usa esa; si no, se
+  crea con el nombre de ORCID o, sin ORCID, con el nombre y el correo de la cuenta. Si hay coautores con nombre
+  parecido y sin ORCID, se pregunta si es alguno, para que la cuenta conserve su producción.
+- **Perfil**: el académico ajusta su nombre para mostrar y captura su ORCID. Si un administrador captura un ORCID que
+  ya tiene otra persona sin cuenta (p. ej. un coautor importado), se fusiona con la de la cuenta.
 
 - **Captura asistida**: en *Artículos científicos → Importar* se llena el alta desde un DOI (Crossref), un BibTeX o
   la lista de obras de un ORCID. Los autores se reconocen en el catálogo de personas, primero por su ORCID y luego

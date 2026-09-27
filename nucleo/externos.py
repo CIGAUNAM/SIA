@@ -2,6 +2,7 @@
 
 import json
 import urllib.error
+import urllib.parse
 import urllib.request
 
 from .nombres import formato_cita, normalizar_orcid
@@ -38,3 +39,16 @@ def nombre_orcid(orcid):
     nombre = obtener_json(f'https://pub.orcid.org/v3.0/{orcid}/person').get('name') or {}
     valor = lambda clave: ((nombre.get(clave) or {}).get('value') or '').strip()
     return formato_cita(valor('given-names'), valor('family-name')) or valor('credit-name')
+
+
+def orcid_por_correo(correo):
+    """(ORCID, nombre en formato de cita) de quien tiene ese correo público en ORCID; None si no hay uno solo."""
+    if not correo or correo.endswith('.invalid'):
+        return None
+    datos = obtener_json('https://pub.orcid.org/v3.0/expanded-search/?q='
+                         + urllib.parse.quote(f'email:{correo.strip().lower()}'))
+    resultados = datos.get('expanded-result') or []
+    if len(resultados) != 1:
+        return None
+    r = resultados[0]
+    return r['orcid-id'], formato_cita(r.get('given-names'), r.get('family-names')) or r.get('credit-name') or ''

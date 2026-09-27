@@ -1,25 +1,37 @@
-"""Formularios de cuenta: cada cuenta figura como una persona (nombre para mostrar y ORCID)."""
+"""Formularios de cuenta: la cuenta se liga a su persona a partir del ORCID (o del nombre, si no tiene).
+
+La relación interna es `User.persona`; en la interfaz solo se ven el ORCID y el nombre para mostrar.
+"""
 
 from django import forms
-from django.utils.html import format_html
 from unfold.forms import UserChangeForm as BaseUserChangeForm
 from unfold.forms import UserCreationForm as BaseUserCreationForm
-from unfold.widgets import UnfoldBooleanWidget, UnfoldAdminTextInputWidget
+from unfold.widgets import UnfoldAdminRadioSelectWidget, UnfoldAdminTextInputWidget
 
-from .externos import ErrorServicio, nombre_orcid
+from .externos import ErrorServicio, nombre_orcid, orcid_por_correo
+from .fusion import resumen_referencias
 from .models import Persona, User
 from .nombres import formato_cita, normalizar_orcid
 from .similitud import personas_parecidas
 
+NUEVA = 'nueva'
+
+
+def _registros(persona):
+    total = sum(resumen_referencias(persona).values())
+    return 'sin registros' if not total else f'{total} registro{"s" if total != 1 else ""}'
+
 
 class CamposPersona(forms.Form):
+    orcid = forms.CharField(
+        label='ORCID', max_length=40, required=False, widget=UnfoldAdminTextInputWidget,
+        help_text='Por ejemplo 0000-0002-1825-0097 o https://orcid.org/0000-0002-1825-0097. Con él se reconoce a la '
+                  'persona en el catálogo y en las importaciones. Si falta, se busca en ORCID por el correo.')
     nombre_persona = forms.CharField(
         label='Nombre para mostrar', max_length=300, required=False, widget=UnfoldAdminTextInputWidget,
         help_text=f'{Persona._meta.get_field("nombre").help_text} Si lo dejas vacío, se toma de ORCID.')
-    orcid = forms.CharField(label='ORCID', max_length=40, required=False, widget=UnfoldAdminTextInputWidget,
-                            help_text='Formato 0000-0002-1825-0097. Una vez asignado, solo un administrador lo cambia.')
 
-    #: Lo asigna el admin: los académicos no cambian un ORCID ya capturado ni su persona.
+    #: Lo asigna el admin (`get_form`): los académicos no cambian un ORCID ya capturado.
     administrador = False
 
     def clean_orcid(self):
@@ -38,78 +50,74 @@ class CamposPersona(forms.Form):
             self.add_error('nombre_persona', 'Ese ORCID no tiene un nombre público. Escribe el nombre.')
         return nombre
 
-    def _orcid_de_otra_persona(self, orcid, persona=None):
-        otra = Persona.objects.filter(orcid=orcid).exclude(pk=getattr(persona, 'pk', None)).first()
-        if otra is not None:
-            self.add_error('orcid', f'Ese ORCID ya es de «{otra}».')
-        return otra
-
 
 class UserCreationForm(CamposPersona, BaseUserCreationForm):
-    """Alta de cuenta: se elige una persona existente, se crea desde ORCID o con el nombre escrito."""
-    confirmar_persona_nueva = forms.BooleanField(
-        required=False, widget=forms.HiddenInput,
-        label='Crear persona nueva', help_text='Ninguna de las personas parecidas es esta persona.')
+    """Alta: con el ORCID se encuentra o se crea la persona; si hay coautores parecidos, se pregunta si es alguno."""
+    es_persona = forms.CharField(label='¿Es alguna de estas personas?', required=False, widget=forms.HiddenInput)
 
     class Meta(BaseUserCreationForm.Meta):
         model = User
-        fields = ('email', 'first_name', 'last_name', 'persona')
+        fields = ('email', 'first_name', 'last_name')
         field_classes = {}
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['persona'].required = False
-        self.fields['persona'].label = 'Persona existente'
-        self.fields['persona'].help_text = ('Si ya figura en el catálogo (p. ej. como coautor), elígela aquí; '
-                                            'si no, se crea con el ORCID o el nombre para mostrar.')
 
     def clean(self):
         datos = super().clean()
-        persona, orcid, nombre = datos.get('persona'), datos.get('orcid'), datos.get('nombre_persona', '').strip()
-        if persona is not None:
-            if orcid and persona.orcid and persona.orcid != orcid:
-                self.add_error('orcid', f'«{persona}» ya tiene otro ORCID ({persona.orcid}).')
-            elif orcid:
-                self._orcid_de_otra_persona(orcid, persona)
-            self.persona_nueva = None
+        orcid, nombre = datos.get('orcid', ''), datos.get('nombre_persona', '').strip()
+        self.persona = None
+        self.orcid_encontrado = False
+        if self.errors:
             return datos
 
-        existente = Persona.objects.filter(orcid=orcid).first() if orcid else None
-        if existente is not None:
+        if not orcid:  # Quien publicó su correo en ORCID se encuentra sin capturar el ORCID.
+            try:
+                encontrado = orcid_por_correo(datos.get('email'))
+            except ErrorServicio:
+                encontrado = None
+            if encontrado:
+                orcid, nombre_orcid_encontrado = encontrado
+                datos['orcid'], self.orcid_encontrado = orcid, True
+                nombre = nombre or nombre_orcid_encontrado
+
+        if orcid and (existente := Persona.objects.filter(orcid=orcid).first()):
             if existente.tiene_cuenta:
-                self.add_error('orcid', f'Ese ORCID es de «{existente}», que ya tiene cuenta.')
-            else:
-                datos['persona'] = existente
-            self.persona_nueva = None
+                self.add_error('orcid', f'Ese ORCID es de «{existente}», que ya tiene cuenta ({existente.usuario}).')
+            self.persona = existente
             return datos
 
-        if not nombre and orcid:
-            nombre = self._nombre_desde_orcid(orcid)
+        nombre = nombre or (self._nombre_desde_orcid(orcid) if orcid else '')
         nombre = nombre or formato_cita(datos.get('first_name'), datos.get('last_name'))
         if not nombre:
-            self.add_error('nombre_persona', 'Escribe el nombre para mostrar, un ORCID o el nombre y apellidos.')
+            if 'nombre_persona' not in self.errors:
+                self.add_error('nombre_persona', 'Escribe el ORCID, el nombre para mostrar o el nombre y apellidos.')
             return datos
-        similares = [p for p in personas_parecidas(Persona.objects.all(), nombre) if not p.tiene_cuenta]
-        if similares and not datos.get('confirmar_persona_nueva'):
-            self.fields['confirmar_persona_nueva'].widget = UnfoldBooleanWidget()
-            self.add_error('persona', format_html(
-                'Ya hay personas parecidas en el catálogo: {}. Si es alguna, elígela aquí; si no, marca abajo '
-                '«Crear persona nueva».', '; '.join(f'«{p}» (núm. {p.pk})' for p in similares)))
-        self.persona_nueva = Persona(nombre=nombre, orcid=orcid, verificado=True)
+
+        respuesta = datos.get('es_persona')
+        candidatas = [p for p in personas_parecidas(Persona.objects.filter(usuario__isnull=True), nombre, limite=8)
+                      if not (orcid and p.orcid)]
+        if respuesta == NUEVA or not candidatas and not respuesta:
+            correo = (datos.get('email') or '').strip().lower()
+            correo = '' if correo.endswith('.invalid') else correo
+            self.persona = Persona(nombre=nombre, orcid=orcid, email=correo, verificado=True)
+        elif respuesta:
+            self.persona = next((p for p in candidatas if str(p.pk) == respuesta), None)
+            if self.persona is None:
+                self.add_error('es_persona', 'Elige una de las opciones.')
+        else:
+            self.fields['es_persona'].widget = UnfoldAdminRadioSelectWidget(choices=[
+                *[(p.pk, f'{p} — {_registros(p)}') for p in candidatas],
+                (NUEVA, f'Ninguna: crear «{nombre}»')])
+            self.add_error('es_persona', 'Ya hay personas parecidas en el catálogo (p. ej. como coautoras). Si es '
+                                         'alguna, elígela para que la cuenta conserve su producción.')
         return datos
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        persona = self.cleaned_data.get('persona')
-        if persona is None:
-            persona = self.persona_nueva
-            persona.save()
-        elif self.cleaned_data.get('orcid') and not persona.orcid:
-            persona.orcid = self.cleaned_data['orcid']
-            persona.save(update_fields=['orcid'])
-        if self.cleaned_data.get('nombre_persona') and persona.nombre != self.cleaned_data['nombre_persona']:
-            persona.nombre = self.cleaned_data['nombre_persona'].strip()
-            persona.save(update_fields=['nombre'])
+        persona, orcid, nombre = self.persona, self.cleaned_data['orcid'], self.cleaned_data['nombre_persona'].strip()
+        if orcid:
+            persona.orcid = orcid
+        if nombre:
+            persona.nombre = nombre
+        persona.save()
         user.persona = persona
         if commit:
             user.save()
@@ -118,7 +126,11 @@ class UserCreationForm(CamposPersona, BaseUserCreationForm):
 
 
 class UserChangeForm(CamposPersona, BaseUserChangeForm):
-    """Perfil: el nombre para mostrar y el ORCID se editan aquí y se guardan en la persona de la cuenta."""
+    """Perfil: el ORCID y el nombre para mostrar se guardan en la persona de la cuenta.
+
+    Si un administrador captura un ORCID que ya tiene otra persona sin cuenta (p. ej. un coautor importado),
+    es la misma persona: se fusiona con la de la cuenta, que conserva toda la producción.
+    """
 
     class Meta(BaseUserChangeForm.Meta):
         model = User
@@ -131,21 +143,31 @@ class UserChangeForm(CamposPersona, BaseUserChangeForm):
         self.fields['orcid'].initial = persona.orcid
         if persona.orcid and not self.administrador:
             self.fields['orcid'].disabled = True
+            self.fields['orcid'].help_text = 'Para corregirlo, pídelo a un administrador.'
         if 'persona' in self.fields:
-            self.fields['persona'].help_text = ('Cambiarla reasigna al académico la producción de otra persona. '
-                                                'Al cambiarla no se guardan el nombre ni el ORCID de abajo.')
+            self.fields['persona'].help_text = (
+                'Solo para corregir una liga equivocada: la cuenta pasa a figurar como otra persona y deja la '
+                'producción de la actual. Al cambiarla no se guardan el ORCID ni el nombre de arriba.')
+        self.fusionada = None
 
     def _persona_cambia(self):
         return 'persona' in self.changed_data
 
     def clean(self):
         datos = super().clean()
-        if self._persona_cambia():
+        if self._persona_cambia() or self.errors:
             return datos
         persona = self.instance.persona
         orcid = datos.get('orcid', '')
-        if orcid:
-            self._orcid_de_otra_persona(orcid, persona)
+        otra = Persona.objects.filter(orcid=orcid).exclude(pk=persona.pk).first() if orcid else None
+        if otra is not None:
+            if otra.tiene_cuenta:
+                self.add_error('orcid', f'Ese ORCID es de la cuenta {otra.usuario}.')
+            elif not self.administrador:
+                self.add_error('orcid', f'Ese ORCID ya está en el catálogo como «{otra}». Pide a un administrador '
+                                        'que lo ligue a tu cuenta.')
+            else:
+                self.fusionada = otra
         if not datos.get('nombre_persona', '').strip():
             if orcid:
                 datos['nombre_persona'] = self._nombre_desde_orcid(orcid)
@@ -154,9 +176,14 @@ class UserChangeForm(CamposPersona, BaseUserChangeForm):
         return datos
 
     def save(self, commit=True):
+        from .fusion import fusionar
+
         user = super().save(commit=commit)
         if not self._persona_cambia():
             persona = user.persona
+            if self.fusionada is not None:
+                self.resumen_fusion = f'«{self.fusionada}» ({_registros(self.fusionada)})'
+                fusionar(persona, [self.fusionada])
             persona.nombre = self.cleaned_data['nombre_persona'].strip()
             persona.orcid = self.cleaned_data.get('orcid', '')
             persona.save(update_fields=['nombre', 'orcid', 'actualizado'])
