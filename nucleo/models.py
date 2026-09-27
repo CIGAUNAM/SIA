@@ -15,6 +15,8 @@ from django.db import models
 from django.db.models import Q
 from django.db.models.functions import Coalesce
 
+from .nombres import formato_cita
+
 
 # ---------------------------------------------------------------------------
 # Opciones compartidas
@@ -309,6 +311,9 @@ class User(AbstractUser):
     egreso_entidad = models.DateField('egreso de la entidad', null=True, blank=True)
     ultimo_contrato = models.DateField('último contrato', null=True, blank=True)
     avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
+    persona = models.OneToOneField(
+        'Persona', on_delete=models.PROTECT, related_name='usuario',
+        help_text='Cómo figura el académico en las publicaciones. Solo un administrador puede cambiarla.')
 
     class Meta:
         ordering = ['first_name', 'last_name']
@@ -325,6 +330,9 @@ class User(AbstractUser):
 
     def save(self, *args, **kwargs):
         self.email = self.email.strip().lower()
+        if self.persona_id is None:  # Toda cuenta figura como una persona en la producción académica.
+            self.persona = Persona.objects.create(
+                nombre=formato_cita(self.first_name, self.last_name) or self.email.split('@')[0], verificado=True)
         super().save(*args, **kwargs)
 
     @property
@@ -342,28 +350,24 @@ class User(AbstractUser):
 
 
 class Persona(Verificable):
-    """Cualquier persona que aparece en la producción académica, tenga o no cuenta."""
-    nombre = models.CharField(max_length=150)
-    apellidos = models.CharField(max_length=150)
+    """Cualquier persona que aparece en la producción académica, tenga o no cuenta (`persona.usuario`)."""
+    nombre = models.CharField(
+        'nombre para mostrar', max_length=300,
+        help_text='Como aparece en las publicaciones: apellidos, iniciales. Por ejemplo: Pérez García, J. C.')
     email = models.EmailField(blank=True)
     orcid = models.CharField('ORCID', max_length=19, blank=True, validators=[validar_orcid],
                              help_text='Formato 0000-0002-1825-0097.')
-    usuario = models.OneToOneField(
-        User, on_delete=models.SET_NULL, null=True, blank=True, related_name='persona',
-        help_text='Cuenta del sistema asociada, si la persona es académica de la entidad.')
 
     class Meta:
-        ordering = ['apellidos', 'nombre']
+        ordering = ['nombre']
+        constraints = [models.UniqueConstraint(fields=['orcid'], condition=~Q(orcid=''), name='orcid_unico')]
 
     def __str__(self):
-        return f'{self.nombre} {self.apellidos}'.strip()
+        return self.nombre
 
     @property
-    def nombre_cita(self):
-        """Nombre en formato bibliográfico: `Apellido-Apellido, N. M.`"""
-        iniciales = ' '.join(f'{n[0]}.' for n in self.nombre.split())
-        apellidos = '-'.join(self.apellidos.split())
-        return f'{apellidos}, {iniciales}' if iniciales else apellidos
+    def tiene_cuenta(self):
+        return hasattr(self, 'usuario')
 
 
 # ---------------------------------------------------------------------------

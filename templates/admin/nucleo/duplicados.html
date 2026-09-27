@@ -12,7 +12,7 @@
                  onchange="this.form.eliminar.value = '{% if forloop.first %}{{ par.1.0.pk }}{% else %}{{ par.0.0.pk }}{% endif %}'">
           <span><span class="font-medium text-important">{{ registro }}</span>
             <span class="block text-font-subtle-light dark:text-font-subtle-dark">
-              #{{ registro.pk }}{% if registro.usuario_id %} · con cuenta{% endif %}{% if registro.verificado %} · verificado{% endif %} ·
+              #{{ registro.pk }}{% if registro.tiene_cuenta %} · con cuenta{% endif %}{% if registro.verificado %} · verificado{% endif %} ·
               {% for tipo, total in referencias.items %}{{ total }} {{ tipo }}{% if not forloop.last %}, {% endif %}{% empty %}sin referencias{% endfor %}
             </span></span>
         </label>

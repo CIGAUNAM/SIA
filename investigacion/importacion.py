@@ -4,23 +4,16 @@ El resultado se usa para abrir el formulario de alta ya lleno: el académico rev
 """
 
 import html
-import json
 import re
-import urllib.error
 import urllib.parse
-import urllib.request
 from dataclasses import dataclass, field
 from datetime import date
 
-
-from nucleo.models import ConfiguracionEntidad, Persona, Revista, normalizar_doi, normalizar_issn
+from nucleo.externos import ErrorServicio as ErrorImportacion
+from nucleo.externos import obtener_json
+from nucleo.models import Persona, Revista, normalizar_doi, normalizar_issn
+from nucleo.nombres import formato_cita, normalizar_orcid
 from nucleo.similitud import normalizar, personas_parecidas
-
-TIEMPO_ESPERA = 12
-
-
-class ErrorImportacion(Exception):
-    pass
 
 
 @dataclass
@@ -35,22 +28,7 @@ class DatosArticulo:
     fecha: date | None = None
     doi: str = ''
     url: str = ''
-    autores: list = field(default_factory=list)  # [(nombre, apellidos)]
-
-
-def _obtener_json(url, encabezados=None):
-    solicitud = urllib.request.Request(url, headers={
-        'User-Agent': f"SIA/1.0 (mailto:{ConfiguracionEntidad.actual().remitente_correos.split('<')[-1].rstrip('>')})",
-        **(encabezados or {})})
-    try:
-        with urllib.request.urlopen(solicitud, timeout=TIEMPO_ESPERA) as respuesta:
-            return json.loads(respuesta.read().decode('utf-8'))
-    except urllib.error.HTTPError as error:
-        if error.code == 404:
-            raise ErrorImportacion('No se encontró el registro solicitado.')
-        raise ErrorImportacion(f'El servicio respondió con un error ({error.code}).')
-    except (urllib.error.URLError, TimeoutError) as error:
-        raise ErrorImportacion(f'No fue posible conectarse al servicio ({error}).')
+    autores: list = field(default_factory=list)  # [(nombre en formato de cita, ORCID)]
 
 
 def _limpiar(texto):
@@ -69,7 +47,7 @@ def desde_crossref(doi):
     doi = normalizar_doi(doi)
     if not doi.startswith('10.'):
         raise ErrorImportacion('Escribe un DOI válido (empieza con "10.").')
-    mensaje = _obtener_json(f'https://api.crossref.org/works/{urllib.parse.quote(doi)}')['message']
+    mensaje = obtener_json(f'https://api.crossref.org/works/{urllib.parse.quote(doi)}')['message']
     partes_fecha = None
     for clave in ('published-print', 'published-online', 'issued'):
         partes_fecha = (mensaje.get(clave) or {}).get('date-parts', [[None]])[0]
@@ -86,7 +64,8 @@ def desde_crossref(doi):
         issn=[normalizar_issn(x) for x in mensaje.get('ISSN', [])],
         volumen=mensaje.get('volume', ''), numero=mensaje.get('issue', ''),
         pagina_inicio=inicio, pagina_fin=fin, fecha=fecha, doi=doi, url=mensaje.get('URL', ''),
-        autores=[(a.get('given', ''), a.get('family', '')) for a in mensaje.get('author', []) if a.get('family')],
+        autores=[(formato_cita(a.get('given', ''), a['family']), normalizar_orcid(a.get('ORCID', '')))
+                 for a in mensaje.get('author', []) if a.get('family')],
     )
 
 
@@ -120,12 +99,13 @@ def _campos_bibtex(cuerpo):
 
 
 def _autor_bibtex(texto):
+    """'Pérez García, Juan' o 'Juan Pérez' → ('Pérez García, J.', '')."""
     if ',' in texto:
         apellidos, _, nombre = texto.partition(',')
     else:
         *nombre, apellidos = texto.split() or ['']
         nombre = ' '.join(nombre)
-    return nombre.strip(), apellidos.strip()
+    return formato_cita(nombre, apellidos), ''
 
 
 def desde_bibtex(texto):
@@ -152,10 +132,10 @@ def desde_bibtex(texto):
 
 def obras_orcid(orcid):
     """[(título, año, DOI)] de las obras públicas de un ORCID."""
-    orcid = orcid.strip().rsplit('/', 1)[-1]
-    if not re.fullmatch(r'\d{4}-\d{4}-\d{4}-\d{3}[\dX]', orcid):
+    orcid = normalizar_orcid(orcid)
+    if not orcid:
         raise ErrorImportacion('El ORCID debe tener el formato 0000-0000-0000-000X.')
-    datos = _obtener_json(f'https://pub.orcid.org/v3.0/{orcid}/works', {'Accept': 'application/json'})
+    datos = obtener_json(f'https://pub.orcid.org/v3.0/{orcid}/works')
     obras = []
     for grupo in datos.get('group', []):
         resumen = (grupo.get('work-summary') or [{}])[0]
@@ -183,17 +163,21 @@ def buscar_revista(datos):
 
 
 def resolver_autores(datos, usuario):
-    """Personas del catálogo para cada autor; si no hay una parecida se crea (sin verificar)."""
+    """Persona del catálogo para cada autor: por ORCID o, si no, por parecido del nombre.
+
+    Si no hay ninguna se crea (sin verificar).
+    """
     personas, nuevas = [], []
-    for nombre, apellidos in datos.autores:
-        parecidas = personas_parecidas(Persona.objects.all(), nombre, apellidos)
-        parecidas.sort(key=lambda p: p.usuario_id is None)  # Prefiere a quien tiene cuenta.
-        if parecidas:
-            personas.append(parecidas[0])
-        else:
-            persona = Persona.objects.create(nombre=nombre or '—', apellidos=apellidos, creado_por=usuario)
-            personas.append(persona)
+    for nombre, orcid in datos.autores:
+        persona = Persona.objects.filter(orcid=orcid).first() if orcid else None
+        if persona is None:
+            parecidas = personas_parecidas(Persona.objects.all(), nombre)
+            parecidas.sort(key=lambda p: not p.tiene_cuenta)  # Prefiere a quien tiene cuenta.
+            persona = next((p for p in parecidas if not (orcid and p.orcid)), None)  # Otro ORCID: otra persona.
+        if persona is None:
+            persona = Persona.objects.create(nombre=nombre or '—', orcid=orcid, creado_por=usuario)
             nuevas.append(persona)
+        personas.append(persona)
     return personas, nuevas
 
 

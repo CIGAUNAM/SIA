@@ -93,7 +93,7 @@ def _unir(*partes):
 
 
 def _personas(obj, campo='autores'):
-    return ', '.join(p.nombre_cita for p in personas_ordenadas(obj, campo))
+    return ', '.join(p.nombre for p in personas_ordenadas(obj, campo))
 
 
 def _anio(fecha):
@@ -144,7 +144,7 @@ def _articulo(obj):
 def _autores_libro(libro):
     participantes = list(libro.libroparticipante_set.all())
     autores = [p for p in participantes if p.rol == LibroParticipante.Rol.AUTOR] or participantes
-    texto = ', '.join(p.persona.nombre_cita for p in autores)
+    texto = ', '.join(p.persona.nombre for p in autores)
     if autores and autores[0].rol != LibroParticipante.Rol.AUTOR:
         texto += f' ({autores[0].get_rol_display().lower()})'
     return texto

@@ -10,8 +10,8 @@ from django.test import override_settings
 from django.urls import reverse
 
 from investigacion.models import ArticuloCientifico, ArticuloCientificoAutor
-from nucleo.fusion import fusionar
-from nucleo.models import ConfirmacionInforme, Evidencia, Institucion, PeriodoInforme, Persona, Revista
+from nucleo.fusion import ErrorFusion, fusionar
+from nucleo.models import ConfirmacionInforme, Evidencia, Institucion, PeriodoInforme, Persona, Revista, User
 from nucleo.normalizacion import normalizar
 from nucleo.tests import Datos
 from vinculacion.models import ArbitrajePublicacion
@@ -28,13 +28,13 @@ def datos_articulo(revista, **extra):
 
 class DuplicadosTests(Datos):
     def test_aviso_de_persona_parecida_y_confirmacion(self):
-        existente = Persona.objects.create(nombre='Juan Carlos', apellidos='Pérez Gómez')
+        existente = Persona.objects.create(nombre='Pérez Gómez, Juan Carlos')
         self.client.force_login(self.ana)
         url = reverse('admin:nucleo_persona_add')
-        respuesta = self.client.post(url, {'nombre': 'J. C.', 'apellidos': 'Perez Gomez'})
+        respuesta = self.client.post(url, {'nombre': 'Perez Gomez, J. C.'})
         self.assertContains(respuesta, 'Ya existen registros parecidos')
         self.assertContains(respuesta, str(existente))
-        respuesta = self.client.post(url, {'nombre': 'J. C.', 'apellidos': 'Perez Gomez', 'confirmar_no_duplicado': 'on'})
+        respuesta = self.client.post(url, {'nombre': 'Perez Gomez, J. C.', 'confirmar_no_duplicado': 'on'})
         self.assertEqual(respuesta.status_code, 302)
 
     def test_doi_repetido(self):
@@ -46,13 +46,22 @@ class DuplicadosTests(Datos):
         self.assertNotContains(respuesta, reverse('admin:investigacion_articulocientifico_change', args=[otro.pk]))
 
     def test_fusionar_personas(self):
-        duplicada = Persona.objects.create(nombre='A.', apellidos='López Pérez')
+        duplicada = Persona.objects.create(nombre='López Pérez, A.')
         articulo = self.articulo('Compartido', self.ana.persona, duplicada)
         solo_duplicada = self.articulo('Solo la duplicada', duplicada)
         fusionar(self.ana.persona, [duplicada])
         self.assertFalse(Persona.objects.filter(pk=duplicada.pk).exists())
         self.assertEqual(list(articulo.autores.all()), [self.ana.persona])
         self.assertEqual(list(solo_duplicada.autores.all()), [self.ana.persona])
+
+    def test_fusion_mueve_la_cuenta_y_no_borra_cuentas(self):
+        externa = Persona.objects.create(nombre='López Pérez, Ana')
+        fusionar(externa, [self.ana.persona])
+        self.ana.refresh_from_db()
+        self.assertEqual(self.ana.persona, externa)
+        with self.assertRaises(ErrorFusion):
+            fusionar(self.beto.persona, [externa])
+        self.assertTrue(User.objects.filter(pk=self.ana.pk).exists())
 
     def test_accion_fusionar_solo_para_administradores(self):
         a = Revista.objects.create(nombre='Rev A', pais=self.mexico)
@@ -71,12 +80,12 @@ class DuplicadosTests(Datos):
 
 class RevisarDuplicadosTests(Datos):
     def test_lista_pares_y_fusiona(self):
-        original = Persona.objects.create(nombre='Miguel Ángel', apellidos='Salinas Melgoza')
-        copia = Persona.objects.create(nombre='Miguel A.', apellidos='Salinas Melgoza')
+        original = Persona.objects.create(nombre='Salinas Melgoza, Miguel Ángel')
+        copia = Persona.objects.create(nombre='Salinas Melgoza, M. A.')
         self.articulo('De la copia', copia)
         url = reverse('admin:nucleo_persona_revisar_duplicados')
         self.client.force_login(self.admin)
-        self.assertContains(self.client.get(url), 'Miguel A. Salinas Melgoza')
+        self.assertContains(self.client.get(url), 'Salinas Melgoza, M. A.')
         self.client.post(url, {'conservar': original.pk, 'eliminar': copia.pk})
         self.assertFalse(Persona.objects.filter(pk=copia.pk).exists())
         self.assertEqual(list(ArticuloCientifico.objects.get(titulo='De la copia').autores.all()), [original])
@@ -186,17 +195,19 @@ class ImportacionTests(Datos):
         'title': ['Soil  erosion in Michoacán'], 'container-title': ['Investigaciones Geográficas'],
         'ISSN': ['01884611'], 'volume': '12', 'issue': '3', 'page': '45-60', 'DOI': '10.1000/xyz',
         'URL': 'https://doi.org/10.1000/xyz', 'published-print': {'date-parts': [[2021, 5]]},
-        'author': [{'given': 'Ana', 'family': 'López Pérez'}, {'given': 'Pedro', 'family': 'Nuevo'}],
+        'author': [{'given': 'Ana', 'family': 'López Pérez'},
+                   {'given': 'Pedro', 'family': 'Nuevo', 'ORCID': 'http://orcid.org/0000-0002-1825-0097'}],
     }}
 
     def test_doi_llena_el_formulario(self):
         self.client.force_login(self.ana)
         url = reverse('admin:investigacion_articulocientifico_importar')
-        with mock.patch('investigacion.importacion._obtener_json', return_value=self.CROSSREF):
+        with mock.patch('investigacion.importacion.obtener_json', return_value=self.CROSSREF):
             respuesta = self.client.post(url, {'doi': 'https://doi.org/10.1000/XYZ'})
         self.assertEqual(respuesta.status_code, 302)
         self.assertIn('revista=', respuesta.url)  # La revista se encontró por nombre.
-        nuevo = Persona.objects.get(apellidos='Nuevo')
+        nuevo = Persona.objects.get(nombre='Nuevo, P.')
+        self.assertEqual(nuevo.orcid, '0000-0002-1825-0097')
         self.assertFalse(nuevo.verificado)
         alta = self.client.get(respuesta.url)
         formset = next(f for f in alta.context['inline_admin_formsets'] if f.formset.model is ArticuloCientificoAutor)
@@ -208,7 +219,7 @@ class ImportacionTests(Datos):
         [datos] = desde_bibtex('@article{a1, title={Paisajes {de} Michoacán}, author={López, Ana and Pedro Ruiz}, '
                                'journal={Investigaciones Geográficas}, year={2019}, pages={10--20}, doi={10.1/ABC}}')
         self.assertEqual(datos.titulo, 'Paisajes de Michoacán')
-        self.assertEqual(datos.autores, [('Ana', 'López'), ('Pedro', 'Ruiz')])
+        self.assertEqual(datos.autores, [('López, A.', ''), ('Ruiz, P.', '')])
         self.assertEqual((datos.pagina_inicio, datos.pagina_fin, datos.doi), (10, 20, '10.1/abc'))
 
 

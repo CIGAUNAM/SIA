@@ -60,14 +60,10 @@ def fusionar(conservar, duplicados):
             continue
         if type(duplicado) is not modelo:
             raise ErrorFusion('Solo se pueden fusionar registros del mismo tipo.')
-        if isinstance(conservar, Persona) and duplicado.usuario_id:
-            if conservar.usuario_id:
-                raise ErrorFusion(f'"{conservar}" y "{duplicado}" tienen cuenta propia; no se pueden fusionar.')
-            usuario = duplicado.usuario
-            duplicado.usuario = None
-            duplicado.save(update_fields=['usuario'])
-            conservar.usuario = usuario
-            conservar.save(update_fields=['usuario'])
+        if isinstance(conservar, Persona) and Persona.objects.filter(
+                pk__in=[conservar.pk, duplicado.pk], usuario__isnull=False).count() == 2:
+            # Sin esto, el conflicto de la relación uno a uno haría que se borrara una de las cuentas.
+            raise ErrorFusion(f'"{conservar}" y "{duplicado}" tienen cuenta propia; no se pueden fusionar.')
 
         for otro, campo in relaciones:
             for fila in otro._default_manager.filter(**{campo.name: duplicado}):

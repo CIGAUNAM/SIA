@@ -22,7 +22,7 @@ class DistincionAlumnoAdmin(PropietarioAdmin):
     list_display = ['distincion', 'alumno', 'nivel', 'fecha']
     campo_fecha = 'fecha'
     list_filter = ['nivel']
-    search_fields = ['distincion__nombre', 'alumno__nombre', 'alumno__apellidos']
+    search_fields = ['distincion__nombre', 'alumno__nombre']
     autocomplete_fields = ['distincion', 'alumno', 'tutores']
 
 

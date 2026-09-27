@@ -12,10 +12,10 @@ from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin, TabularInline
 from unfold.forms import AdminPasswordChangeForm
 from unfold.widgets import UnfoldAdminTextareaWidget
-from unfold.forms import UserChangeForm as BaseUserChangeForm
-from unfold.forms import UserCreationForm as BaseUserCreationForm
 
-from .admin_base import CatalogoAdmin, ParticipanteInline, VerificableAdmin, es_administrador, persona_de
+from .admin_base import CatalogoAdmin, FormularioSIA, ParticipanteInline, VerificableAdmin, es_administrador
+from .externos import ErrorServicio, nombre_orcid
+from .formularios import UserChangeForm, UserCreationForm
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
                      Nombramiento, Pais, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
@@ -24,6 +24,7 @@ from .permisos import GRUPO_INVESTIGADORES
 DATOS_PERSONALES = ('Datos personales', {'fields': (
     'grado', 'first_name', 'last_name', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp', 'telefono', 'avatar',
 )})
+PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('nombre_persona', 'orcid')})
 PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'domicilio', 'url', 'sni', 'pride')})
 ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato')})
 
@@ -43,19 +44,6 @@ class DomicilioWidget(UnfoldAdminTextareaWidget):
         return {**super().get_context(name, value, attrs), 'domicilio_entidad': self.domicilio_entidad}
 
 
-class UserCreationForm(BaseUserCreationForm):
-    class Meta(BaseUserCreationForm.Meta):
-        model = User
-        fields = ('email',)
-        field_classes = {}
-
-
-class UserChangeForm(BaseUserChangeForm):
-    class Meta(BaseUserChangeForm.Meta):
-        model = User
-        field_classes = {}
-
-
 @admin.register(Group)
 class GroupAdmin(BaseGroupAdmin, ModelAdmin):
     pass
@@ -68,15 +56,21 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
     permisos_investigador = ('view', 'change')
-    list_display = ['email', 'first_name', 'last_name', 'tipo', 'is_active', 'is_staff', 'cv']
+    list_display = ['email', 'first_name', 'last_name', 'persona', 'tipo', 'is_active', 'is_staff', 'cv']
     list_filter = ['tipo', 'is_active', 'is_staff', 'groups']
-    search_fields = ['email', 'first_name', 'last_name']
+    search_fields = ['email', 'first_name', 'last_name', 'persona__nombre', 'persona__orcid']
     ordering = ['first_name', 'last_name']
-    autocomplete_fields = ['pais_origen']
-    add_fieldsets = ((None, {'classes': ('wide',), 'fields': ('email', 'usable_password', 'password1', 'password2')}),)
+    autocomplete_fields = ['pais_origen', 'persona']
+    list_select_related = ['persona']
+    add_fieldsets = (
+        (None, {'classes': ('wide',), 'fields': ('email', 'first_name', 'last_name')}),
+        ('Nombre en publicaciones', {'fields': ('persona', 'orcid', 'nombre_persona', 'confirmar_persona_nueva')}),
+        ('Contraseña', {'fields': ('usable_password', 'password1', 'password2')}),
+    )
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         DATOS_PERSONALES,
+        ('Nombre en publicaciones', {'fields': ('persona', 'nombre_persona', 'orcid')}),
         PERFIL,
         ADSCRIPCION,
         *BaseUserAdmin.fieldsets[2:],
@@ -84,6 +78,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     fieldsets_propios = (
         (None, {'fields': ('email', 'password')}),
         DATOS_PERSONALES,
+        PUBLICACIONES,
         PERFIL,
         ADSCRIPCION,
     )
@@ -96,6 +91,11 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
         if db_field.name == 'domicilio':
             kwargs['widget'] = DomicilioWidget(ConfiguracionEntidad.actual(request).direccion)
         return super().formfield_for_dbfield(db_field, request, **kwargs)
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        form.administrador = es_administrador(request.user)
+        return form
 
     def get_fieldsets(self, request, obj=None):
         if obj is not None and not es_administrador(request.user):
@@ -128,20 +128,58 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
         return format_html('<a href="{}">PDF</a>', reverse('admin:cv_usuario', args=[obj.pk]))
 
 
+class PersonaForm(FormularioSIA):
+    """Si se da un ORCID y no el nombre, el nombre se toma del registro público de ORCID."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if 'nombre' in self.fields:
+            self.fields['nombre'].required = False
+            self.fields['nombre'].help_text += ' Si lo dejas vacío, se toma de ORCID.'
+
+    def clean(self):
+        datos = super().clean()
+        if 'nombre' in self.fields and not datos.get('nombre'):
+            if not datos.get('orcid'):
+                self.add_error('nombre', 'Escribe el nombre para mostrar o un ORCID.')
+            else:
+                try:
+                    datos['nombre'] = nombre_orcid(datos['orcid'])
+                except ErrorServicio as error:
+                    self.add_error('nombre', f'No se pudo consultar ORCID ({error}). Escribe el nombre.')
+                else:
+                    if not datos['nombre']:
+                        self.add_error('nombre', 'Ese ORCID no tiene un nombre público. Escribe el nombre.')
+        return datos
+
+
 @admin.register(Persona)
 class PersonaAdmin(VerificableAdmin):
-    list_display = ['apellidos', 'nombre', 'email', 'usuario', 'verificado']
-    search_fields = ['apellidos', 'nombre', 'email', 'orcid', 'usuario__email']
-    autocomplete_fields = ['usuario']
-    fields = ['nombre', 'apellidos', 'email', 'orcid', 'usuario', 'verificado', 'creado_por', 'creado', 'actualizado']
+    form = PersonaForm
+    list_display = ['nombre', 'orcid', 'email', 'cuenta', 'verificado']
+    list_select_related = ['usuario']
+    search_fields = ['nombre', 'email', 'orcid', 'usuario__email']
+    fields = ['nombre', 'orcid', 'email', 'cuenta', 'verificado', 'creado_por', 'creado', 'actualizado']
+
+    @admin.display(description='cuenta', ordering='usuario__email')
+    def cuenta(self, obj):
+        usuario = getattr(obj, 'usuario', None)
+        if usuario is None:
+            return '—'
+        return format_html('<a href="{}">{}</a>', reverse('admin:nucleo_user_change', args=[usuario.pk]), usuario.email)
 
     def posibles_duplicados(self, request, instancia):
         from .similitud import personas_parecidas
-        return personas_parecidas(Persona.objects.all(), instancia.nombre, instancia.apellidos, excluir_pk=instancia.pk)
+        return personas_parecidas(Persona.objects.all(), instancia.nombre, excluir_pk=instancia.pk)
+
+    def get_search_results(self, request, queryset, search_term):
+        queryset, duplicados = super().get_search_results(request, queryset, search_term)
+        if request.GET.get('model_name') == 'user' and request.GET.get('field_name') == 'persona':
+            queryset = queryset.filter(usuario__isnull=True)  # Al ligar una cuenta, solo personas sin cuenta.
+        return queryset, duplicados
 
     def get_readonly_fields(self, request, obj=None):
-        campos = super().get_readonly_fields(request, obj)
-        return campos if es_administrador(request.user) else [*campos, 'usuario']
+        return [*super().get_readonly_fields(request, obj), 'cuenta']
 
 
 @admin.register(Pais)
@@ -298,7 +336,7 @@ class LibroAdmin(VerificableAdmin):
         # Quien registra un libro nuevo sin participantes figura como autor.
         libro = form.instance
         if not change and not libro.participantes.exists():
-            LibroParticipante.objects.create(libro=libro, persona=persona_de(request.user), orden=1)
+            LibroParticipante.objects.create(libro=libro, persona=request.user.persona, orden=1)
 
 
 @admin.register(PeriodoInforme)

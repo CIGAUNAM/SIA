@@ -68,17 +68,24 @@ def candidatos(queryset, campos, texto, excluir_pk=None, limite=5):
     return resultado
 
 
-def personas_parecidas(queryset, nombre, apellidos, excluir_pk=None, limite=5):
-    """Personas con apellidos equivalentes y el mismo nombre o la misma inicial (J. Pérez ≈ Juan Pérez)."""
+def personas_parecidas(queryset, nombre, excluir_pk=None, limite=5):
+    """Personas con apellidos equivalentes y nombres compatibles (Pérez, J. ≈ Pérez, Juan).
+
+    `nombre` va en formato de cita (`Apellidos, Nombres`).
+    """
+    from .nombres import partes_cita
+
+    apellidos, nombres = partes_cita(nombre)
     palabras = _palabras_clave(apellidos, maximo=1)
     if not palabras:
         return []
-    qs = queryset.filter(apellidos__iregex=patron_sin_acentos(palabras[0]))
+    qs = queryset.filter(nombre__iregex=patron_sin_acentos(palabras[0]))
     if excluir_pk is not None:
         qs = qs.exclude(pk=excluir_pk)
     resultado = []
     for persona in qs[:200]:
-        if parecidos(apellidos, persona.apellidos, umbral=0.9) and nombres_compatibles(nombre, persona.nombre):
+        otros_apellidos, otros_nombres = partes_cita(persona.nombre)
+        if parecidos(apellidos, otros_apellidos, umbral=0.9) and nombres_compatibles(nombres, otros_nombres):
             resultado.append(persona)
             if len(resultado) >= limite:
                 break

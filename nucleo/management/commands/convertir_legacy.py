@@ -16,6 +16,7 @@ from pathlib import Path
 from django.core.management.base import BaseCommand
 
 from nucleo.models import correo_provisional
+from nucleo.nombres import formato_cita
 
 REGISTRO_LEGACY = '2019-06-27T00:00:00Z'
 TIPOS_CUENTA = {'INVESTIGADOR', 'TECNICO', 'POSTDOCTORADO', 'ADMINISTRATIVO'}
@@ -227,10 +228,10 @@ class Conversor:
                     'sni': {1: 'I', 2: 'II', 3: 'III'}.get(f.get('sni'), ''), 'pride': opcion(f['pride'], {'A', 'B', 'C', 'D'}),
                     'ingreso_unam': f['ingreso_unam'], 'ingreso_entidad': f['ingreso_entidad'],
                     'egreso_entidad': f['egreso_entidad'], 'ultimo_contrato': f['ultimo_contrato'],
-                    'avatar': txt(f['avatar'])})
+                    'avatar': txt(f['avatar']), 'persona': pk})
             self.agregar('nucleo.persona', pk, {
-                'nombre': txt(f['first_name']) or f['username'], 'apellidos': txt(f['last_name']),
-                'email': txt(f['email']), 'usuario': pk if pk in self.cuentas else None,
+                'nombre': formato_cita(txt(f['first_name']), txt(f['last_name'])) or f['username'],
+                'email': txt(f['email']),
                 **self.verificable(True, creado=f['date_joined'])})
 
     def catalogos(self):

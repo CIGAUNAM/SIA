@@ -77,10 +77,25 @@ cada artículo a las métricas por año de su revista.
 Las cuentas se identifican por correo electrónico (no hay nombre de usuario). Las cuentas legacy sin correo reciben
 uno provisional `…@sin-correo.invalid`, que un administrador debe reemplazar por el real desde *Usuarios*.
 
+Los nombres de las personas se convierten al formato de cita (`Pérez García, J. C.`). Para las que tengan ORCID,
+`completar_orcid` propone el nombre de su registro público (`--aplicar` para guardarlo):
+
+```bash
+.venv/bin/python manage.py completar_orcid
+```
+
 ## Funciones para la operación diaria
 
+- **Nombre en publicaciones**: cada persona tiene un solo *nombre para mostrar* en formato de cita
+  (`Pérez García, J. C.`), que es también su orden alfabético. Si se captura su ORCID y no el nombre, el nombre se
+  toma del registro público de ORCID.
+- **Alta de cuentas**: el administrador elige la persona que ya existe en el catálogo (p. ej. un coautor que ahora
+  es académico), o da el ORCID o el nombre para crearla; si hay personas parecidas, se le avisa antes de crear otra.
+  En su perfil, el académico ajusta su nombre para mostrar y captura su ORCID, pero no puede cambiar de persona.
+
 - **Captura asistida**: en *Artículos científicos → Importar* se llena el alta desde un DOI (Crossref), un BibTeX o
-  la lista de obras de un ORCID. Los autores se reconocen en el catálogo de personas (o se agregan sin verificar).
+  la lista de obras de un ORCID. Los autores se reconocen en el catálogo de personas, primero por su ORCID y luego
+  por parecido del nombre (o se agregan sin verificar).
 - **Evidencias**: cada registro de producción tiene una pestaña para adjuntar constancias o PDF (máx. 15 MB).
   Se guardan en `PRIVATE_MEDIA_ROOT` y solo las descarga quien puede ver el registro.
 - **Guardar como nuevo** para duplicar registros recurrentes (p. ej. el mismo curso cada semestre) y **filtro por
@@ -130,7 +145,10 @@ locale/         traducciones al español de Unfold (no trae las suyas)
 ```
 
 - **Persona vs. User**: `Persona` es cualquier persona que aparece en la producción (coautores externos,
-  estudiantes, invitados); `User` es una cuenta con el perfil académico. Cada cuenta tiene su Persona.
+  estudiantes, invitados); `User` es una cuenta con el perfil académico. Cada cuenta apunta a su Persona
+  (`User.persona`, obligatoria, solo la cambia un administrador); desde la persona, `persona.usuario` es su cuenta,
+  y los filtros de propiedad (`autores__usuario=...`) usan esa relación. Nombre y apellidos de la cuenta son el
+  nombre legal para trámites; el nombre en publicaciones es el de la persona.
 - **Autores ordenados**: las relaciones donde importa el orden (autores, responsables, tutores, sinodales) usan
   tablas intermedias con `orden` y se capturan como inlines que se reordenan arrastrando las filas.
 - **Bases abstractas**: `EstadoPublicacion` (estado editorial y fechas), `Periodo` (fecha de inicio/fin con

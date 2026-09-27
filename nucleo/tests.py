@@ -3,6 +3,7 @@ import json
 import tempfile
 from datetime import date
 from pathlib import Path
+from unittest import mock
 
 from django.contrib.auth.models import Group
 from django.core.cache import cache
@@ -14,6 +15,7 @@ from formatos.models import PagoViaticos
 from investigacion.models import ArticuloCientifico, ArticuloCientificoAutor
 from nucleo.admin_base import es_administrador
 from nucleo.models import ConfiguracionEntidad, Evento, Institucion, Pais, Persona, Revista, TipoEvento, User
+from nucleo.nombres import formato_cita, partes_cita
 from nucleo.permisos import GRUPO_INVESTIGADORES
 from SIA.tablero import construir_tablero
 
@@ -36,7 +38,7 @@ class Datos(TestCase):
         cls.ana.groups.add(grupo)
         cls.beto.groups.add(grupo)
         cls.admin = User.objects.create_superuser('admin@ciga.unam.mx', password='x')
-        cls.externo = Persona.objects.create(nombre='Carla', apellidos='Externa')
+        cls.externo = Persona.objects.create(nombre='Externa, C.')
         ConfiguracionEntidad.objects.update(pais_sede=cls.mexico, titular='Dra. Titular Prueba')
 
     def setUp(self):
@@ -51,15 +53,21 @@ class Datos(TestCase):
 
 
 class PersonaTests(Datos):
-    def test_cada_cuenta_tiene_persona_sincronizada(self):
-        self.assertEqual(self.ana.persona.apellidos, 'López Pérez')
+    def test_cada_cuenta_nace_con_su_persona(self):
+        self.assertEqual(self.ana.persona.nombre, 'López Pérez, A.')
         self.ana.last_name = 'López'
         self.ana.save()
         self.ana.persona.refresh_from_db()
-        self.assertEqual(self.ana.persona.apellidos, 'López')
+        self.assertEqual(self.ana.persona.nombre, 'López Pérez, A.')  # El nombre para mostrar es independiente.
 
-    def test_nombre_cita(self):
-        self.assertEqual(self.ana.persona.nombre_cita, 'López-Pérez, A.')
+    def test_formato_cita(self):
+        self.assertEqual(formato_cita('Juan Carlos', 'Pérez García'), 'Pérez García, J. C.')
+        self.assertEqual(formato_cita('Jean-Pierre', 'Dubois'), 'Dubois, J.-P.')
+        self.assertEqual(formato_cita('María de los Ángeles', 'Ruiz'), 'Ruiz, M. Á.')
+        self.assertEqual(formato_cita('Hans Th.A.', 'Bressers'), 'Bressers, H. T. A.')
+        self.assertEqual(formato_cita('E.J', 'Aguayo'), 'Aguayo, E. J.')
+        self.assertEqual(formato_cita('adminn', ''), 'adminn')
+        self.assertEqual(partes_cita('Bocco (mal), G.'), ('Bocco (mal)', 'G.'))
 
     def test_grupo_investigadores_incluye_modelos_de_inlines(self):
         permisos = set(Group.objects.get(name=GRUPO_INVESTIGADORES).permissions.values_list('codename', flat=True))
@@ -179,11 +187,73 @@ class PerfilTests(Datos):
         self.client.force_login(self.admin)
         self.client.post(reverse('admin:nucleo_user_add'), {
             'email': 'Nueva@CIGA.unam.mx', 'password1': 'Clave-de-prueba-9', 'password2': 'Clave-de-prueba-9',
-            'usable_password': 'true'})
+            'usable_password': 'true', 'first_name': 'Nueva', 'last_name': 'Cuenta Prueba'})
         nueva = User.objects.get(email='nueva@ciga.unam.mx')  # Se guarda en minúsculas.
         self.assertTrue(nueva.is_staff)
         self.assertTrue(nueva.groups.filter(name=GRUPO_INVESTIGADORES).exists())
-        self.assertTrue(Persona.objects.filter(usuario=nueva).exists())
+        self.assertEqual(nueva.persona.nombre, 'Cuenta Prueba, N.')
+
+    def alta(self, **datos):
+        self.client.force_login(self.admin)
+        return self.client.post(reverse('admin:nucleo_user_add'), {
+            'email': 'nuevo@ciga.unam.mx', 'password1': 'Clave-de-prueba-9', 'password2': 'Clave-de-prueba-9',
+            'usable_password': 'true', **datos})
+
+    def test_alta_toma_el_nombre_de_orcid(self):
+        orcid = {'name': {'given-names': {'value': 'Juan Carlos'}, 'family-name': {'value': 'Pérez García'}}}
+        with mock.patch('nucleo.externos.obtener_json', return_value=orcid):
+            self.alta(orcid='https://orcid.org/0000-0002-1825-0097')
+        persona = User.objects.get(email='nuevo@ciga.unam.mx').persona
+        self.assertEqual((persona.nombre, persona.orcid), ('Pérez García, J. C.', '0000-0002-1825-0097'))
+
+    def test_alta_con_persona_existente_y_aviso_de_parecidas(self):
+        respuesta = self.alta(nombre_persona='Externa, Carla')
+        self.assertContains(respuesta, 'Ya hay personas parecidas')
+        self.assertFalse(User.objects.filter(email='nuevo@ciga.unam.mx').exists())
+        self.alta(persona=self.externo.pk)
+        self.assertEqual(User.objects.get(email='nuevo@ciga.unam.mx').persona, self.externo)
+
+    def test_alta_no_reutiliza_persona_con_cuenta(self):
+        respuesta = self.alta(persona=self.beto.persona.pk)
+        self.assertFalse(User.objects.filter(email='nuevo@ciga.unam.mx').exists())
+        self.assertEqual(respuesta.status_code, 200)
+
+    def test_buscador_de_persona_para_cuenta_omite_personas_con_cuenta(self):
+        self.client.force_login(self.admin)
+        respuesta = self.client.get(reverse('admin:autocomplete'), {
+            'app_label': 'nucleo', 'model_name': 'user', 'field_name': 'persona', 'term': ''})
+        ids = {int(r['id']) for r in respuesta.json()['results']}
+        self.assertIn(self.externo.pk, ids)
+        self.assertNotIn(self.beto.persona_id, ids)
+
+    def test_completar_orcid(self):
+        Persona.objects.filter(pk=self.externo.pk).update(orcid='0000-0002-1825-0097')
+        orcid = {'name': {'given-names': {'value': 'Carla María'}, 'family-name': {'value': 'Externa Ruiz'}}}
+        salida = io.StringIO()
+        with mock.patch('nucleo.externos.obtener_json', return_value=orcid):
+            call_command('completar_orcid', stdout=salida)
+            self.externo.refresh_from_db()
+            self.assertEqual(self.externo.nombre, 'Externa, C.')  # Sin --aplicar no cambia nada.
+            call_command('completar_orcid', '--aplicar', stdout=salida)
+        self.externo.refresh_from_db()
+        self.assertEqual(self.externo.nombre, 'Externa Ruiz, C. M.')
+
+    def test_investigador_ajusta_su_nombre_pero_no_su_persona_ni_su_orcid(self):
+        Persona.objects.filter(pk=self.ana.persona_id).update(orcid='0000-0002-1825-0097')
+        self.client.force_login(self.ana)
+        url = reverse('admin:nucleo_user_change', args=[self.ana.pk])
+        formulario = self.client.get(url).context['adminform'].form
+        self.assertNotIn('persona', formulario.fields)
+        self.assertTrue(formulario.fields['orcid'].disabled)
+        datos = {k: v for k, v in formulario.initial.items() if v is not None and k not in ('password', 'avatar')}
+        datos.update(nombre_persona='López-Pérez, Ana', orcid='0000-0001-0000-0000', persona=self.beto.persona_id,
+                     tipo=self.ana.tipo)
+        respuesta = self.client.post(url, datos)
+        self.assertEqual(respuesta.status_code, 302, respuesta.context and respuesta.context['adminform'].form.errors)
+        self.ana.refresh_from_db()
+        self.assertEqual(self.ana.persona.nombre, 'López-Pérez, Ana')
+        self.assertEqual(self.ana.persona.orcid, '0000-0002-1825-0097')
+        self.assertNotEqual(self.ana.persona, self.beto.persona)
 
 
     def test_perfil_ofrece_copiar_domicilio_de_la_entidad(self):
@@ -206,7 +276,7 @@ class DocumentosTests(Datos):
         self.client.force_login(self.ana)
         respuesta = self.client.get(reverse('admin:cv'), {'generar': 1, 'formato': 'html'})
         self.assertContains(respuesta, '<strong>Suelos &amp; agua &lt;al 100%&gt;</strong>', html=False)
-        self.assertContains(respuesta, 'López-Pérez, A., Externa, C. (2018)')
+        self.assertContains(respuesta, 'López Pérez, A., Externa, C. (2018)')
 
     def test_cv_filtra_por_periodo_y_seccion(self):
         self.articulo('Artículo 2018', self.ana.persona)
@@ -328,9 +398,9 @@ class ConvertirLegacyTests(TestCase):
         self.assertTrue(ana.groups.filter(name=GRUPO_INVESTIGADORES).exists())
         self.assertEqual((ana.sni, ana.genero), ('I', ''))
         self.assertEqual(ana.email, 'ana@sin-correo.invalid')  # No tenía correo: recibe uno provisional.
-        self.assertEqual(Persona.objects.get(usuario=ana).email, '')
+        self.assertEqual(ana.persona.nombre, 'López, A.')
         self.assertFalse(User.objects.filter(pk=11).exists())
-        self.assertEqual(str(Persona.objects.get(pk=11)), 'Eva Externa')
+        self.assertEqual(str(Persona.objects.get(pk=11)), 'Externa, E.')
         articulo = ArticuloCientifico.objects.get(pk=7)
         autores = [a.persona_id for a in articulo.articulocientificoautor_set.all()]
         self.assertEqual(autores, [11, 10])
