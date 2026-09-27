@@ -29,13 +29,13 @@ class Datos(TestCase):
         cls.institucion = Institucion.objects.create(nombre='UNAM', pais=cls.mexico, verificado=True)
         cls.revista = Revista.objects.create(nombre='Investigaciones Geográficas', pais=cls.mexico, verificado=True)
         grupo = Group.objects.get(name=GRUPO_INVESTIGADORES)
-        cls.ana = User.objects.create_user('ana', password='x', first_name='Ana', last_name='López Pérez',
+        cls.ana = User.objects.create_user('ana@ciga.unam.mx', password='x', first_name='Ana', last_name='López Pérez',
                                            is_staff=True, tipo=User.Tipo.INVESTIGADOR)
-        cls.beto = User.objects.create_user('beto', password='x', first_name='Beto', last_name='Ruiz',
+        cls.beto = User.objects.create_user('beto@ciga.unam.mx', password='x', first_name='Beto', last_name='Ruiz',
                                             is_staff=True, tipo=User.Tipo.INVESTIGADOR)
         cls.ana.groups.add(grupo)
         cls.beto.groups.add(grupo)
-        cls.admin = User.objects.create_superuser('admin', password='x')
+        cls.admin = User.objects.create_superuser('admin@ciga.unam.mx', password='x')
         cls.externo = Persona.objects.create(nombre='Carla', apellidos='Externa')
         ConfiguracionEntidad.objects.update(pais_sede=cls.mexico, titular='Dra. Titular Prueba')
 
@@ -178,12 +178,18 @@ class PerfilTests(Datos):
     def test_cuenta_nueva_entra_como_investigador(self):
         self.client.force_login(self.admin)
         self.client.post(reverse('admin:nucleo_user_add'), {
-            'username': 'nueva', 'password1': 'Clave-de-prueba-9', 'password2': 'Clave-de-prueba-9',
+            'email': 'Nueva@CIGA.unam.mx', 'password1': 'Clave-de-prueba-9', 'password2': 'Clave-de-prueba-9',
             'usable_password': 'true'})
-        nueva = User.objects.get(username='nueva')
+        nueva = User.objects.get(email='nueva@ciga.unam.mx')  # Se guarda en minúsculas.
         self.assertTrue(nueva.is_staff)
         self.assertTrue(nueva.groups.filter(name=GRUPO_INVESTIGADORES).exists())
         self.assertTrue(Persona.objects.filter(usuario=nueva).exists())
+
+
+    def test_entra_con_correo_sin_distinguir_mayusculas(self):
+        self.assertTrue(self.client.login(username='ANA@ciga.unam.mx', password='x'))
+        respuesta = self.client.post(reverse('admin:login'), {'username': 'Beto@Ciga.unam.mx', 'password': 'x'})
+        self.assertEqual(respuesta.status_code, 302)
 
 
 class DocumentosTests(Datos):
@@ -310,8 +316,11 @@ class ConvertirLegacyTests(TestCase):
             call_command('convertir_legacy', str(entrada), str(salida), stdout=io.StringIO())
             call_command('loaddata', str(salida), verbosity=0)
 
-        self.assertTrue(User.objects.get(username='ana').groups.filter(name=GRUPO_INVESTIGADORES).exists())
-        self.assertFalse(User.objects.filter(username='externo').exists())
+        ana = User.objects.get(pk=10)
+        self.assertTrue(ana.groups.filter(name=GRUPO_INVESTIGADORES).exists())
+        self.assertEqual(ana.email, 'ana@sin-correo.invalid')  # No tenía correo: recibe uno provisional.
+        self.assertEqual(Persona.objects.get(usuario=ana).email, '')
+        self.assertFalse(User.objects.filter(pk=11).exists())
         self.assertEqual(str(Persona.objects.get(pk=11)), 'Eva Externa')
         articulo = ArticuloCientifico.objects.get(pk=7)
         autores = [a.persona_id for a in articulo.articulocientificoautor_set.all()]

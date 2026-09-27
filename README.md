@@ -74,6 +74,9 @@ versión más reciente de cada modelo. Qué hace la conversión:
 recalcula el ámbito nacional/internacional a partir del país, limpia los DOIs y pasa el factor de impacto capturado en
 cada artículo a las métricas por año de su revista.
 
+Las cuentas se identifican por correo electrónico (no hay nombre de usuario). Las cuentas legacy sin correo reciben
+uno provisional `…@sin-correo.invalid`, que un administrador debe reemplazar por el real desde *Usuarios*.
+
 ## Funciones para la operación diaria
 
 - **Captura asistida**: en *Artículos científicos → Importar* se llena el alta desde un DOI (Crossref), un BibTeX o
