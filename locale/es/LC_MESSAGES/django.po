@@ -215,3 +215,6 @@ msgstr "Seleccionar moneda"
 
 msgid "- Select an option -"
 msgstr "- Selecciona una opción -"
+
+msgid "Forgotten your password or username?"
+msgstr "¿Olvidaste tu contraseña?"

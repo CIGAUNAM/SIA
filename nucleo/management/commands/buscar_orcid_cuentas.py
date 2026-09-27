@@ -4,8 +4,8 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 
 from nucleo.externos import ErrorServicio, orcid_por_correo
-from nucleo.fusion import fusionar
 from nucleo.models import Persona, User
+from nucleo.sugerencias_orcid import asignar_orcid
 
 
 class Command(BaseCommand):
@@ -38,10 +38,7 @@ class Command(BaseCommand):
             self.stdout.write(f'{cuenta.email}: {orcid} — ORCID lo nombra «{nombre}», figura como «{persona}»{nota}')
             if aplicar:
                 with transaction.atomic():
-                    if otra is not None:
-                        fusionar(persona, [otra])
-                    persona.orcid = orcid
-                    persona.save(update_fields=['orcid', 'actualizado'])
+                    asignar_orcid(persona, orcid)
             encontrados += 1
         accion = 'guardados' if aplicar else 'encontrados (usa --aplicar para guardarlos)'
         self.stdout.write(self.style.SUCCESS(f'{encontrados} de {total} cuentas sin ORCID: {accion}.'))

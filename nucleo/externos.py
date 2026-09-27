@@ -52,3 +52,37 @@ def orcid_por_correo(correo):
         return None
     r = resultados[0]
     return r['orcid-id'], formato_cita(r.get('given-names'), r.get('family-names')) or r.get('credit-name') or ''
+
+
+def buscar_perfiles(consulta, maximo=1000):
+    """Perfiles públicos de ORCID que cumplen la consulta (sintaxis de búsqueda de ORCID).
+
+    Devuelve dicts con `orcid`, `nombres`, `apellidos`, `nombre` (formato de cita) e `instituciones`.
+    """
+    perfiles, inicio = [], 0
+    while inicio < maximo:
+        datos = obtener_json('https://pub.orcid.org/v3.0/expanded-search/?'
+                             + urllib.parse.urlencode({'q': consulta, 'start': inicio, 'rows': min(200, maximo)}))
+        pagina = datos.get('expanded-result') or []
+        for r in pagina:
+            nombres, apellidos = (r.get('given-names') or '').strip(), (r.get('family-names') or '').strip()
+            perfiles.append({'orcid': r['orcid-id'], 'nombres': nombres, 'apellidos': apellidos,
+                             'nombre': formato_cita(nombres, apellidos) or r.get('credit-name') or '',
+                             'instituciones': r.get('institution-name') or []})
+        inicio += len(pagina)
+        if not pagina or inicio >= (datos.get('num-found') or 0):
+            break
+    return perfiles
+
+
+def perfiles_por_afiliacion(instituciones):
+    consulta = ' OR '.join(f'affiliation-org-name:"{nombre}"' for nombre in instituciones if nombre)
+    return buscar_perfiles(consulta) if consulta else []
+
+
+def perfiles_por_nombre(nombres, apellidos, maximo=20):
+    """Perfiles cuyo primer apellido y primer nombre coinciden (p. ej. 'Pérez' y 'Juan')."""
+    apellido, nombre = (apellidos.split() or [''])[0], (nombres.split() or [''])[0]
+    if not apellido or not nombre or len(nombre.strip('.')) < 2:
+        return []
+    return buscar_perfiles(f'family-name:"{apellido}" AND given-names:"{nombre}"', maximo=maximo)

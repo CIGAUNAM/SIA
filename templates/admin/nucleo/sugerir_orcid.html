@@ -1,0 +1,44 @@
+{% extends "admin/base_site.html" %}
+{% load unfold %}
+
+{% block content %}
+<div id="content-main" class="max-w-5xl">
+  {% include "unfold/helpers/messages/info.html" with message="Perfiles de ORCID con el nombre de cada académico sin ORCID (o afiliados a la entidad). El cruce es por nombre: revisa cada sugerencia. Vienen marcadas las que coinciden exacto y tienen afiliación a la entidad o a su institución; el resto, elígelas tú. Si otra persona del catálogo ya tenía el ORCID elegido, se une a la de la cuenta." %}
+  <p class="mb-4 text-font-subtle-light dark:text-font-subtle-dark">
+    {{ filas|length }} de {{ sin_orcid }} cuentas activas sin ORCID tienen sugerencias.
+  </p>
+  <form method="post">{% csrf_token %}
+    {% for cuenta, candidatos, elegido in filas %}
+      <fieldset class="bg-white border border-base-200 rounded-default shadow-xs p-3 mb-3 dark:bg-base-900 dark:border-base-800">
+        <legend class="font-semibold text-important px-1">
+          <a href="{% url 'admin:nucleo_user_change' cuenta.pk %}">{{ cuenta.get_full_name|default:cuenta.email }}</a>
+          <span class="font-normal text-font-subtle-light dark:text-font-subtle-dark">· figura como {{ cuenta.persona }}</span>
+        </legend>
+        {% for perfil, nivel, afiliada in candidatos %}
+          <label class="flex items-start gap-2 py-1">
+            <input type="radio" name="cuenta_{{ cuenta.pk }}" value="{{ perfil.orcid }}" class="mt-1" {% if perfil.orcid == elegido %}checked{% endif %}>
+            <span>
+              <span class="font-medium">{{ perfil.nombres }} {{ perfil.apellidos }}</span>
+              · <a href="https://orcid.org/{{ perfil.orcid }}" target="_blank" rel="noopener" class="text-primary-600">{{ perfil.orcid }}</a>
+              {% if nivel == 'exacta' %}<span class="ml-1 rounded-default bg-green-100 px-1.5 text-xs text-green-700 dark:bg-green-500/20 dark:text-green-400">mismo nombre</span>
+              {% else %}<span class="ml-1 rounded-default bg-orange-100 px-1.5 text-xs text-orange-700 dark:bg-orange-500/20 dark:text-orange-400">nombre parecido</span>{% endif %}
+              {% if afiliada %}<span class="ml-1 rounded-default bg-primary-100 px-1.5 text-xs text-primary-700 dark:bg-primary-500/20 dark:text-primary-400">afiliación {{ afiliacion }}</span>{% endif %}
+              <span class="block text-font-subtle-light dark:text-font-subtle-dark">{{ perfil.instituciones|slice:":3"|join:" · "|default:"sin afiliación pública" }}</span>
+            </span>
+          </label>
+        {% endfor %}
+        <label class="flex items-center gap-2 py-1 text-font-subtle-light dark:text-font-subtle-dark">
+          <input type="radio" name="cuenta_{{ cuenta.pk }}" value="" {% if not elegido %}checked{% endif %}> Ninguno / no lo sé
+        </label>
+      </fieldset>
+    {% empty %}
+      {% include "unfold/helpers/messages/success.html" with message="No hay sugerencias: las cuentas ya tienen ORCID o no se encontró ningún perfil parecido." %}
+    {% endfor %}
+    {% if filas %}
+      <div class="sticky bottom-0 bg-base-50 py-3 dark:bg-base-950">
+        {% component "unfold/components/button.html" with submit=1 %}Guardar los ORCID elegidos{% endcomponent %}
+      </div>
+    {% endif %}
+  </form>
+</div>
+{% endblock %}

@@ -4,18 +4,22 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
 from django.core.exceptions import PermissionDenied
 from django.db.models import Count
-from django.shortcuts import redirect
+from django.db import transaction
+from django.shortcuts import get_object_or_404, redirect
+from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import format_html
 from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin, TabularInline
+from unfold.decorators import action
 from unfold.forms import AdminPasswordChangeForm
 from unfold.widgets import UnfoldAdminTextareaWidget
 
 from .admin_base import CatalogoAdmin, FormularioSIA, ParticipanteInline, VerificableAdmin, es_administrador
 from .externos import ErrorServicio, nombre_orcid, orcid_por_correo
 from .formularios import UserChangeForm, UserCreationForm, registros_de
+from .nombres import normalizar_orcid
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
                      Nombramiento, Pais, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
@@ -62,6 +66,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     ordering = ['first_name', 'last_name']
     autocomplete_fields = ['pais_origen', 'persona']
     list_select_related = ['persona']
+    actions_list = ['sugerir_orcid']
     add_fieldsets = (
         (None, {'classes': ('wide',), 'fields': ('email', 'first_name', 'last_name')}),
         ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona')}),  # + es_persona si hay parecidas
@@ -117,6 +122,41 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
                 if nombre == 'Nombre en publicaciones' else (nombre, opciones)
                 for nombre, opciones in adminform.fieldsets]
         return super().render_change_form(request, context, add, change, form_url, obj)
+
+    def has_sugerir_orcid_permission(self, request):
+        return es_administrador(request.user)
+
+    @action(description='Sugerir ORCID', icon='fingerprint', url_path='sugerir-orcid',
+            permissions=['sugerir_orcid'])
+    def sugerir_orcid(self, request):
+        """ORCID probables de las cuentas que no lo tienen (por nombre y afiliación); el administrador confirma."""
+        from .sugerencias_orcid import asignar_orcid, preseleccion, sugerencias
+
+        if request.method == 'POST':
+            guardados = 0
+            for clave, valor in request.POST.items():
+                orcid = normalizar_orcid(valor)
+                if not clave.startswith('cuenta_') or not orcid:
+                    continue
+                cuenta = get_object_or_404(User.objects.select_related('persona'), pk=clave.removeprefix('cuenta_'))
+                try:
+                    with transaction.atomic():
+                        unida = asignar_orcid(cuenta.persona, orcid)
+                except ValueError as error:
+                    self.message_user(request, f'{cuenta}: {error}', messages.ERROR)
+                    continue
+                guardados += 1
+                if unida is not None:
+                    self.message_user(request, f'{cuenta}: se unió «{unida}», que ya tenía ese ORCID.')
+            self.message_user(request, f'Se guardó el ORCID de {guardados} cuenta(s).', messages.SUCCESS)
+            return redirect(request.get_full_path())
+        filas = [(cuenta, candidatos, preseleccion(candidatos)) for cuenta, candidatos in sugerencias(request)]
+        contexto = {**self.admin_site.each_context(request), 'opts': self.opts, 'filas': filas,
+                    'sin_orcid': User.objects.filter(is_active=True, persona__orcid='').count(),
+                    'afiliacion': '/'.join(x for x in (ConfiguracionEntidad.actual(request).siglas,
+                                                        ConfiguracionEntidad.actual(request).institucion_madre_siglas) if x),
+                    'title': 'Sugerencias de ORCID'}
+        return TemplateResponse(request, 'admin/nucleo/sugerir_orcid.html', contexto)
 
     @admin.display(description='Figura como')
     def figura_como(self, obj):

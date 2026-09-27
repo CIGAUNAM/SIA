@@ -313,6 +313,41 @@ class PerfilTests(Datos):
         self.assertFalse(Persona.objects.filter(pk=coautor.pk).exists())
         self.assertEqual(list(ArticuloCientifico.objects.get(titulo='Del coautor').autores.all()), [self.ana.persona])
 
+    def test_coincidencia_de_nombres_con_orcid(self):
+        from nucleo.sugerencias_orcid import coincidencia
+        perfil = lambda nombres, apellidos: {'nombres': nombres, 'apellidos': apellidos}
+        self.assertEqual(coincidencia('Cinthia', 'Ruiz López', perfil('RUIZ-LÓPEZ', 'CINTHIA')), 'exacta')
+        self.assertEqual(coincidencia('Gustavo Martín', 'Morales', perfil('Gustavo', 'Martín Morales')), 'exacta')
+        self.assertEqual(coincidencia('Adi Estela', 'Lazos Ruíz', perfil('Adi E.', 'Lazos Ruíz')), 'probable')
+        self.assertEqual(coincidencia('Alina', 'Alvarez Larrain', perfil('Alina', 'Alvarez')), 'probable')
+        self.assertIsNone(coincidencia('Alina', 'Alvarez Larrain', perfil('Alina', 'Alvarez León')))
+        self.assertIsNone(coincidencia('Beatriz', 'de la Tejera', perfil('Beatriz', 'de Abreu de Carvalho')))
+        self.assertIsNone(coincidencia('Juan', 'Pérez', perfil('José', 'Pérez')))
+
+    def test_sugerir_orcid(self):
+        from nucleo.sugerencias_orcid import sugerencias
+        User.objects.filter(pk=self.beto.pk).update(is_active=False)
+        perfiles = {'ana': [{'orcid': '0000-0002-1825-0097', 'nombres': 'Ana', 'apellidos': 'López Pérez',
+                             'nombre': 'López Pérez, A.', 'instituciones': ['Universidad Nacional Autónoma de México']},
+                            {'orcid': '0000-0001-5109-3700', 'nombres': 'Ana', 'apellidos': 'López',
+                             'nombre': 'López, A.', 'instituciones': []}]}
+        with mock.patch('nucleo.sugerencias_orcid.perfiles_por_nombre',
+                        side_effect=lambda n, a: perfiles.get(n.lower(), [])), \
+                mock.patch('nucleo.sugerencias_orcid.perfiles_por_afiliacion', return_value=[]):
+            ConfiguracionEntidad.objects.update(institucion_madre='Universidad Nacional Autónoma de México')
+            filas = sugerencias()
+            self.assertEqual([(c, [p['orcid'] for p, *_ in x]) for c, x in filas],
+                             [(self.ana, ['0000-0002-1825-0097', '0000-0001-5109-3700'])])
+            self.client.force_login(self.admin)
+            url = reverse('admin:nucleo_user_sugerir_orcid')
+            respuesta = self.client.get(url)
+            self.assertContains(respuesta, 'value="0000-0002-1825-0097" class="mt-1" checked')
+            self.client.post(url, {f'cuenta_{self.ana.pk}': '0000-0002-1825-0097'})
+        self.ana.refresh_from_db()
+        self.assertEqual(self.ana.persona.orcid, '0000-0002-1825-0097')
+        self.client.force_login(self.ana)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_user_sugerir_orcid')).status_code, 403)
+
     def test_completar_orcid(self):
         Persona.objects.filter(pk=self.externo.pk).update(orcid='0000-0002-1825-0097')
         orcid = {'name': {'given-names': {'value': 'Carla María'}, 'family-name': {'value': 'Externa Ruiz'}}}
