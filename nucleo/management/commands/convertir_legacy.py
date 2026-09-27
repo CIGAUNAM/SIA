@@ -221,10 +221,10 @@ class Conversor:
                     'groups': [] if f['is_superuser'] else [['Investigadores']], 'user_permissions': [],
                     'tipo': opcion(f['tipo'], TIPOS_CUENTA | {'OTRO'}, 'OTRO'), 'grado': '',
                     'semblanza': txt(f['descripcion']), 'fecha_nacimiento': f['fecha_nacimiento'],
-                    'genero': opcion(f['genero'], {'M', 'F'}), 'pais_origen': f['pais_origen'],
+                    'genero': {'M': 'MASCULINO', 'F': 'FEMENINO'}.get(f['genero'], ''), 'pais_origen': f['pais_origen'],
                     'rfc': txt(f['rfc'])[:13], 'curp': txt(f['curp'])[:18], 'domicilio': domicilio,
                     'telefono': txt(f['telefono']) or txt(f['celular']), 'url': txt(f['url']),
-                    'sni': str(f['sni']) if f.get('sni') in (1, 2, 3) else '', 'pride': opcion(f['pride'], {'A', 'B', 'C', 'D'}),
+                    'sni': {1: 'I', 2: 'II', 3: 'III'}.get(f.get('sni'), ''), 'pride': opcion(f['pride'], {'A', 'B', 'C', 'D'}),
                     'ingreso_unam': f['ingreso_unam'], 'ingreso_entidad': f['ingreso_entidad'],
                     'egreso_entidad': f['egreso_entidad'], 'ultimo_contrato': f['ultimo_contrato'],
                     'avatar': txt(f['avatar'])})

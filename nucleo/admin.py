@@ -22,10 +22,9 @@ from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEnt
 from .permisos import GRUPO_INVESTIGADORES
 
 DATOS_PERSONALES = ('Datos personales', {'fields': (
-    'grado', 'first_name', 'last_name', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp', 'telefono',
-    'domicilio',
+    'grado', 'first_name', 'last_name', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp', 'telefono', 'avatar',
 )})
-PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'avatar', 'url', 'sni', 'pride')})
+PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'domicilio', 'url', 'sni', 'pride')})
 ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato')})
 
 

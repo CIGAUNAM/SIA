@@ -326,6 +326,7 @@ class ConvertirLegacyTests(TestCase):
 
         ana = User.objects.get(pk=10)
         self.assertTrue(ana.groups.filter(name=GRUPO_INVESTIGADORES).exists())
+        self.assertEqual((ana.sni, ana.genero), ('I', ''))
         self.assertEqual(ana.email, 'ana@sin-correo.invalid')  # No tenía correo: recibe uno provisional.
         self.assertEqual(Persona.objects.get(usuario=ana).email, '')
         self.assertFalse(User.objects.filter(pk=11).exists())

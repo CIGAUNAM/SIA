@@ -274,15 +274,15 @@ class User(AbstractUser):
         OTRO = 'OTRO', 'Otro'
 
     class Genero(models.TextChoices):
-        FEMENINO = 'F', 'Femenino'
-        MASCULINO = 'M', 'Masculino'
-        OTRO = 'O', 'Otro'
+        FEMENINO = 'FEMENINO', 'Femenino'
+        MASCULINO = 'MASCULINO', 'Masculino'
+        OTRO = 'OTRO', 'Otro'
 
     class SNI(models.TextChoices):
         CANDIDATO = 'C', 'Candidato'
-        NIVEL_1 = '1', 'Nivel I'
-        NIVEL_2 = '2', 'Nivel II'
-        NIVEL_3 = '3', 'Nivel III'
+        NIVEL_1 = 'I', 'Nivel I'
+        NIVEL_2 = 'II', 'Nivel II'
+        NIVEL_3 = 'III', 'Nivel III'
         EMERITO = 'E', 'Emérito'
 
     class Pride(models.TextChoices):
@@ -295,14 +295,14 @@ class User(AbstractUser):
     grado = models.CharField('grado (abreviatura)', max_length=20, blank=True, help_text='Por ejemplo: Dr., Mtra., Lic.')
     semblanza = models.TextField(blank=True)
     fecha_nacimiento = models.DateField(null=True, blank=True)
-    genero = models.CharField('género', max_length=1, choices=Genero.choices, blank=True)
+    genero = models.CharField('género', max_length=10, choices=Genero.choices, blank=True)
     pais_origen = models.ForeignKey(Pais, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país de origen')
     rfc = models.CharField('RFC', max_length=13, blank=True)
     curp = models.CharField('CURP', max_length=18, blank=True)
     domicilio = models.TextField(blank=True, help_text='Domicilio donde realiza sus actividades académicas.')
     telefono = models.CharField('teléfono', max_length=20, blank=True)
     url = models.URLField('página web', blank=True)
-    sni = models.CharField('nivel SNII', max_length=1, choices=SNI.choices, blank=True)
+    sni = models.CharField('nivel SNII', max_length=3, choices=SNI.choices, blank=True)
     pride = models.CharField('nivel PRIDE', max_length=1, choices=Pride.choices, blank=True)
     ingreso_unam = models.DateField('ingreso a la UNAM', null=True, blank=True)
     ingreso_entidad = models.DateField('ingreso a la entidad', null=True, blank=True)
