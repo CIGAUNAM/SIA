@@ -17,7 +17,7 @@ from .similitud import personas_parecidas
 NUEVA = 'nueva'
 
 
-def _registros(persona):
+def registros_de(persona):
     total = sum(resumen_referencias(persona).values())
     return 'sin registros' if not total else f'{total} registro{"s" if total != 1 else ""}'
 
@@ -52,8 +52,13 @@ class CamposPersona(forms.Form):
 
 
 class UserCreationForm(CamposPersona, BaseUserCreationForm):
-    """Alta: con el ORCID se encuentra o se crea la persona; si hay coautores parecidos, se pregunta si es alguno."""
-    es_persona = forms.CharField(label='¿Es alguna de estas personas?', required=False, widget=forms.HiddenInput)
+    """Alta: con el ORCID se encuentra o se crea la persona; si hay coautores parecidos, se pregunta si es alguno.
+
+    `es_persona` solo se muestra (lo agrega el admin a la sección) cuando hay que preguntar: queda en `pregunta`.
+    """
+    es_persona = forms.CharField(label='¿Es alguna de estas personas?', required=False,
+                                 widget=UnfoldAdminRadioSelectWidget)
+    pregunta = ()
 
     class Meta(BaseUserCreationForm.Meta):
         model = User
@@ -103,8 +108,9 @@ class UserCreationForm(CamposPersona, BaseUserCreationForm):
             if self.persona is None:
                 self.add_error('es_persona', 'Elige una de las opciones.')
         else:
+            self.pregunta = ('es_persona',)
             self.fields['es_persona'].widget = UnfoldAdminRadioSelectWidget(choices=[
-                *[(p.pk, f'{p} — {_registros(p)}') for p in candidatas],
+                *[(p.pk, f'{p} — {registros_de(p)}') for p in candidatas],
                 (NUEVA, f'Ninguna: crear «{nombre}»')])
             self.add_error('es_persona', 'Ya hay personas parecidas en el catálogo (p. ej. como coautoras). Si es '
                                          'alguna, elígela para que la cuenta conserve su producción.')
@@ -141,6 +147,7 @@ class UserChangeForm(CamposPersona, BaseUserChangeForm):
         persona = self.instance.persona
         self.fields['nombre_persona'].initial = persona.nombre
         self.fields['orcid'].initial = persona.orcid
+        self.fields['orcid'].help_text = self.fields['orcid'].help_text.replace(' Si falta, se busca en ORCID por el correo.', '')
         if persona.orcid and not self.administrador:
             self.fields['orcid'].disabled = True
             self.fields['orcid'].help_text = 'Para corregirlo, pídelo a un administrador.'
@@ -182,7 +189,7 @@ class UserChangeForm(CamposPersona, BaseUserChangeForm):
         if not self._persona_cambia():
             persona = user.persona
             if self.fusionada is not None:
-                self.resumen_fusion = f'«{self.fusionada}» ({_registros(self.fusionada)})'
+                self.resumen_fusion = f'«{self.fusionada}» ({registros_de(self.fusionada)})'
                 fusionar(persona, [self.fusionada])
             persona.nombre = self.cleaned_data['nombre_persona'].strip()
             persona.orcid = self.cleaned_data.get('orcid', '')

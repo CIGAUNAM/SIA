@@ -240,6 +240,12 @@ class PerfilTests(Datos):
         self.alta(first_name='Carla', last_name='Externa', es_persona=self.externo.pk)
         self.assertEqual(User.objects.get(email='nuevo@ciga.unam.mx').persona, self.externo)
 
+    def test_alta_solo_pregunta_si_hay_parecidas(self):
+        self.client.force_login(self.admin)
+        self.assertNotContains(self.client.get(reverse('admin:nucleo_user_add')), '¿Es alguna de estas personas?')
+        self.assertNotContains(self.alta(first_name='Zoe', last_name='Única', password2='otra'),
+                               '¿Es alguna de estas personas?')
+
     def test_alta_puede_crear_persona_nueva_aunque_haya_parecidas(self):
         self.alta(first_name='Carla', last_name='Externa', es_persona='nueva')
         persona = User.objects.get(email='nuevo@ciga.unam.mx').persona

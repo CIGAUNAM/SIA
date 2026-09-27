@@ -15,7 +15,7 @@ from unfold.widgets import UnfoldAdminTextareaWidget
 
 from .admin_base import CatalogoAdmin, FormularioSIA, ParticipanteInline, VerificableAdmin, es_administrador
 from .externos import ErrorServicio, nombre_orcid, orcid_por_correo
-from .formularios import UserChangeForm, UserCreationForm
+from .formularios import UserChangeForm, UserCreationForm, registros_de
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
                      Nombramiento, Pais, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
@@ -24,7 +24,7 @@ from .permisos import GRUPO_INVESTIGADORES
 DATOS_PERSONALES = ('Datos personales', {'fields': (
     'grado', 'first_name', 'last_name', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp', 'telefono', 'avatar',
 )})
-PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona')})
+PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('figura_como', 'orcid', 'nombre_persona')})
 PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'domicilio', 'url', 'sni', 'pride')})
 ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato')})
 
@@ -56,7 +56,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     add_form = UserCreationForm
     change_password_form = AdminPasswordChangeForm
     permisos_investigador = ('view', 'change')
-    list_display = ['email', 'first_name', 'last_name', 'persona', 'tipo', 'is_active', 'is_staff', 'cv']
+    list_display = ['email', 'first_name', 'last_name', 'nombre_publicaciones', 'orcid', 'tipo', 'is_active', 'cv']
     list_filter = ['tipo', 'is_active', 'is_staff', 'groups']
     search_fields = ['email', 'first_name', 'last_name', 'persona__nombre', 'persona__orcid']
     ordering = ['first_name', 'last_name']
@@ -64,7 +64,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     list_select_related = ['persona']
     add_fieldsets = (
         (None, {'classes': ('wide',), 'fields': ('email', 'first_name', 'last_name')}),
-        ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona', 'es_persona')}),
+        ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona')}),  # + es_persona si hay parecidas
         ('Contraseña', {'fields': ('usable_password', 'password1', 'password2')}),
     )
     fieldsets = (
@@ -105,8 +105,35 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         if es_administrador(request.user):
-            return super().get_readonly_fields(request, obj)
-        return ['email', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato']
+            return [*super().get_readonly_fields(request, obj), 'figura_como']
+        return ['email', 'figura_como', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato']
+
+    def render_change_form(self, request, context, add=False, change=False, form_url='', obj=None):
+        adminform = context['adminform']
+        if add and 'es_persona' in adminform.form.pregunta:
+            # La pregunta "¿Es alguna de estas personas?" solo aparece cuando hay coautores parecidos.
+            adminform.fieldsets = [
+                (nombre, {**opciones, 'fields': (*opciones['fields'], 'es_persona')})
+                if nombre == 'Nombre en publicaciones' else (nombre, opciones)
+                for nombre, opciones in adminform.fieldsets]
+        return super().render_change_form(request, context, add, change, form_url, obj)
+
+    @admin.display(description='Figura como')
+    def figura_como(self, obj):
+        persona = obj.persona
+        orcid = (format_html('<a href="https://orcid.org/{0}" target="_blank" rel="noopener">ORCID {0}</a>',
+                             persona.orcid) if persona.orcid else 'sin ORCID')
+        return format_html('<a href="{}" class="font-semibold text-primary-600">{}</a> · {} · {}',
+                           reverse('admin:nucleo_persona_change', args=[persona.pk]), persona, orcid,
+                           registros_de(persona))
+
+    @admin.display(description='Nombre en publicaciones', ordering='persona__nombre')
+    def nombre_publicaciones(self, obj):
+        return obj.persona
+
+    @admin.display(description='ORCID', ordering='persona__orcid')
+    def orcid(self, obj):
+        return obj.persona.orcid or '—'
 
     def save_model(self, request, obj, form, change):
         if not change:
