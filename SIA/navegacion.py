@@ -9,7 +9,7 @@ from django.contrib import admin
 from django.urls import reverse
 from django.utils.translation import gettext_lazy
 
-from nucleo.admin_base import VerificableAdmin, es_administrador
+from nucleo.admin_base import SECCIONES_PERFIL, VerificableAdmin, es_administrador
 
 SECCIONES = [
     ('formacion_academica', 'school'),
@@ -60,6 +60,7 @@ def menu(request):
         {'title': 'Inicio', 'icon': 'dashboard', 'link': reverse('admin:index')},
         {'title': 'Mi informe', 'icon': 'fact_check', 'link': reverse('admin:informe')},
         {'title': 'Mi currículum', 'icon': 'article', 'link': reverse('admin:cv')},
+        {'title': 'Mi perfil', 'icon': 'person', 'link': reverse('admin:perfil')},
     ]
     if administrador:
         principales.append({'title': 'Avance de captura', 'icon': 'monitoring', 'link': reverse('admin:informe_avance')})
@@ -87,6 +88,8 @@ def menu(request):
             items[seccion].append(item)
     grupos = [{'items': principales}]
     for app_label, _ in SECCIONES:
+        if app_label in SECCIONES_PERFIL and not administrador:
+            continue  # Formación y experiencia se capturan desde "Mi perfil".
         if items[app_label] and app_label in apps:
             grupos.append({'title': apps[app_label]['name'], 'separator': True, 'collapsible': True,
                            'items': items[app_label]})
@@ -95,6 +98,6 @@ def menu(request):
 
 def enlaces_cuenta(request):
     return [
-        {'title': gettext_lazy('Mi perfil'), 'link': reverse('admin:nucleo_user_change', args=[request.user.pk])},
+        {'title': gettext_lazy('Mi perfil'), 'link': reverse('admin:perfil')},
         {'title': gettext_lazy('Mi currículum'), 'link': reverse('admin:cv')},
     ]

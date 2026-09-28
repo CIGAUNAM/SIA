@@ -26,6 +26,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.html import format_html, format_html_join
+from django.utils.http import url_has_allowed_host_and_scheme
 from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import GenericTabularInline, ModelAdmin, TabularInline
 from unfold.decorators import action
@@ -38,6 +39,8 @@ from .permisos import es_sysadmin
 from .utils import personas_ordenadas
 
 TODAS_LAS_ACCIONES = ('add', 'change', 'delete', 'view')
+#: Apps de trayectoria (no producción regular): se capturan desde "Mi perfil" y no aparecen en el menú de los académicos.
+SECCIONES_PERFIL = ('formacion_academica', 'experiencia_profesional')
 ANIO_MINIMO = 1900
 ANIOS_A_FUTURO = 2
 
@@ -434,6 +437,29 @@ class PropietarioAdmin(BaseAdmin):
         if obj is not None and not es_sysadmin(request.user) and not self.es_propio(request, obj):
             return False
         return super().has_delete_permission(request, obj)
+
+    def _volver(self, request):
+        """Página a la que se regresa al guardar (p. ej. el perfil desde el que se agregó el registro)."""
+        destino = request.GET.get('volver', '')
+        if destino and url_has_allowed_host_and_scheme(destino, allowed_hosts={request.get_host()}) and not any(
+                boton in request.POST for boton in ('_continue', '_addanother', '_saveasnew')):
+            return destino
+        return None
+
+    def response_add(self, request, obj, post_url_continue=None):
+        respuesta = super().response_add(request, obj, post_url_continue)
+        destino = self._volver(request)
+        return redirect(destino) if destino and respuesta.status_code == 302 else respuesta
+
+    def response_change(self, request, obj):
+        respuesta = super().response_change(request, obj)
+        destino = self._volver(request)
+        return redirect(destino) if destino and respuesta.status_code == 302 else respuesta
+
+    def response_delete(self, request, obj_display, obj_id):
+        respuesta = super().response_delete(request, obj_display, obj_id)
+        destino = self._volver(request)
+        return redirect(destino) if destino and respuesta.status_code == 302 else respuesta
 
     def save_model(self, request, obj, form, change):
         motivo = form.cleaned_data.get('motivo_cambio')

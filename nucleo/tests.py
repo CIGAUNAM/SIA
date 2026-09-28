@@ -605,3 +605,47 @@ class GruposTests(Datos):
         respuesta = self.client.post(url, datos)
         self.assertEqual(respuesta.status_code, 302, respuesta.context and [
             respuesta.context['adminform'].form.errors, [(f.formset.prefix, f.formset.errors, f.formset.non_form_errors()) for f in respuesta.context['inline_admin_formsets']]])
+
+
+class MiPerfilTests(Datos):
+    def test_mi_perfil_sin_controles_administrativos_y_con_trayectoria(self):
+        from formacion_academica.models import Grado
+        Grado.objects.create(usuario=self.ana, nivel='DOCTORADO', titulo_obtenido='Doctora en Geografía',
+                             institucion=self.institucion, fecha_grado=date(2015, 6, 1))
+        for usuario in (self.ana, self.administrativa, self.admin):
+            self.client.force_login(usuario)
+            respuesta = self.client.get(reverse('admin:perfil'), follow=True)
+            self.assertEqual(respuesta.redirect_chain[-1][0], reverse('admin:nucleo_user_change', args=[usuario.pk]))
+            formulario = respuesta.context['adminform'].form
+            self.assertNotIn('groups', formulario.fields)
+            self.assertNotIn('is_superuser', formulario.fields)
+            self.assertIn('nombre_persona', formulario.fields)
+            self.assertContains(respuesta, 'Formación académica')
+        self.client.force_login(self.ana)
+        self.assertContains(self.client.get(reverse('admin:perfil'), follow=True), 'Doctora en Geografía')
+        self.client.force_login(self.admin)
+        self.assertContains(self.client.get(reverse('admin:nucleo_user_change', args=[self.admin.pk]) + '?completo=1'),
+                            'name="is_superuser"')
+
+    def test_guardar_desde_el_perfil_regresa_al_perfil(self):
+        from experiencia_profesional.models import LineaInvestigacion
+        self.client.force_login(self.ana)
+        perfil = reverse('admin:nucleo_user_change', args=[self.ana.pk])
+        respuesta = self.client.get(perfil)
+        agregar = next(m['agregar'] for s in respuesta.context['trayectoria'] for m in s['modelos']
+                       if 'nea' in m['titulo'])
+        respuesta = self.client.post(agregar, {'nombre': 'Geografía ambiental', 'fecha_inicio': '2015-01-01',
+                                               **SIN_EVIDENCIAS})
+        self.assertRedirects(respuesta, perfil, fetch_redirect_response=False)
+        self.assertTrue(LineaInvestigacion.objects.filter(usuario=self.ana, nombre='Geografía ambiental').exists())
+        self.assertContains(self.client.get(perfil), 'Geografía ambiental')
+
+    def test_menu_de_academicos_sin_formacion_ni_experiencia(self):
+        from django.test import RequestFactory
+        from SIA.navegacion import menu
+        solicitud = RequestFactory().get('/')
+        for usuario, esperado in ((self.ana, False), (self.admin, True)):
+            solicitud.user = usuario
+            titulos = [str(g.get('title')) for g in menu(solicitud)]
+            self.assertEqual('Formación académica' in titulos, esperado, titulos)
+            self.assertIn('Mi perfil', [str(i['title']) for i in menu(solicitud)[0]['items']])

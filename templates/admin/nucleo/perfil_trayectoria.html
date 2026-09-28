@@ -1,0 +1,32 @@
+{% if trayectoria %}
+  {% if version_completa %}
+    <p class="mb-4 text-sm text-font-subtle-light dark:text-font-subtle-dark">
+      Como superusuario, también puedes <a class="text-primary-600" href="?completo=1">editar la versión completa de tu cuenta</a> (grupos y permisos).
+    </p>
+  {% endif %}
+  {% for seccion in trayectoria %}
+    <h2 class="mb-3 mt-8 text-base font-semibold text-important">{{ seccion.titulo }}</h2>
+    <div class="grid gap-4 lg:grid-cols-2">
+      {% for modelo in seccion.modelos %}
+        <div class="rounded-default border border-base-200 bg-white p-4 shadow-xs dark:border-base-800 dark:bg-base-900">
+          <div class="mb-2 flex items-center justify-between gap-2">
+            <h3 class="font-semibold text-important">{{ modelo.titulo }} <span class="font-normal text-font-subtle-light dark:text-font-subtle-dark">({{ modelo.registros|length }})</span></h3>
+            {% if modelo.agregar %}
+              <a href="{{ modelo.agregar }}" class="flex items-center gap-1 rounded-default border border-base-200 px-2 py-1 text-sm font-medium text-primary-600 hover:bg-base-50 dark:border-base-700 dark:hover:bg-base-800">
+                <span class="material-symbols-outlined text-base">add</span> Agregar
+              </a>
+            {% endif %}
+          </div>
+          {% for registro in modelo.registros %}
+            <a href="{{ registro.url }}" class="flex justify-between gap-3 border-t border-base-100 py-2 text-sm hover:text-primary-600 dark:border-base-800">
+              <span>{{ registro.texto }}</span>
+              <span class="shrink-0 text-font-subtle-light dark:text-font-subtle-dark">{{ registro.periodo }}</span>
+            </a>
+          {% empty %}
+            <p class="border-t border-base-100 py-2 text-sm text-font-subtle-light dark:border-base-800 dark:text-font-subtle-dark">Sin registros.</p>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+{% endif %}

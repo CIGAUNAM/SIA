@@ -1,3 +1,4 @@
+from django.apps import apps
 from django.contrib import admin, messages
 from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
@@ -10,6 +11,8 @@ from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import format_html
+from django.utils.http import urlencode
+from django.utils.text import capfirst
 from simple_history.admin import SimpleHistoryAdmin
 from unfold.admin import ModelAdmin, TabularInline
 from unfold.decorators import action
@@ -19,6 +22,7 @@ from unfold.widgets import UnfoldAdminTextareaWidget
 from .admin_base import CatalogoAdmin, FormularioSIA, ParticipanteInline, VerificableAdmin, es_administrador
 from .externos import ErrorServicio, nombre_orcid, orcid_por_correo
 from .formularios import UserChangeForm, UserCreationForm, registros_de
+from .admin_base import SECCIONES_PERFIL
 from .nombres import normalizar_orcid
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
@@ -28,6 +32,18 @@ from .permisos import GRUPO_ACADEMICOS, GRUPO_ADMINISTRACION, es_sysadmin
 DATOS_PERSONALES = ('Datos personales', {'fields': (
     'grado', 'first_name', 'last_name', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp', 'telefono', 'avatar',
 )})
+def _periodo(registro):
+    """'2015–2019', '2015–actual' o el año de la fecha principal del registro, si la tiene."""
+    inicio = getattr(registro, 'fecha_inicio', None)
+    if inicio:
+        if not hasattr(registro, 'fecha_fin'):
+            return f'desde {inicio.year}'
+        return f"{inicio.year}–{registro.fecha_fin.year if registro.fecha_fin else 'actual'}"
+    fecha = next((getattr(registro, campo) for campo in ('fecha_grado', 'fecha', 'fecha_obtencion')
+                  if getattr(registro, campo, None)), None)
+    return str(fecha.year) if fecha else ''
+
+
 PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('figura_como', 'orcid', 'nombre_persona')})
 PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'domicilio', 'url', 'sni', 'pride')})
 ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato')})
@@ -82,12 +98,22 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
         *BaseUserAdmin.fieldsets[2:],
     )
     fieldsets_propios = (
-        (None, {'fields': ('email', 'password')}),
+        (None, {'fields': ('email', 'contrasena')}),
         DATOS_PERSONALES,
         PUBLICACIONES,
         PERFIL,
         ADSCRIPCION,
     )
+    #: Debajo del formulario: formación académica y experiencia profesional de la cuenta.
+    change_form_after_template = 'admin/nucleo/perfil_trayectoria.html'
+
+    def es_mi_perfil(self, request, obj):
+        """La propia cuenta se edita como "Mi perfil", sin controles administrativos (aun siendo administrador).
+
+        Un superusuario puede ver la versión completa de su cuenta con `?completo=1`.
+        """
+        return (obj is not None and obj.pk == request.user.pk
+                and not (es_sysadmin(request.user) and request.GET.get('completo')))
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -104,7 +130,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
         return form
 
     def get_fieldsets(self, request, obj=None):
-        if obj is not None and not es_administrador(request.user):
+        if obj is not None and (not es_administrador(request.user) or self.es_mi_perfil(request, obj)):
             return self.fieldsets_propios
         fieldsets = super().get_fieldsets(request, obj)
         if obj is not None and not es_sysadmin(request.user):
@@ -126,11 +152,46 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
         return ', '.join(obj.groups.values_list('name', flat=True)) or '—'
 
     def get_readonly_fields(self, request, obj=None):
-        if es_administrador(request.user):
+        if es_administrador(request.user) and not self.es_mi_perfil(request, obj):
             return [*super().get_readonly_fields(request, obj), 'figura_como', 'grupos']
-        return ['email', 'figura_como', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato']
+        return ['email', 'contrasena', 'figura_como', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato']
+
+    def trayectoria(self, request, obj):
+        """Secciones de formación y experiencia de la cuenta, con enlaces para agregar y editar que vuelven aquí."""
+        volver = request.get_full_path()
+        secciones = []
+        for app_label in SECCIONES_PERFIL:
+            modelos = []
+            for modelo, model_admin in admin.site._registry.items():
+                if modelo._meta.app_label != app_label or not model_admin.has_view_or_change_permission(request):
+                    continue
+                opts = modelo._meta
+                parametros = {'volver': volver, **({} if obj.pk == request.user.pk else {'usuario': obj.pk})}
+                registros = [{
+                    'texto': str(r), 'periodo': _periodo(r),
+                    'url': f"{reverse(f'admin:{opts.app_label}_{opts.model_name}_change', args=[r.pk])}?"
+                           f"{urlencode({'volver': volver})}",
+                } for r in modelo._default_manager.filter(usuario=obj)]
+                modelos.append({
+                    'titulo': capfirst(opts.verbose_name_plural), 'registros': registros,
+                    'agregar': (f"{reverse(f'admin:{opts.app_label}_{opts.model_name}_add')}?{urlencode(parametros)}"
+                                if model_admin.has_add_permission(request) else None),
+                })
+            secciones.append({'titulo': apps.get_app_config(app_label).verbose_name, 'modelos': modelos})
+        return secciones
+
+    def response_change(self, request, obj):
+        if obj.pk == request.user.pk and not any(b in request.POST for b in ('_continue', '_addanother', '_saveasnew')):
+            super().response_change(request, obj)  # Deja el mensaje de "se guardó".
+            return redirect(request.get_full_path())  # En "Mi perfil", guardar deja en la misma página.
+        return super().response_change(request, obj)
 
     def render_change_form(self, request, context, add=False, change=False, form_url='', obj=None):
+        if obj is not None:
+            context['trayectoria'] = self.trayectoria(request, obj)
+            if self.es_mi_perfil(request, obj):
+                context.update(title='Mi perfil', subtitle=None, es_mi_perfil=True, show_save_and_add_another=False,
+                               version_completa=es_sysadmin(request.user))
         adminform = context['adminform']
         if add and 'es_persona' in adminform.form.pregunta:
             # La pregunta "¿Es alguna de estas personas?" solo aparece cuando hay coautores parecidos.
@@ -210,7 +271,14 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
         return es_administrador(request.user) and super().has_add_permission(request)
 
     def has_delete_permission(self, request, obj=None):
+        if obj is not None and obj.pk == request.user.pk:
+            return False  # Nadie borra su propia cuenta desde "Mi perfil".
         return es_administrador(request.user) and super().has_delete_permission(request, obj)
+
+    @admin.display(description='contraseña')
+    def contrasena(self, obj):
+        return format_html('<a href="{}" class="text-primary-600">Cambiar mi contraseña</a>',
+                           reverse('admin:password_change'))
 
     @admin.display(description='CV')
     def cv(self, obj):

@@ -195,3 +195,8 @@ def informe_excel_view(request):
                              content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     respuesta["Content-Disposition"] = f'attachment; filename="informe-{periodo.anio}.xlsx"'
     return respuesta
+
+
+def mi_perfil_view(request):
+    """"Mi perfil": la página de la propia cuenta (datos personales, formación y experiencia)."""
+    return redirect('admin:nucleo_user_change', request.user.pk)

@@ -87,6 +87,11 @@ Los nombres de las personas se convierten al formato de cita (`Pérez García, J
 
 ## Funciones para la operación diaria
 
+- **Mi perfil** (menú principal): cada quien ajusta sus datos personales, su nombre en publicaciones, ORCID y
+  perfil académico, sin ver grupos ni permisos (aunque sea administrador), y cambia su contraseña. Debajo están su
+  **formación académica** y **experiencia profesional**, que se agregan y editan desde ahí (y ya no aparecen en el
+  menú de los académicos).
+
 - **Nombre en publicaciones**: cada persona tiene un solo *nombre para mostrar* en formato de cita
   (`Pérez García, J. C.`), que es también su orden alfabético. Si se captura su ORCID y no el nombre, el nombre se
   toma del registro público de ORCID; si falta el ORCID, se busca en ORCID por el correo (si la persona lo hizo público).
