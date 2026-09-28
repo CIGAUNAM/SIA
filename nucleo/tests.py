@@ -646,6 +646,10 @@ class MiPerfilTests(Datos):
         solicitud = RequestFactory().get('/')
         for usuario, esperado in ((self.ana, False), (self.admin, True)):
             solicitud.user = usuario
-            titulos = [str(g.get('title')) for g in menu(solicitud)]
-            self.assertEqual('Formación académica' in titulos, esperado, titulos)
+            grupos = menu(solicitud)
+            titulos = [str(g.get('title')) for g in grupos]
+            self.assertNotIn('Formación académica', titulos)
+            self.assertEqual('Trayectoria' in titulos, esperado, titulos)
+            if esperado:
+                self.assertEqual(titulos[-1], 'Trayectoria')
             self.assertIn('Mi perfil', [str(i['title']) for i in menu(solicitud)[0]['items']])

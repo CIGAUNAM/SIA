@@ -88,11 +88,15 @@ def menu(request):
             items[seccion].append(item)
     grupos = [{'items': principales}]
     for app_label, _ in SECCIONES:
-        if app_label in SECCIONES_PERFIL and not administrador:
-            continue  # Formación y experiencia se capturan desde "Mi perfil".
+        if app_label in SECCIONES_PERFIL:
+            continue  # Formación y experiencia: "Mi perfil" y, para administradores, "Trayectoria" (abajo).
         if items[app_label] and app_label in apps:
             grupos.append({'title': apps[app_label]['name'], 'separator': True, 'collapsible': True,
                            'items': items[app_label]})
+    trayectoria = [item for app_label in SECCIONES_PERFIL for item in items[app_label]]
+    if administrador and trayectoria:
+        # Las de todos los académicos, al final y separadas de la producción.
+        grupos.append({'title': 'Trayectoria', 'separator': True, 'collapsible': True, 'items': trayectoria})
     return grupos
 
 
