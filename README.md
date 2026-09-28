@@ -23,7 +23,8 @@ cp .env.example .env        # y edita SECRET_KEY y los datos de la base de datos
 .venv/bin/python manage.py runserver
 ```
 
-`migrate` crea también el grupo **Investigadores** con sus permisos (se resincroniza en cada `migrate`).
+`migrate` crea también los grupos **Académicos** y **Administración** con sus permisos (se resincronizan en cada
+`migrate`).
 
 ### Variables de entorno (`.env`)
 
@@ -62,7 +63,7 @@ Los volcados legacy (`dumpdata` de la versión Django 2.0) se convierten al esqu
 versión más reciente de cada modelo. Qué hace la conversión:
 
 - Los ~2,200 "usuarios" legacy se vuelven **Personas**. Solo ~60 son **cuentas** (quienes iniciaron sesión, el
-  personal académico y los dueños de registros); conservan su contraseña y quedan en el grupo Investigadores.
+  personal académico y los dueños de registros); conservan su contraseña y quedan en el grupo Académicos.
 - Se fusionan catálogos duplicados: `Institucion` + `InstitucionSimple` + `Dependencia` → `Institucion`;
   `Evento` + `EventoDifusion` + `EventoDivulgacion` → `Evento`; `Revista` + `RevistaDivulgacion` → `Revista`;
   programas de licenciatura, maestría y doctorado → `ProgramaAcademico`.
@@ -122,15 +123,22 @@ Los nombres de las personas se convierten al formato de cita (`Pérez García, J
 
 ## Roles y permisos
 
-- **Administradores**: superusuarios o usuarios con el permiso `nucleo.ver_todo`. Ven y editan todo, verifican
-  catálogos y administran cuentas.
-- **Investigadores**: cuentas del grupo *Investigadores*. Ven solo sus registros (los que tienen su usuario o en los
-  que figuran como autor, responsable, tutor, etc.) y editan su perfil. Pueden ampliar los catálogos compartidos
-  (instituciones, revistas, eventos, personas...); un registro de catálogo **verificado** solo lo modifica un
-  administrador. Las cuentas nuevas creadas desde el admin entran automáticamente a este grupo.
+El acceso se da con grupos; el **tipo** de la cuenta (investigador, técnico académico, posdoctorante,
+administrativo) describe a la persona para reportes, no lo que puede hacer.
 
-Los permisos del grupo se declaran en cada `ModelAdmin` (`permisos_investigador`) y se aplican con
-`nucleo.permisos.sincronizar_grupo_investigadores`.
+- **Sysadmin**: superusuarios. Acceso total, incluidos grupos, permisos y otras cuentas de superusuario.
+- **Administración** (personal administrativo): ve y edita la producción de todos los académicos; al editar un
+  registro ajeno debe escribir el **motivo del cambio**, que queda en el historial junto con quién, cuándo y qué
+  cambió. No borra producción ajena. Mantiene catálogos (verifica, fusiona duplicados), el informe anual (periodos,
+  avance, confirmaciones), la configuración de la entidad y las cuentas (altas, contraseñas, ORCID), pero no asigna
+  grupos ni permisos, ni edita superusuarios u otras cuentas de Administración.
+- **Académicos** (investigadores, técnicos académicos y posdoctorantes): ven solo sus registros (los que tienen su
+  usuario o en los que figuran como autor, responsable, tutor, etc.) y editan su perfil. Pueden ampliar los
+  catálogos compartidos (instituciones, revistas, eventos, personas...); un registro de catálogo **verificado**
+  solo lo modifica Administración. Las cuentas nuevas creadas desde el admin entran automáticamente a este grupo.
+
+Los grupos se definen en `nucleo/permisos.py`: los permisos de Académicos se declaran en cada `ModelAdmin`
+(`permisos_investigador`) y los de Administración se derivan del tipo de admin (catálogo o producción).
 
 ## Arquitectura
 

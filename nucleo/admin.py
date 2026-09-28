@@ -23,7 +23,7 @@ from .nombres import normalizar_orcid
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
                      Nombramiento, Pais, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
-from .permisos import GRUPO_INVESTIGADORES
+from .permisos import GRUPO_ACADEMICOS, GRUPO_ADMINISTRACION, es_sysadmin
 
 DATOS_PERSONALES = ('Datos personales', {'fields': (
     'grado', 'first_name', 'last_name', 'fecha_nacimiento', 'genero', 'pais_origen', 'rfc', 'curp', 'telefono', 'avatar',
@@ -106,11 +106,28 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     def get_fieldsets(self, request, obj=None):
         if obj is not None and not es_administrador(request.user):
             return self.fieldsets_propios
-        return super().get_fieldsets(request, obj)
+        fieldsets = super().get_fieldsets(request, obj)
+        if obj is not None and not es_sysadmin(request.user):
+            # Administración no asigna grupos, permisos ni superusuarios: solo activa o desactiva cuentas.
+            fieldsets = [('Acceso', {'fields': ('is_active', 'grupos'), 'description': (
+                'Los grupos y permisos los asigna un superusuario.')}) if 'is_superuser' in opciones.get('fields', ())
+                         else (nombre, opciones) for nombre, opciones in fieldsets]
+        return fieldsets
+
+    def has_change_permission(self, request, obj=None):
+        # Administración no edita superusuarios ni a otros miembros de Administración (p. ej. su contraseña).
+        if (obj is not None and obj != request.user and not es_sysadmin(request.user)
+                and (obj.is_superuser or obj.groups.filter(name=GRUPO_ADMINISTRACION).exists())):
+            return False
+        return super().has_change_permission(request, obj)
+
+    @admin.display(description='grupos')
+    def grupos(self, obj):
+        return ', '.join(obj.groups.values_list('name', flat=True)) or '—'
 
     def get_readonly_fields(self, request, obj=None):
         if es_administrador(request.user):
-            return [*super().get_readonly_fields(request, obj), 'figura_como']
+            return [*super().get_readonly_fields(request, obj), 'figura_como', 'grupos']
         return ['email', 'figura_como', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato']
 
     def render_change_form(self, request, context, add=False, change=False, form_url='', obj=None):
@@ -187,7 +204,7 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     def save_related(self, request, form, formsets, change):
         super().save_related(request, form, formsets, change)
         if not change and not form.instance.is_superuser:
-            form.instance.groups.add(Group.objects.get_or_create(name=GRUPO_INVESTIGADORES)[0])
+            form.instance.groups.add(Group.objects.get_or_create(name=GRUPO_ACADEMICOS)[0])
 
     def has_add_permission(self, request):
         return es_administrador(request.user) and super().has_add_permission(request)

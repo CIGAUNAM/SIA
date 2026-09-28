@@ -1,7 +1,7 @@
 """Clases base del admin del SIA.
 
 Cada `ModelAdmin` declara en `permisos_investigador` qué acciones concede al grupo
-"Investigadores"; `nucleo.permisos.sincronizar_grupo_investigadores` lee esos valores.
+"Académicos"; `nucleo.permisos.sincronizar_grupos` lee esos valores (ver ahí los demás grupos).
 
 - `PropietarioAdmin`: registros de producción académica. Un académico solo ve los
   registros en los que participa (según `propietarios`); los administradores ven todo.
@@ -14,6 +14,7 @@ Las tres bases incluyen bitácora de cambios, validación de fechas, aviso de po
 duplicados y la acción "Fusionar" para administradores.
 """
 
+import copy
 from datetime import date
 
 from django import forms
@@ -33,6 +34,7 @@ from unfold.forms import PaginationInlineFormSet
 from .fusion import ErrorFusion, fusionar, resumen_referencias
 from .informe import anio_cierre
 from .models import EstadoPublicacion, Evidencia, PeriodoInforme, Persona
+from .permisos import es_sysadmin
 from .utils import personas_ordenadas
 
 TODAS_LAS_ACCIONES = ('add', 'change', 'delete', 'view')
@@ -98,6 +100,9 @@ class FormularioSIA(forms.ModelForm):
     """Valida el rango de las fechas capturadas, aplica las reglas del admin y avisa de posibles duplicados."""
     confirmar_no_duplicado = forms.BooleanField(
         required=False, widget=forms.HiddenInput, label='Confirmo que no es un duplicado de los registros señalados')
+    motivo_cambio = forms.CharField(
+        label='Motivo del cambio', required=False, max_length=100,
+        help_text='Este registro es de otro académico: el motivo queda en su historial junto con quién y qué cambió.')
 
     _model_admin = None
     _request = None
@@ -406,8 +411,43 @@ class PropietarioAdmin(BaseAdmin):
             inicial.setdefault('usuario', request.user.pk)
         return inicial
 
+    def es_propio(self, request, obj):
+        """Si el usuario participa en el registro (o sea, si lo vería sin ser administrador)."""
+        filtro = Q()
+        for lookup in self.propietarios:
+            filtro |= Q(**{lookup: request.user})
+        return self.model._default_manager.filter(filtro, pk=obj.pk).exists()
+
+    def requiere_motivo(self, request, obj):
+        """Administración (no el superusuario) debe justificar cada edición de la producción de otro académico."""
+        return (obj is not None and es_administrador(request.user) and not es_sysadmin(request.user)
+                and not self.es_propio(request, obj))
+
+    def get_fieldsets(self, request, obj=None):
+        fieldsets = super().get_fieldsets(request, obj)
+        if self.requiere_motivo(request, obj):
+            fieldsets = [*fieldsets, ('Trazabilidad', {'fields': ['motivo_cambio']})]
+        return fieldsets
+
+    def has_delete_permission(self, request, obj=None):
+        # Administración puede corregir la producción ajena, pero no borrarla.
+        if obj is not None and not es_sysadmin(request.user) and not self.es_propio(request, obj):
+            return False
+        return super().has_delete_permission(request, obj)
+
+    def save_model(self, request, obj, form, change):
+        motivo = form.cleaned_data.get('motivo_cambio')
+        if motivo:
+            obj._change_reason = motivo  # django-simple-history lo guarda en el historial.
+        super().save_model(request, obj, form, change)
+
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
+        if 'motivo_cambio' in form.base_fields:
+            # Copia: el campo declarado es el mismo objeto en todas las clases de formulario.
+            campo_motivo = copy.deepcopy(form.base_fields['motivo_cambio'])
+            campo_motivo.required = self.requiere_motivo(request, obj)
+            form.base_fields['motivo_cambio'] = campo_motivo
         campo = form.base_fields.get('usuario')
         if campo is not None and not es_administrador(request.user):
             # El académico no elige el dueño: el campo se envía oculto y se ignora lo que llegue en POST.

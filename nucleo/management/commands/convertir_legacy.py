@@ -219,7 +219,7 @@ class Conversor:
                     'last_name': txt(f['last_name']), 'is_active': f['is_active'],
                     'is_staff': True, 'is_superuser': f['is_superuser'], 'last_login': f['last_login'],
                     'date_joined': fecha_hora(f['date_joined']),
-                    'groups': [] if f['is_superuser'] else [['Investigadores']], 'user_permissions': [],
+                    'groups': [] if f['is_superuser'] else [['Académicos']], 'user_permissions': [],
                     'tipo': opcion(f['tipo'], TIPOS_CUENTA | {'OTRO'}, 'OTRO'), 'grado': '',
                     'semblanza': txt(f['descripcion']), 'fecha_nacimiento': f['fecha_nacimiento'],
                     'genero': {'M': 'MASCULINO', 'F': 'FEMENINO'}.get(f['genero'], ''), 'pais_origen': f['pais_origen'],

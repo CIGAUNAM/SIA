@@ -17,7 +17,7 @@ from nucleo.admin_base import es_administrador
 from nucleo.models import ConfiguracionEntidad, Evento, Institucion, Pais, Persona, Revista, TipoEvento, User
 from nucleo.externos import ErrorServicio
 from nucleo.nombres import formato_cita, partes_cita
-from nucleo.permisos import GRUPO_INVESTIGADORES
+from nucleo.permisos import GRUPO_ACADEMICOS, GRUPO_ADMINISTRACION
 from SIA.tablero import construir_tablero
 
 
@@ -32,7 +32,7 @@ def datos_de_formulario(formulario):
     datos = {}
     for campo in formulario:
         valor, widget = campo.value(), campo.field.widget
-        if valor in (None, False) or campo.name in ('password', 'avatar'):
+        if valor is None or valor is False or campo.name in ('password', 'avatar'):
             continue
         if isinstance(widget, MultiWidget):
             for i, (sub, parte) in enumerate(zip(widget.widgets, widget.decompress(valor))):
@@ -46,13 +46,24 @@ def datos_de_formulario(formulario):
     return datos
 
 
+def datos_de_pagina(respuesta):
+    """POST equivalente a guardar sin cambios una página de alta o edición del admin (formulario e inlines)."""
+    datos = datos_de_formulario(respuesta.context['adminform'].form)
+    for inline in respuesta.context['inline_admin_formsets']:
+        formset = inline.formset
+        datos.update(datos_de_formulario(formset.management_form))
+        for formulario in formset.initial_forms:
+            datos.update(datos_de_formulario(formulario))
+    return datos
+
+
 class Datos(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.mexico = Pais.objects.create(nombre='México', codigo='MX')
         cls.institucion = Institucion.objects.create(nombre='UNAM', pais=cls.mexico, verificado=True)
         cls.revista = Revista.objects.create(nombre='Investigaciones Geográficas', pais=cls.mexico, verificado=True)
-        grupo = Group.objects.get(name=GRUPO_INVESTIGADORES)
+        grupo = Group.objects.get(name=GRUPO_ACADEMICOS)
         cls.ana = User.objects.create_user('ana@ciga.unam.mx', password='x', first_name='Ana', last_name='López Pérez',
                                            is_staff=True, tipo=User.Tipo.INVESTIGADOR)
         cls.beto = User.objects.create_user('beto@ciga.unam.mx', password='x', first_name='Beto', last_name='Ruiz',
@@ -60,6 +71,10 @@ class Datos(TestCase):
         cls.ana.groups.add(grupo)
         cls.beto.groups.add(grupo)
         cls.admin = User.objects.create_superuser('admin@ciga.unam.mx', password='x')
+        cls.administrativa = User.objects.create_user('eva@ciga.unam.mx', password='x', first_name='Eva',
+                                                      last_name='Admin', is_staff=True,
+                                                      tipo=User.Tipo.ADMINISTRATIVO)
+        cls.administrativa.groups.add(Group.objects.get(name=GRUPO_ADMINISTRACION))
         cls.externo = Persona.objects.create(nombre='Externa, C.')
         ConfiguracionEntidad.objects.update(pais_sede=cls.mexico, titular='Dra. Titular Prueba')
 
@@ -96,7 +111,7 @@ class PersonaTests(Datos):
         self.assertEqual(partes_cita('Bocco (mal), G.'), ('Bocco (mal)', 'G.'))
 
     def test_grupo_investigadores_incluye_modelos_de_inlines(self):
-        permisos = set(Group.objects.get(name=GRUPO_INVESTIGADORES).permissions.values_list('codename', flat=True))
+        permisos = set(Group.objects.get(name=GRUPO_ACADEMICOS).permissions.values_list('codename', flat=True))
         self.assertIn('add_articulocientificoautor', permisos)
         self.assertIn('view_pais', permisos)
         self.assertNotIn('change_pais', permisos)
@@ -216,7 +231,7 @@ class PerfilTests(Datos):
             'usable_password': 'true', 'first_name': 'Nueva', 'last_name': 'Cuenta Prueba'})
         nueva = User.objects.get(email='nueva@ciga.unam.mx')  # Se guarda en minúsculas.
         self.assertTrue(nueva.is_staff)
-        self.assertTrue(nueva.groups.filter(name=GRUPO_INVESTIGADORES).exists())
+        self.assertTrue(nueva.groups.filter(name=GRUPO_ACADEMICOS).exists())
         self.assertEqual((nueva.persona.nombre, nueva.persona.email), ('Cuenta Prueba, N.', 'nueva@ciga.unam.mx'))
 
     def alta(self, **datos):
@@ -529,7 +544,7 @@ class ConvertirLegacyTests(TestCase):
             call_command('loaddata', str(salida), verbosity=0)
 
         ana = User.objects.get(pk=10)
-        self.assertTrue(ana.groups.filter(name=GRUPO_INVESTIGADORES).exists())
+        self.assertTrue(ana.groups.filter(name=GRUPO_ACADEMICOS).exists())
         self.assertEqual((ana.sni, ana.genero), ('I', ''))
         self.assertEqual(ana.email, 'ana@sin-correo.invalid')  # No tenía correo: recibe uno provisional.
         self.assertEqual(ana.persona.nombre, 'López, A.')
@@ -539,3 +554,54 @@ class ConvertirLegacyTests(TestCase):
         autores = [a.persona_id for a in articulo.articulocientificoautor_set.all()]
         self.assertEqual(autores, [11, 10])
         self.assertEqual(Pais.objects.get().codigo, 'MX')
+
+
+class GruposTests(Datos):
+    def test_permisos_de_administracion(self):
+        permisos = set(Group.objects.get(name=GRUPO_ADMINISTRACION).permissions.values_list('codename', flat=True))
+        self.assertTrue({'ver_todo', 'change_articulocientifico', 'delete_revista', 'change_user',
+                         'change_periodoinforme', 'change_configuracionentidad'} <= permisos)
+        self.assertFalse({'delete_articulocientifico', 'delete_user', 'change_group', 'change_permission'} & permisos)
+
+    def test_editar_produccion_ajena_pide_motivo_y_queda_en_historial(self):
+        articulo = self.articulo('De Ana', self.ana.persona)
+        url = reverse('admin:investigacion_articulocientifico_change', args=[articulo.pk])
+        self.client.force_login(self.administrativa)
+        datos = datos_de_pagina(self.client.get(url))
+        datos['titulo'] = 'De Ana (corregido)'
+        respuesta = self.client.post(url, datos)
+        self.assertContains(respuesta, 'Motivo del cambio')
+        datos['motivo_cambio'] = 'Título corregido según la constancia'
+        self.assertEqual(self.client.post(url, datos).status_code, 302)
+        ultimo = articulo.history.first()
+        self.assertEqual((ultimo.titulo, ultimo.history_user, ultimo.history_change_reason),
+                         ('De Ana (corregido)', self.administrativa, 'Título corregido según la constancia'))
+
+    def test_administracion_no_borra_produccion_ajena(self):
+        articulo = self.articulo('De Ana', self.ana.persona)
+        self.client.force_login(self.administrativa)
+        url = reverse('admin:investigacion_articulocientifico_delete', args=[articulo.pk])
+        self.assertEqual(self.client.post(url, {'post': 'yes'}).status_code, 403)
+        self.assertTrue(ArticuloCientifico.objects.filter(pk=articulo.pk).exists())
+
+    def test_administracion_no_toca_superusuarios_ni_permisos(self):
+        self.client.force_login(self.administrativa)
+        cambio = lambda u: reverse('admin:nucleo_user_change', args=[u.pk])
+        formulario = self.client.get(cambio(self.ana)).context['adminform'].form
+        self.assertNotIn('is_superuser', formulario.fields)
+        self.assertNotIn('groups', formulario.fields)
+        pagina_admin = self.client.get(cambio(self.admin))
+        self.assertNotContains(pagina_admin, 'name="password1"')
+        self.assertEqual(self.client.get(reverse('admin:auth_user_password_change', args=[self.admin.pk]))
+                         .status_code, 403)
+        self.assertEqual(self.client.get(reverse('admin:auth_group_changelist')).status_code, 403)
+
+    def test_superusuario_edita_sin_motivo(self):
+        articulo = self.articulo('De Ana', self.ana.persona)
+        url = reverse('admin:investigacion_articulocientifico_change', args=[articulo.pk])
+        self.client.force_login(self.admin)
+        datos = datos_de_pagina(self.client.get(url))
+        datos['titulo'] = 'Otro título'
+        respuesta = self.client.post(url, datos)
+        self.assertEqual(respuesta.status_code, 302, respuesta.context and [
+            respuesta.context['adminform'].form.errors, [(f.formset.prefix, f.formset.errors, f.formset.non_form_errors()) for f in respuesta.context['inline_admin_formsets']]])
