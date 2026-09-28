@@ -113,7 +113,7 @@ Los nombres de las personas se convierten al formato de cita (`Pérez García, J
 
 ## Informe anual
 
-1. Un administrador crea el **periodo de informe** (año y fecha límite) en *Catálogos y personas → Periodos de informe*.
+1. Un administrador crea el **periodo de informe** (año y fecha límite) en *Periodos de informe* (menú principal, junto a *Avance de captura*).
 2. Cada académico revisa **Mi informe** (lo capturado en ese año, con enlaces para corregir) y lo **confirma**.
 3. Los administradores siguen el **Avance de captura** (registros y confirmación por académico) y descargan el
    **informe en Excel** (resumen de indicadores, avance y una hoja por sección sin duplicar coautorías).

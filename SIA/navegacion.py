@@ -31,6 +31,12 @@ SECCIONES = [
 
 # Modelos que se muestran en una sección distinta a la de su app: (app, modelo) → sección.
 REUBICADOS = {('nucleo', 'user'): 'auth'}
+# Modelos que van en el grupo principal del menú (junto a "Avance de captura"), no en su sección.
+EN_PRINCIPAL = [
+    ('nucleo', 'periodoinforme', 'Periodos de informe', 'event_available'),
+    ('nucleo', 'confirmacioninforme', 'Confirmaciones de informe', 'task_alt'),
+    ('nucleo', 'configuracionentidad', 'Configuración de la entidad', 'settings'),
+]
 
 
 def _funcion_contador(modelo):
@@ -57,13 +63,16 @@ def menu(request):
     ]
     if administrador:
         principales.append({'title': 'Avance de captura', 'icon': 'monitoring', 'link': reverse('admin:informe_avance')})
-    if request.user.has_perm('nucleo.change_configuracionentidad'):
-        principales.append({'title': 'Configuración de la entidad', 'icon': 'settings',
-                            'link': reverse('admin:nucleo_configuracionentidad_changelist')})
+    for app_label, modelo, titulo, icono in EN_PRINCIPAL:
+        if administrador and request.user.has_perm(f'{app_label}.view_{modelo}'):
+            principales.append({'title': titulo, 'icon': icono,
+                                'link': reverse(f'admin:{app_label}_{modelo}_changelist')})
     iconos = dict(SECCIONES)
     items = {app_label: [] for app_label, _ in SECCIONES}
     for app_label, app in apps.items():
         for modelo in app['models']:
+            if any((app_label, modelo['object_name'].lower()) == (a, m) for a, m, *_ in EN_PRINCIPAL):
+                continue
             seccion = REUBICADOS.get((app_label, modelo['object_name'].lower()), app_label)
             if seccion not in apps:  # Sin acceso a la sección destino: se queda en la de su app.
                 seccion = app_label
