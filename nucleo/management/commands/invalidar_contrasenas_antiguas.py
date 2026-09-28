@@ -33,14 +33,14 @@ class Command(BaseCommand):
 
     def handle(self, *args, aplicar=False, **options):
         cuentas = [u for u in User.objects.order_by('email') if es_antigua(u.password)]
+        conservan = sum(1 for u in User.objects.filter(is_active=True)
+                        if u.has_usable_password() and not es_antigua(u.password))
         for cuenta in cuentas:
             marca = ' (superusuario)' if cuenta.is_superuser else ''
             self.stdout.write(f'{cuenta.email} — {cuenta.get_full_name() or "sin nombre"}{marca}')
             if aplicar:
                 cuenta.set_unusable_password()
                 cuenta.save(update_fields=['password'])
-        conservan = User.objects.filter(is_active=True).count() - len(
-            [c for c in cuentas if c.is_active]) - User.objects.filter(is_active=True, password__startswith='!').count()
         if aplicar:
             self.stdout.write(self.style.SUCCESS(
                 f'{len(cuentas)} contraseñas invalidadas. Para que entren, asígnales una en Usuarios → '
