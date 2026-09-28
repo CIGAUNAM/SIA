@@ -348,6 +348,18 @@ class PerfilTests(Datos):
         self.client.force_login(self.ana)
         self.assertEqual(self.client.get(reverse('admin:nucleo_user_sugerir_orcid')).status_code, 403)
 
+    def test_invalidar_contrasenas_antiguas(self):
+        from django.contrib.auth.hashers import make_password
+        User.objects.filter(pk=self.ana.pk).update(password=make_password('vieja', hasher='pbkdf2_sha256').replace(
+            'pbkdf2_sha256$1500000$', 'pbkdf2_sha256$100000$'))
+        self.beto.set_password('nueva-clave-9')
+        self.beto.save()
+        call_command('invalidar_contrasenas_antiguas', stdout=io.StringIO())
+        self.assertTrue(User.objects.get(pk=self.ana.pk).has_usable_password())  # Sin --aplicar no cambia.
+        call_command('invalidar_contrasenas_antiguas', '--aplicar', stdout=io.StringIO())
+        self.assertFalse(User.objects.get(pk=self.ana.pk).has_usable_password())
+        self.assertTrue(User.objects.get(pk=self.beto.pk).check_password('nueva-clave-9'))
+
     def test_completar_orcid(self):
         Persona.objects.filter(pk=self.externo.pk).update(orcid='0000-0002-1825-0097')
         orcid = {'name': {'given-names': {'value': 'Carla María'}, 'family-name': {'value': 'Externa Ruiz'}}}
