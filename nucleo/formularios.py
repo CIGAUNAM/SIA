@@ -28,7 +28,8 @@ class CamposPersona(forms.Form):
         label='ORCID', max_length=40, required=False,
         widget=BuscarOrcidWidget({'orcid': 'id_orcid', 'nombre': 'id_nombre_persona'}, campo_correo='id_email'),
         help_text='Por ejemplo 0000-0002-1825-0097 o https://orcid.org/0000-0002-1825-0097. Con él se reconoce a la '
-                  'persona en el catálogo y en las importaciones. Si falta, se busca en ORCID por el correo.')
+                  'persona en el catálogo y en las importaciones. Si falta, se busca en ORCID por el correo; el correo '
+                  'solo se obtiene de ORCID si la persona lo hizo público ahí.')
     nombre_persona = forms.CharField(
         label='Nombre para mostrar', max_length=300, required=False, widget=UnfoldAdminTextInputWidget,
         help_text=f'{Persona._meta.get_field("nombre").help_text} Si lo dejas vacío, se toma de ORCID.')

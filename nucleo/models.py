@@ -257,7 +257,7 @@ class User(AbstractUser):
         D = 'D', 'D'
 
     tipo = models.CharField(max_length=20, choices=Tipo.choices, default=Tipo.OTRO)
-    grado = models.CharField('grado (abreviatura)', max_length=20, blank=True, help_text='Por ejemplo: Dr., Mtra., Lic.')
+    grado = models.CharField('grado académico', max_length=20, blank=True)
     semblanza = models.TextField(blank=True)
     fecha_nacimiento = models.DateField(null=True, blank=True)
     genero = models.CharField('género', max_length=10, choices=Genero.choices, blank=True)
@@ -323,7 +323,8 @@ class Persona(Verificable):
         help_text='Como aparece en las publicaciones: apellidos, iniciales. Por ejemplo: Pérez García, J. C.')
     email = models.EmailField(blank=True)
     orcid = models.CharField('ORCID', max_length=19, blank=True, validators=[validar_orcid],
-                             help_text='Formato 0000-0002-1825-0097.')
+                             help_text='Formato 0000-0002-1825-0097. "Buscar en ORCID" llena el nombre y el correo; '
+                                       'el correo solo se obtiene si la persona lo hizo público en ORCID.')
 
     class Meta:
         ordering = ['nombre']
