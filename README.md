@@ -145,6 +145,14 @@ administrativo) describe a la persona para reportes, no lo que puede hacer.
 Los grupos se definen en `nucleo/permisos.py`: los permisos de Académicos se declaran en cada `ModelAdmin`
 (`permisos_investigador`) y los de Administración se derivan del tipo de admin (catálogo o producción).
 
+## Países
+
+El catálogo de países es `cities_light.Country` (django-cities-light). Se llena desde el fixture
+`nucleo/fixtures/paises.json`, que está en el repositorio y lo carga la migración `nucleo.0012` con ids fijos: **no se
+usa** el comando de importación de GeoNames del paquete (`cities_light`), para que las llaves no cambien. Tiene los
+países ISO de GeoNames con nombre en español y, sin código ISO, los que usaba el SIA anterior (Inglaterra, Gales,
+Desconocido, Interamericano...). No se administra desde el SIA: solo se elige en los campos de país.
+
 ## Arquitectura
 
 ```

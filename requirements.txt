@@ -7,3 +7,4 @@ weasyprint>=70
 python-docx>=1.2
 django-simple-history>=3.13
 openpyxl>=3.1
+django-cities-light>=3.11

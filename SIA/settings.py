@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'simple_history',
+    'cities_light',  # Catálogo de países (nucleo/fixtures/paises.json); antes que nucleo por su admin.
 
     'nucleo',
     'formacion_academica',

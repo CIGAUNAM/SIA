@@ -17,6 +17,8 @@ from pathlib import Path
 from django.core.management.base import BaseCommand
 
 from nucleo.nombres import formato_cita
+from nucleo.paises import del_fixture as paises_del_fixture
+from nucleo.paises import equivalencia
 
 DOMINIO_SIN_CORREO = 'sin-correo.invalid'
 
@@ -190,17 +192,21 @@ class Conversor:
         self.formacion_recursos_humanos()
         self.desarrollo_tecnologico()
         self.distinciones()
+        self.paises()
         for modelo in sorted(set(self.legacy) - self.convertidos):
             self.aviso(f'Modelo legacy sin equivalente, se omitió: {modelo} ({len(self.legacy[modelo])})')
         return self.salida
 
+    def paises(self):
+        """Los países van al catálogo de cities_light (fixture `paises`): se traducen las llaves de cada registro."""
+        anteriores = [(pk, f['pais_codigo'], f['pais_nombre']) for pk, f in self.fuente('nucleo.pais').items()]
+        equivalente = equivalencia(anteriores, paises_del_fixture())
+        for obj in self.salida:
+            for campo in ('pais', 'pais_origen', 'pais_sede'):
+                if obj['fields'].get(campo) is not None:
+                    obj['fields'][campo] = equivalente[obj['fields'][campo]]
+
     def personas_y_usuarios(self):
-        for pk, f in self.fuente('nucleo.pais').items():
-            self.agregar('nucleo.pais', pk, {
-                'nombre': f['pais_nombre'], 'nombre_extendido': txt(f['pais_nombre_extendido']),
-                'codigo': f['pais_codigo'].upper(),
-                'zona': opcion(f.get('pais_zona'), {'AMERICA_NORTE', 'AMERICA_CENTRAL', 'AMERICA_SUR', 'ANTILLAS',
-                                                    'EUROPA', 'ASIA', 'EURASIA', 'AFRICA', 'OCEANIA'})})
 
         usuarios = self.fuente('nucleo.user')
         # Son cuentas quienes entraron al sistema, el personal académico y los dueños de algún registro.

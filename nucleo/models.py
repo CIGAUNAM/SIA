@@ -2,6 +2,7 @@ import re
 import uuid
 from pathlib import Path
 
+from cities_light.models import Country
 from django.conf import settings
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import AbstractUser, UserManager
@@ -190,32 +191,6 @@ class Participante(models.Model):
 # Personas y usuarios
 # ---------------------------------------------------------------------------
 
-class Pais(models.Model):
-    class Zona(models.TextChoices):
-        AMERICA_NORTE = 'AMERICA_NORTE', 'América del Norte'
-        AMERICA_CENTRAL = 'AMERICA_CENTRAL', 'América Central'
-        AMERICA_SUR = 'AMERICA_SUR', 'América del Sur'
-        ANTILLAS = 'ANTILLAS', 'Antillas'
-        EUROPA = 'EUROPA', 'Europa'
-        ASIA = 'ASIA', 'Asia'
-        EURASIA = 'EURASIA', 'Europa-Asia'
-        AFRICA = 'AFRICA', 'África'
-        OCEANIA = 'OCEANIA', 'Oceanía'
-
-    nombre = models.CharField(max_length=60, unique=True)
-    nombre_extendido = models.CharField(max_length=200, blank=True)
-    codigo = models.CharField('código ISO', max_length=2, unique=True)
-    zona = models.CharField(max_length=20, choices=Zona.choices, blank=True)
-
-    class Meta:
-        ordering = ['nombre']
-        verbose_name = 'país'
-        verbose_name_plural = 'países'
-
-    def __str__(self):
-        return self.nombre
-
-
 DOMINIO_SIN_CORREO = 'sin-correo.invalid'
 
 
@@ -284,7 +259,7 @@ class User(AbstractUser):
     semblanza = models.TextField(blank=True)
     fecha_nacimiento = models.DateField(null=True, blank=True)
     genero = models.CharField('género', max_length=10, choices=Genero.choices, blank=True)
-    pais_origen = models.ForeignKey(Pais, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país de origen')
+    pais_origen = models.ForeignKey(Country, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país de origen')
     rfc = models.CharField('RFC', max_length=13, blank=True)
     curp = models.CharField('CURP', max_length=18, blank=True)
     domicilio = models.TextField(blank=True, help_text='Domicilio donde realiza sus actividades académicas.')
@@ -365,7 +340,7 @@ class Institucion(Verificable):
     padre = models.ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True, related_name='dependencias',
                               verbose_name='pertenece a',
                               help_text='Institución de la que depende (p. ej. una facultad pertenece a su universidad).')
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=255, blank=True)
     clasificacion = models.CharField('clasificación', max_length=20, choices=Clasificacion.choices, blank=True)
     pertenece_unam = models.BooleanField('pertenece a la UNAM', default=False)
@@ -527,7 +502,7 @@ class Evento(Verificable):
     descripcion = models.TextField('descripción', blank=True)
     fecha_inicio = models.DateField('fecha de inicio')
     fecha_fin = models.DateField('fecha de término')
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=255, blank=True)
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     numero_ponentes = models.PositiveIntegerField('número de ponentes', null=True, blank=True)
@@ -568,7 +543,7 @@ class Revista(Verificable):
     nombre = models.CharField(max_length=255, unique=True)
     nombre_abreviado = models.CharField('nombre abreviado (WoS)', max_length=255, blank=True)
     tipo = models.CharField(max_length=20, choices=Tipo.choices, default=Tipo.CIENTIFICA)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     indices = models.ManyToManyField(Indice, blank=True, verbose_name='índices')
     issn_impreso = models.CharField('ISSN impreso', max_length=9, blank=True, validators=[validar_issn])
     issn_electronico = models.CharField('ISSN electrónico', max_length=9, blank=True, validators=[validar_issn])
@@ -629,7 +604,7 @@ class MedioDivulgacion(Verificable):
     nombre = models.CharField(max_length=255)
     tipo = models.CharField(max_length=20, choices=Tipo.choices)
     canal = models.CharField(max_length=255, blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=255, blank=True)
 
     class Meta:
@@ -653,7 +628,7 @@ class Libro(Verificable, EstadoPublicacion):
     participantes = models.ManyToManyField('Persona', through='LibroParticipante', related_name='libros')
     agradecimientos = models.ManyToManyField('Persona', blank=True, related_name='libros_agradecimientos')
     editorial = models.CharField(max_length=255, blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=255, blank=True)
     coleccion = models.CharField('colección', max_length=255, blank=True)
     volumen = models.CharField(max_length=255, blank=True)
@@ -740,7 +715,7 @@ class ConfiguracionEntidad(models.Model):
         'consejo técnico', max_length=255, blank=True, default='Consejo Técnico de la Investigación Científica',
         help_text='Órgano ante el que se tramitan las licencias con goce de sueldo.')
     # Operación
-    pais_sede = models.ForeignKey(Pais, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país sede',
+    pais_sede = models.ForeignKey(Country, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país sede',
                                   help_text='Define si un evento o participación es nacional o internacional.')
     remitente = models.EmailField('remitente de los correos', blank=True,
                                   help_text='Si se deja vacío se usa el configurado en el servidor.')

@@ -1,7 +1,8 @@
+from cities_light.models import Country
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import (Ambito, Evento, Institucion, Pais, Participante, Persona, requerido_si,
+from nucleo.models import (Ambito, Evento, Institucion, Participante, Persona, requerido_si,
                            validar_paginas)
 
 
@@ -17,7 +18,7 @@ class MemoriaInExtenso(models.Model):
     evento = models.CharField('nombre del evento', max_length=254)
     lugar = models.CharField('lugar del evento', max_length=254, blank=True)
     fecha = models.DateField()
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=254, blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución organizadora')
@@ -79,7 +80,7 @@ class ParticipacionEventoAcademico(models.Model):
     evento = models.CharField('nombre del evento', max_length=254)
     lugar = models.CharField('lugar del evento', max_length=254, blank=True)
     ciudad = models.CharField(max_length=255, blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución organizadora')
     fecha = models.DateField()

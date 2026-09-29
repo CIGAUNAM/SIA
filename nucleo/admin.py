@@ -1,3 +1,4 @@
+from cities_light.models import City, Country, Region, SubRegion
 from django.apps import apps
 from django.contrib import admin, messages
 from django.contrib.auth.admin import GroupAdmin as BaseGroupAdmin
@@ -26,7 +27,7 @@ from .admin_base import SECCIONES_PERFIL
 from .nombres import normalizar_orcid
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
-                     Nombramiento, Pais, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
+                     Nombramiento, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
 from .permisos import GRUPO_ACADEMICOS, GRUPO_ADMINISTRACION, es_sysadmin
 
 DATOS_PERSONALES = ('Datos personales', {'fields': (
@@ -348,18 +349,37 @@ class PersonaAdmin(VerificableAdmin):
         return [*super().get_readonly_fields(request, obj), 'cuenta']
 
 
-@admin.register(Pais)
-class PaisAdmin(CatalogoAdmin):
-    list_display = ['nombre', 'codigo', 'zona']
-    list_filter = ['zona']
-    search_fields = ['nombre', 'nombre_extendido', 'codigo']
+# Países: catálogo fijo de django-cities-light (fixture `paises`). No se administra desde el SIA; solo se elige en
+# los campos de país. Se quitan las pantallas que registra el paquete y Country queda solo para el autocompletado.
+for modelo_geo in (Country, Region, SubRegion, City):
+    if admin.site.is_registered(modelo_geo):
+        admin.site.unregister(modelo_geo)
+
+
+@admin.register(Country)
+class PaisAdmin(ModelAdmin):
+    permisos_investigador = ('view',)
+    search_fields = ['name', 'name_ascii', 'alternate_names', 'code2', 'code3']
+    ordering = ['name']
+
+    def get_model_perms(self, request):
+        return {}  # Fuera del menú y del índice del admin.
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 
 @admin.register(Institucion)
 class InstitucionAdmin(VerificableAdmin):
     list_display = ['nombre', 'padre', 'pais', 'ciudad', 'clasificacion', 'pertenece_unam', 'verificado']
     list_filter = ['clasificacion', 'pertenece_unam', 'subsistema_unam']
-    search_fields = ['nombre', 'padre__nombre', 'ciudad', 'pais__nombre']
+    search_fields = ['nombre', 'padre__nombre', 'ciudad', 'pais__name']
     autocomplete_fields = ['pais', 'padre']
 
     def get_queryset(self, request):

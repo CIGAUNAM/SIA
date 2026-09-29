@@ -5,6 +5,7 @@ from datetime import date
 from pathlib import Path
 from unittest import mock
 
+from cities_light.models import City, Country, Region
 from django.contrib.auth.models import Group
 from django.core.cache import cache
 from django.core.management import call_command
@@ -14,7 +15,7 @@ from django.urls import reverse
 from formatos.models import PagoViaticos
 from investigacion.models import ArticuloCientifico, ArticuloCientificoAutor
 from nucleo.admin_base import es_administrador
-from nucleo.models import ConfiguracionEntidad, Evento, Institucion, Pais, Persona, Revista, TipoEvento, User
+from nucleo.models import ConfiguracionEntidad, Evento, Institucion, Persona, Revista, TipoEvento, User
 from nucleo.externos import ErrorServicio
 from nucleo.nombres import formato_cita, partes_cita
 from nucleo.permisos import GRUPO_ACADEMICOS, GRUPO_ADMINISTRACION
@@ -60,7 +61,7 @@ def datos_de_pagina(respuesta):
 class Datos(TestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.mexico = Pais.objects.create(nombre='México', codigo='MX')
+        cls.mexico = Country.objects.get(code2='MX')  # Cargado por la migración desde el fixture de países.
         cls.institucion = Institucion.objects.create(nombre='UNAM', pais=cls.mexico, verificado=True)
         cls.revista = Revista.objects.create(nombre='Investigaciones Geográficas', pais=cls.mexico, verificado=True)
         grupo = Group.objects.get(name=GRUPO_ACADEMICOS)
@@ -113,7 +114,7 @@ class PersonaTests(Datos):
     def test_grupo_investigadores_incluye_modelos_de_inlines(self):
         permisos = set(Group.objects.get(name=GRUPO_ACADEMICOS).permissions.values_list('codename', flat=True))
         self.assertIn('add_articulocientificoautor', permisos)
-        self.assertIn('view_pais', permisos)
+        self.assertIn('view_country', permisos)  # Para elegir países en los campos de autocompletado.
         self.assertNotIn('change_pais', permisos)
         self.assertNotIn('add_user', permisos)
         self.assertFalse(es_administrador(self.ana))
@@ -486,7 +487,7 @@ class NavegacionTests(Datos):
 
     def test_administrador_ve_todo_el_menu(self):
         titulos = self.titulos_menu(self.admin)
-        self.assertIn('Países', titulos)
+        self.assertNotIn('Países', titulos)  # Catálogo fijo: solo se elige en los campos.
         self.assertIn('Grupos', titulos)
 
 
@@ -553,7 +554,7 @@ class ConvertirLegacyTests(TestCase):
         articulo = ArticuloCientifico.objects.get(pk=7)
         autores = [a.persona_id for a in articulo.articulocientificoautor_set.all()]
         self.assertEqual(autores, [11, 10])
-        self.assertEqual(Pais.objects.get().codigo, 'MX')
+        self.assertEqual(Revista.objects.get(pk=5).pais.code2, 'MX')  # El país legacy 'mx' pasa al catálogo.
 
 
 class GruposTests(Datos):
@@ -653,3 +654,33 @@ class MiPerfilTests(Datos):
             if esperado:
                 self.assertEqual(titulos[-1], 'Trayectoria')
             self.assertIn('Mi perfil', [str(i['title']) for i in menu(solicitud)[0]['items']])
+
+
+class PaisesTests(Datos):
+    def test_catalogo_cargado_en_espanol_y_con_los_del_sia_anterior(self):
+        self.assertGreaterEqual(Country.objects.count(), 266)
+        self.assertEqual(str(self.mexico), 'México')
+        self.assertTrue(Country.objects.filter(name='Desconocido', code2=None).exists())
+
+    def test_equivalencia_de_paises_anteriores(self):
+        from nucleo.paises import del_fixture, equivalencia
+        paises = del_fixture()
+        pk = {codigo: p for p, codigo, _ in paises if codigo}
+        resultado = equivalencia([(1, 'mx', 'México'), (2, 'EU', 'Estados Unidos'), (3, '99', 'Desconocido')], paises)
+        desconocido = next(p for p, codigo, nombre in paises if nombre == 'Desconocido')
+        self.assertEqual(resultado, {1: pk['MX'], 2: pk['US'], 3: desconocido})
+        with self.assertRaises(ValueError):
+            equivalencia([(4, 'ZZ', 'Atlántida')], paises)
+
+    def test_paises_solo_se_seleccionan(self):
+        from django.contrib import admin
+        self.assertFalse(admin.site.is_registered(Region) or admin.site.is_registered(City))
+        self.client.force_login(self.ana)
+        busqueda = self.client.get(reverse('admin:autocomplete'), {
+            'app_label': 'nucleo', 'model_name': 'institucion', 'field_name': 'pais', 'term': 'Méxi'})
+        self.assertIn(str(self.mexico.pk), [r['id'] for r in busqueda.json()['results']])
+        self.client.force_login(self.admin)
+        self.assertEqual(self.client.get(reverse('admin:cities_light_country_add')).status_code, 403)
+        self.assertEqual(self.client.post(reverse('admin:cities_light_country_change', args=[self.mexico.pk]),
+                                          {'name': 'Otro'}).status_code, 403)
+        self.assertNotContains(self.client.get(reverse('admin:index')), '/admin/cities_light/')

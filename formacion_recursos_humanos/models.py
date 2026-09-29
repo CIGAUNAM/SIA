@@ -1,8 +1,9 @@
+from cities_light.models import Country
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 
-from nucleo.models import (Beca, Distincion, Institucion, NivelAcademico, Pais, Participante, Periodo, Persona,
+from nucleo.models import (Beca, Distincion, Institucion, NivelAcademico, Participante, Periodo, Persona,
                            ProgramaAcademico, requerido_si, validar_programa)
 
 
@@ -56,7 +57,7 @@ class SupervisionPostdoctoral(Periodo):
 
 class GrupoInvestigacionInterno(Periodo):
     nombre = models.CharField(max_length=255)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     integrantes = models.ManyToManyField(Persona, related_name='grupos_investigacion')
 
     class Meta:

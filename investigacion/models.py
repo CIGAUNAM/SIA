@@ -1,7 +1,8 @@
+from cities_light.models import Country
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import (CapituloLibro, EstadoPublicacion, Institucion, Pais, Participante, Periodo, Persona,
+from nucleo.models import (CapituloLibro, EstadoPublicacion, Institucion, Participante, Periodo, Persona,
                            Revista, normalizar_doi, requerido_si, validar_paginas)
 
 
@@ -178,7 +179,7 @@ class CapituloLibroInvestigacionAutor(Participante):
 class MapaArbitrado(EstadoPublicacion):
     titulo = models.CharField('título', max_length=255, unique=True)
     publicacion = models.CharField('publicación o editorial', max_length=255, blank=True)
-    pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
+    pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=255, blank=True)
     numero_paginas = models.PositiveIntegerField('número de páginas', default=1)
     autores = models.ManyToManyField(Persona, through='MapaArbitradoAutor', related_name='mapas_arbitrados')
