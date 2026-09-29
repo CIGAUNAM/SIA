@@ -1,5 +1,19 @@
+from django.contrib.admin.views.autocomplete import AutocompleteJsonView
 from django.urls import path
 from unfold.sites import UnfoldAdminSite
+
+
+class AutocompleteSIA(AutocompleteJsonView):
+    """En los buscadores de los formularios, las personas llevan la marca de si están adscritas a la entidad."""
+
+    def serialize_result(self, obj, to_field_name):
+        from nucleo.admin_base import etiqueta_persona
+        from nucleo.models import Persona
+
+        resultado = super().serialize_result(obj, to_field_name)
+        if isinstance(obj, Persona):
+            resultado['text'] = etiqueta_persona(obj)
+        return resultado
 
 
 class SIAAdminSite(UnfoldAdminSite):
@@ -7,6 +21,9 @@ class SIAAdminSite(UnfoldAdminSite):
     site_title = 'SIA'
     index_title = 'Inicio'
     index_template = 'admin/tablero.html'
+
+    def autocomplete_view(self, request):
+        return AutocompleteSIA.as_view(admin_site=self)(request)
 
     def get_urls(self):
         from nucleo.cv import cv_view

@@ -20,7 +20,8 @@ from unfold.decorators import action
 from unfold.forms import AdminPasswordChangeForm
 from unfold.widgets import UnfoldAdminTextareaWidget
 
-from .admin_base import CatalogoAdmin, FormularioSIA, ParticipanteInline, VerificableAdmin, es_administrador
+from .admin_base import (CatalogoAdmin, EtiquetaPersonaMixin, FormularioSIA, ParticipanteInline, VerificableAdmin,
+                         es_administrador)
 from .externos import ErrorServicio, datos_orcid, orcid_por_correo
 from .formularios import UserChangeForm, UserCreationForm, registros_de
 from .widgets import BuscarOrcidWidget
@@ -72,7 +73,7 @@ class GroupAdmin(BaseGroupAdmin, ModelAdmin):
 
 
 @admin.register(User)
-class UserAdmin(BaseUserAdmin, ModelAdmin):
+class UserAdmin(EtiquetaPersonaMixin, BaseUserAdmin, ModelAdmin):
     """Los administradores gestionan todas las cuentas; cada académico solo edita su propio perfil."""
     form = UserChangeForm
     add_form = UserCreationForm
@@ -342,6 +343,9 @@ class TieneCuentaFilter(admin.SimpleListFilter):
 @admin.register(Persona)
 class PersonaAdmin(VerificableAdmin):
     form = PersonaForm
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related('usuario')  # Para la marca de adscripción.
 
     def formfield_for_dbfield(self, db_field, request, **kwargs):
         if db_field.name == 'orcid':

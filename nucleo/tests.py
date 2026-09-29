@@ -766,3 +766,29 @@ class PersonasConCuentaTests(Datos):
         formulario = self.client.get(reverse('admin:perfil'), follow=True).context['adminform'].form
         self.assertIn('ingreso_entidad', formulario.fields)
         self.assertNotIn('tipo', formulario.fields)
+
+
+class EtiquetaPersonaTests(Datos):
+    def test_selectores_marcan_adscripcion_pero_str_no(self):
+        from nucleo.admin_base import etiqueta_persona
+        ConfiguracionEntidad.objects.update(siglas='CIGA')
+        cache.clear()
+        User.objects.filter(pk=self.beto.pk).update(egreso_entidad=date(2020, 1, 1))
+        beto = Persona.objects.get(pk=self.beto.persona_id)
+        self.assertEqual(etiqueta_persona(self.ana.persona), 'López Pérez, A. · CIGA')
+        self.assertEqual(etiqueta_persona(beto), 'Ruiz, B. · ex CIGA')
+        self.assertEqual(etiqueta_persona(self.externo), 'Externa, C.')
+        self.assertEqual(str(self.ana.persona), 'López Pérez, A.')  # Informes, PDF y exportaciones: sin marca.
+        self.client.force_login(self.ana)
+        resultados = self.client.get(reverse('admin:autocomplete'), {
+            'app_label': 'investigacion', 'model_name': 'articulocientificoautor', 'field_name': 'persona',
+            'term': 'López'}).json()['results']
+        self.assertIn('López Pérez, A. · CIGA', [r['text'] for r in resultados])
+
+    def test_opcion_elegida_en_un_formulario_lleva_la_marca(self):
+        ConfiguracionEntidad.objects.update(siglas='CIGA')
+        cache.clear()
+        articulo = self.articulo('Con Ana', self.ana.persona)
+        self.client.force_login(self.ana)
+        pagina = self.client.get(reverse('admin:investigacion_articulocientifico_change', args=[articulo.pk]))
+        self.assertContains(pagina, 'López Pérez, A. · CIGA')

@@ -99,6 +99,35 @@ def filtro_anio(*campos):
 # Comportamiento común
 # ---------------------------------------------------------------------------
 
+def etiqueta_persona(persona):
+    """Cómo se ve una persona en los selectores de los formularios (no en informes, PDF ni exportaciones, que usan
+    `str`): se marca a quien tiene cuenta en la entidad, p. ej. "Lazos Ruíz, A. E. · CIGA" o "… · ex CIGA"."""
+    from .models import ConfiguracionEntidad
+
+    usuario = getattr(persona, 'usuario', None)
+    if usuario is None:
+        return str(persona)
+    siglas = ConfiguracionEntidad.actual().siglas or 'entidad'
+    egreso = usuario.egreso_entidad
+    return f"{persona} · {'ex ' if egreso and egreso < date.today() else ''}{siglas}"
+
+
+class EtiquetaPersonaMixin:
+    """Los campos que eligen personas muestran `etiqueta_persona` en lugar de `str`."""
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        campo = super().formfield_for_foreignkey(db_field, request, **kwargs)
+        if campo is not None and db_field.related_model is Persona:
+            campo.label_from_instance = etiqueta_persona
+        return campo
+
+    def formfield_for_manytomany(self, db_field, request, **kwargs):
+        campo = super().formfield_for_manytomany(db_field, request, **kwargs)
+        if campo is not None and db_field.related_model is Persona:
+            campo.label_from_instance = etiqueta_persona
+        return campo
+
+
 class FormularioSIA(forms.ModelForm):
     """Valida el rango de las fechas capturadas, aplica las reglas del admin y avisa de posibles duplicados."""
     confirmar_no_duplicado = forms.BooleanField(
@@ -140,7 +169,7 @@ class FormularioSIA(forms.ModelForm):
                     format_html_join('; ', '{}', elementos)))
 
 
-class BaseAdmin(SimpleHistoryAdmin, ModelAdmin):
+class BaseAdmin(EtiquetaPersonaMixin, SimpleHistoryAdmin, ModelAdmin):
     """Bitácora, validación de fechas, aviso de duplicados y fusión (solo administradores)."""
     form = FormularioSIA
     #: Campos (en orden) cuyo texto se compara para avisar de posibles duplicados al crear.
@@ -320,7 +349,7 @@ class ParticipanteFormSet(PaginationInlineFormSet):
                 instancia.save(update_fields=['orden'])
 
 
-class ParticipanteInline(TabularInline):
+class ParticipanteInline(EtiquetaPersonaMixin, TabularInline):
     form = ParticipanteForm
     formset = ParticipanteFormSet
     autocomplete_fields = ['persona']
