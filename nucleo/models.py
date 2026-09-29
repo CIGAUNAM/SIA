@@ -472,13 +472,15 @@ class Cargo(Verificable):
 class Nombramiento(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     clave = models.CharField(max_length=20, unique=True)
-    descripcion = models.TextField('descripción', blank=True)
-
-    class Meta:
-        ordering = ['nombre']
 
     def __str__(self):
         return self.nombre
+
+    class Meta:
+        ordering = ['nombre']
+        verbose_name = 'Nombramiento'
+        verbose_name_plural = 'Nombramientos'
+
 
 
 class Distincion(Verificable):

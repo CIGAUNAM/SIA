@@ -156,7 +156,10 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         if es_administrador(request.user) and not self.es_mi_perfil(request, obj):
             return [*super().get_readonly_fields(request, obj), 'figura_como', 'grupos']
-        return ['email', 'contrasena', 'figura_como', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato']
+        campos = ['email', 'contrasena', 'figura_como']
+        if not es_administrador(request.user):
+            campos.append('tipo')  # El tipo (investigador, técnico...) lo asigna un administrador.
+        return campos
 
     def trayectoria(self, request, obj):
         """Secciones de formación y experiencia de la cuenta, con enlaces para agregar y editar que vuelven aquí."""
@@ -323,6 +326,19 @@ class PersonaForm(FormularioSIA):
         return datos
 
 
+class TieneCuentaFilter(admin.SimpleListFilter):
+    title = '¿tiene cuenta?'
+    parameter_name = 'cuenta'
+
+    def lookups(self, request, model_admin):
+        return [('si', 'Con cuenta'), ('no', 'Sin cuenta')]
+
+    def queryset(self, request, queryset):
+        if self.value() in ('si', 'no'):
+            return queryset.filter(usuario__isnull=self.value() == 'no')
+        return queryset
+
+
 @admin.register(Persona)
 class PersonaAdmin(VerificableAdmin):
     form = PersonaForm
@@ -333,16 +349,19 @@ class PersonaAdmin(VerificableAdmin):
                                                  campo_correo='id_email', en_persona=True)
         return super().formfield_for_dbfield(db_field, request, **kwargs)
     list_display = ['nombre', 'orcid', 'email', 'cuenta', 'verificado']
+    list_filter = [TieneCuentaFilter, 'verificado']
     list_select_related = ['usuario']
-    search_fields = ['nombre', 'email', 'orcid', 'usuario__email']
-    fields = ['nombre', 'orcid', 'email', 'cuenta', 'verificado', 'creado_por', 'creado', 'actualizado']
+    search_fields = ['nombre', 'email', 'orcid', 'usuario__email', 'usuario__first_name', 'usuario__last_name']
+    fields = ['cuenta', 'nombre', 'orcid', 'email', 'verificado', 'creado_por', 'creado', 'actualizado']
 
-    @admin.display(description='cuenta', ordering='usuario__email')
+    @admin.display(description='cuenta vinculada', ordering='usuario__email')
     def cuenta(self, obj):
         usuario = getattr(obj, 'usuario', None)
         if usuario is None:
-            return '—'
-        return format_html('<a href="{}">{}</a>', reverse('admin:nucleo_user_change', args=[usuario.pk]), usuario.email)
+            return 'Sin cuenta (coautor u otra persona externa)'
+        return format_html('<a href="{}" class="font-medium text-primary-600">{}</a> ({})',
+                           reverse('admin:nucleo_user_change', args=[usuario.pk]),
+                           usuario.get_full_name() or usuario.email, usuario.email)
 
     def posibles_duplicados(self, request, instancia):
         from .similitud import personas_parecidas

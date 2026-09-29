@@ -395,15 +395,17 @@ class PerfilTests(Datos):
         formulario = self.client.get(url).context['adminform'].form
         self.assertNotIn('persona', formulario.fields)
         self.assertTrue(formulario.fields['orcid'].disabled)
+        self.assertNotIn('tipo', formulario.fields)  # Solo lo cambia un administrador.
         datos = {k: v for k, v in formulario.initial.items() if v is not None and k not in ('password', 'avatar')}
         datos.update(nombre_persona='López-Pérez, Ana', orcid='0000-0001-0000-0000', persona=self.beto.persona_id,
-                     tipo=self.ana.tipo)
+                     tipo=User.Tipo.ADMINISTRATIVO)
         respuesta = self.client.post(url, datos)
         self.assertEqual(respuesta.status_code, 302, respuesta.context and respuesta.context['adminform'].form.errors)
         self.ana.refresh_from_db()
         self.assertEqual(self.ana.persona.nombre, 'López-Pérez, Ana')
         self.assertEqual(self.ana.persona.orcid, '0000-0002-1825-0097')
         self.assertNotEqual(self.ana.persona, self.beto.persona)
+        self.assertEqual(self.ana.tipo, User.Tipo.INVESTIGADOR)  # Se ignora el tipo que mande el académico.
 
 
     def test_perfil_ofrece_copiar_domicilio_de_la_entidad(self):
@@ -745,3 +747,22 @@ class IdentificadoresTests(Datos):
             datos = self.client.get(url, {'email': 'jcperez@ejemplo.org'}).json()
         self.assertEqual(datos['orcid'], '0000-0002-1825-0097')
         self.assertContains(self.client.get(reverse('admin:nucleo_persona_add')), 'Buscar en ORCID')
+
+
+class PersonasConCuentaTests(Datos):
+    def test_lista_y_detalle_muestran_la_cuenta(self):
+        self.client.force_login(self.admin)
+        lista = self.client.get(reverse('admin:nucleo_persona_changelist'), {'cuenta': 'si'})
+        self.assertContains(lista, 'ana@ciga.unam.mx')
+        self.assertNotContains(lista, 'Externa, C.')
+        self.assertContains(self.client.get(reverse('admin:nucleo_persona_changelist'), {'cuenta': 'no'}), 'Externa, C.')
+        detalle = self.client.get(reverse('admin:nucleo_persona_change', args=[self.ana.persona_id]))
+        self.assertContains(detalle, reverse('admin:nucleo_user_change', args=[self.ana.pk]))
+        self.assertContains(self.client.get(reverse('admin:nucleo_persona_change', args=[self.externo.pk])),
+                            'Sin cuenta')
+
+    def test_academico_edita_su_adscripcion_pero_no_su_tipo(self):
+        self.client.force_login(self.ana)
+        formulario = self.client.get(reverse('admin:perfil'), follow=True).context['adminform'].form
+        self.assertIn('ingreso_entidad', formulario.fields)
+        self.assertNotIn('tipo', formulario.fields)
