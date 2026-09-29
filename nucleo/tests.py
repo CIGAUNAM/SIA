@@ -675,12 +675,6 @@ class PaisesTests(Datos):
         with self.assertRaises(ValueError):
             equivalencia([(4, 'ZZ', 'Atlántida')], paises)
 
-    def test_pais_de_la_entidad_se_sugiere_al_registrar(self):
-        self.client.force_login(self.ana)
-        for url in ('admin:nucleo_institucion_add', 'admin:nucleo_revista_add', 'admin:nucleo_evento_add'):
-            formulario = self.client.get(reverse(url)).context['adminform'].form
-            self.assertEqual(formulario.initial.get('pais'), self.mexico.pk, url)
-
     def test_paises_solo_se_seleccionan(self):
         from django.contrib import admin
         self.assertFalse(admin.site.is_registered(Region) or admin.site.is_registered(City))

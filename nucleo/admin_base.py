@@ -186,20 +186,6 @@ class BaseAdmin(SimpleHistoryAdmin, ModelAdmin):
         form_class = super().get_form(request, obj, **kwargs)
         return type(form_class.__name__, (form_class,), {'_model_admin': self, '_request': request})
 
-    def get_changeform_initial_data(self, request):
-        """Al registrar algo nuevo, el país sugerido es el de la entidad (Configuración de la entidad)."""
-        from cities_light.models import Country
-
-        from .models import ConfiguracionEntidad
-
-        inicial = super().get_changeform_initial_data(request)
-        campo = next((f for f in self.model._meta.fields if f.name == 'pais' and f.related_model is Country), None)
-        if campo is not None and 'pais' not in inicial:
-            pais = ConfiguracionEntidad.actual(request).pais_sede_id
-            if pais:
-                inicial['pais'] = pais
-        return inicial
-
     def get_fieldsets(self, request, obj=None):
         fieldsets = super().get_fieldsets(request, obj)
         campos = [c for _, opciones in fieldsets for c in opciones.get('fields', ())]

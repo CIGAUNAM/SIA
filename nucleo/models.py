@@ -707,7 +707,7 @@ class ConfiguracionEntidad(models.Model):
     cargo_titular = models.CharField('cargo de quien dirige', max_length=100, default='Director(a)')
     pais_sede = models.ForeignKey(
         Country, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país',
-        help_text='País donde se ubica la entidad. Se sugiere al registrar instituciones, eventos, revistas, etc.')
+        help_text='País donde se ubica la entidad.')
     ciudad = models.CharField(max_length=255, blank=True)
     direccion = models.TextField('dirección', blank=True)
     telefono = models.CharField('teléfono', max_length=100, blank=True)
