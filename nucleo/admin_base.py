@@ -587,10 +587,11 @@ class PropietarioAdmin(BaseAdmin):
 class CompartidoAdmin(BaseAdmin):
     """Catálogos compartidos que cualquier académico amplía (personas, instituciones, revistas, eventos...).
 
-    Quién puede modificar un registro depende de quién lo usa (`nucleo.uso`):
-    - nadie (huérfano): cualquiera; solo quien lo creó puede borrarlo;
-    - una sola cuenta, aunque sea en varios registros: solo esa cuenta;
-    - varias cuentas: nadie más que la administración (y queda de solo lectura para los académicos).
+    Quién puede modificar un registro (`nucleo.uso`):
+    - si tiene titulares con cuenta (autores, editores... de un libro; la cuenta de una persona): cualquiera de ellos;
+    - si no, según quién lo usa: nadie (huérfano), cualquiera; una sola cuenta (aunque sea en varios registros),
+      solo esa; varias cuentas, nadie (queda de solo lectura para los académicos).
+    Borrar: solo si ningún otro registro lo usa, y solo sus titulares o, si no tiene, quien lo creó.
     La administración siempre puede, con un aviso de que el cambio se verá en todos los registros que lo usan.
     """
     permisos_investigador = TODAS_LAS_ACCIONES
@@ -612,13 +613,17 @@ class CompartidoAdmin(BaseAdmin):
     def puede_modificar(self, request, obj):
         if es_administrador(request.user):
             return True
-        usuarios = self._uso(request, obj).usuarios
-        return not usuarios or usuarios == {request.user.pk}
+        registro_uso = self._uso(request, obj)
+        if registro_uso.titulares:
+            return request.user.pk in registro_uso.titulares
+        return not registro_uso.usuarios or registro_uso.usuarios == {request.user.pk}
 
     def has_delete_permission(self, request, obj=None):
         if obj is not None and not es_administrador(request.user):
-            # Borrar solo lo huérfano, y solo quien lo creó.
-            if self._uso(request, obj).registros or obj.creado_por_id != request.user.pk:
+            registro_uso = self._uso(request, obj)
+            dueno = (request.user.pk in registro_uso.titulares if registro_uso.titulares
+                     else obj.creado_por_id == request.user.pk)
+            if registro_uso.registros or not dueno:
                 return False
         return super().has_delete_permission(request, obj)
 
@@ -637,6 +642,7 @@ class CompartidoAdmin(BaseAdmin):
                 'registros': registro_uso.registros, 'cuentas': len(registro_uso.usuarios),
                 'administrador': es_administrador(request.user),
                 'propio': registro_uso.usuarios == {request.user.pk},
+                'titular': request.user.pk in registro_uso.titulares, 'con_titulares': bool(registro_uso.titulares),
                 'editable': self.puede_modificar(request, obj),
             }
         return super().render_change_form(request, context, add, change, form_url, obj)

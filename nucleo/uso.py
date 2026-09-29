@@ -1,7 +1,10 @@
-"""Quién usa un registro de catálogo compartido (persona, institución, revista...).
+"""Quién es titular y quién usa un registro de catálogo compartido (persona, institución, revista, libro...).
 
-Define quién puede editarlo: si nadie lo usa, cualquiera; si lo usa una sola cuenta, solo esa; si lo usan varias,
-solo la administración (ver `CompartidoAdmin`).
+- Titulares: las cuentas que figuran en el propio registro (autores, editores... de un libro; la cuenta de una
+  persona). Pueden editarlo siempre, sean cuantos sean.
+- Usuarios: las cuentas dueñas de otros registros que lo usan (un artículo en esa revista, un capítulo en ese libro).
+
+Ver las reglas en `CompartidoAdmin`.
 """
 
 from dataclasses import dataclass, field
@@ -15,8 +18,9 @@ PROFUNDIDAD = 3  # Catálogos que usan catálogos (p. ej. una dependencia usa a 
 
 @dataclass
 class Uso:
-    registros: int = 0  # Registros que apuntan al catálogo.
+    registros: int = 0  # Otros registros que lo usan (sin contar a sus titulares).
     usuarios: set = field(default_factory=set)  # Cuentas dueñas de esos registros.
+    titulares: set = field(default_factory=set)  # Cuentas que figuran en el propio registro.
 
 
 def _rutas_a_cuentas(modelo):
@@ -44,8 +48,15 @@ def uso(obj, _profundidad=PROFUNDIDAD, _vistos=None):
     vistos = _vistos if _vistos is not None else set()
     vistos.add((type(obj), obj.pk))
     resultado = Uso()
+    from .models import Participante, User
+
     for modelo, campo in relaciones_hacia(type(obj)):
         registros = modelo._default_manager.filter(**{campo.name: obj})
+        if modelo is User or (issubclass(modelo, Participante) and campo.name != 'persona'):
+            # La cuenta de una persona, o los participantes del propio registro (autores de un libro): titulares.
+            ruta = 'pk' if modelo is User else 'persona__usuario'
+            resultado.titulares.update(u for u in registros.values_list(ruta, flat=True) if u is not None)
+            continue
         resultado.registros += registros.count()
         rutas = _rutas_a_cuentas(modelo)
         if rutas is not None:

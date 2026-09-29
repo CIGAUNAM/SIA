@@ -228,19 +228,28 @@ class CatalogoCompartidoTests(Datos):
         self.assertContains(pagina, 'se reflejará en todos los registros vinculados')
         self.assertEqual(self.editar_revista(self.administrativa).status_code, 302)
 
-    def test_libro_con_autores_de_varias_cuentas(self):
+    def test_libro_lo_editan_todos_sus_autores_con_cuenta(self):
+        from investigacion.models import CapituloLibroInvestigacion, CapituloLibroInvestigacionAutor
         from nucleo.models import Libro, LibroParticipante
         libro = Libro.objects.create(titulo='Atlas', tipo='INVESTIGACION', pais=self.mexico, status='PUBLICADO',
                                      fecha_publicado=date(2018, 1, 1))
         LibroParticipante.objects.create(libro=libro, persona=self.ana.persona, orden=1)
-        url = reverse('admin:nucleo_libro_change', args=[libro.pk])
-        self.client.force_login(self.ana)
-        self.assertTrue(self.client.get(url).context['has_change_permission'])
-        self.client.force_login(self.beto)
-        self.assertFalse(self.client.get(url).context['has_change_permission'])
         LibroParticipante.objects.create(libro=libro, persona=self.beto.persona, orden=2)
-        self.client.force_login(self.ana)
+        url = reverse('admin:nucleo_libro_change', args=[libro.pk])
+        for autor in (self.ana, self.beto):  # Dos autores con cuenta: ambos lo siguen editando.
+            self.client.force_login(autor)
+            self.assertTrue(self.client.get(url).context['has_change_permission'])
+        tercero = User.objects.create_user('carla@ciga.unam.mx', password='x', first_name='Carla', last_name='Tercera',
+                                           is_staff=True)
+        tercero.groups.add(Group.objects.get(name=GRUPO_ACADEMICOS))
+        self.client.force_login(tercero)  # No figura en el libro: solo lo consulta.
         self.assertFalse(self.client.get(url).context['has_change_permission'])
+        self.assertContains(self.client.get(url), 'quienes figuran en él')
+        capitulo = CapituloLibroInvestigacion.objects.create(libro=libro, titulo='Cap. de Carla', pagina_inicio=1,
+                                                             pagina_fin=9)
+        CapituloLibroInvestigacionAutor.objects.create(capitulo=capitulo, persona=tercero.persona, orden=1)
+        self.client.force_login(self.ana)
+        self.assertTrue(self.client.get(url).context['has_change_permission'])  # Aunque otros lo usen.
 
 
 class PerfilTests(Datos):

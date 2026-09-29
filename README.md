@@ -139,7 +139,8 @@ administrativo) describe a la persona para reportes, no lo que puede hacer.
   grupos ni permisos, ni edita superusuarios u otras cuentas de Administración.
 - **Académicos** (investigadores, técnicos académicos y posdoctorantes): ven solo sus registros (los que tienen su
   usuario o en los que figuran como autor, responsable, tutor, etc.) y editan su perfil. Pueden ampliar los
-  catálogos compartidos (instituciones, revistas, eventos, personas...). Un registro de catálogo lo edita
+  catálogos compartidos (instituciones, revistas, eventos, personas...). Si el registro tiene titulares con
+  cuenta (autores, editores... de un libro; la cuenta de una persona), lo edita cualquiera de ellos; si no, lo edita
   cualquiera mientras nadie lo use, solo su usuario mientras lo use una sola cuenta (aunque sea en varios
   registros) y solo Administración cuando lo usan varias cuentas; Administración ve un aviso de que el cambio se
   refleja en todos los registros vinculados. Las cuentas nuevas creadas desde el admin entran a este grupo.
