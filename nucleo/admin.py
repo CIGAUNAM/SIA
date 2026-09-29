@@ -46,7 +46,7 @@ def _periodo(registro):
     return str(fecha.year) if fecha else ''
 
 
-PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('figura_como', 'orcid', 'nombre_persona')})
+PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona', 'figura_como')})
 PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'domicilio', 'url', 'sni', 'pride')})
 ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato')})
 

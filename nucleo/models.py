@@ -259,13 +259,8 @@ class User(AbstractUser):
     class Grado(models.TextChoices):
         """Abreviatura que antecede al nombre (en el CV y los formatos)."""
         LIC = 'Lic.', 'Lic. (licenciatura)'
-        ING = 'Ing.', 'Ing. (ingeniería)'
-        ARQ = 'Arq.', 'Arq. (arquitectura)'
-        BIOL = 'Biól.', 'Biól. (biología)'
-        GEOG = 'Geóg.', 'Geóg. (geografía)'
         MTRO = 'Mtro.', 'Mtro. (maestro)'
         MTRA = 'Mtra.', 'Mtra. (maestra)'
-        M_EN_C = 'M. en C.', 'M. en C. (maestría en ciencias)'
         DR = 'Dr.', 'Dr. (doctor)'
         DRA = 'Dra.', 'Dra. (doctora)'
 
