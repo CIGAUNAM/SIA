@@ -15,6 +15,8 @@ from django.db import models
 from django.db.models import Q
 from django.db.models.functions import Coalesce
 
+from .identificadores import (fecha_de_curp, normalizar_telefono, validar_curp, validar_rfc,
+                              validar_telefono)
 from .nombres import formato_cita
 
 
@@ -260,10 +262,12 @@ class User(AbstractUser):
     fecha_nacimiento = models.DateField(null=True, blank=True)
     genero = models.CharField('género', max_length=10, choices=Genero.choices, blank=True)
     pais_origen = models.ForeignKey(Country, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país de origen')
-    rfc = models.CharField('RFC', max_length=13, blank=True)
-    curp = models.CharField('CURP', max_length=18, blank=True)
+    rfc = models.CharField('RFC', max_length=13, blank=True, validators=[validar_rfc],
+                           help_text='13 caracteres, con homoclave.')
+    curp = models.CharField('CURP', max_length=18, blank=True, validators=[validar_curp])
     domicilio = models.TextField(blank=True, help_text='Domicilio donde realiza sus actividades académicas.')
-    telefono = models.CharField('teléfono', max_length=20, blank=True)
+    telefono = models.CharField('teléfono', max_length=30, blank=True, validators=[validar_telefono],
+                                help_text='Si no es de México, con + y código de país. Puede llevar extensión (ext. 123).')
     url = models.URLField('página web', blank=True)
     sni = models.CharField('nivel SNII', max_length=3, choices=SNI.choices, blank=True)
     pride = models.CharField('nivel PRIDE', max_length=1, choices=Pride.choices, blank=True)
@@ -288,6 +292,16 @@ class User(AbstractUser):
     def clean(self):
         super().clean()
         self.email = self.email.strip().lower()
+        self.rfc, self.curp = self.rfc.strip().upper(), self.curp.strip().upper()
+        self.telefono = normalizar_telefono(self.telefono)
+        errores = {}
+        if self.rfc and len(self.rfc) != 13:
+            errores['rfc'] = 'El RFC de una persona tiene 13 caracteres (el de 12 es de persona moral).'
+        nacimiento = fecha_de_curp(self.curp)
+        if nacimiento and self.fecha_nacimiento and nacimiento != self.fecha_nacimiento:
+            errores['curp'] = f'La fecha de la CURP ({nacimiento:%d/%m/%Y}) no coincide con la fecha de nacimiento.'
+        if errores:
+            raise ValidationError(errores)
 
     def save(self, *args, **kwargs):
         self.email = self.email.strip().lower()
@@ -715,9 +729,7 @@ class ConfiguracionEntidad(models.Model):
         'consejo técnico', max_length=255, blank=True, default='Consejo Técnico de la Investigación Científica',
         help_text='Órgano ante el que se tramitan las licencias con goce de sueldo.')
     # Operación
-    pais_sede = models.ForeignKey(
-        Country, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país sede',
-        help_text='Se propone en los campos de país al registrar algo nuevo (se puede cambiar).')
+    pais_sede = models.ForeignKey(Country, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país sede')
     remitente = models.EmailField('remitente de los correos', blank=True,
                                   help_text='Si se deja vacío se usa el configurado en el servidor.')
     anios_tablero = models.PositiveSmallIntegerField('años en el tablero', default=6)

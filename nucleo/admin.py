@@ -21,8 +21,9 @@ from unfold.forms import AdminPasswordChangeForm
 from unfold.widgets import UnfoldAdminTextareaWidget
 
 from .admin_base import CatalogoAdmin, FormularioSIA, ParticipanteInline, VerificableAdmin, es_administrador
-from .externos import ErrorServicio, nombre_orcid, orcid_por_correo
+from .externos import ErrorServicio, datos_orcid, orcid_por_correo
 from .formularios import UserChangeForm, UserCreationForm, registros_de
+from .widgets import BuscarOrcidWidget
 from .admin_base import SECCIONES_PERFIL
 from .nombres import normalizar_orcid
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
@@ -287,7 +288,8 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
 
 
 class PersonaForm(FormularioSIA):
-    """Sin ORCID pero con correo, el ORCID se busca en ORCID; sin nombre, se toma del registro de ORCID."""
+    """Completa lo que falte con el registro público de ORCID: con el ORCID, el nombre y el correo; con el correo
+    (si es público en ORCID), el ORCID y el nombre. El botón "Buscar en ORCID" hace lo mismo sin guardar."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -297,32 +299,39 @@ class PersonaForm(FormularioSIA):
 
     def clean(self):
         datos = super().clean()
-        if ('orcid' in self.fields and not datos.get('orcid') and datos.get('email')
-                and (self.instance.pk is None or 'email' in self.changed_data)):
-            try:
-                encontrado = orcid_por_correo(datos['email'])
-            except ErrorServicio:
-                encontrado = None
-            if encontrado and not Persona.objects.filter(orcid=encontrado[0]).exclude(pk=self.instance.pk).exists():
-                datos['orcid'] = encontrado[0]
-                datos['nombre'] = datos.get('nombre') or encontrado[1]
-        if 'nombre' in self.fields and not datos.get('nombre'):
-            if not datos.get('orcid'):
-                self.add_error('nombre', 'Escribe el nombre para mostrar, un ORCID o un correo público en ORCID.')
-            else:
-                try:
-                    datos['nombre'] = nombre_orcid(datos['orcid'])
-                except ErrorServicio as error:
-                    self.add_error('nombre', f'No se pudo consultar ORCID ({error}). Escribe el nombre.')
-                else:
-                    if not datos['nombre']:
-                        self.add_error('nombre', 'Ese ORCID no tiene un nombre público. Escribe el nombre.')
+        if 'orcid' not in self.fields:
+            return datos
+        encontrado = {}
+        try:
+            if datos.get('orcid') and not (datos.get('nombre') and datos.get('email')):
+                encontrado = datos_orcid(datos['orcid'])
+            elif not datos.get('orcid') and datos.get('email') and (
+                    self.instance.pk is None or 'email' in self.changed_data):
+                por_correo = orcid_por_correo(datos['email'])
+                if por_correo and not Persona.objects.filter(orcid=por_correo[0]).exclude(pk=self.instance.pk).exists():
+                    encontrado = {'orcid': por_correo[0], 'nombre': por_correo[1]}
+        except ErrorServicio as error:
+            if not datos.get('nombre'):
+                self.add_error('nombre', f'No se pudo consultar ORCID ({error}). Escribe el nombre.')
+                return datos
+        for campo in ('orcid', 'nombre', 'email'):
+            if not datos.get(campo) and encontrado.get(campo):
+                datos[campo] = encontrado[campo]
+        if not datos.get('nombre'):
+            self.add_error('nombre', 'Escribe el nombre para mostrar, o un ORCID o correo públicos en ORCID.' if not
+                           datos.get('orcid') else 'Ese ORCID no tiene un nombre público. Escribe el nombre.')
         return datos
 
 
 @admin.register(Persona)
 class PersonaAdmin(VerificableAdmin):
     form = PersonaForm
+
+    def formfield_for_dbfield(self, db_field, request, **kwargs):
+        if db_field.name == 'orcid':
+            kwargs['widget'] = BuscarOrcidWidget({'orcid': 'id_orcid', 'nombre': 'id_nombre', 'email': 'id_email'},
+                                                 campo_correo='id_email', en_persona=True)
+        return super().formfield_for_dbfield(db_field, request, **kwargs)
     list_display = ['nombre', 'orcid', 'email', 'cuenta', 'verificado']
     list_select_related = ['usuario']
     search_fields = ['nombre', 'email', 'orcid', 'usuario__email']

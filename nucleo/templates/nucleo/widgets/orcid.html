@@ -1,0 +1,40 @@
+{% include "unfold/widgets/text.html" %}
+<div class="mt-2 flex flex-wrap items-center gap-3">
+  <button type="button" class="flex items-center gap-1 rounded-default border border-base-200 px-2 py-1 text-sm font-medium text-primary-600 hover:bg-base-50 dark:border-base-700 dark:hover:bg-base-800"
+          data-url="{{ orcid_url }}" data-orcid="{{ widget.attrs.id }}" data-correo="{{ orcid_correo }}" data-destinos="{{ orcid_destinos }}" data-en-persona="{{ orcid_en_persona|yesno:'1,' }}"
+          onclick="siaBuscarOrcid(this)">
+    <span class="material-symbols-outlined text-base">search</span> Buscar en ORCID
+  </button>
+  <span class="text-sm text-font-subtle-light dark:text-font-subtle-dark" data-estado></span>
+</div>
+<script>
+window.siaBuscarOrcid = window.siaBuscarOrcid || async function (boton) {
+  const estado = boton.parentElement.querySelector('[data-estado]');
+  const campo = id => id && document.getElementById(id);
+  const orcid = campo(boton.dataset.orcid).value.trim();
+  const correo = campo(boton.dataset.correo) ? campo(boton.dataset.correo).value.trim() : '';
+  if (!orcid && !correo) { estado.textContent = 'Escribe un ORCID' + (boton.dataset.correo ? ' o un correo.' : '.'); return; }
+  estado.textContent = 'Consultando ORCID…';
+  const url = new URL(boton.dataset.url, window.location.origin);
+  url.searchParams.set(orcid ? 'orcid' : 'email', orcid || correo);
+  const actual = window.location.pathname.match(/\/(\d+)\/change\//);
+  if (boton.dataset.enPersona && actual) url.searchParams.set('persona', actual[1]);
+  try {
+    const respuesta = await fetch(url, {headers: {'Accept': 'application/json'}});
+    const datos = await respuesta.json();
+    if (!respuesta.ok) { estado.textContent = datos.error || 'No se pudo consultar ORCID.'; return; }
+    const destinos = JSON.parse(boton.dataset.destinos);
+    const llenados = [], distintos = [];
+    for (const [clave, id] of Object.entries(destinos)) {
+      const destino = campo(id);
+      if (!destino || !datos[clave]) continue;
+      if (!destino.value.trim()) { destino.value = datos[clave]; llenados.push(clave); }
+      else if (destino.value.trim().toLowerCase() !== String(datos[clave]).toLowerCase()) distintos.push(`${clave}: «${datos[clave]}»`);
+    }
+    let texto = llenados.length ? `Se llenó: ${llenados.join(', ')}.` : 'No había campos vacíos que llenar.';
+    if (distintos.length) texto += ` En ORCID: ${distintos.join('; ')}.`;
+    if (datos.existente) texto += ` Ojo: ese ORCID ya es de «${datos.existente}» en el catálogo.`;
+    estado.textContent = texto;
+  } catch (error) { estado.textContent = 'No se pudo consultar ORCID.'; }
+};
+</script>

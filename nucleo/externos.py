@@ -31,14 +31,22 @@ def obtener_json(url, encabezados=None):
         raise ErrorServicio(f'No fue posible conectarse al servicio ({error}).')
 
 
-def nombre_orcid(orcid):
-    """Nombre en formato de cita a partir del registro público de ORCID ('' si no es público)."""
+def datos_orcid(orcid):
+    """{'orcid', 'nombre' (formato de cita), 'email'} del registro público de ORCID ('' en lo que no sea público)."""
     orcid = normalizar_orcid(orcid)
     if not orcid:
         raise ErrorServicio('El ORCID debe tener el formato 0000-0000-0000-000X.')
-    nombre = obtener_json(f'https://pub.orcid.org/v3.0/{orcid}/person').get('name') or {}
+    persona = obtener_json(f'https://pub.orcid.org/v3.0/{orcid}/person')
+    nombre = persona.get('name') or {}
     valor = lambda clave: ((nombre.get(clave) or {}).get('value') or '').strip()
-    return formato_cita(valor('given-names'), valor('family-name')) or valor('credit-name')
+    correos = [c.get('email') for c in ((persona.get('emails') or {}).get('email') or []) if c.get('email')]
+    return {'orcid': orcid, 'email': correos[0].lower() if correos else '',
+            'nombre': formato_cita(valor('given-names'), valor('family-name')) or valor('credit-name')}
+
+
+def nombre_orcid(orcid):
+    """Nombre en formato de cita a partir del registro público de ORCID ('' si no es público)."""
+    return datos_orcid(orcid)['nombre']
 
 
 def orcid_por_correo(correo):

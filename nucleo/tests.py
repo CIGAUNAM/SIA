@@ -675,13 +675,6 @@ class PaisesTests(Datos):
         with self.assertRaises(ValueError):
             equivalencia([(4, 'ZZ', 'Atlántida')], paises)
 
-    def test_pais_sede_se_propone_en_los_campos_de_pais(self):
-        self.client.force_login(self.ana)
-        for url in ('admin:nucleo_institucion_add', 'admin:nucleo_revista_add', 'admin:nucleo_evento_add',
-                    'admin:difusion_cientifica_participacioneventoacademico_add'):
-            formulario = self.client.get(reverse(url)).context['adminform'].form
-            self.assertEqual(formulario.initial.get('pais'), self.mexico.pk, url)
-
     def test_paises_solo_se_seleccionan(self):
         from django.contrib import admin
         self.assertFalse(admin.site.is_registered(Region) or admin.site.is_registered(City))
@@ -694,3 +687,61 @@ class PaisesTests(Datos):
         self.assertEqual(self.client.post(reverse('admin:cities_light_country_change', args=[self.mexico.pk]),
                                           {'name': 'Otro'}).status_code, 403)
         self.assertNotContains(self.client.get(reverse('admin:index')), '/admin/cities_light/')
+
+
+class IdentificadoresTests(Datos):
+    PERSONA_ORCID = {'name': {'given-names': {'value': 'Juan Carlos'}, 'family-name': {'value': 'Pérez García'}},
+                     'emails': {'email': [{'email': 'JCPEREZ@ejemplo.org'}]}}
+
+    def test_rfc_curp_y_telefono(self):
+        from django.core.exceptions import ValidationError
+        from nucleo.identificadores import normalizar_telefono, validar_curp, validar_rfc, validar_telefono
+        for valido in ('GODE561231GR8', 'gode561231gr8'):
+            validar_rfc(valido)
+        for invalido in ('GODE561231GR9', 'GODE561331GR8', 'DgFdm'):
+            with self.assertRaises(ValidationError):
+                validar_rfc(invalido)
+        validar_curp('HEGG560427MVZRRL04')
+        for invalido in ('HEGG560427MVZRRL05', 'HEGG561327MVZRRL04', 'HEGG560427MXXRRL04'):
+            with self.assertRaises(ValidationError):
+                validar_curp(invalido)
+        validar_telefono('(443) 322-3854')
+        validar_telefono('+1 650 253 0000')
+        with self.assertRaises(ValidationError):
+            validar_telefono('12345')
+        self.assertEqual(normalizar_telefono('(443) 322-3854 ext. 12'), '+52 443 322 3854 ext. 12')
+
+    def test_perfil_normaliza_y_revisa_la_fecha_de_la_curp(self):
+        from django.core.exceptions import ValidationError
+        self.ana.rfc, self.ana.curp, self.ana.telefono = 'gode561231gr8', 'hegg560427mvzrrl04', '443 322 3854'
+        self.ana.fecha_nacimiento = date(1956, 4, 27)
+        self.ana.full_clean()
+        self.assertEqual((self.ana.rfc, self.ana.curp, self.ana.telefono),
+                         ('GODE561231GR8', 'HEGG560427MVZRRL04', '+52 443 322 3854'))
+        self.ana.fecha_nacimiento = date(1960, 1, 1)
+        with self.assertRaises(ValidationError) as error:
+            self.ana.full_clean()
+        self.assertIn('curp', error.exception.message_dict)
+
+    def test_persona_toma_nombre_y_correo_de_orcid_al_guardar(self):
+        self.client.force_login(self.admin)
+        with mock.patch('nucleo.externos.obtener_json', return_value=self.PERSONA_ORCID):
+            respuesta = self.client.post(reverse('admin:nucleo_persona_add'),
+                                         {'orcid': '0000-0002-1825-0097', 'nombre': '', 'email': ''})
+        self.assertEqual(respuesta.status_code, 302)
+        persona = Persona.objects.get(orcid='0000-0002-1825-0097')
+        self.assertEqual((persona.nombre, persona.email), ('Pérez García, J. C.', 'jcperez@ejemplo.org'))
+
+    def test_boton_buscar_en_orcid(self):
+        self.client.force_login(self.ana)
+        url = reverse('admin:orcid')
+        with mock.patch('nucleo.externos.obtener_json', return_value=self.PERSONA_ORCID):
+            datos = self.client.get(url, {'orcid': 'https://orcid.org/0000-0002-1825-0097'}).json()
+        self.assertEqual(datos, {'orcid': '0000-0002-1825-0097', 'nombre': 'Pérez García, J. C.',
+                                 'email': 'jcperez@ejemplo.org'})
+        busqueda = {'num-found': 1, 'expanded-result': [
+            {'orcid-id': '0000-0002-1825-0097', 'given-names': 'Juan Carlos', 'family-names': 'Pérez García'}]}
+        with mock.patch('nucleo.externos.obtener_json', return_value=busqueda):
+            datos = self.client.get(url, {'email': 'jcperez@ejemplo.org'}).json()
+        self.assertEqual(datos['orcid'], '0000-0002-1825-0097')
+        self.assertContains(self.client.get(reverse('admin:nucleo_persona_add')), 'Buscar en ORCID')

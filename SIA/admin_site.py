@@ -10,12 +10,14 @@ class SIAAdminSite(UnfoldAdminSite):
 
     def get_urls(self):
         from nucleo.cv import cv_view
-        from nucleo.vistas import avance_view, evidencia_view, informe_excel_view, mi_informe_view, mi_perfil_view
+        from nucleo.vistas import (avance_view, evidencia_view, informe_excel_view, mi_informe_view, mi_perfil_view,
+                                   orcid_view)
 
         return [
             path('cv/', self.admin_view(cv_view), name='cv'),
             path('cv/<int:usuario_id>/', self.admin_view(cv_view), name='cv_usuario'),
             path('perfil/', self.admin_view(mi_perfil_view), name='perfil'),
+            path('orcid/', self.admin_view(orcid_view), name='orcid'),
             path('informe/', self.admin_view(mi_informe_view), name='informe'),
             path('informe/avance/', self.admin_view(avance_view), name='informe_avance'),
             path('informe/excel/', self.admin_view(informe_excel_view), name='informe_excel'),

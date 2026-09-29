@@ -200,3 +200,29 @@ def informe_excel_view(request):
 def mi_perfil_view(request):
     """"Mi perfil": la página de la propia cuenta (datos personales, formación y experiencia)."""
     return redirect('admin:nucleo_user_change', request.user.pk)
+
+
+def orcid_view(request):
+    """Lo que ORCID tiene público de una persona, buscada por ORCID o por correo (botón "Buscar en ORCID")."""
+    from django.http import JsonResponse
+
+    from .externos import ErrorServicio, datos_orcid, orcid_por_correo
+    from .models import Persona
+
+    orcid, correo = request.GET.get('orcid', '').strip(), request.GET.get('email', '').strip()
+    try:
+        if orcid:
+            datos = datos_orcid(orcid)
+        elif correo:
+            encontrado = orcid_por_correo(correo)
+            if not encontrado:
+                return JsonResponse({'error': 'No hay un perfil de ORCID con ese correo público.'}, status=404)
+            datos = {'orcid': encontrado[0], 'nombre': encontrado[1], 'email': correo.lower()}
+        else:
+            return JsonResponse({'error': 'Escribe un ORCID o un correo.'}, status=400)
+    except ErrorServicio as error:
+        return JsonResponse({'error': str(error)}, status=502)
+    existente = Persona.objects.filter(orcid=datos['orcid']).exclude(pk=request.GET.get('persona') or None).first()
+    if existente is not None:
+        datos['existente'] = str(existente)
+    return JsonResponse(datos)

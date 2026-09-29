@@ -13,6 +13,7 @@ from .fusion import resumen_referencias
 from .models import Persona, User
 from .nombres import formato_cita, normalizar_orcid
 from .similitud import personas_parecidas
+from .widgets import BuscarOrcidWidget
 
 NUEVA = 'nueva'
 
@@ -24,7 +25,8 @@ def registros_de(persona):
 
 class CamposPersona(forms.Form):
     orcid = forms.CharField(
-        label='ORCID', max_length=40, required=False, widget=UnfoldAdminTextInputWidget,
+        label='ORCID', max_length=40, required=False,
+        widget=BuscarOrcidWidget({'orcid': 'id_orcid', 'nombre': 'id_nombre_persona'}, campo_correo='id_email'),
         help_text='Por ejemplo 0000-0002-1825-0097 o https://orcid.org/0000-0002-1825-0097. Con él se reconoce a la '
                   'persona en el catálogo y en las importaciones. Si falta, se busca en ORCID por el correo.')
     nombre_persona = forms.CharField(
