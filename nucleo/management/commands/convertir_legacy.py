@@ -9,14 +9,23 @@ una vez, se usa su última aparición.
 
 import json
 import re
+import unicodedata
 from collections import Counter, defaultdict
 from itertools import count
 from pathlib import Path
 
 from django.core.management.base import BaseCommand
 
-from nucleo.models import correo_provisional
 from nucleo.nombres import formato_cita
+
+DOMINIO_SIN_CORREO = 'sin-correo.invalid'
+
+
+def correo_provisional(identificador):
+    """Correo para cuentas legacy que no tienen uno (el dominio .invalid nunca recibe correo)."""
+    local = re.sub(r'[^a-z0-9._-]+', '', unicodedata.normalize('NFKD', str(identificador))
+                   .encode('ascii', 'ignore').decode().lower()) or 'cuenta'
+    return f'{local}@{DOMINIO_SIN_CORREO}'
 
 REGISTRO_LEGACY = '2019-06-27T00:00:00Z'
 TIPOS_CUENTA = {'INVESTIGADOR', 'TECNICO', 'POSTDOCTORADO', 'ADMINISTRATIVO'}
@@ -210,7 +219,7 @@ class Conversor:
                 domicilio = '\n'.join(x for x in (txt(f['direccion']), txt(f['direccion_continuacion']),
                                                   txt(ciudades.get(f['ciudad'], {}).get('nombre'))) if x)
                 correo = txt(f['email']).lower()
-                if not correo or correo in correos_usados:
+                if not correo or correo in correos_usados:  # El correo identifica la cuenta: debe ser único.
                     self.aviso('Cuenta sin correo o con correo repetido (se le asignó uno provisional)')
                     correo = correo_provisional(f['username'])
                 correos_usados.add(correo)

@@ -1,5 +1,4 @@
 import re
-import unicodedata
 import uuid
 from pathlib import Path
 
@@ -41,13 +40,6 @@ class Ambito(models.TextChoices):
     REGIONAL = 'REGIONAL', 'Regional'
     NACIONAL = 'NACIONAL', 'Nacional'
     INTERNACIONAL = 'INTERNACIONAL', 'Internacional'
-
-
-def ambito_por_pais(pais):
-    """Ámbito de un evento o participación según el país donde ocurre y el país sede de la entidad."""
-    if pais is None:
-        return ''
-    return Ambito.NACIONAL if pais.pk == ConfiguracionEntidad.actual().pais_sede_id else Ambito.INTERNACIONAL
 
 
 class Modalidad(models.TextChoices):
@@ -227,13 +219,6 @@ class Pais(models.Model):
 DOMINIO_SIN_CORREO = 'sin-correo.invalid'
 
 
-def correo_provisional(identificador):
-    """Correo para cuentas que no tienen uno (el dominio .invalid nunca recibe correo)."""
-    local = re.sub(r'[^a-z0-9._-]+', '', unicodedata.normalize('NFKD', str(identificador))
-                   .encode('ascii', 'ignore').decode().lower()) or 'cuenta'
-    return f'{local}@{DOMINIO_SIN_CORREO}'
-
-
 class UsuarioManager(UserManager):
     """Las cuentas se identifican por correo (sin distinguir mayúsculas)."""
 
@@ -251,7 +236,8 @@ class UsuarioManager(UserManager):
         return super().create_superuser(email, email, password, **extra_fields)
 
     def get_by_natural_key(self, email):
-        return self.get(email__iexact=email)
+        return self.get(email__iexact=email)  # Se entra con el correo sin importar mayúsculas.
+
 
 
 class User(AbstractUser):
@@ -334,14 +320,6 @@ class User(AbstractUser):
             self.persona = Persona.objects.create(
                 nombre=formato_cita(self.first_name, self.last_name) or self.email.split('@')[0], verificado=True)
         super().save(*args, **kwargs)
-
-    @property
-    def sin_correo(self):
-        return self.email.endswith('@' + DOMINIO_SIN_CORREO)
-
-    @property
-    def es_administrador(self):
-        return self.is_superuser or self.has_perm('nucleo.ver_todo')
 
     def activo_en(self, anio):
         """Indica si el académico estaba adscrito a la entidad durante el año dado."""
@@ -551,8 +529,7 @@ class Evento(Verificable):
     fecha_fin = models.DateField('fecha de término')
     pais = models.ForeignKey(Pais, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=255, blank=True)
-    ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices, blank=True, editable=False,
-                              help_text='Se calcula a partir del país.')
+    ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     numero_ponentes = models.PositiveIntegerField('número de ponentes', null=True, blank=True)
     numero_asistentes = models.PositiveIntegerField('número de asistentes', null=True, blank=True)
 
@@ -568,7 +545,6 @@ class Evento(Verificable):
         validar_periodo(self.fecha_inicio, self.fecha_fin)
 
     def save(self, *args, **kwargs):
-        self.ambito = ambito_por_pais(self.pais) if self.pais_id else ''
         super().save(*args, **kwargs)
 
 

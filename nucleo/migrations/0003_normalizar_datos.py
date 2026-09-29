@@ -4,8 +4,7 @@ from nucleo.normalizacion import normalizar
 
 
 def aplicar(apps, schema_editor):
-    sede = apps.get_model('nucleo', 'Pais').objects.filter(nombre='México').values_list('pk', flat=True).first()
-    normalizar(apps.get_model, sede)
+    normalizar(apps.get_model)
 
 
 class Migration(migrations.Migration):

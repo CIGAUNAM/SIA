@@ -39,17 +39,6 @@ def jerarquia_instituciones(Institucion):
     return cambios
 
 
-def ambitos(Evento, ParticipacionEventoAcademico, ParticipacionEventoDivulgacion, sede_id):
-    sede = [sede_id] if sede_id else []
-    total = 0
-    for modelo, campo in ((Evento, 'pais'), (ParticipacionEventoAcademico, 'pais'),
-                          (ParticipacionEventoDivulgacion, 'evento__pais')):
-        total += modelo.objects.filter(**{f'{campo}__in': sede}).exclude(ambito='NACIONAL').update(ambito='NACIONAL')
-        total += (modelo.objects.exclude(**{f'{campo}__in': sede}).exclude(ambito='INTERNACIONAL')
-                  .update(ambito='INTERNACIONAL'))
-    return total
-
-
 def dois(ArticuloCientifico):
     """Normaliza DOIs; lo que no es un DOI (una URL cualquiera) pasa al campo URL si está vacío."""
     cambios = 0
@@ -81,14 +70,9 @@ def metricas_revistas(ArticuloCientifico, MetricaRevista):
     return creadas
 
 
-def normalizar(get_model, sede_id):
-    """`sede_id`: pk del país sede de la entidad (si falta, todo se considera internacional)."""
+def normalizar(get_model):
     return {
         'instituciones reorganizadas': jerarquia_instituciones(get_model('nucleo', 'Institucion')),
-        'ámbitos recalculados': ambitos(get_model('nucleo', 'Evento'),
-                                        get_model('difusion_cientifica', 'ParticipacionEventoAcademico'),
-                                        get_model('divulgacion_cientifica', 'ParticipacionEventoDivulgacion'),
-                                        sede_id),
         'DOIs corregidos': dois(get_model('investigacion', 'ArticuloCientifico')),
         'métricas de revista creadas': metricas_revistas(get_model('investigacion', 'ArticuloCientifico'),
                                                          get_model('nucleo', 'MetricaRevista')),

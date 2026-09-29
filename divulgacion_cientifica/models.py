@@ -3,7 +3,7 @@ from django.db import models
 
 from difusion_cientifica.models import TipoParticipacionOrganizacion
 from nucleo.models import (Ambito, CapituloLibro, EstadoPublicacion, Evento, Institucion, MedioDivulgacion,
-                           Participante, Persona, Revista, ambito_por_pais, requerido_si, validar_paginas)
+                           Participante, Persona, Revista, requerido_si, validar_paginas)
 
 
 class ArticuloDivulgacion(EstadoPublicacion):
@@ -91,8 +91,7 @@ class ParticipacionEventoDivulgacion(models.Model):
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución organizadora')
     fecha = models.DateField()
-    ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices, editable=False,
-                              help_text='Se calcula a partir del país del evento.')
+    ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     por_invitacion = models.BooleanField('por invitación', default=False,
                                          help_text='La participación fue por invitación expresa de los organizadores.')
     ponencia_magistral = models.BooleanField('conferencia magistral', default=False,
@@ -109,7 +108,6 @@ class ParticipacionEventoDivulgacion(models.Model):
         return f'{self.titulo} — {self.evento}'
 
     def save(self, *args, **kwargs):
-        self.ambito = ambito_por_pais(self.evento.pais) if self.evento_id else ''
         super().save(*args, **kwargs)
 
 

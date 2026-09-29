@@ -248,11 +248,11 @@ class RecuperacionTests(Datos):
 
 
 class NormalizacionTests(Datos):
-    def test_jerarquia_ambito_y_doi(self):
+    def test_jerarquia_y_doi(self):
         from django.apps import apps
         Institucion.objects.create(nombre='Facultad de Ciencias, UNAM', pais=self.mexico)
         self.articulo('Con URL como DOI', self.ana.persona, doi='http://revista.mx/articulo')
-        normalizar(apps.get_model, self.mexico.pk)
+        normalizar(apps.get_model)
         facultad = Institucion.objects.get(nombre='Facultad de Ciencias')
         self.assertEqual(facultad.padre, self.institucion)
         articulo = ArticuloCientifico.objects.get(titulo='Con URL como DOI')
@@ -267,7 +267,8 @@ class ConfiguracionEntidadTests(Datos):
         configuracion.consejo_tecnico = 'Consejo Técnico de Prueba'
         configuracion.save()
         evento = Evento.objects.create(nombre='Congreso', tipo=TipoEvento.objects.create(nombre='Congreso'),
-                                       fecha_inicio=date(2026, 5, 1), fecha_fin=date(2026, 5, 3), pais=self.mexico)
+                                       fecha_inicio=date(2026, 5, 1), fecha_fin=date(2026, 5, 3), pais=self.mexico,
+                                       ambito='NACIONAL')
         licencia = LicenciaGoceSueldo.objects.create(
             usuario=self.ana, evento=evento, tipo_participacion='Ponente', fecha_inicio=date(2026, 5, 1),
             fecha_fin=date(2026, 5, 3), importancia='Alta', costo='100.00')
@@ -276,16 +277,6 @@ class ConfiguracionEntidadTests(Datos):
                                {'formato': 'html'})
         self.assertContains(html, 'Dra. Titular Prueba')
         self.assertContains(html, 'Consejo Técnico de Prueba')
-
-    def test_ambito_segun_pais_sede(self):
-        from nucleo.models import Evento, Pais, TipoEvento
-        tipo = TipoEvento.objects.create(nombre='Congreso')
-        nacional = Evento.objects.create(nombre='A', tipo=tipo, fecha_inicio=date(2020, 1, 1),
-                                         fecha_fin=date(2020, 1, 2), pais=self.mexico)
-        chile = Pais.objects.create(nombre='Chile', codigo='CL')
-        internacional = Evento.objects.create(nombre='B', tipo=tipo, fecha_inicio=date(2020, 1, 1),
-                                              fecha_fin=date(2020, 1, 2), pais=chile)
-        self.assertEqual((nacional.ambito, internacional.ambito), ('NACIONAL', 'INTERNACIONAL'))
 
     def test_solo_administradores_y_un_registro(self):
         from nucleo.models import ConfiguracionEntidad

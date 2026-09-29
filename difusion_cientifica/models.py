@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import (Ambito, Evento, Institucion, Pais, Participante, Persona, ambito_por_pais, requerido_si,
+from nucleo.models import (Ambito, Evento, Institucion, Pais, Participante, Persona, requerido_si,
                            validar_paginas)
 
 
@@ -83,8 +83,7 @@ class ParticipacionEventoAcademico(models.Model):
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución organizadora')
     fecha = models.DateField()
-    ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices, editable=False,
-                              help_text='Se calcula a partir del país.')
+    ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     por_invitacion = models.BooleanField('por invitación', default=False,
                                          help_text='La ponencia fue por invitación expresa de los organizadores.')
     ponencia_magistral = models.BooleanField('conferencia magistral', default=False,
@@ -101,7 +100,6 @@ class ParticipacionEventoAcademico(models.Model):
         return f'{self.titulo} — {self.evento}'
 
     def save(self, *args, **kwargs):
-        self.ambito = ambito_por_pais(self.pais)
         super().save(*args, **kwargs)
 
 
