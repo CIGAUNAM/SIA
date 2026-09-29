@@ -658,19 +658,28 @@ class MiPerfilTests(Datos):
 
 class PaisesTests(Datos):
     def test_catalogo_cargado_en_espanol_y_con_los_del_sia_anterior(self):
-        self.assertGreaterEqual(Country.objects.count(), 266)
+        self.assertEqual(Country.objects.count(), 264)
         self.assertEqual(str(self.mexico), 'México')
         self.assertTrue(Country.objects.filter(name='Desconocido', code2=None).exists())
+        self.assertFalse(Country.objects.filter(name__in=['Inglaterra', 'Gales']).exists())  # Unidas a Reino Unido.
+        self.assertIn('Inglaterra', Country.objects.get(code2='GB').alternate_names)
 
     def test_equivalencia_de_paises_anteriores(self):
         from nucleo.paises import del_fixture, equivalencia
         paises = del_fixture()
         pk = {codigo: p for p, codigo, _ in paises if codigo}
-        resultado = equivalencia([(1, 'mx', 'México'), (2, 'EU', 'Estados Unidos'), (3, '99', 'Desconocido')], paises)
+        resultado = equivalencia([(1, 'mx', 'México'), (2, 'EU', 'Estados Unidos'), (3, '99', 'Desconocido'),
+                                  (4, '23', 'Inglaterra')], paises)
         desconocido = next(p for p, codigo, nombre in paises if nombre == 'Desconocido')
-        self.assertEqual(resultado, {1: pk['MX'], 2: pk['US'], 3: desconocido})
+        self.assertEqual(resultado, {1: pk['MX'], 2: pk['US'], 3: desconocido, 4: pk['GB']})
         with self.assertRaises(ValueError):
             equivalencia([(4, 'ZZ', 'Atlántida')], paises)
+
+    def test_pais_de_la_entidad_se_sugiere_al_registrar(self):
+        self.client.force_login(self.ana)
+        for url in ('admin:nucleo_institucion_add', 'admin:nucleo_revista_add', 'admin:nucleo_evento_add'):
+            formulario = self.client.get(reverse(url)).context['adminform'].form
+            self.assertEqual(formulario.initial.get('pais'), self.mexico.pk, url)
 
     def test_paises_solo_se_seleccionan(self):
         from django.contrib import admin

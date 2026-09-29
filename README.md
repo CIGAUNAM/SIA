@@ -151,7 +151,7 @@ El catálogo de países es `cities_light.Country` (django-cities-light). Se llen
 `nucleo/fixtures/paises.json`, que está en el repositorio y lo carga la migración `nucleo.0012` con ids fijos: **no se
 usa** el comando de importación de GeoNames del paquete (`cities_light`), para que las llaves no cambien. Tiene los
 países ISO de GeoNames con nombre en español y, sin código ISO, los que usaba el SIA anterior (Inglaterra, Gales,
-Desconocido, Interamericano...). No se administra desde el SIA: solo se elige en los campos de país.
+Desconocido, Interamericano...; Inglaterra y Gales se unieron a Reino Unido). No se administra desde el SIA: solo se elige en los campos de país.
 
 ## Arquitectura
 

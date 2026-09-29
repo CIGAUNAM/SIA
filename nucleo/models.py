@@ -705,6 +705,9 @@ class ConfiguracionEntidad(models.Model):
     titular = models.CharField('nombre de quien dirige', max_length=255, blank=True,
                                help_text='Firma el visto bueno de los formatos.')
     cargo_titular = models.CharField('cargo de quien dirige', max_length=100, default='Director(a)')
+    pais_sede = models.ForeignKey(
+        Country, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país',
+        help_text='País donde se ubica la entidad. Se sugiere al registrar instituciones, eventos, revistas, etc.')
     ciudad = models.CharField(max_length=255, blank=True)
     direccion = models.TextField('dirección', blank=True)
     telefono = models.CharField('teléfono', max_length=100, blank=True)
@@ -715,8 +718,6 @@ class ConfiguracionEntidad(models.Model):
         'consejo técnico', max_length=255, blank=True, default='Consejo Técnico de la Investigación Científica',
         help_text='Órgano ante el que se tramitan las licencias con goce de sueldo.')
     # Operación
-    pais_sede = models.ForeignKey(Country, on_delete=models.PROTECT, null=True, blank=True, verbose_name='país sede',
-                                  help_text='Define si un evento o participación es nacional o internacional.')
     remitente = models.EmailField('remitente de los correos', blank=True,
                                   help_text='Si se deja vacío se usa el configurado en el servidor.')
     anios_tablero = models.PositiveSmallIntegerField('años en el tablero', default=6)

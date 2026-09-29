@@ -15,7 +15,8 @@ from django.core.management.color import no_style
 from django.db import migrations, models
 
 FIXTURE = Path(__file__).resolve().parent.parent / 'fixtures' / 'paises.json'
-ALIAS = {'EU': 'US', '1': 'NL', '67': 'KR', '78': 'AE'}  # Mismo país con otro código en el SIA anterior.
+# Mismo país (o parte de él) con otro código en el SIA anterior.
+ALIAS = {'EU': 'US', '1': 'NL', '67': 'KR', '78': 'AE', '23': 'GB', '44': 'GB'}
 
 
 def cargar_paises(apps, schema_editor):

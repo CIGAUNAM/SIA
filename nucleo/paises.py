@@ -8,8 +8,8 @@ import json
 from pathlib import Path
 
 FIXTURE = Path(__file__).parent / 'fixtures' / 'paises.json'
-#: Códigos del SIA anterior que eran el mismo país que otro con código ISO.
-ALIAS = {'EU': 'US', '1': 'NL', '67': 'KR', '78': 'AE'}
+#: Códigos del SIA anterior que corresponden a un país con código ISO (Inglaterra y Gales → Reino Unido).
+ALIAS = {'EU': 'US', '1': 'NL', '67': 'KR', '78': 'AE', '23': 'GB', '44': 'GB'}
 
 
 def equivalencia(paises_anteriores, paises):

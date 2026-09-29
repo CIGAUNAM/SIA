@@ -1333,7 +1333,7 @@
    "name_ascii": "Reino Unido",
    "slug": "reino-unido",
    "geoname_id": 2635167,
-   "alternate_names": "United Kingdom;Reino Unido de Gran Bretaña e Irlanda del Norte",
+   "alternate_names": "United Kingdom;Reino Unido de Gran Bretaña e Irlanda del Norte;Inglaterra;Gales",
    "translations": {},
    "code2": "GB",
    "code3": "GBR",
@@ -4360,40 +4360,6 @@
    "slug": "europa",
    "geoname_id": null,
    "alternate_names": "Unión Europea",
-   "translations": {},
-   "code2": null,
-   "code3": null,
-   "continent": "",
-   "tld": "",
-   "phone": null
-  }
- },
- {
-  "model": "cities_light.country",
-  "pk": 258,
-  "fields": {
-   "name": "Gales",
-   "name_ascii": "Gales",
-   "slug": "gales",
-   "geoname_id": null,
-   "alternate_names": "Gales Wales Cymru",
-   "translations": {},
-   "code2": null,
-   "code3": null,
-   "continent": "",
-   "tld": "",
-   "phone": null
-  }
- },
- {
-  "model": "cities_light.country",
-  "pk": 259,
-  "fields": {
-   "name": "Inglaterra",
-   "name_ascii": "Inglaterra",
-   "slug": "inglaterra",
-   "geoname_id": null,
-   "alternate_names": "Gran Bretaña",
    "translations": {},
    "code2": null,
    "code3": null,
