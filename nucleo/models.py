@@ -256,8 +256,21 @@ class User(AbstractUser):
         C = 'C', 'C'
         D = 'D', 'D'
 
+    class Grado(models.TextChoices):
+        """Abreviatura que antecede al nombre (en el CV y los formatos)."""
+        LIC = 'Lic.', 'Lic. (licenciatura)'
+        ING = 'Ing.', 'Ing. (ingeniería)'
+        ARQ = 'Arq.', 'Arq. (arquitectura)'
+        BIOL = 'Biól.', 'Biól. (biología)'
+        GEOG = 'Geóg.', 'Geóg. (geografía)'
+        MTRO = 'Mtro.', 'Mtro. (maestro)'
+        MTRA = 'Mtra.', 'Mtra. (maestra)'
+        M_EN_C = 'M. en C.', 'M. en C. (maestría en ciencias)'
+        DR = 'Dr.', 'Dr. (doctor)'
+        DRA = 'Dra.', 'Dra. (doctora)'
+
     tipo = models.CharField(max_length=20, choices=Tipo.choices, default=Tipo.OTRO)
-    grado = models.CharField('grado académico', max_length=20, blank=True)
+    grado = models.CharField('grado académico', max_length=20, choices=Grado.choices, blank=True)
     semblanza = models.TextField(blank=True)
     fecha_nacimiento = models.DateField(null=True, blank=True)
     genero = models.CharField('género', max_length=10, choices=Genero.choices, blank=True)
