@@ -8,6 +8,7 @@ entorno o de un archivo `.env` (ver `.env.example`).
 from pathlib import Path
 
 from decouple import Csv, config
+from django.templatetags.static import static
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -149,6 +150,9 @@ UNFOLD = {
     'SHOW_HISTORY': True,
     'SHOW_VIEW_ON_SITE': False,
     'DASHBOARD_CALLBACK': 'SIA.tablero.contexto_tablero',
+    # Colores de las personas en los selectores (adscritas / ex adscritas / externas).
+    'STYLES': [lambda request: static('sia/personas.css')],
+    'SCRIPTS': [lambda request: static('sia/personas.js')],
     'SIDEBAR': {
         'show_search': True,
         'show_all_applications': False,

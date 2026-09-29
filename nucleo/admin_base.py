@@ -99,32 +99,47 @@ def filtro_anio(*campos):
 # Comportamiento común
 # ---------------------------------------------------------------------------
 
-def etiqueta_persona(persona):
-    """Cómo se ve una persona en los selectores de los formularios (no en informes, PDF ni exportaciones, que usan
-    `str`): se marca a quien tiene cuenta en la entidad, p. ej. "Lazos Ruíz, A. E. · CIGA" o "… · ex CIGA"."""
-    from .models import ConfiguracionEntidad
+def adscripcion(persona):
+    """'actual', 'ex' o 'externa': si la persona tiene cuenta en la entidad y sigue adscrita.
 
+    Solo se usa para distinguirla (con color) en los selectores de los formularios; `str(persona)` no cambia, así que
+    informes, PDF y exportaciones no la muestran.
+    """
     usuario = getattr(persona, 'usuario', None)
     if usuario is None:
-        return str(persona)
-    siglas = ConfiguracionEntidad.actual().siglas or 'entidad'
-    egreso = usuario.egreso_entidad
-    return f"{persona} · {'ex ' if egreso and egreso < date.today() else ''}{siglas}"
+        return 'externa'
+    return 'ex' if usuario.egreso_entidad and usuario.egreso_entidad < date.today() else 'actual'
+
+
+def _marcar_opciones(widget):
+    """Agrega `data-adscripcion` a las opciones de personas ya elegidas (el script `sia/personas.js` las colorea)."""
+    original = widget.create_option
+
+    def create_option(name, value, label, selected, index, subindex=None, attrs=None):
+        opcion = original(name, value, label, selected, index, subindex, attrs)
+        pk = getattr(value, 'value', value)
+        if pk not in (None, ''):
+            persona = Persona.objects.select_related('usuario').filter(pk=pk).first()
+            if persona is not None:
+                opcion['attrs']['data-adscripcion'] = adscripcion(persona)
+        return opcion
+
+    widget.create_option = create_option
 
 
 class EtiquetaPersonaMixin:
-    """Los campos que eligen personas muestran `etiqueta_persona` en lugar de `str`."""
+    """Los campos que eligen personas distinguen (por color) a quienes están adscritos a la entidad."""
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         campo = super().formfield_for_foreignkey(db_field, request, **kwargs)
         if campo is not None and db_field.related_model is Persona:
-            campo.label_from_instance = etiqueta_persona
+            _marcar_opciones(campo.widget)
         return campo
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         campo = super().formfield_for_manytomany(db_field, request, **kwargs)
         if campo is not None and db_field.related_model is Persona:
-            campo.label_from_instance = etiqueta_persona
+            _marcar_opciones(campo.widget)
         return campo
 
 

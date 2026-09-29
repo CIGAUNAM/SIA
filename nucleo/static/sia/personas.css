@@ -1,0 +1,9 @@
+/* Personas en los selectores: adscritas, ex adscritas y externas (ver sia/personas.js). */
+.sia-persona--actual { color: #111827; font-weight: 500; }
+.sia-persona--ex { color: #374151; }
+.sia-persona--externa { color: #6b7280; }
+.dark .sia-persona--actual { color: #f9fafb; }
+.dark .sia-persona--ex { color: #d1d5db; }
+.dark .sia-persona--externa { color: #9ca3af; }
+/* La opción resaltada en la lista usa el color del resaltado. */
+.select2-results__option--highlighted .sia-persona { color: inherit; }
