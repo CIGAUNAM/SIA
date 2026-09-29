@@ -21,7 +21,7 @@
             </td>
             <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">
               <span class="font-medium text-important">{{ registro }}</span>
-              <span class="text-font-subtle-light dark:text-font-subtle-dark">#{{ registro.pk }}{% if registro.verificado %} · verificado{% endif %}</span>
+              <span class="text-font-subtle-light dark:text-font-subtle-dark">#{{ registro.pk }}</span>
             </td>
             <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">
               {% for tipo, total in referencias.items %}{{ total }} {{ tipo }}{% if not forloop.last %}, {% endif %}{% empty %}—{% endfor %}

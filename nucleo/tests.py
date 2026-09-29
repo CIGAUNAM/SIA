@@ -62,8 +62,8 @@ class Datos(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.mexico = Country.objects.get(code2='MX')  # Cargado por la migración desde el fixture de países.
-        cls.institucion = Institucion.objects.create(nombre='UNAM', pais=cls.mexico, verificado=True)
-        cls.revista = Revista.objects.create(nombre='Investigaciones Geográficas', pais=cls.mexico, verificado=True)
+        cls.institucion = Institucion.objects.create(nombre='UNAM', pais=cls.mexico)
+        cls.revista = Revista.objects.create(nombre='Investigaciones Geográficas', pais=cls.mexico)
         grupo = Group.objects.get(name=GRUPO_ACADEMICOS)
         cls.ana = User.objects.create_user('ana@ciga.unam.mx', password='x', first_name='Ana', last_name='López Pérez',
                                            is_staff=True, tipo=User.Tipo.INVESTIGADOR)
@@ -183,30 +183,52 @@ class PropietarioAdminTests(Datos):
         self.assertEqual([r['text'] for r in respuesta.json()['results']], ['Proyecto de Beto'])
 
 
-class VerificableAdminTests(Datos):
-    def test_catalogo_verificado_solo_lo_edita_un_administrador(self):
-        url = reverse('admin:nucleo_revista_change', args=[self.revista.pk])
-        self.client.force_login(self.ana)
-        respuesta = self.client.post(url, {'nombre': 'Otra', 'tipo': 'CIENTIFICA', 'pais': self.mexico.pk})
-        self.assertEqual(respuesta.status_code, 403)
-        self.client.force_login(self.admin)
-        self.assertEqual(self.client.get(url).status_code, 200)
+class CatalogoCompartidoTests(Datos):
+    """Un catálogo lo edita cualquiera si nadie lo usa, solo su usuario si lo usa una cuenta, y solo la
+    administración si lo usan varias."""
 
-    def test_quien_crea_un_registro_no_verificado_puede_editarlo(self):
+    def editar_revista(self, usuario):
+        self.client.force_login(usuario)
+        url = reverse('admin:nucleo_revista_change', args=[self.revista.pk])
+        datos = datos_de_pagina(self.client.get(url))
+        datos['nombre'] = f'Revista de {usuario.first_name}'
+        return self.client.post(url, datos)
+
+    def test_huerfano_lo_edita_cualquiera_y_solo_quien_lo_creo_lo_borra(self):
         self.client.force_login(self.ana)
         self.client.post(reverse('admin:nucleo_institucion_add'), {
             'nombre': 'Instituto Nuevo', 'pais': self.mexico.pk, 'ciudad': 'Morelia'})
         nueva = Institucion.objects.get(nombre='Instituto Nuevo')
         self.assertEqual(nueva.creado_por, self.ana)
-        self.assertFalse(nueva.verificado)
         url = reverse('admin:nucleo_institucion_change', args=[nueva.pk])
+        self.client.force_login(self.beto)
         self.assertEqual(self.client.post(url, {'nombre': 'Instituto Renombrado', 'pais': self.mexico.pk,
                                                 'ciudad': 'Morelia'}).status_code, 302)
-        self.client.force_login(self.beto)
-        self.assertEqual(self.client.post(url, {'nombre': 'X', 'pais': self.mexico.pk}).status_code, 403)
+        borrar = reverse('admin:nucleo_institucion_delete', args=[nueva.pk])
+        self.assertEqual(self.client.post(borrar, {'post': 'yes'}).status_code, 403)
+        self.client.force_login(self.ana)
+        self.client.post(borrar, {'post': 'yes'})
+        self.assertFalse(Institucion.objects.filter(pk=nueva.pk).exists())
 
+    def test_usado_por_una_cuenta_solo_lo_edita_esa_cuenta(self):
+        self.articulo('Uno', self.ana.persona)
+        self.articulo('Dos', self.ana.persona)  # Dos registros, pero de la misma cuenta.
+        self.assertEqual(self.editar_revista(self.beto).status_code, 403)
+        self.assertEqual(self.editar_revista(self.ana).status_code, 302)
 
-    def test_participantes_pueden_corregir_su_libro_no_verificado(self):
+    def test_usado_por_varias_cuentas_queda_de_solo_lectura(self):
+        self.articulo('De Ana', self.ana.persona)
+        self.articulo('De Beto', self.beto.persona)
+        self.assertEqual(self.editar_revista(self.ana).status_code, 403)
+        self.client.force_login(self.ana)
+        pagina = self.client.get(reverse('admin:nucleo_revista_change', args=[self.revista.pk]))
+        self.assertContains(pagina, 'Solo lectura')
+        self.client.force_login(self.administrativa)
+        pagina = self.client.get(reverse('admin:nucleo_revista_change', args=[self.revista.pk]))
+        self.assertContains(pagina, 'se reflejará en todos los registros vinculados')
+        self.assertEqual(self.editar_revista(self.administrativa).status_code, 302)
+
+    def test_libro_con_autores_de_varias_cuentas(self):
         from nucleo.models import Libro, LibroParticipante
         libro = Libro.objects.create(titulo='Atlas', tipo='INVESTIGACION', pais=self.mexico, status='PUBLICADO',
                                      fecha_publicado=date(2018, 1, 1))
@@ -215,6 +237,9 @@ class VerificableAdminTests(Datos):
         self.client.force_login(self.ana)
         self.assertTrue(self.client.get(url).context['has_change_permission'])
         self.client.force_login(self.beto)
+        self.assertFalse(self.client.get(url).context['has_change_permission'])
+        LibroParticipante.objects.create(libro=libro, persona=self.beto.persona, orden=2)
+        self.client.force_login(self.ana)
         self.assertFalse(self.client.get(url).context['has_change_permission'])
 
 

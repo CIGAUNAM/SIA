@@ -208,7 +208,6 @@ class ImportacionTests(Datos):
         self.assertIn('revista=', respuesta.url)  # La revista se encontró por nombre.
         nuevo = Persona.objects.get(nombre='Nuevo, P.')
         self.assertEqual(nuevo.orcid, '0000-0002-1825-0097')
-        self.assertFalse(nuevo.verificado)
         alta = self.client.get(respuesta.url)
         formset = next(f for f in alta.context['inline_admin_formsets'] if f.formset.model is ArticuloCientificoAutor)
         self.assertEqual([str(f.initial['persona']) for f in formset.formset.forms[:2]], [str(self.ana.persona.pk), str(nuevo.pk)])

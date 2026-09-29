@@ -180,23 +180,6 @@ ALTAS_RAPIDAS = [
 ]
 
 
-def cola_verificacion():
-    """Catálogos con registros nuevos sin verificar, para los administradores."""
-    from django.contrib import admin
-
-    from nucleo.admin_base import VerificableAdmin
-
-    cola = []
-    for modelo, model_admin in admin.site._registry.items():
-        if isinstance(model_admin, VerificableAdmin):
-            total = modelo.objects.filter(verificado=False).count()
-            if total:
-                url = reverse(f'admin:{modelo._meta.app_label}_{modelo._meta.model_name}_changelist')
-                cola.append({'texto': str(modelo._meta.verbose_name_plural).capitalize(), 'total': total,
-                             'url': f'{url}?verificado__exact=0'})
-    return sorted(cola, key=lambda x: -x['total'])
-
-
 def contexto_tablero(request, context):
     """`DASHBOARD_CALLBACK` de Unfold: agrega el tablero al contexto del inicio del admin."""
     from nucleo.admin_base import es_administrador
@@ -212,6 +195,5 @@ def contexto_tablero(request, context):
         'pendientes': pendientes(request.user),
         'altas_rapidas': [{'texto': texto, 'icono': icono,
                            'url': reverse(f'admin:{app}_{modelo}_add')} for texto, app, modelo, icono in ALTAS_RAPIDAS],
-        'cola_verificacion': cola_verificacion() if administrador else [],
     })
     return context

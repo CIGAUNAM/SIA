@@ -20,7 +20,7 @@ from unfold.decorators import action
 from unfold.forms import AdminPasswordChangeForm
 from unfold.widgets import UnfoldAdminTextareaWidget
 
-from .admin_base import (CatalogoAdmin, EtiquetaPersonaMixin, FormularioSIA, ParticipanteInline, VerificableAdmin,
+from .admin_base import (CatalogoAdmin, EtiquetaPersonaMixin, FormularioSIA, ParticipanteInline, CompartidoAdmin,
                          es_administrador)
 from .externos import ErrorServicio, datos_orcid, orcid_por_correo
 from .formularios import UserChangeForm, UserCreationForm, registros_de
@@ -341,7 +341,7 @@ class TieneCuentaFilter(admin.SimpleListFilter):
 
 
 @admin.register(Persona)
-class PersonaAdmin(VerificableAdmin):
+class PersonaAdmin(CompartidoAdmin):
     form = PersonaForm
 
     def get_queryset(self, request):
@@ -352,11 +352,11 @@ class PersonaAdmin(VerificableAdmin):
             kwargs['widget'] = BuscarOrcidWidget({'orcid': 'id_orcid', 'nombre': 'id_nombre', 'email': 'id_email'},
                                                  campo_correo='id_email', en_persona=True)
         return super().formfield_for_dbfield(db_field, request, **kwargs)
-    list_display = ['nombre', 'orcid', 'email', 'cuenta', 'verificado']
-    list_filter = [TieneCuentaFilter, 'verificado']
+    list_display = ['nombre', 'orcid', 'email', 'cuenta']
+    list_filter = [TieneCuentaFilter]
     list_select_related = ['usuario']
     search_fields = ['nombre', 'email', 'orcid', 'usuario__email', 'usuario__first_name', 'usuario__last_name']
-    fields = ['cuenta', 'nombre', 'orcid', 'email', 'verificado', 'creado_por', 'creado', 'actualizado']
+    fields = ['cuenta', 'nombre', 'orcid', 'email', 'creado_por', 'creado', 'actualizado']
 
     @admin.display(description='cuenta vinculada', ordering='usuario__email')
     def cuenta(self, obj):
@@ -408,8 +408,8 @@ class PaisAdmin(ModelAdmin):
 
 
 @admin.register(Institucion)
-class InstitucionAdmin(VerificableAdmin):
-    list_display = ['nombre', 'padre', 'pais', 'ciudad', 'clasificacion', 'pertenece_unam', 'verificado']
+class InstitucionAdmin(CompartidoAdmin):
+    list_display = ['nombre', 'padre', 'pais', 'ciudad', 'clasificacion', 'pertenece_unam']
     list_filter = ['clasificacion', 'pertenece_unam', 'subsistema_unam']
     search_fields = ['nombre', 'padre__nombre', 'ciudad', 'pais__name']
     autocomplete_fields = ['pais', 'padre']
@@ -426,28 +426,28 @@ class AreaConocimientoAdmin(CatalogoAdmin):
 
 
 @admin.register(ProgramaAcademico)
-class ProgramaAcademicoAdmin(VerificableAdmin):
-    list_display = ['nombre', 'nivel', 'area_conocimiento', 'verificado']
+class ProgramaAcademicoAdmin(CompartidoAdmin):
+    list_display = ['nombre', 'nivel', 'area_conocimiento']
     list_filter = ['nivel']
     search_fields = ['nombre']
     autocomplete_fields = ['area_conocimiento']
 
 
 @admin.register(Asignatura)
-class AsignaturaAdmin(VerificableAdmin):
-    list_display = ['nombre', 'verificado']
+class AsignaturaAdmin(CompartidoAdmin):
+    list_display = ['nombre']
     search_fields = ['nombre']
 
 
 @admin.register(Beca)
-class BecaAdmin(VerificableAdmin):
-    list_display = ['nombre', 'verificado']
+class BecaAdmin(CompartidoAdmin):
+    list_display = ['nombre']
     search_fields = ['nombre']
 
 
 @admin.register(Cargo)
-class CargoAdmin(VerificableAdmin):
-    list_display = ['nombre', 'tipo', 'verificado']
+class CargoAdmin(CompartidoAdmin):
+    list_display = ['nombre', 'tipo']
     list_filter = ['tipo']
     search_fields = ['nombre']
 
@@ -459,8 +459,8 @@ class NombramientoAdmin(CatalogoAdmin):
 
 
 @admin.register(Distincion)
-class DistincionAdmin(VerificableAdmin):
-    list_display = ['nombre', 'tipo', 'institucion', 'ambito', 'verificado']
+class DistincionAdmin(CompartidoAdmin):
+    list_display = ['nombre', 'tipo', 'institucion', 'ambito']
     list_filter = ['tipo', 'ambito']
     search_fields = ['nombre']
     autocomplete_fields = ['institucion']
@@ -472,8 +472,8 @@ class TipoEventoAdmin(CatalogoAdmin):
 
 
 @admin.register(Evento)
-class EventoAdmin(VerificableAdmin):
-    list_display = ['nombre', 'tipo', 'fecha_inicio', 'pais', 'ciudad', 'ambito', 'verificado']
+class EventoAdmin(CompartidoAdmin):
+    list_display = ['nombre', 'tipo', 'fecha_inicio', 'pais', 'ciudad', 'ambito']
     list_filter = ['tipo', 'ambito']
     search_fields = ['nombre', 'ciudad']
     autocomplete_fields = ['tipo', 'pais']
@@ -492,8 +492,8 @@ class MetricaRevistaInline(TabularInline):
 
 
 @admin.register(Revista)
-class RevistaAdmin(VerificableAdmin):
-    list_display = ['nombre', 'tipo', 'pais', 'issn_impreso', 'issn_electronico', 'verificado']
+class RevistaAdmin(CompartidoAdmin):
+    list_display = ['nombre', 'tipo', 'pais', 'issn_impreso', 'issn_electronico']
     list_filter = ['tipo', 'indices']
     search_fields = ['nombre', 'nombre_abreviado', 'issn_impreso', 'issn_electronico']
     autocomplete_fields = ['pais']
@@ -502,8 +502,8 @@ class RevistaAdmin(VerificableAdmin):
 
 
 @admin.register(MedioDivulgacion)
-class MedioDivulgacionAdmin(VerificableAdmin):
-    list_display = ['nombre', 'tipo', 'canal', 'pais', 'verificado']
+class MedioDivulgacionAdmin(CompartidoAdmin):
+    list_display = ['nombre', 'tipo', 'canal', 'pais']
     list_filter = ['tipo']
     search_fields = ['nombre', 'canal']
     autocomplete_fields = ['pais']
@@ -528,8 +528,8 @@ class MisLibrosFilter(admin.SimpleListFilter):
 
 
 @admin.register(Libro)
-class LibroAdmin(VerificableAdmin):
-    list_display = ['titulo', 'tipo', 'editorial', 'status', 'fecha', 'verificado']
+class LibroAdmin(CompartidoAdmin):
+    list_display = ['titulo', 'tipo', 'editorial', 'status', 'fecha']
     list_filter = [MisLibrosFilter, 'tipo', 'status']
     search_fields = ['titulo', 'editorial', 'isbn']
     campos_similitud = ('titulo',)
@@ -541,13 +541,8 @@ class LibroAdmin(VerificableAdmin):
         ('Estado editorial', {'fields': ('status', 'fecha_enviado', 'fecha_aceptado', 'fecha_enprensa',
                                          'fecha_publicado')}),
         ('Agradecimientos', {'fields': ('agradecimientos',), 'classes': ('collapse',)}),
-        ('Registro', {'fields': ('verificado', 'creado_por', 'creado', 'actualizado'), 'classes': ('collapse',)}),
+        ('Registro', {'fields': ('creado_por', 'creado', 'actualizado'), 'classes': ('collapse',)}),
     )
-
-    def puede_modificar(self, request, obj):
-        # Un libro no verificado también lo pueden corregir sus autores, editores, coordinadores o compiladores.
-        return super().puede_modificar(request, obj) or (
-            not obj.verificado and obj.participantes.filter(usuario=request.user).exists())
 
     def save_related(self, request, form, formsets, change):
         super().save_related(request, form, formsets, change)

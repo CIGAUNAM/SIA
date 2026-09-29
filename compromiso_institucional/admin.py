@@ -1,14 +1,14 @@
 from django.contrib import admin
 
-from nucleo.admin_base import CatalogoAdmin, PropietarioAdmin, VerificableAdmin
+from nucleo.admin_base import CatalogoAdmin, PropietarioAdmin, CompartidoAdmin
 
 from .models import (ActividadApoyo, ApoyoInstitucional, Comision, ComisionInstitucional, LaborDirectivaCoordinacion,
                      RepresentacionOrganoColegiado)
 
 
 @admin.register(Comision)
-class ComisionAdmin(VerificableAdmin):
-    list_display = ['nombre', 'verificado']
+class ComisionAdmin(CompartidoAdmin):
+    list_display = ['nombre']
     search_fields = ['nombre']
 
 

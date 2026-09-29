@@ -105,7 +105,7 @@ class UserCreationForm(CamposPersona, BaseUserCreationForm):
         if respuesta == NUEVA or not candidatas and not respuesta:
             correo = (datos.get('email') or '').strip().lower()
             correo = '' if correo.endswith('.invalid') else correo
-            self.persona = Persona(nombre=nombre, orcid=orcid, email=correo, verificado=True)
+            self.persona = Persona(nombre=nombre, orcid=orcid, email=correo)
         elif respuesta:
             self.persona = next((p for p in candidatas if str(p.pk) == respuesta), None)
             if self.persona is None:

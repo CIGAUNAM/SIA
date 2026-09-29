@@ -46,11 +46,11 @@ def _permisos(acciones_por_modelo):
 
 
 def _acciones_administracion(modelo, model_admin):
-    from .admin_base import CatalogoAdmin, VerificableAdmin
+    from .admin_base import CatalogoAdmin, CompartidoAdmin
 
     if modelo._meta.app_label in APPS_SOLO_SYSADMIN:
         return ()
-    if isinstance(model_admin, (VerificableAdmin, CatalogoAdmin)):
+    if isinstance(model_admin, (CompartidoAdmin, CatalogoAdmin)):
         return ('view', 'add', 'change', 'delete')  # Borrar catálogos es parte de fusionar duplicados.
     return ('view', 'add', 'change')  # Producción y cuentas: sin borrar.
 

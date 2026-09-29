@@ -1,10 +1,10 @@
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import Cargo, Institucion, Periodo, Verificable, requerido_si
+from nucleo.models import Cargo, Institucion, Periodo, Compartido, requerido_si
 
 
-class Comision(Verificable):
+class Comision(Compartido):
     nombre = models.CharField(max_length=255, unique=True)
 
     class Meta:

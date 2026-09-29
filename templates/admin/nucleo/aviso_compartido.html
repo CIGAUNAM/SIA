@@ -1,0 +1,19 @@
+{% if uso_compartido %}
+  {% if uso_compartido.administrador %}
+    {% if uso_compartido.registros %}
+      <div class="mb-4 rounded-default border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-400">
+        <strong>Catálogo compartido.</strong> Este registro lo usan {{ uso_compartido.registros }} registro{{ uso_compartido.registros|pluralize }}{% if uso_compartido.cuentas %} de {{ uso_compartido.cuentas }} académico{{ uso_compartido.cuentas|pluralize }}{% endif %}:
+        cualquier cambio que hagas se reflejará en todos los registros vinculados.
+      </div>
+    {% endif %}
+  {% elif not uso_compartido.editable %}
+    <div class="mb-4 rounded-default border border-base-200 bg-base-50 px-3 py-2 text-sm text-font-default-light dark:border-base-700 dark:bg-base-800 dark:text-font-default-dark">
+      <strong>Solo lectura.</strong> Este registro lo usan {{ uso_compartido.cuentas }} académicos, así que cambiarlo afectaría los registros de otras personas.
+      Si hay que corregirlo, pídelo a la administración.
+    </div>
+  {% elif uso_compartido.propio and uso_compartido.registros %}
+    <div class="mb-4 rounded-default border border-base-200 bg-base-50 px-3 py-2 text-sm text-font-default-light dark:border-base-700 dark:bg-base-800 dark:text-font-default-dark">
+      Por ahora solo tú usas este registro, por eso puedes editarlo. Cuando otro académico también lo use, quedará en solo lectura.
+    </div>
+  {% endif %}
+{% endif %}

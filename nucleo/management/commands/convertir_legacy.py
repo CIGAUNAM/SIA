@@ -91,8 +91,9 @@ class Conversor:
     def aviso(self, mensaje):
         self.avisos[mensaje] += 1
 
-    def verificable(self, verificado=True, usuario=None, creado=None, actualizado=None):
-        return {'verificado': bool(verificado), 'creado_por': usuario if usuario in self.cuentas else None,
+    def alta(self, usuario=None, creado=None, actualizado=None):
+        """Quién y cuándo dio de alta un registro de catálogo compartido."""
+        return {'creado_por': usuario if usuario in self.cuentas else None,
                 'creado': fecha_hora(creado), 'actualizado': fecha_hora(actualizado or creado)}
 
     def persona(self, pk):
@@ -127,7 +128,7 @@ class Conversor:
         if llave not in indice:
             pk = self.nuevo_pk(modelo)
             self.agregar(modelo, pk, {'nombre': re.sub(r'\s+', ' ', txt(nombre)), **campos,
-                                      **self.verificable(False)})
+                                      **self.alta()})
             indice[llave] = pk
         return indice[llave]
 
@@ -155,7 +156,7 @@ class Conversor:
                 'nombre': nombre[:255], 'pais': institucion['pais_institucion'], 'ciudad': ciudad,
                 'clasificacion': opcion(institucion['clasificacion_institucion'], self.CLASIFICACIONES),
                 'pertenece_unam': 'UNAM' in nombre.upper(), 'subsistema_unam': '',
-                **self.verificable(False)})
+                **self.alta()})
             indice[llave] = pk
         return indice[llave]
 
@@ -247,7 +248,7 @@ class Conversor:
             self.agregar('nucleo.persona', pk, {
                 'nombre': formato_cita(txt(f['first_name']), txt(f['last_name'])) or f['username'],
                 'email': txt(f['email']),
-                **self.verificable(True, creado=f['date_joined'])})
+                **self.alta(creado=f['date_joined'])})
 
     def catalogos(self):
         for pk, f in self.fuente('nucleo.institucionsimple').items():
@@ -257,8 +258,8 @@ class Conversor:
                 'clasificacion': opcion(f['institucion_clasificacion'], self.CLASIFICACIONES),
                 'pertenece_unam': f['institucion_perteneceunam'],
                 'subsistema_unam': txt(f['institucion_subsistemaunam']),
-                **self.verificable(f['institucion_regverificado'], f['institucion_regusuario'],
-                                   f['institucion_regfechacreado'], f['institucion_regfechaactualizado'])})
+                **self.alta(f['institucion_regusuario'],
+                            f['institucion_regfechacreado'], f['institucion_regfechaactualizado'])})
             self.por_nombre['institucion'][(clave(f['institucion_nombre']), f['institucion_pais'],
                                             clave(f['institucion_ciudad']))] = pk
         self.fuente('nucleo.institucion')
@@ -278,21 +279,21 @@ class Conversor:
                 pk = self.catalogo_existente('nucleo.programaacademico', f[prefijo + 'nombre'], {
                     'nombre': txt(f[prefijo + 'nombre']), 'nivel': nivel,
                     'area_conocimiento': f[prefijo + 'areaconocimiento'],
-                    **self.verificable(f[prefijo + 'regverificado'], f[prefijo + 'regusuario'],
-                                       f[prefijo + 'regfechacreado'], f[prefijo + 'regfechaactualizado'])},
+                    **self.alta(f[prefijo + 'regusuario'],
+                                f[prefijo + 'regfechacreado'], f[prefijo + 'regfechaactualizado'])},
                     llave=(nivel,))
                 self.mapa_programas[sufijo][pk_legacy] = pk
 
         for modelo_legacy, modelo in (('nucleo.asignatura', 'nucleo.asignatura'), ('nucleo.beca', 'nucleo.beca')):
             for pk, f in self.fuente(modelo_legacy).items():
-                self.agregar(modelo, pk, {'nombre': txt(f['nombre']), **self.verificable()})
+                self.agregar(modelo, pk, {'nombre': txt(f['nombre']), **self.alta()})
                 self.indexar(modelo, pk, f['nombre'])
 
         for pk, f in self.fuente('nucleo.cargo').items():
             self.agregar('nucleo.cargo', pk, {
                 'nombre': txt(f['nombre']),
                 'tipo': opcion(f['tipo_cargo'], {'ACADEMICO', 'ADMINISTRATIVO', 'DIRECTIVO'}, 'OTRO'),
-                **self.verificable()})
+                **self.alta()})
             self.indexar('nucleo.cargo', pk, f['nombre'])
 
         for pk, f in self.fuente('nucleo.nombramiento').items():
@@ -303,7 +304,7 @@ class Conversor:
             self.agregar('nucleo.distincion', pk, {
                 'nombre': txt(f['nombre']), 'tipo': f['tipo'], 'institucion': self.institucion(f),
                 'ambito': opcion(f['ambito'], {'INSTITUCIONAL', 'REGIONAL', 'NACIONAL', 'INTERNACIONAL'}),
-                **self.verificable()})
+                **self.alta()})
             self.indexar('nucleo.distincion', pk, f['nombre'])
 
         for pk, f in self.fuente('nucleo.tipoevento').items():
@@ -321,7 +322,7 @@ class Conversor:
             self.agregar('nucleo.mediodivulgacion', pk, {
                 'nombre': f['nombre_medio'], 'tipo': opcion(f['tipo'], {'PERIODICO', 'RADIO', 'TV', 'INTERNET'}, 'OTRO'),
                 'canal': txt(f['canal']), 'pais': f['pais'], 'ciudad': txt(ciudades.get(f['ciudad'], {}).get('nombre')),
-                **self.verificable()})
+                **self.alta()})
 
         self.libros()
 
@@ -349,10 +350,9 @@ class Conversor:
 
         def agregar_evento(origen, pk_legacy, campos):
             llave = (clave(campos['nombre']), campos['fecha_inicio'])
-            verificado = campos.pop('_verificado', True)
             if llave not in indice:
                 pk = pk_legacy if origen == 'nucleo' else self.nuevo_pk('nucleo.evento')
-                self.agregar('nucleo.evento', pk, {**campos, **self.verificable(verificado)})
+                self.agregar('nucleo.evento', pk, {**campos, **self.alta()})
                 indice[llave] = pk
             self.mapa_eventos[origen][pk_legacy] = indice[llave]
 
@@ -370,8 +370,7 @@ class Conversor:
                     'pais': f[prefijo + 'pais'], 'ciudad': txt(f[prefijo + 'ciudad']),
                     'ambito': opcion(f[prefijo + 'ambito'], {'NACIONAL', 'INTERNACIONAL'}),
                     'numero_ponentes': f[prefijo + 'numeroponentes'],
-                    'numero_asistentes': f[prefijo + 'numeroasistentes'],
-                    '_verificado': f.get(prefijo + 'regverificado', True)})
+                    'numero_asistentes': f[prefijo + 'numeroasistentes']})
 
     def revistas(self):
         self.mapa_revistas_divulgacion = {}
@@ -381,8 +380,8 @@ class Conversor:
                 'nombre': txt(f['revista_nombre']), 'nombre_abreviado': txt(f['revista_nombreabreviadowos']),
                 'tipo': 'CIENTIFICA', 'pais': f['revista_pais'], 'indices': f['revista_indices'],
                 'issn_impreso': txt(f['revista_issn_impreso']), 'issn_electronico': txt(f['revista_issn_online']),
-                **self.verificable(f['revista_regverificado'], f['revista_regusuario'], f['revista_regfechacreado'],
-                                   f['revista_regfechaactualizado'])})
+                **self.alta(f['revista_regusuario'], f['revista_regfechacreado'],
+                            f['revista_regfechaactualizado'])})
             nombres[clave(f['revista_nombre'])] = pk
         for pk_legacy, f in self.fuente('nucleo.revistadivulgacion').items():
             nombre = clave(f['revistadivulgacion_nombre'])
@@ -391,9 +390,9 @@ class Conversor:
                     'nombre': txt(f['revistadivulgacion_nombre']), 'nombre_abreviado': '', 'tipo': 'DIVULGACION',
                     'pais': f['revistadivulgacion_pais'], 'indices': [],
                     'issn_impreso': txt(f['revistadivulgacion_issnimpreso']), 'issn_electronico': '',
-                    **self.verificable(f['revistadivulgacion_regverificado'], f['revistadivulgacion_regusuario'],
-                                       f['revistadivulgacion_regfechacreado'],
-                                       f['revistadivulgacion_regfechaactualizado'])})
+                    **self.alta(f['revistadivulgacion_regusuario'],
+                                f['revistadivulgacion_regfechacreado'],
+                                f['revistadivulgacion_regfechaactualizado'])})
             self.mapa_revistas_divulgacion[pk_legacy] = nombres[nombre]
 
     def libros(self):
@@ -405,7 +404,7 @@ class Conversor:
                 'coleccion': txt(f['coleccion_text']), 'volumen': txt(f['volumen']),
                 'numero_edicion': f['numero_edicion'] or 1, 'numero_paginas': f['numero_paginas'] or None,
                 'isbn': txt(f['isbn']), 'url': txt(f['url']), 'arbitrado_pares': f['arbitrado_pares'],
-                **self.publicacion(f), **self.verificable(False)})
+                **self.publicacion(f), **self.alta()})
             orden = 0
             vistos = set()
             for rol, campo in (('AUTOR', 'autores'), ('EDITOR', 'editores'), ('COORDINADOR', 'coordinadores'),
@@ -530,7 +529,7 @@ class Conversor:
     def compromiso_institucional(self):
         for pk, f in self.fuente('compromiso_institucional.comisioninstitucional').items():
             self.agregar('compromiso_institucional.comision', pk,
-                         {'nombre': txt(f['comisioninstitucional_nombre']), **self.verificable()})
+                         {'nombre': txt(f['comisioninstitucional_nombre']), **self.alta()})
             self.indexar('compromiso_institucional.comision', pk, f['comisioninstitucional_nombre'])
         for pk, f in self.fuente('compromiso_institucional.actividadapoyo').items():
             self.agregar('compromiso_institucional.actividadapoyo', pk,

@@ -6,8 +6,8 @@ Cada `ModelAdmin` declara en `permisos_investigador` qué acciones concede al gr
 - `PropietarioAdmin`: registros de producción académica. Un académico solo ve los
   registros en los que participa (según `propietarios`); los administradores ven todo.
   Los registros de un periodo de informe cerrado quedan en solo lectura para los académicos.
-- `VerificableAdmin`: catálogos que cualquier académico puede ampliar; los registros
-  verificados solo los modifican los administradores.
+- `CompartidoAdmin`: catálogos que cualquier académico puede ampliar; quién los modifica depende de
+  cuántas cuentas los usan (ver `nucleo.uso`).
 - `CatalogoAdmin`: catálogos que solo mantienen los administradores.
 
 Las tres bases incluyen bitácora de cambios, validación de fechas, aviso de posibles
@@ -584,39 +584,62 @@ class PropietarioAdmin(BaseAdmin):
 # Catálogos
 # ---------------------------------------------------------------------------
 
-class VerificableAdmin(BaseAdmin):
+class CompartidoAdmin(BaseAdmin):
+    """Catálogos compartidos que cualquier académico amplía (personas, instituciones, revistas, eventos...).
+
+    Quién puede modificar un registro depende de quién lo usa (`nucleo.uso`):
+    - nadie (huérfano): cualquiera; solo quien lo creó puede borrarlo;
+    - una sola cuenta, aunque sea en varios registros: solo esa cuenta;
+    - varias cuentas: nadie más que la administración (y queda de solo lectura para los académicos).
+    La administración siempre puede, con un aviso de que el cambio se verá en todos los registros que lo usan.
+    """
     permisos_investigador = TODAS_LAS_ACCIONES
     campos_similitud = ('nombre',)
-    actions = ['marcar_verificados', 'fusionar_registros']
+    actions = ['fusionar_registros']
     actions_list = ['revisar_duplicados']
+    change_form_before_template = 'admin/nucleo/aviso_compartido.html'
 
-    def get_list_filter(self, request):
-        return [*super().get_list_filter(request), 'verificado']
+    def _uso(self, request, obj):
+        """Uso del registro, calculado una vez por solicitud."""
+        from .uso import uso
 
-    def get_readonly_fields(self, request, obj=None):
-        campos = [*super().get_readonly_fields(request, obj), 'creado_por', 'creado', 'actualizado']
-        if not es_administrador(request.user):
-            campos.append('verificado')
-        return campos
+        cache = request.__dict__.setdefault('_uso_compartido', {})
+        llave = (type(obj), obj.pk)
+        if llave not in cache:
+            cache[llave] = uso(obj)
+        return cache[llave]
 
     def puede_modificar(self, request, obj):
-        return es_administrador(request.user) or (not obj.verificado and obj.creado_por_id == request.user.pk)
+        if es_administrador(request.user):
+            return True
+        usuarios = self._uso(request, obj).usuarios
+        return not usuarios or usuarios == {request.user.pk}
 
-    def get_actions(self, request):
-        acciones = super().get_actions(request)
-        if not es_administrador(request.user):
-            acciones.pop('marcar_verificados', None)
-        return acciones
+    def has_delete_permission(self, request, obj=None):
+        if obj is not None and not es_administrador(request.user):
+            # Borrar solo lo huérfano, y solo quien lo creó.
+            if self._uso(request, obj).registros or obj.creado_por_id != request.user.pk:
+                return False
+        return super().has_delete_permission(request, obj)
+
+    def get_readonly_fields(self, request, obj=None):
+        return [*super().get_readonly_fields(request, obj), 'creado_por', 'creado', 'actualizado']
 
     def save_model(self, request, obj, form, change):
         if not change:
             obj.creado_por = request.user
         super().save_model(request, obj, form, change)
 
-    @admin.action(description='Marcar como verificados')
-    def marcar_verificados(self, request, queryset):
-        actualizados = queryset.update(verificado=True)
-        self.message_user(request, f'{actualizados} registro(s) marcados como verificados.')
+    def render_change_form(self, request, context, add=False, change=False, form_url='', obj=None):
+        if obj is not None and obj.pk:
+            registro_uso = self._uso(request, obj)
+            context['uso_compartido'] = {
+                'registros': registro_uso.registros, 'cuentas': len(registro_uso.usuarios),
+                'administrador': es_administrador(request.user),
+                'propio': registro_uso.usuarios == {request.user.pk},
+                'editable': self.puede_modificar(request, obj),
+            }
+        return super().render_change_form(request, context, add, change, form_url, obj)
 
 
 class CatalogoAdmin(BaseAdmin):

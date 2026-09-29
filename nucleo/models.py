@@ -108,14 +108,12 @@ def requerido_si(condicion, obj, campo, mensaje='Este campo es obligatorio en es
 # Bases abstractas
 # ---------------------------------------------------------------------------
 
-class Verificable(models.Model):
-    """Catálogo que cualquier académico puede ampliar y que los administradores validan.
+class Compartido(models.Model):
+    """Catálogo compartido que cualquier académico puede ampliar (personas, instituciones, revistas...).
 
-    Un registro verificado solo puede modificarlo un administrador; uno no verificado,
-    además, quien lo creó.
+    Lo edita cualquiera mientras nadie lo use, solo su único usuario mientras lo use una sola cuenta, y solo la
+    administración cuando lo usan varias (ver `nucleo.uso` y `CompartidoAdmin`).
     """
-    verificado = models.BooleanField(
-        default=False, help_text='Los registros verificados solo pueden modificarlos los administradores.')
     creado_por = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, editable=False,
         related_name='+')
@@ -315,7 +313,7 @@ class User(AbstractUser):
         self.email = self.email.strip().lower()
         if self.persona_id is None:  # Toda cuenta figura como una persona en la producción académica.
             self.persona = Persona.objects.create(
-                nombre=formato_cita(self.first_name, self.last_name) or self.email.split('@')[0], verificado=True)
+                nombre=formato_cita(self.first_name, self.last_name) or self.email.split('@')[0])
         super().save(*args, **kwargs)
 
     def activo_en(self, anio):
@@ -324,7 +322,7 @@ class User(AbstractUser):
                 and (self.egreso_entidad is None or self.egreso_entidad.year >= anio))
 
 
-class Persona(Verificable):
+class Persona(Compartido):
     """Cualquier persona que aparece en la producción académica, tenga o no cuenta (`persona.usuario`)."""
     nombre = models.CharField(
         'nombre para mostrar', max_length=300,
@@ -350,7 +348,7 @@ class Persona(Verificable):
 # Catálogos
 # ---------------------------------------------------------------------------
 
-class Institucion(Verificable):
+class Institucion(Compartido):
     class Clasificacion(models.TextChoices):
         ACADEMICA = 'ACADEMICA', 'Académica'
         FEDERAL = 'FEDERAL', 'Gubernamental federal'
@@ -415,7 +413,7 @@ class AreaConocimiento(models.Model):
         return self.nombre
 
 
-class ProgramaAcademico(Verificable):
+class ProgramaAcademico(Compartido):
     nombre = models.CharField(max_length=255)
     nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
     area_conocimiento = models.ForeignKey(AreaConocimiento, on_delete=models.PROTECT, null=True, blank=True,
@@ -431,7 +429,7 @@ class ProgramaAcademico(Verificable):
         return f'{self.nombre} ({self.get_nivel_display()})'
 
 
-class Asignatura(Verificable):
+class Asignatura(Compartido):
     nombre = models.CharField(max_length=255, unique=True)
 
     class Meta:
@@ -441,7 +439,7 @@ class Asignatura(Verificable):
         return self.nombre
 
 
-class Beca(Verificable):
+class Beca(Compartido):
     nombre = models.CharField(max_length=200, unique=True)
 
     class Meta:
@@ -451,7 +449,7 @@ class Beca(Verificable):
         return self.nombre
 
 
-class Cargo(Verificable):
+class Cargo(Compartido):
     class Tipo(models.TextChoices):
         ACADEMICO = 'ACADEMICO', 'Académico'
         ADMINISTRATIVO = 'ADMINISTRATIVO', 'Administrativo'
@@ -483,7 +481,7 @@ class Nombramiento(models.Model):
 
 
 
-class Distincion(Verificable):
+class Distincion(Compartido):
     class Tipo(models.TextChoices):
         PREMIO = 'PREMIO', 'Premio'
         DISTINCION = 'DISTINCION', 'Distinción'
@@ -521,7 +519,7 @@ class TipoEvento(models.Model):
         return self.nombre
 
 
-class Evento(Verificable):
+class Evento(Compartido):
     nombre = models.CharField(max_length=255)
     tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
     descripcion = models.TextField('descripción', blank=True)
@@ -560,7 +558,7 @@ class Indice(models.Model):
         return self.nombre
 
 
-class Revista(Verificable):
+class Revista(Compartido):
     class Tipo(models.TextChoices):
         CIENTIFICA = 'CIENTIFICA', 'Científica'
         DIVULGACION = 'DIVULGACION', 'Divulgación'
@@ -618,7 +616,7 @@ class MetricaRevista(models.Model):
         return f'{self.revista.nombre} {self.anio}: {self.factor_impacto}'
 
 
-class MedioDivulgacion(Verificable):
+class MedioDivulgacion(Compartido):
     class Tipo(models.TextChoices):
         PERIODICO = 'PERIODICO', 'Periódico'
         RADIO = 'RADIO', 'Radio'
@@ -642,7 +640,7 @@ class MedioDivulgacion(Verificable):
         return f'{self.nombre} ({self.canal})' if self.canal else self.nombre
 
 
-class Libro(Verificable, EstadoPublicacion):
+class Libro(Compartido, EstadoPublicacion):
     class Tipo(models.TextChoices):
         INVESTIGACION = 'INVESTIGACION', 'Investigación'
         DIVULGACION = 'DIVULGACION', 'Divulgación'

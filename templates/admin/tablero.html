@@ -73,15 +73,6 @@
       </div>
     {% endcomponent %}
 
-    {% if es_administrador %}
-      {% component "unfold/components/card.html" with title="Por verificar" title_icon="verified" %}
-        {% if cola_verificacion %}
-          <ul class="tablero-lista">{% for item in cola_verificacion %}<li><a href="{{ item.url }}">{{ item.texto }}: <strong>{{ item.total }}</strong></a></li>{% endfor %}</ul>
-        {% else %}
-          <p>No hay catálogos pendientes de verificar.</p>
-        {% endif %}
-      {% endcomponent %}
-    {% endif %}
   </div>
 </div>
 

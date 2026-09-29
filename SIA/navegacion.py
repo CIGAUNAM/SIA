@@ -9,7 +9,7 @@ from django.contrib import admin
 from django.urls import reverse
 from django.utils.translation import gettext_lazy
 
-from nucleo.admin_base import SECCIONES_PERFIL, VerificableAdmin, es_administrador
+from nucleo.admin_base import SECCIONES_PERFIL, es_administrador
 
 SECCIONES = [
     ('formacion_academica', 'school'),
@@ -37,16 +37,6 @@ EN_PRINCIPAL = [
     ('nucleo', 'confirmacioninforme', 'Confirmaciones de informe', 'task_alt'),
     ('nucleo', 'configuracionentidad', 'Configuración de la entidad', 'settings'),
 ]
-
-
-def _funcion_contador(modelo):
-    """Unfold solo acepta insignias como ruta importable: se registra una función por catálogo en este módulo."""
-    nombre = f'contador_{modelo._meta.app_label}_{modelo._meta.model_name}'
-    if nombre not in globals():
-        def contador(request):
-            return modelo.objects.filter(verificado=False).count() or None
-        globals()[nombre] = contador
-    return f'{__name__}.{nombre}'
 
 
 def _solo_consulta(model_admin):
@@ -82,10 +72,7 @@ def menu(request):
             model_admin = admin.site._registry.get(modelo['model'])
             if not administrador and model_admin is not None and _solo_consulta(model_admin):
                 continue
-            item = {'title': modelo['name'], 'icon': iconos[seccion], 'link': modelo['admin_url']}
-            if administrador and isinstance(model_admin, VerificableAdmin):
-                item['badge'] = _funcion_contador(modelo['model'])
-            items[seccion].append(item)
+            items[seccion].append({'title': modelo['name'], 'icon': iconos[seccion], 'link': modelo['admin_url']})
     grupos = [{'items': principales}]
     for app_label, _ in SECCIONES:
         if app_label in SECCIONES_PERFIL:

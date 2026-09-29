@@ -103,7 +103,7 @@ Los nombres de las personas se convierten al formato de cita (`Pérez García, J
 
 - **Captura asistida**: en *Artículos científicos → Importar* se llena el alta desde un DOI (Crossref), un BibTeX o
   la lista de obras de un ORCID. Los autores se reconocen en el catálogo de personas, primero por su ORCID y luego
-  por parecido del nombre (o se agregan sin verificar).
+  por parecido del nombre (o se agregan al catálogo).
 - **Evidencias**: cada registro de producción tiene una pestaña para adjuntar constancias o PDF (máx. 15 MB).
   Se guardan en `PRIVATE_MEDIA_ROOT` y solo las descarga quien puede ver el registro.
 - **Guardar como nuevo** para duplicar registros recurrentes (p. ej. el mismo curso cada semestre) y **filtro por
@@ -114,7 +114,7 @@ Los nombres de las personas se convierten al formato de cita (`Pérez García, J
   Los administradores tienen *Revisar duplicados* (pares probables) y la acción *Fusionar*, que reasigna todas las
   referencias al registro que se conserva.
 - **Inicio**: pendientes del académico (publicaciones sin actualizar en 6 meses, tesis vencidas, perfil incompleto,
-  informe por confirmar), altas rápidas y, para administradores, la cola de catálogos por verificar.
+  informe por confirmar) y altas rápidas.
 - **Bitácora**: cada cambio queda registrado (botón *Historial* en cada registro), con quién y qué cambió.
 
 ## Informe anual
@@ -134,13 +134,15 @@ administrativo) describe a la persona para reportes, no lo que puede hacer.
 - **Sysadmin**: superusuarios. Acceso total, incluidos grupos, permisos y otras cuentas de superusuario.
 - **Administración** (personal administrativo): ve y edita la producción de todos los académicos; al editar un
   registro ajeno debe escribir el **motivo del cambio**, que queda en el historial junto con quién, cuándo y qué
-  cambió. No borra producción ajena. Mantiene catálogos (verifica, fusiona duplicados), el informe anual (periodos,
+  cambió. No borra producción ajena. Mantiene catálogos (corrige, fusiona duplicados), el informe anual (periodos,
   avance, confirmaciones), la configuración de la entidad y las cuentas (altas, contraseñas, ORCID), pero no asigna
   grupos ni permisos, ni edita superusuarios u otras cuentas de Administración.
 - **Académicos** (investigadores, técnicos académicos y posdoctorantes): ven solo sus registros (los que tienen su
   usuario o en los que figuran como autor, responsable, tutor, etc.) y editan su perfil. Pueden ampliar los
-  catálogos compartidos (instituciones, revistas, eventos, personas...); un registro de catálogo **verificado**
-  solo lo modifica Administración. Las cuentas nuevas creadas desde el admin entran automáticamente a este grupo.
+  catálogos compartidos (instituciones, revistas, eventos, personas...). Un registro de catálogo lo edita
+  cualquiera mientras nadie lo use, solo su usuario mientras lo use una sola cuenta (aunque sea en varios
+  registros) y solo Administración cuando lo usan varias cuentas; Administración ve un aviso de que el cambio se
+  refleja en todos los registros vinculados. Las cuentas nuevas creadas desde el admin entran a este grupo.
 
 Los grupos se definen en `nucleo/permisos.py`: los permisos de Académicos se declaran en cada `ModelAdmin`
 (`permisos_investigador`) y los de Administración se derivan del tipo de admin (catálogo o producción).
@@ -158,7 +160,7 @@ Desconocido, Interamericano...; Inglaterra y Gales se unieron a Reino Unido). No
 ```
 SIA/            configuración, sitio admin (Unfold), menú lateral y tablero del inicio
 nucleo/         Persona/User, catálogos compartidos, bases abstractas y utilidades
-  admin_base.py   PropietarioAdmin, VerificableAdmin, CatalogoAdmin, inlines de personas ordenadas
+  admin_base.py   PropietarioAdmin, CompartidoAdmin, CatalogoAdmin, inlines de personas ordenadas
   cv.py           CV en PDF, Word o HTML, con filtro por periodo y secciones
   documentos.py   HTML → PDF con WeasyPrint (CV y formatos)
   management/commands/convertir_legacy.py
@@ -175,7 +177,7 @@ locale/         traducciones al español de Unfold (no trae las suyas)
 - **Autores ordenados**: las relaciones donde importa el orden (autores, responsables, tutores, sinodales) usan
   tablas intermedias con `orden` y se capturan como inlines que se reordenan arrastrando las filas.
 - **Bases abstractas**: `EstadoPublicacion` (estado editorial y fechas), `Periodo` (fecha de inicio/fin con
-  validación), `Verificable` (catálogos ampliables) y `Participante` (tablas intermedias ordenadas).
+  validación), `Compartido` (catálogos ampliables) y `Participante` (tablas intermedias ordenadas).
 
 ## Traducciones
 
