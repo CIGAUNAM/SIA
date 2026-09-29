@@ -576,10 +576,10 @@ class ConfiguracionEntidadAdmin(SimpleHistoryAdmin, ModelAdmin):
     autocomplete_fields = ['pais_sede']
     fieldsets = (
         ('Identidad', {'fields': ('nombre', 'siglas', 'institucion_madre', 'institucion_madre_siglas', 'logo')}),
-        ('Dirección y contacto', {'fields': ('titular', 'cargo_titular', 'pais_sede', 'ciudad', 'direccion', 'telefono',
-                                             'correo', 'sitio_web')}),
+        ('Dirección y contacto', {'fields': ('titular', 'cargo_titular', 'ciudad', 'direccion', 'telefono', 'correo',
+                                             'sitio_web')}),
         ('Documentos', {'fields': ('consejo_tecnico',)}),
-        ('Operación', {'fields': ('remitente', 'anios_tablero', 'meses_publicacion_pendiente')}),
+        ('Operación', {'fields': ('pais_sede', 'remitente', 'anios_tablero', 'meses_publicacion_pendiente')}),
     )
 
     def has_add_permission(self, request):
