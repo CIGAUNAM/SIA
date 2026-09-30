@@ -194,9 +194,17 @@ class Conversor:
         self.desarrollo_tecnologico()
         self.distinciones()
         self.paises()
+        self.sin_fecha()
         for modelo in sorted(set(self.legacy) - self.convertidos):
             self.aviso(f'Modelo legacy sin equivalente, se omitió: {modelo} ({len(self.legacy[modelo])})')
         return self.salida
+
+    def sin_fecha(self):
+        """El SIA anterior usaba 1900-01-01 como "sin fecha": se guarda vacío (el formulario pide completarla)."""
+        for obj in self.salida:
+            for campo, valor in obj['fields'].items():
+                if valor == '1900-01-01':
+                    obj['fields'][campo] = None
 
     def paises(self):
         """Los países van al catálogo de cities_light (fixture `paises`): se traducen las llaves de cada registro."""

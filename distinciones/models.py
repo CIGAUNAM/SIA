@@ -1,12 +1,12 @@
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import Ambito, Distincion, Institucion, NivelAcademico, Periodo, Persona
+from nucleo.models import anio_o_sf, Ambito, Distincion, Institucion, NivelAcademico, Periodo, Persona
 
 
 class DistincionAcademico(models.Model):
     distincion = models.ForeignKey(Distincion, on_delete=models.PROTECT, verbose_name='distinción')
-    fecha = models.DateField()
+    fecha = models.DateField(null=True)
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='distinciones')
 
     class Meta:
@@ -15,7 +15,7 @@ class DistincionAcademico(models.Model):
         verbose_name_plural = 'distinciones recibidas'
 
     def __str__(self):
-        return f'{self.distincion} ({self.fecha:%Y})'
+        return f'{self.distincion} ({anio_o_sf(self.fecha)})'
 
 
 class DistincionAlumno(models.Model):

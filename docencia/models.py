@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import (Asignatura, EstadoPublicacion, Institucion, Modalidad, NivelAcademico, Participante, Periodo,
+from nucleo.models import (anio_o_sf, Asignatura, EstadoPublicacion, Institucion, Modalidad, NivelAcademico, Participante, Periodo,
                            Persona, ProgramaAcademico, requerido_si, validar_paginas, validar_programa)
 
 
@@ -62,7 +62,7 @@ class CursoExtracurricular(Periodo):
         verbose_name_plural = 'cursos extracurriculares'
 
     def __str__(self):
-        return f'{self.asignatura} ({self.fecha_inicio:%Y})'
+        return f'{self.asignatura} ({anio_o_sf(self.fecha_inicio)})'
 
     def clean(self):
         super().clean()

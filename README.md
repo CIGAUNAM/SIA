@@ -87,6 +87,11 @@ Los nombres de las personas se convierten al formato de cita (`Pérez García, J
 
 ## Funciones para la operación diaria
 
+- **Fechas dudosas**: `revisar_fechas` busca fechas imposibles (el 1900-01-01 que el SIA anterior usaba como "sin
+  fecha", años como 2916) y las corrige de la más a la menos segura: fecha de Crossref para publicaciones, año mal
+  tecleado (2916 → 2016), evento de un día, o "sin fecha". Sin `--aplicar` solo informa; al aplicar, el motivo queda
+  en el historial. Un registro "sin fecha" aparece como "s.f." en el CV y pide la fecha la próxima vez que se edite.
+
 - **Mi perfil** (menú principal): cada quien ajusta sus datos personales, su nombre en publicaciones, ORCID y
   perfil académico, sin ver grupos ni permisos (aunque sea administrador), y cambia su contraseña. Debajo están su
   **formación académica** y **experiencia profesional**, que se agregan y editan desde ahí (y ya no aparecen en el

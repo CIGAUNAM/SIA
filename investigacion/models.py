@@ -2,7 +2,7 @@ from cities_light.models import Country
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import (CapituloLibro, EstadoPublicacion, Institucion, Participante, Periodo, Persona,
+from nucleo.models import (anio_o_sf, CapituloLibro, EstadoPublicacion, Institucion, Participante, Periodo, Persona,
                            Revista, normalizar_doi, requerido_si, validar_paginas)
 
 
@@ -275,7 +275,7 @@ class ApoyoTecnico(Periodo):
         verbose_name_plural = 'apoyos técnicos'
 
     def __str__(self):
-        return f'{self.actividad_otra or self.actividad} ({self.fecha_inicio:%Y})'
+        return f'{self.actividad_otra or self.actividad} ({anio_o_sf(self.fecha_inicio)})'
 
 
 from nucleo.historial import registrar_historial  # noqa: E402

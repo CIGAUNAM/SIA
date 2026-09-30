@@ -1,8 +1,11 @@
-"""Fechas sospechosas (1900-01-01 del SIA anterior, años imposibles) y, para publicaciones, la fecha en Crossref.
+"""Fechas sospechosas (1900-01-01 del SIA anterior, años imposibles) y su corrección, de la más a la menos segura:
 
-Crossref solo se acepta si el DOI coincide o si el título es prácticamente el mismo y comparte al menos un autor.
-Sin --aplicar solo informa; con --aplicar guarda únicamente esas correcciones de Crossref (fecha de publicación,
-DOI y estado "publicado"). Las demás fechas las debe corregir quien conoce el dato.
+1. Publicaciones: la fecha en Crossref (DOI igual, o título casi idéntico con un autor en común).
+2. Año con un dígito mal tecleado (2916 → 2016), si el candidato es único o el más cercano a la otra fecha.
+3. Evento con término imposible: término = inicio (evento de un día).
+4. Lo demás: "sin fecha" (vacío); en el formulario la fecha sigue siendo obligatoria, así que se completa al editar.
+
+Sin --aplicar solo informa. Con --aplicar guarda, con el motivo en el historial de cada registro.
 """
 
 import urllib.parse
@@ -85,6 +88,59 @@ def en_crossref(obj):
     return None
 
 
+PLACEHOLDER = date(1900, 1, 1)  # "Sin fecha" en el SIA anterior.
+
+
+def por_digito(fecha, antes_de=None, despues_de=None):
+    """Año con un dígito mal tecleado (2916 → 2016): el único año válido que resulta de cambiar un dígito, o el más
+    cercano a la otra fecha del registro, respetando el orden inicio ≤ fin. None si no hay uno claro."""
+    if fecha == PLACEHOLDER:
+        return None
+    anio, hoy = str(fecha.year), date.today()
+    candidatos = set()
+    for posicion in range(len(anio)):
+        for digito in '0123456789':
+            try:
+                otra = fecha.replace(year=int(anio[:posicion] + digito + anio[posicion + 1:]))
+            except ValueError:
+                continue
+            if (otra != fecha and date(ANIO_MINIMO, 1, 1) <= otra <= hoy and (antes_de is None or otra <= antes_de)
+                    and (despues_de is None or otra >= despues_de)):
+                candidatos.add(otra)
+    if len(candidatos) == 1:
+        return candidatos.pop()
+    referencia = antes_de or despues_de
+    if referencia and candidatos:
+        orden = sorted(candidatos, key=lambda c: abs((c - referencia).days))
+        if len(orden) == 1 or abs((orden[0] - referencia).days) < abs((orden[1] - referencia).days):
+            return orden[0]
+    return None
+
+
+def _valida(fecha):
+    return fecha is not None and date(ANIO_MINIMO, 1, 1) <= fecha <= date(date.today().year + 2, 12, 31)
+
+
+def correcciones(obj, campos):
+    """{campo: (valor, motivo)} para las fechas sospechosas de `obj` que no se resolvieron con Crossref."""
+    from nucleo.models import Evento
+
+    resultado = {}
+    for campo in campos:
+        valor = getattr(obj, campo)
+        inicio_valido = getattr(obj, 'fecha_inicio', None) if _valida(getattr(obj, 'fecha_inicio', None)) else None
+        fin_valido = getattr(obj, 'fecha_fin', None) if _valida(getattr(obj, 'fecha_fin', None)) else None
+        despues = inicio_valido if campo == 'fecha_fin' else None
+        antes = fin_valido if campo == 'fecha_inicio' else None
+        if (nueva := por_digito(valor, antes_de=antes, despues_de=despues)) is not None:
+            resultado[campo] = (nueva, f'año mal tecleado ({valor.year} → {nueva.year})')
+        elif isinstance(obj, Evento) and campo == 'fecha_fin' and inicio_valido:
+            resultado[campo] = (inicio_valido, 'evento de un día: término = inicio')
+        elif type(obj)._meta.get_field(campo).null:
+            resultado[campo] = (None, 'sin fecha conocida')
+    return resultado
+
+
 class Command(BaseCommand):
     help = 'Lista fechas sospechosas y busca en Crossref la fecha de las publicaciones. --aplicar guarda solo esas.'
 
@@ -92,23 +148,36 @@ class Command(BaseCommand):
         parser.add_argument('--aplicar', action='store_true', help='Guarda las fechas encontradas en Crossref.')
 
     def handle(self, *args, aplicar=False, **options):
-        total = corregibles = 0
-        for obj, campos in sospechosas():
+        total = con_crossref = deducidas = sin_fecha = 0
+        for obj, campos in list(sospechosas()):
             total += 1
             texto = ', '.join(f'{c}={getattr(obj, c)}' for c in campos)
-            linea = f'{obj._meta.verbose_name} #{obj.pk} «{str(obj)[:70]}» — {texto}'
-            if isinstance(obj, EstadoPublicacion) or hasattr(obj, 'titulo') and hasattr(obj, 'autores'):
-                encontrado = en_crossref(obj)
-                if encontrado:
-                    fecha, doi, titulo = encontrado
-                    corregibles += 1
-                    self.stdout.write(self.style.SUCCESS(f'{linea}\n    Crossref: {fecha} · DOI {doi} · «{titulo[:70]}»'))
-                    if aplicar:
-                        self._aplicar(obj, campos, fecha, doi)
-                    continue
-            self.stdout.write(f'{linea}\n    Sin dato en línea: debe corregirlo quien lo capturó.')
-        accion = 'corregidas' if aplicar else 'corregibles con Crossref (usa --aplicar)'
-        self.stdout.write(self.style.WARNING(f'{total} registros con fechas sospechosas; {corregibles} {accion}.'))
+            self.stdout.write(f'{obj._meta.verbose_name} #{obj.pk} «{str(obj)[:70]}» — {texto}')
+            if hasattr(obj, 'titulo') and hasattr(obj, 'autores') and (encontrado := en_crossref(obj)):
+                fecha, doi, titulo = encontrado
+                con_crossref += 1
+                self.stdout.write(self.style.SUCCESS(f'    Crossref: {fecha} · DOI {doi} · «{titulo[:70]}»'))
+                if aplicar:
+                    self._aplicar(obj, campos, fecha, doi)
+                continue
+            cambios = correcciones(obj, campos)
+            for campo, (valor, motivo) in cambios.items():
+                self.stdout.write(f'    {campo} → {valor or "sin fecha"} ({motivo})')
+                if valor is None:
+                    sin_fecha += 1
+                else:
+                    deducidas += 1
+            if aplicar and cambios:
+                with transaction.atomic():
+                    for campo, (valor, _) in cambios.items():
+                        setattr(obj, campo, valor)
+                    motivo = 'Fecha revisada: ' + '; '.join(f'{c}: {m}' for c, (_, m) in cambios.items())
+                    obj._change_reason = motivo[:100]  # Límite del historial.
+                    obj.save()
+        estado = 'aplicadas' if aplicar else 'propuestas (usa --aplicar)'
+        self.stdout.write(self.style.WARNING(
+            f'{total} registros con fechas sospechosas. Correcciones {estado}: {con_crossref} con Crossref, '
+            f'{deducidas} fechas deducidas, {sin_fecha} fechas a "sin fecha".'))
 
     @transaction.atomic
     def _aplicar(self, obj, campos, fecha, doi):

@@ -890,4 +890,25 @@ class RevisarFechasTests(Datos):
         self.assertEqual((seguro.status, seguro.fecha_publicado, seguro.fecha_aceptado, seguro.doi),
                          ('PUBLICADO', date(2017, 7, 1), None, '10.1111/gcb.13589'))
         self.assertEqual(seguro.history.first().history_change_reason, 'Fecha corregida con Crossref (revisar_fechas)')
-        self.assertEqual(dudoso.fecha_enviado, date(2029, 1, 1))  # Sin dato seguro: no se inventa.
+        self.assertIsNone(dudoso.fecha_enviado)  # Sin dato seguro: no se inventa, queda "sin fecha".
+
+    def test_anio_mal_tecleado(self):
+        from nucleo.management.commands.revisar_fechas import por_digito
+        self.assertEqual(por_digito(date(3001, 1, 1)), date(2001, 1, 1))  # Único candidato.
+        self.assertEqual(por_digito(date(2916, 10, 21), despues_de=date(2016, 10, 20)), date(2016, 10, 21))
+        self.assertEqual(por_digito(date(2066, 7, 1), despues_de=date(2004, 8, 1)), date(2006, 7, 1))  # Más cercano.
+        self.assertIsNone(por_digito(date(2099, 11, 1)))  # 2009 o 2019: ambiguo.
+        self.assertIsNone(por_digito(date(1900, 1, 1)))  # "Sin fecha" del SIA anterior: no es un error de dedo.
+
+    def test_evento_de_un_dia_y_sin_fecha(self):
+        from nucleo.management.commands.revisar_fechas import correcciones
+        evento = Evento.objects.create(nombre='Taller', tipo=TipoEvento.objects.create(nombre='Taller'),
+                                       fecha_inicio=date(2015, 12, 3), fecha_fin=date(1900, 1, 1), pais=self.mexico)
+        self.assertEqual(correcciones(evento, ['fecha_fin'])['fecha_fin'][0], date(2015, 12, 3))
+        otro = Evento.objects.create(nombre='Pendiente', tipo=evento.tipo, fecha_inicio=date(1900, 1, 1),
+                                     fecha_fin=date(1900, 1, 1), pais=self.mexico)
+        self.assertEqual({c: v for c, (v, _) in correcciones(otro, ['fecha_inicio', 'fecha_fin']).items()},
+                         {'fecha_inicio': None, 'fecha_fin': None})
+        self.assertEqual(str(Evento.objects.get(pk=otro.pk)).endswith('(1900)'), True)
+        Evento.objects.filter(pk=otro.pk).update(fecha_inicio=None, fecha_fin=None)
+        self.assertEqual(str(Evento.objects.get(pk=otro.pk)), 'Pendiente (s.f.)')

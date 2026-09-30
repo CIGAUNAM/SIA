@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 
-from nucleo.models import (Beca, Distincion, Institucion, NivelAcademico, Participante, Periodo, Persona,
+from nucleo.models import (anio_o_sf, Beca, Distincion, Institucion, NivelAcademico, Participante, Periodo, Persona,
                            ProgramaAcademico, requerido_si, validar_programa)
 
 
@@ -128,7 +128,7 @@ class ComiteTutoral(Periodo):
         verbose_name_plural = 'comités tutorales'
 
     def __str__(self):
-        return f'{self.estudiante} ({self.fecha_inicio:%Y})'
+        return f'{self.estudiante} ({anio_o_sf(self.fecha_inicio)})'
 
     def clean(self):
         super().clean()

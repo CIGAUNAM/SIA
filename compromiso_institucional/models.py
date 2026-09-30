@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import Cargo, Institucion, Periodo, Compartido, requerido_si
+from nucleo.models import anio_o_sf, Cargo, Institucion, Periodo, Compartido, requerido_si
 
 
 class Comision(Compartido):
@@ -41,7 +41,7 @@ class LaborDirectivaCoordinacion(Periodo):
         verbose_name_plural = 'labores directivas y de coordinación'
 
     def __str__(self):
-        return f'{self.cargo} ({self.fecha_inicio:%Y})'
+        return f'{self.cargo} ({anio_o_sf(self.fecha_inicio)})'
 
 
 class RepresentacionOrganoColegiado(Periodo):
@@ -117,7 +117,7 @@ class ApoyoInstitucional(Periodo):
         verbose_name_plural = 'apoyos institucionales'
 
     def __str__(self):
-        return f'{self.actividad} ({self.fecha_inicio:%Y})'
+        return f'{self.actividad} ({anio_o_sf(self.fecha_inicio)})'
 
 
 from nucleo.historial import registrar_historial  # noqa: E402

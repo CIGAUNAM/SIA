@@ -87,6 +87,11 @@ def validar_periodo(inicio, fin, campo_fin='fecha_fin'):
         raise ValidationError({campo_fin: 'La fecha de término no puede ser anterior a la de inicio.'})
 
 
+def anio_o_sf(fecha):
+    """'2015', o 's.f.' (sin fecha) si el registro heredado no tiene fecha conocida."""
+    return f'{fecha:%Y}' if fecha else 's.f.'
+
+
 def validar_paginas(obj):
     if obj.pagina_inicio and obj.pagina_fin and obj.pagina_fin < obj.pagina_inicio:
         raise ValidationError({'pagina_fin': 'La página final no puede ser menor que la inicial.'})
@@ -125,7 +130,8 @@ class Compartido(models.Model):
 
 
 class Periodo(models.Model):
-    fecha_inicio = models.DateField('fecha de inicio')
+    # null: registros heredados sin fecha conocida; en el formulario sigue siendo obligatoria.
+    fecha_inicio = models.DateField('fecha de inicio', null=True)
     fecha_fin = models.DateField('fecha de término', null=True, blank=True,
                                  help_text='Déjala vacía si sigue vigente.')
 
@@ -523,8 +529,8 @@ class Evento(Compartido):
     nombre = models.CharField(max_length=255)
     tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
     descripcion = models.TextField('descripción', blank=True)
-    fecha_inicio = models.DateField('fecha de inicio')
-    fecha_fin = models.DateField('fecha de término')
+    fecha_inicio = models.DateField('fecha de inicio', null=True)
+    fecha_fin = models.DateField('fecha de término', null=True)
     pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=255, blank=True)
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
@@ -536,7 +542,7 @@ class Evento(Compartido):
         constraints = [models.UniqueConstraint(fields=['nombre', 'fecha_inicio'], name='evento_unico')]
 
     def __str__(self):
-        return f'{self.nombre} ({self.fecha_inicio:%Y})'
+        return f'{self.nombre} ({anio_o_sf(self.fecha_inicio)})'
 
     def clean(self):
         super().clean()

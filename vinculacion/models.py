@@ -66,7 +66,7 @@ class RedAcademica(models.Model):
     nombre = models.CharField(max_length=255, unique=True)
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     objetivos = models.TextField()
-    fecha_constitucion = models.DateField('fecha de constitución')
+    fecha_constitucion = models.DateField('fecha de constitución', null=True)
     fecha_fin = models.DateField('fecha de término', null=True, blank=True)
     instituciones = models.ManyToManyField(Institucion, blank=True)
     proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)

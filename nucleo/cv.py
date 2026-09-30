@@ -105,6 +105,8 @@ def _anio_texto(fecha):
 
 
 def _texto_periodo(obj):
+    if obj.fecha_inicio is None:
+        return 's.f.'  # Sin fecha (dato heredado que nadie ha completado).
     inicio = obj.fecha_inicio.year
     fin = obj.fecha_fin.year if obj.fecha_fin else 'actual'
     return f'{inicio}' if fin == inicio else f'{inicio}–{fin}'
@@ -126,7 +128,7 @@ def en_fecha(obj, fecha, *partes):
 
 def en_periodo(obj, *partes):
     fin = obj.fecha_fin.year if obj.fecha_fin else None
-    return Entrada(_unir(*partes, _texto_periodo(obj)), obj.fecha_inicio.year, fin, obj)
+    return Entrada(_unir(*partes, _texto_periodo(obj)), _anio(obj.fecha_inicio), fin, obj)
 
 
 def _publicacion(obj, *medio):
@@ -217,7 +219,7 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
         anio = _anio_texto(t.fecha_examen) if t.fecha_examen else 'en proceso'
         return Entrada(_unir(f'{t.asesorado} ({anio})', i(t.titulo_tesis), t.get_nivel_display(),
                              t.institucion.nombre),
-                       t.fecha_inicio.year, _anio(t.fecha_examen), t)
+                       _anio(t.fecha_inicio), _anio(t.fecha_examen), t)
 
     secciones = [
         ('Formación académica', [
@@ -292,7 +294,7 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
                 for x in con_autores(ParticipacionEventoAcademico.objects.filter(autores=p)).select_related('pais')]),
             ('Organización de eventos académicos', [
                 en_fecha(x, x.evento.fecha_inicio, b(x.evento.nombre), x.get_tipo_participacion_display(),
-                         str(x.evento.fecha_inicio.year))
+                         _anio_texto(x.evento.fecha_inicio))
                 for x in OrganizacionEventoAcademico.objects.filter(usuario=u).select_related('evento')]),
         ]),
         ('Divulgación científica', [
@@ -309,7 +311,7 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
                     'evento')]),
             ('Organización de eventos de divulgación', [
                 en_fecha(x, x.evento.fecha_inicio, b(x.evento.nombre), x.get_tipo_participacion_display(),
-                         str(x.evento.fecha_inicio.year))
+                         _anio_texto(x.evento.fecha_inicio))
                 for x in OrganizacionEventoDivulgacion.objects.filter(usuario=u).select_related('evento')]),
             ('Medios de comunicación', [
                 en_fecha(x, x.fecha, b(x.tema), f'{x.get_actividad_display()} en {x.medio}', _anio_texto(x.fecha))
@@ -325,7 +327,7 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
                 for x in OtraComision.objects.filter(usuario=u).select_related('tipo', 'institucion')]),
             ('Redes académicas', [
                 Entrada(_unir(b(x.nombre), x.get_ambito_display(), _anio_texto(x.fecha_constitucion)),
-                        x.fecha_constitucion.year, _anio(x.fecha_fin), x)
+                        _anio(x.fecha_constitucion), _anio(x.fecha_fin), x)
                 for x in RedAcademica.objects.filter(participantes=p)]),
             ('Convenios', [en_periodo(x, b(x.nombre)) for x in Convenio.objects.filter(participantes=p)]),
             ('Servicios y asesorías externas', [
