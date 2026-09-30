@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+{# Igual que el de Unfold, más la franja de "Ver por académico" (nucleo.acotar). #}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+    {% include "unfold/helpers/site_branding.html" %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block messages %}
+    {% if academico_acotado %}
+        <div class="px-4">
+            <div class="container mx-auto mb-4 flex flex-wrap items-center gap-3 rounded-default border border-primary-200 bg-primary-50 px-3 py-2 text-sm text-primary-700 dark:border-primary-500/30 dark:bg-primary-500/10 dark:text-primary-300">
+                <span class="material-symbols-outlined">person_search</span>
+                <span>Viendo la producción de <strong>{{ academico_acotado.get_full_name|default:academico_acotado.email }}</strong>
+                    ({{ academico_acotado.get_tipo_display|lower }}): las listas muestran solo sus registros.</span>
+                <span class="ml-auto flex gap-3">
+                    <a class="font-medium underline" href="{% url 'admin:informe' %}?usuario={{ academico_acotado.pk }}">Su informe</a>
+                    <a class="font-medium underline" href="{% url 'admin:cv_usuario' academico_acotado.pk %}">Su CV</a>
+                    <a class="font-medium underline" href="{% url 'admin:ver_academico' %}?next={{ request.get_full_path|urlencode }}">Cambiar</a>
+                    <a class="font-medium underline" href="{% url 'admin:ver_academico' %}?quitar=1&amp;next={{ request.get_full_path|urlencode }}">Ver toda la producción</a>
+                </span>
+            </div>
+        </div>
+    {% endif %}
+    {{ block.super }}
+{% endblock messages %}

@@ -1,0 +1,32 @@
+{% extends "admin/base_site.html" %}
+{% load unfold %}
+
+{% block content %}
+<div id="content-main" class="max-w-4xl">
+  {% include "unfold/helpers/messages/info.html" with message="Elige a un académico para ver solo sus registros en las listas de producción (como los ve él). Sigues siendo tú: tus permisos no cambian y lo que edites queda en el historial a tu nombre." %}
+  <input type="search" placeholder="Buscar por nombre, correo o tipo" autofocus
+         class="mb-3 w-full rounded-default border border-base-200 bg-white px-3 py-2 text-sm dark:border-base-700 dark:bg-base-900"
+         oninput="const t=this.value.toLowerCase(); document.querySelectorAll('[data-academico]').forEach(f => f.hidden = !f.dataset.academico.includes(t))">
+  <div class="rounded-default border border-base-200 bg-white dark:border-base-800 dark:bg-base-900">
+    {% for academico in academicos %}
+      <form method="post" class="flex items-center gap-3 border-b border-base-100 px-3 py-2 last:border-0 dark:border-base-800"
+            data-academico="{{ academico.get_full_name|lower }} {{ academico.persona|lower }} {{ academico.email|lower }} {{ academico.get_tipo_display|lower }}">
+        {% csrf_token %}
+        <input type="hidden" name="usuario" value="{{ academico.pk }}">
+        <input type="hidden" name="next" value="{{ destino }}">
+        <span class="grow">
+          <span class="font-medium text-important">{{ academico.get_full_name|default:academico.email }}</span>
+          <span class="block text-xs text-font-subtle-light dark:text-font-subtle-dark">{{ academico.persona }} · {{ academico.get_tipo_display }} · {{ academico.email }}</span>
+        </span>
+        {% if academico_acotado.pk == academico.pk %}
+          <span class="text-sm text-primary-600">Viendo</span>
+        {% else %}
+          {% component "unfold/components/button.html" with submit=1 size="sm" variant="default" %}Ver su producción{% endcomponent %}
+        {% endif %}
+      </form>
+    {% empty %}
+      <p class="px-3 py-2 text-sm">No hay académicos activos.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
