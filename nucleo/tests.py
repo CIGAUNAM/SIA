@@ -862,3 +862,32 @@ class VerPorAcademicoTests(Datos):
         sesion.save()
         self.articulo('De Beto', self.beto.persona)
         self.assertContains(self.client.get(reverse('admin:investigacion_articulocientifico_changelist')), 'De Beto')
+
+
+class RevisarFechasTests(Datos):
+    def test_corrige_solo_con_coincidencia_segura_en_crossref(self):
+        seguro = self.articulo('Regional climate on the breeding grounds', self.ana.persona)
+        dudoso = self.articulo('Un artículo que no está en Crossref', self.ana.persona)
+        ArticuloCientifico.objects.filter(pk=seguro.pk).update(status='ACEPTADO', fecha_publicado=None,
+                                                               fecha_aceptado=date(1900, 1, 1))
+        ArticuloCientifico.objects.filter(pk=dudoso.pk).update(status='ENVIADO', fecha_publicado=None,
+                                                               fecha_enviado=date(2029, 1, 1))
+        crossref = {'message': {'items': [{
+            'title': ['Regional climate on the breeding grounds'], 'DOI': '10.1111/GCB.13589',
+            'author': [{'family': 'López Pérez'}], 'published-print': {'date-parts': [[2017, 7]]}}]}}
+
+        def respuesta(url):
+            return crossref if 'Regional' in url else {'message': {'items': []}}
+
+        salida = io.StringIO()
+        with mock.patch('nucleo.externos.obtener_json', side_effect=respuesta):
+            call_command('revisar_fechas', stdout=salida)
+            seguro.refresh_from_db()
+            self.assertEqual(seguro.fecha_aceptado, date(1900, 1, 1))  # Sin --aplicar no cambia nada.
+            call_command('revisar_fechas', '--aplicar', stdout=salida)
+        seguro.refresh_from_db()
+        dudoso.refresh_from_db()
+        self.assertEqual((seguro.status, seguro.fecha_publicado, seguro.fecha_aceptado, seguro.doi),
+                         ('PUBLICADO', date(2017, 7, 1), None, '10.1111/gcb.13589'))
+        self.assertEqual(seguro.history.first().history_change_reason, 'Fecha corregida con Crossref (revisar_fechas)')
+        self.assertEqual(dudoso.fecha_enviado, date(2029, 1, 1))  # Sin dato seguro: no se inventa.
