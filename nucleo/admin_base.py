@@ -417,12 +417,16 @@ class PropietarioAdmin(BaseAdmin):
         return ()
 
     def get_queryset(self, request):
+        from .acotar import academico_acotado
+
         qs = super().get_queryset(request)
-        if es_administrador(request.user) or (self.compartido and _es_autocomplete(request)):
+        academico = academico_acotado(request)  # "Ver por académico" de un administrador.
+        if (es_administrador(request.user) and academico is None) or (self.compartido and _es_autocomplete(request)):
             return qs
+        dueno = academico or request.user
         filtro = Q()
         for lookup in self.propietarios:
-            filtro |= Q(**{lookup: request.user})
+            filtro |= Q(**{lookup: dueno})
         qs = qs.filter(filtro)
         if len(self.propietarios) > 1 or any('__' in lookup for lookup in self.propietarios):
             qs = qs.distinct()
@@ -455,7 +459,9 @@ class PropietarioAdmin(BaseAdmin):
     def get_changeform_initial_data(self, request):
         inicial = super().get_changeform_initial_data(request)
         if self._tiene_campo_usuario():
-            inicial.setdefault('usuario', request.user.pk)
+            from .acotar import academico_acotado
+
+            inicial.setdefault('usuario', (academico_acotado(request) or request.user).pk)
         return inicial
 
     def es_propio(self, request, obj):
@@ -561,11 +567,15 @@ class PropietarioAdmin(BaseAdmin):
                 for evidencia in formset.new_objects:
                     evidencia.subido_por = request.user
                     evidencia.save(update_fields=['subido_por'])
-        if es_administrador(request.user):
+        from .acotar import academico_acotado
+
+        academico = academico_acotado(request)
+        if es_administrador(request.user) and (academico is None or change):
             return
         obj = form.instance
         if self.get_queryset(request).filter(pk=obj.pk).exists():
             return
+        dueno = academico or request.user
         if self.autoria:
             relacion = getattr(obj, self.autoria)
             through = relacion.through
@@ -573,10 +583,13 @@ class PropietarioAdmin(BaseAdmin):
             if any(f.name == 'orden' for f in through._meta.fields):
                 ultimo = through.objects.filter(**{relacion.source_field_name: obj}).aggregate(m=Max('orden'))['m']
                 defaults['orden'] = (ultimo or 0) + 1
-            relacion.add(persona_de(request.user), through_defaults=defaults)
-            messages.info(request, 'Se te agregó a la lista de %s para que el registro aparezca entre los tuyos.'
-                          % obj._meta.get_field(self.autoria).verbose_name)
-        else:
+            relacion.add(persona_de(dueno), through_defaults=defaults)
+            lista = obj._meta.get_field(self.autoria).verbose_name
+            if dueno == request.user:
+                messages.info(request, f'Se te agregó a la lista de {lista} para que el registro aparezca entre los tuyos.')
+            else:
+                messages.info(request, f'Se agregó a {dueno} a la lista de {lista}: el registro es de su producción.')
+        elif dueno == request.user:
             messages.warning(request, 'El registro se guardó, pero no figuras en él, así que no aparecerá en tu lista.')
 
 

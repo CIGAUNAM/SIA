@@ -823,3 +823,42 @@ class AdscripcionPersonaTests(Datos):
         self.assertContains(pagina, 'data-adscripcion="actual"')
         self.assertContains(pagina, 'data-adscripcion="externa"')
         self.assertContains(pagina, 'sia/personas.js')
+
+
+class VerPorAcademicoTests(Datos):
+    def test_administrativo_acota_las_listas_a_un_academico(self):
+        self.articulo('De Ana', self.ana.persona)
+        self.articulo('De Beto', self.beto.persona)
+        lista = reverse('admin:investigacion_articulocientifico_changelist')
+        self.client.force_login(self.administrativa)
+        pagina = self.client.get(lista)
+        self.assertContains(pagina, 'De Ana')
+        self.assertContains(pagina, 'De Beto')  # Sin acotar: toda la producción.
+        self.assertContains(self.client.get(reverse('admin:ver_academico')), 'Ver su producción')
+        self.client.post(reverse('admin:ver_academico'), {'usuario': self.ana.pk, 'next': lista})
+        pagina = self.client.get(lista)
+        self.assertContains(pagina, 'De Ana')
+        self.assertNotContains(pagina, 'De Beto')
+        self.assertContains(pagina, 'Viendo la producción de')
+        self.client.get(reverse('admin:ver_academico'), {'quitar': 1})
+        self.assertContains(self.client.get(lista), 'De Beto')
+
+    def test_lo_que_se_crea_acotado_es_del_academico(self):
+        self.client.force_login(self.administrativa)
+        self.client.post(reverse('admin:ver_academico'), {'usuario': self.ana.pk})
+        prefijo = 'articulocientificoautor_set'
+        self.client.post(reverse('admin:investigacion_articulocientifico_add'), {
+            'titulo': 'Capturado por administración', 'revista': self.revista.pk, 'status': 'ENVIADO',
+            'fecha_enviado': '2020-01-01', f'{prefijo}-TOTAL_FORMS': 1, f'{prefijo}-INITIAL_FORMS': 0,
+            f'{prefijo}-0-persona': self.externo.pk, f'{prefijo}-0-orden': '1', **SIN_EVIDENCIAS})
+        articulo = ArticuloCientifico.objects.get(titulo='Capturado por administración')
+        self.assertIn(self.ana.persona, articulo.autores.all())
+
+    def test_solo_administradores(self):
+        self.client.force_login(self.beto)
+        self.assertEqual(self.client.get(reverse('admin:ver_academico')).status_code, 403)
+        sesion = self.client.session
+        sesion['sia_ver_academico'] = self.ana.pk  # Aunque la sesión lo tuviera, a un académico no le aplica.
+        sesion.save()
+        self.articulo('De Beto', self.beto.persona)
+        self.assertContains(self.client.get(reverse('admin:investigacion_articulocientifico_changelist')), 'De Beto')

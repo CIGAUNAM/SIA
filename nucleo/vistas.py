@@ -226,3 +226,29 @@ def orcid_view(request):
     if existente is not None:
         datos['existente'] = str(existente)
     return JsonResponse(datos)
+
+
+def ver_academico_view(request):
+    """"Ver por académico": elegir (o dejar de ver) a un académico para acotar las listas de producción."""
+    from django.utils.http import url_has_allowed_host_and_scheme
+
+    from .acotar import SESION
+
+    if not es_administrador(request.user):
+        raise PermissionDenied
+    destino = request.GET.get('next') or request.POST.get('next') or reverse('admin:index')
+    if not url_has_allowed_host_and_scheme(destino, allowed_hosts={request.get_host()}):
+        destino = reverse('admin:index')
+    if request.GET.get('quitar'):
+        request.session.pop(SESION, None)
+        messages.info(request, 'Ves de nuevo la producción de todos los académicos.')
+        return redirect(destino)
+    if request.method == 'POST':
+        academico = get_object_or_404(User, pk=request.POST.get('usuario'), is_active=True)
+        request.session[SESION] = academico.pk
+        return redirect(destino)
+    academicos = (User.objects.filter(is_active=True, groups__name='Académicos').select_related('persona')
+                  .order_by('persona__nombre'))
+    contexto = {**admin.site.each_context(request), 'title': 'Ver por académico', 'academicos': academicos,
+                'destino': destino}
+    return TemplateResponse(request, 'admin/nucleo/ver_academico.html', contexto)

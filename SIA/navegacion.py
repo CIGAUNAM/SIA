@@ -54,6 +54,8 @@ def menu(request):
     ]
     if administrador:
         principales.append({'title': 'Avance de captura', 'icon': 'monitoring', 'link': reverse('admin:informe_avance')})
+        principales.append({'title': 'Ver por académico', 'icon': 'person_search',
+                            'link': reverse('admin:ver_academico')})
     for app_label, modelo, titulo, icono in EN_PRINCIPAL:
         if administrador and request.user.has_perm(f'{app_label}.view_{modelo}'):
             principales.append({'title': titulo, 'icon': icono,
