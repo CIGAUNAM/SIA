@@ -53,6 +53,7 @@ class CursoExtracurricular(Periodo):
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
     periodo_academico = models.CharField('periodo académico', max_length=20, blank=True)
     total_horas = models.PositiveIntegerField('total de horas')
+    numero_asistentes = models.PositiveIntegerField('asistentes', null=True, blank=True)
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
                                 related_name='cursos_extracurriculares')
 

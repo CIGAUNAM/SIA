@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from nucleo.admin_base import CatalogoAdmin, PropietarioAdmin
 
-from .models import ArbitrajePublicacion, Convenio, OtraComision, RedAcademica, ServicioAsesoriaExterna, TipoComision
+from .models import (ArbitrajePublicacion, ConsejoEditorial, Convenio, OtraComision, RedAcademica,
+                     ServicioAsesoriaExterna, TipoComision)
 
 
 @admin.register(ArbitrajePublicacion)
@@ -13,6 +14,14 @@ class ArbitrajePublicacionAdmin(PropietarioAdmin):
     campo_fecha = 'fecha_dictamen'
     autocomplete_fields = ['revista', 'institucion']
     date_hierarchy = 'fecha_dictamen'
+
+
+@admin.register(ConsejoEditorial)
+class ConsejoEditorialAdmin(PropietarioAdmin):
+    list_display = ['__str__', 'tipo', 'origen', 'fecha_inicio', 'fecha_fin']
+    list_filter = ['tipo', 'origen']
+    search_fields = ['revista__nombre', 'publicacion']
+    autocomplete_fields = ['revista']
 
 
 @admin.register(TipoComision)

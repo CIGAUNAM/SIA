@@ -4,7 +4,7 @@ from nucleo.admin_base import ParticipanteInline, PropietarioAdmin
 
 from .models import (AsesoriaEstudiante, ComiteCandidaturaDoctoral, ComiteCandidaturaMiembro, ComiteTutoral,
                      ComiteTutoralMiembro, DireccionTesis, DireccionTesisTutor, GrupoInvestigacionInterno,
-                     SupervisionPostdoctoral)
+                     JuradoExamen, MovilidadEstudiante, SupervisionPostdoctoral)
 
 
 @admin.register(AsesoriaEstudiante)
@@ -20,6 +20,23 @@ class SupervisionPostdoctoralAdmin(PropietarioAdmin):
     list_display = ['investigador', 'titulo_proyecto', 'fecha_inicio', 'fecha_fin']
     search_fields = ['investigador__nombre', 'titulo_proyecto']
     autocomplete_fields = ['investigador', 'institucion', 'proyecto', 'beca']
+
+
+@admin.register(JuradoExamen)
+class JuradoExamenAdmin(PropietarioAdmin):
+    list_display = ['estudiante', 'nivel', 'programa', 'institucion', 'fecha_examen']
+    campo_fecha = 'fecha_examen'
+    list_filter = ['nivel']
+    search_fields = ['estudiante__nombre', 'titulo_tesis']
+    autocomplete_fields = ['estudiante', 'tutor', 'programa', 'institucion']
+
+
+@admin.register(MovilidadEstudiante)
+class MovilidadEstudianteAdmin(PropietarioAdmin):
+    list_display = ['estudiante', 'nivel', 'institucion_receptora', 'fecha_inicio', 'fecha_fin']
+    list_filter = ['nivel']
+    search_fields = ['estudiante__nombre', 'institucion_receptora__nombre']
+    autocomplete_fields = ['estudiante', 'programa', 'institucion_receptora', 'beca']
 
 
 @admin.register(GrupoInvestigacionInterno)

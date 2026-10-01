@@ -43,11 +43,37 @@ class ProyectoInvestigacion(Periodo):
         TRANSDISCIPLINARIO = 'TRANSDISCIPLINARIO', 'Transdisciplinario'
 
     class Financiamiento(models.TextChoices):
-        CONACYT = 'CONACYT', 'CONAHCYT'
+        CONACYT = 'CONACYT', 'SECIHTI (antes CONAHCYT)'
         PAPIIT = 'PAPIIT', 'DGAPA-PAPIIT'
         PAPIME = 'PAPIME', 'DGAPA-PAPIME'
         EXTRAORDINARIOS = 'EXTRAORDINARIOS', 'Ingresos extraordinarios'
         SIN_RECURSOS = 'SIN_RECURSOS', 'Sin recursos propios (en colaboración con otras dependencias)'
+
+    class FinanciamientoUNAM(models.TextChoices):
+        CONCURSADO = 'CONCURSADO', 'Presupuesto concursado por la entidad'
+        FUERA = 'FUERA', 'Gestionado fuera de la entidad'
+        AUTOGENERADOS = 'AUTOGENERADOS', 'Recursos autogenerados (extraordinarios)'
+
+    class FinanciamientoExterno(models.TextChoices):
+        FEDERAL = 'FEDERAL', 'Gubernamental federal'
+        ESTATAL = 'ESTATAL', 'Gubernamental estatal'
+        MUNICIPAL = 'MUNICIPAL', 'Gubernamental municipal'
+        EXTRANJERO = 'EXTRANJERO', 'Recursos del extranjero'
+        PRIVADO = 'PRIVADO', 'Privado'
+        PRIVADO_NO_LUCRATIVO = 'PRIVADO_NO_LUCRATIVO', 'Privado no lucrativo'
+
+    class Prioridad(models.TextChoices):
+        """Programas Nacionales Estratégicos de SECIHTI (problemas nacionales prioritarios)."""
+        AGENTES_TOXICOS = 'AGENTES_TOXICOS', 'Agentes tóxicos y procesos contaminantes'
+        AGUA = 'AGUA', 'Agua'
+        CULTURA = 'CULTURA', 'Cultura'
+        EDUCACION = 'EDUCACION', 'Educación'
+        ENERGIA = 'ENERGIA', 'Energía y cambio climático'
+        SALUD = 'SALUD', 'Salud'
+        SEGURIDAD = 'SEGURIDAD', 'Seguridad humana'
+        SOCIOECOLOGICOS = 'SOCIOECOLOGICOS', 'Sistemas socioecológicos y sustentabilidad'
+        SOBERANIA_ALIMENTARIA = 'SOBERANIA_ALIMENTARIA', 'Soberanía alimentaria'
+        VIVIENDA = 'VIVIENDA', 'Vivienda'
 
     nombre = models.CharField(max_length=255, unique=True)
     descripcion = models.TextField('descripción', blank=True)
@@ -68,6 +94,11 @@ class ProyectoInvestigacion(Periodo):
                                            verbose_name='objetivos de desarrollo sostenible')
     impacto_social = models.CharField(max_length=255, blank=True)
     financiamiento = models.CharField(max_length=20, choices=Financiamiento.choices, blank=True)
+    financiamiento_unam = models.CharField('financiamiento UNAM', max_length=20, choices=FinanciamientoUNAM.choices,
+                                           blank=True)
+    financiamiento_externo = models.CharField(max_length=30, choices=FinanciamientoExterno.choices, blank=True)
+    prioridad = models.CharField('prioridad estratégica nacional', max_length=30, choices=Prioridad.choices,
+                                 blank=True)
     financiamiento_clave = models.CharField('clave del financiamiento', max_length=30, blank=True,
                                            help_text='Obligatoria para proyectos CONAHCYT, PAPIIT y PAPIME.')
     financiamiento_convocatoria = models.CharField('convocatoria', max_length=160, blank=True)
@@ -212,6 +243,7 @@ class PublicacionTecnica(EstadoPublicacion):
         NORMA_PATENTE = 'NORMA_PATENTE', 'Norma o patente'
         INFORME_TECNICO = 'INFORME_TECNICO', 'Informe técnico final dirigido a tomadores de decisiones'
         PLAN_MANEJO = 'PLAN_MANEJO', 'Plan de manejo, ordenamiento o gestión territorial reconocido oficialmente'
+        RESENA = 'RESENA', 'Reseña'
         CARTA_REVISTA = 'CARTA_REVISTA', 'Carta en revista de prestigio internacional'
         TRADUCCION = 'TRADUCCION', 'Traducción de libro o revisión técnica'
 

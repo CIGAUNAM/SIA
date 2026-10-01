@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
 
 from nucleo.models import Ambito, Institucion, Periodo, Persona, Revista, requerido_si, validar_periodo
@@ -49,6 +50,8 @@ class TipoComision(models.Model):
 class OtraComision(Periodo):
     tipo = models.ForeignKey(TipoComision, on_delete=models.PROTECT)
     descripcion = models.CharField('descripción', max_length=255, blank=True)
+    cantidad = models.PositiveSmallIntegerField('evaluaciones', default=1,
+                                                help_text='Número de proyectos, trabajos o expedientes evaluados.')
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución')
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='otras_comisiones')
@@ -60,6 +63,39 @@ class OtraComision(Periodo):
 
     def __str__(self):
         return self.descripcion or str(self.tipo)
+
+
+class ConsejoEditorial(Periodo):
+    """Pertenencia a un comité o consejo editorial o científico de una revista o colección."""
+
+    class Tipo(models.TextChoices):
+        COMITE_EDITORIAL = 'COMITE_EDITORIAL', 'Comité editorial'
+        CONSEJO_EDITORIAL = 'CONSEJO_EDITORIAL', 'Consejo editorial'
+        CONSEJO_CIENTIFICO = 'CONSEJO_CIENTIFICO', 'Consejo científico'
+
+    class Origen(models.TextChoices):
+        NACIONAL = 'NACIONAL', 'Nacional'
+        EXTRANJERA = 'EXTRANJERA', 'Extranjera'
+
+    tipo = models.CharField(max_length=20, choices=Tipo.choices)
+    revista = models.ForeignKey(Revista, on_delete=models.PROTECT, null=True, blank=True,
+                                help_text='Si es una revista; para una colección o serie de libros, escribe su nombre.')
+    publicacion = models.CharField('colección o serie', max_length=255, blank=True)
+    origen = models.CharField(max_length=20, choices=Origen.choices)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='consejos_editoriales')
+
+    class Meta:
+        ordering = ['-fecha_inicio']
+        verbose_name = 'comité o consejo editorial'
+        verbose_name_plural = 'comités y consejos editoriales'
+
+    def __str__(self):
+        return f'{self.get_tipo_display()}: {self.revista or self.publicacion}'
+
+    def clean(self):
+        super().clean()
+        if not self.revista_id and not self.publicacion:
+            raise ValidationError({'revista': 'Elige la revista o escribe el nombre de la colección.'})
 
 
 class RedAcademica(models.Model):
@@ -92,6 +128,7 @@ class Convenio(Periodo):
     instituciones = models.ManyToManyField(Institucion)
     es_renovacion = models.BooleanField('es renovación', default=False)
     financiamiento = models.CharField(max_length=254, blank=True)
+    monto = models.DecimalField('monto del financiamiento', max_digits=14, decimal_places=2, null=True, blank=True)
     proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
     participantes = models.ManyToManyField(Persona, related_name='convenios')
 
@@ -105,6 +142,14 @@ class Convenio(Periodo):
 
 
 class ServicioAsesoriaExterna(Periodo):
+    class Tipo(models.TextChoices):
+        ASESORIA = 'ASESORIA', 'Asesoría'
+        INCIDENCIA = 'INCIDENCIA', 'Actividad de incidencia'
+        LABORATORIO = 'LABORATORIO', 'Servicio de laboratorio'
+        EVALUACION = 'EVALUACION', 'Evaluación o arbitraje'
+        OTRO = 'OTRO', 'Otro servicio'
+
+    tipo = models.CharField(max_length=20, choices=Tipo.choices, default=Tipo.ASESORIA)
     nombre = models.CharField('nombre del servicio', max_length=254)
     descripcion = models.TextField('descripción', blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')

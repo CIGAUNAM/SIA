@@ -14,6 +14,7 @@ class AsesoriaEstudiante(Periodo):
         ESTANCIA = 'ESTANCIA', 'Estancia de investigación'
         ASESORIA_TECNICA = 'ASESORIA_TECNICA', 'Asesoría técnica'
         SERVICIO_SOCIAL = 'SERVICIO_SOCIAL', 'Servicio social'
+        BECARIO = 'BECARIO', 'Becario de proyecto'
 
     asesorado = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='asesorias_recibidas')
     tipo = models.CharField(max_length=20, choices=Tipo.choices)
@@ -144,6 +145,47 @@ class ComiteTutoral(Periodo):
     def clean(self):
         super().clean()
         validar_programa(self)
+
+
+class JuradoExamen(models.Model):
+    """Participación como sinodal en un examen de grado."""
+    estudiante = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='examenes_jurado')
+    nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
+    programa = models.ForeignKey(ProgramaAcademico, on_delete=models.PROTECT, null=True, blank=True)
+    titulo_tesis = models.CharField('título de la tesis', max_length=255, blank=True)
+    tutor = models.ForeignKey(Persona, on_delete=models.PROTECT, null=True, blank=True, related_name='+',
+                              verbose_name='tutor principal')
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
+    fecha_examen = models.DateField('fecha del examen')
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='jurados_examen')
+
+    class Meta:
+        ordering = ['-fecha_examen']
+        verbose_name = 'sinodal de examen de grado'
+        verbose_name_plural = 'sinodalías de exámenes de grado'
+
+    def __str__(self):
+        return f'{self.estudiante} ({anio_o_sf(self.fecha_examen)})'
+
+
+class MovilidadEstudiante(Periodo):
+    """Estancia de un estudiante tutorado en otra institución (movilidad estudiantil)."""
+    estudiante = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='movilidades_estudiante')
+    nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
+    programa = models.ForeignKey(ProgramaAcademico, on_delete=models.PROTECT, null=True, blank=True)
+    institucion_receptora = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución receptora')
+    beca = models.ForeignKey(Beca, on_delete=models.PROTECT, null=True, blank=True)
+    detalle_beca = models.CharField('detalle de la beca', max_length=255, blank=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='movilidades_tutorados',
+                                verbose_name='tutor')
+
+    class Meta:
+        ordering = ['-fecha_inicio']
+        verbose_name = 'movilidad estudiantil'
+        verbose_name_plural = 'movilidad estudiantil'
+
+    def __str__(self):
+        return f'{self.estudiante}: {self.institucion_receptora.nombre}'
 
 
 class ComiteTutoralMiembro(Participante):

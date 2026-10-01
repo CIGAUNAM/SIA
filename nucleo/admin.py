@@ -29,7 +29,8 @@ from .admin_base import SECCIONES_PERFIL
 from .nombres import normalizar_orcid
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
-                     Nombramiento, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User, anio_o_sf)
+                     Nombramiento, PeriodoInforme, Persona, ProgramaAcademico, Revista, SituacionAcademica, TipoEvento,
+                     User, anio_o_sf)
 from .permisos import GRUPO_ACADEMICOS, GRUPO_ADMINISTRACION, es_sysadmin
 
 DATOS_PERSONALES = ('Datos personales', {'fields': (
@@ -49,7 +50,16 @@ def _periodo(registro):
 
 PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona', 'figura_como')})
 PERFIL = ('Perfil académico', {'fields': ('tipo', 'semblanza', 'domicilio', 'url', 'sni', 'pride')})
-ADSCRIPCION = ('Adscripción', {'fields': ('ingreso_unam', 'ingreso_entidad', 'egreso_entidad', 'ultimo_contrato')})
+ADSCRIPCION = ('Adscripción', {'fields': ('numero_trabajador', 'ingreso_unam', 'ingreso_entidad', 'egreso_entidad',
+                                           'ultimo_contrato')})
+
+
+class SituacionAcademicaInline(TabularInline):
+    """Nombramiento, PRIDE, SNII y contrato de cada año (corte de agosto); solo lo mantiene Administración."""
+    model = SituacionAcademica
+    fields = ['anio', 'nombramiento', 'pride', 'sni', 'area_sni', 'contrato']
+    autocomplete_fields = ['nombramiento']
+    extra = 0
 
 
 admin.site.unregister(Group)
@@ -107,6 +117,7 @@ class UserAdmin(EtiquetaPersonaMixin, BaseUserAdmin, ModelAdmin):
         PERFIL,
         ADSCRIPCION,
     )
+    inlines = [SituacionAcademicaInline]
     #: Debajo del formulario: formación académica y experiencia profesional de la cuenta.
     change_form_after_template = 'admin/nucleo/perfil_trayectoria.html'
 
@@ -131,6 +142,9 @@ class UserAdmin(EtiquetaPersonaMixin, BaseUserAdmin, ModelAdmin):
         form = super().get_form(request, obj, **kwargs)
         form.administrador = es_administrador(request.user)
         return form
+
+    def get_inlines(self, request, obj):
+        return self.inlines if es_administrador(request.user) and not self.es_mi_perfil(request, obj) else []
 
     def get_fieldsets(self, request, obj=None):
         if obj is not None and (not es_administrador(request.user) or self.es_mi_perfil(request, obj)):

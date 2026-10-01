@@ -294,6 +294,8 @@ class User(AbstractUser):
     ingreso_entidad = models.DateField('ingreso a la entidad', null=True, blank=True)
     egreso_entidad = models.DateField('egreso de la entidad', null=True, blank=True)
     ultimo_contrato = models.DateField('último contrato', null=True, blank=True)
+    numero_trabajador = models.CharField('número de trabajador', max_length=20, blank=True,
+                                         help_text='Clave del académico en la UNAM.')
     avatar = models.ImageField(upload_to='avatares', null=True, blank=True)
     persona = models.OneToOneField(
         'Persona', on_delete=models.PROTECT, related_name='usuario',
@@ -335,6 +337,41 @@ class User(AbstractUser):
                 and (self.egreso_entidad is None or self.egreso_entidad.year >= anio))
 
 
+class SituacionAcademica(models.Model):
+    """Situación del académico en un año (corte de agosto, como en el informe): nombramiento, estímulos y
+    contrato. De aquí salen la planta por categoría, las distribuciones PRIDE/SNII y los movimientos de personal."""
+
+    class Pride(models.TextChoices):
+        A = 'A', 'PRIDE A'
+        B = 'B', 'PRIDE B'
+        C = 'C', 'PRIDE C'
+        D = 'D', 'PRIDE D'
+        EQUIVALENCIA = 'EQUIVALENCIA', 'Equivalencia'
+
+    class Contrato(models.TextChoices):
+        DEFINITIVO = 'DEFINITIVO', 'Definitivo'
+        INTERINO = 'INTERINO', 'Interino'
+        OBRA_DETERMINADA = 'OBRA_DETERMINADA', 'Obra determinada'
+        IXM = 'IXM', 'Investigadoras e Investigadores por México'
+
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='situaciones')
+    anio = models.PositiveSmallIntegerField('año')
+    nombramiento = models.ForeignKey('Nombramiento', on_delete=models.PROTECT, null=True, blank=True)
+    pride = models.CharField('PRIDE', max_length=20, choices=Pride.choices, blank=True)
+    sni = models.CharField('SNII', max_length=3, choices=User.SNI.choices, blank=True)
+    area_sni = models.CharField('área SNII', max_length=30, blank=True)
+    contrato = models.CharField(max_length=20, choices=Contrato.choices, blank=True)
+
+    class Meta:
+        ordering = ['-anio']
+        verbose_name = 'situación académica anual'
+        verbose_name_plural = 'situación académica por año'
+        constraints = [models.UniqueConstraint(fields=['usuario', 'anio'], name='situacion_unica')]
+
+    def __str__(self):
+        return f'{self.usuario} ({self.anio})'
+
+
 class Persona(Compartido):
     """Cualquier persona que aparece en la producción académica, tenga o no cuenta (`persona.usuario`)."""
     nombre = models.CharField(
@@ -344,6 +381,9 @@ class Persona(Compartido):
     orcid = models.CharField('ORCID', max_length=19, blank=True, validators=[validar_orcid],
                              help_text='Formato 0000-0002-1825-0097. "Buscar en ORCID" llena el nombre y el correo; '
                                        'el correo solo se obtiene si la persona lo hizo público en ORCID.')
+    genero = models.CharField('género', max_length=10, choices=User.Genero.choices, blank=True,
+                              help_text='Para las estadísticas de estudiantes y colaboradores.')
+    nacionalidad = models.ForeignKey(Country, on_delete=models.PROTECT, null=True, blank=True, related_name='+')
 
     class Meta:
         ordering = ['nombre']
@@ -369,6 +409,7 @@ class Institucion(Compartido):
         MUNICIPAL = 'MUNICIPAL', 'Gubernamental municipal'
         PRIVADA = 'PRIVADA', 'Sector privado'
         NO_LUCRATIVA = 'NO_LUCRATIVA', 'Sector privado no lucrativo'
+        COMUNIDAD = 'COMUNIDAD', 'Comunidad'
 
     nombre = models.CharField(max_length=255)
     padre = models.ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True, related_name='dependencias',
@@ -573,6 +614,8 @@ class Evento(Compartido):
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     numero_ponentes = models.PositiveIntegerField('número de ponentes', null=True, blank=True)
     numero_asistentes = models.PositiveIntegerField('número de asistentes', null=True, blank=True)
+    numero_vistas = models.PositiveIntegerField('vistas en línea', null=True, blank=True,
+                                                help_text='Reproducciones de la transmisión o del video del evento.')
 
     class Meta:
         ordering = ['-fecha_inicio', 'nombre']

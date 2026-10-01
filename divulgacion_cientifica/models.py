@@ -59,11 +59,22 @@ class CapituloLibroDivulgacionAutor(Participante):
         constraints = [models.UniqueConstraint(fields=['capitulo', 'persona'], name='capitulo_divulgacion_autor_unico')]
 
 
+class OrganizadoPor(models.TextChoices):
+    """Quién organiza el evento de divulgación (apartados del informe)."""
+    UNIDAD_COMUNICACION = 'UNIDAD_COMUNICACION', 'Unidad de comunicación de la entidad'
+    COMISION = 'COMISION', 'Comisión de la entidad'
+    COPARTICIPACION = 'COPARTICIPACION', 'Coorganizado con otras dependencias del campus'
+    EXTERNA = 'EXTERNA', 'Dependencia externa a la UNAM u otra institución'
+    PERSONAL_ACADEMICO = 'PERSONAL_ACADEMICO', 'Personal académico'
+
+
 class OrganizacionEventoDivulgacion(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.PROTECT)
     tipo_participacion = models.CharField('tipo de participación', max_length=30,
                                           choices=TipoParticipacionOrganizacion.choices)
     tipo_participacion_otro = models.CharField('otro tipo de participación', max_length=254, blank=True)
+    organizado_por = models.CharField('organizado por', max_length=30, choices=OrganizadoPor.choices,
+                                      default=OrganizadoPor.PERSONAL_ACADEMICO)
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
                                 related_name='organizaciones_eventos_divulgacion')
 
@@ -90,6 +101,7 @@ class ParticipacionEventoDivulgacion(models.Model):
     evento = models.ForeignKey(Evento, on_delete=models.PROTECT)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución organizadora')
+    organizado_por = models.CharField('organizado por', max_length=30, choices=OrganizadoPor.choices, blank=True)
     fecha = models.DateField()
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     por_invitacion = models.BooleanField('por invitación', default=False,
@@ -127,6 +139,7 @@ class ProgramaMedio(models.Model):
         PRODUCCION = 'PRODUCCION', 'Producción'
         PARTICIPACION = 'PARTICIPACION', 'Participación'
         ENTREVISTA = 'ENTREVISTA', 'Entrevista'
+        TRANSMISION = 'TRANSMISION', 'Transmisión en línea de un evento'
         OTRA = 'OTRA', 'Otra'
 
     tema = models.CharField(max_length=254)

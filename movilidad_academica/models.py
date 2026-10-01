@@ -21,6 +21,8 @@ class MovilidadAcademica(Periodo):
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución')
     actividades = models.TextField()
+    visitante = models.BooleanField(
+        default=False, help_text='Marca si la persona viene de otra institución a la entidad (no si es del personal).')
     intercambio_unam = models.BooleanField('intercambio UNAM', default=False)
     financiamiento = models.CharField(max_length=30, choices=Financiamiento.choices, blank=True)
     redes_academicas = models.ManyToManyField('vinculacion.RedAcademica', blank=True, verbose_name='redes académicas')
