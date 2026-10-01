@@ -29,7 +29,7 @@ from .admin_base import SECCIONES_PERFIL
 from .nombres import normalizar_orcid
 from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
-                     Nombramiento, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User)
+                     Nombramiento, PeriodoInforme, Persona, ProgramaAcademico, Revista, TipoEvento, User, anio_o_sf)
 from .permisos import GRUPO_ACADEMICOS, GRUPO_ADMINISTRACION, es_sysadmin
 
 DATOS_PERSONALES = ('Datos personales', {'fields': (
@@ -40,11 +40,11 @@ def _periodo(registro):
     inicio = getattr(registro, 'fecha_inicio', None)
     if inicio:
         if not hasattr(registro, 'fecha_fin'):
-            return f'desde {inicio.year}'
-        return f"{inicio.year}–{registro.fecha_fin.year if registro.fecha_fin else 'actual'}"
+            return f'desde {anio_o_sf(inicio)}'
+        return f"{anio_o_sf(inicio)}–{anio_o_sf(registro.fecha_fin) if registro.fecha_fin else 'actual'}"
     fecha = next((getattr(registro, campo) for campo in ('fecha_grado', 'fecha', 'fecha_obtencion')
                   if getattr(registro, campo, None)), None)
-    return str(fecha.year) if fecha else ''
+    return anio_o_sf(fecha) if fecha else ''
 
 
 PUBLICACIONES = ('Nombre en publicaciones', {'fields': ('orcid', 'nombre_persona', 'figura_como')})

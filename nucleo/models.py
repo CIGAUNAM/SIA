@@ -1,5 +1,6 @@
 import re
 import uuid
+from datetime import date
 from pathlib import Path
 
 from cities_light.models import Country
@@ -83,13 +84,20 @@ def normalizar_doi(valor):
 
 
 def validar_periodo(inicio, fin, campo_fin='fecha_fin'):
-    if inicio and fin and fin < inicio:
+    if inicio and fin and not es_sin_fecha(inicio) and not es_sin_fecha(fin) and fin < inicio:
         raise ValidationError({campo_fin: 'La fecha de término no puede ser anterior a la de inicio.'})
 
 
+SIN_FECHA = date(1900, 1, 1)  # Convención: una fecha de 1900 o anterior significa "sin fecha" (se muestra "s.f.").
+
+
+def es_sin_fecha(fecha):
+    return fecha is not None and fecha.year <= SIN_FECHA.year
+
+
 def anio_o_sf(fecha):
-    """'2015', o 's.f.' (sin fecha) si el registro heredado no tiene fecha conocida."""
-    return f'{fecha:%Y}' if fecha else 's.f.'
+    """'2015', o 's.f.' si no hay fecha o es la convención de "sin fecha"."""
+    return f'{fecha:%Y}' if fecha and not es_sin_fecha(fecha) else 's.f.'
 
 
 def validar_paginas(obj):
@@ -130,8 +138,7 @@ class Compartido(models.Model):
 
 
 class Periodo(models.Model):
-    # null: registros heredados sin fecha conocida; en el formulario sigue siendo obligatoria.
-    fecha_inicio = models.DateField('fecha de inicio', null=True)
+    fecha_inicio = models.DateField('fecha de inicio')
     fecha_fin = models.DateField('fecha de término', null=True, blank=True,
                                  help_text='Déjala vacía si sigue vigente.')
 
@@ -529,8 +536,8 @@ class Evento(Compartido):
     nombre = models.CharField(max_length=255)
     tipo = models.ForeignKey(TipoEvento, on_delete=models.PROTECT)
     descripcion = models.TextField('descripción', blank=True)
-    fecha_inicio = models.DateField('fecha de inicio', null=True)
-    fecha_fin = models.DateField('fecha de término', null=True)
+    fecha_inicio = models.DateField('fecha de inicio')
+    fecha_fin = models.DateField('fecha de término')
     pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     ciudad = models.CharField(max_length=255, blank=True)
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)

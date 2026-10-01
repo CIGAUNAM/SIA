@@ -130,7 +130,7 @@ class ProgramaMedio(models.Model):
         OTRA = 'OTRA', 'Otra'
 
     tema = models.CharField(max_length=254)
-    fecha = models.DateField(null=True)
+    fecha = models.DateField()
     descripcion = models.TextField('descripción', blank=True)
     actividad = models.CharField(max_length=20, choices=Actividad.choices)
     medio = models.ForeignKey(MedioDivulgacion, on_delete=models.PROTECT)

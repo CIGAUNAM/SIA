@@ -3,7 +3,7 @@
 1. Publicaciones: la fecha en Crossref (DOI igual, o título casi idéntico con un autor en común).
 2. Año con un dígito mal tecleado (2916 → 2016), si el candidato es único o el más cercano a la otra fecha.
 3. Evento con término imposible: término = inicio (evento de un día).
-4. Lo demás: "sin fecha" (vacío); en el formulario la fecha sigue siendo obligatoria, así que se completa al editar.
+4. Lo demás: "sin fecha", que por convención es 01/01/1900 (se muestra «s.f.»).
 
 Sin --aplicar solo informa. Con --aplicar guarda, con el motivo en el historial de cada registro.
 """
@@ -20,7 +20,7 @@ from django.db.models import Q
 
 from nucleo import externos
 from nucleo.externos import ErrorServicio
-from nucleo.models import EstadoPublicacion, StatusPublicacion
+from nucleo.models import SIN_FECHA, EstadoPublicacion, StatusPublicacion, es_sin_fecha
 from nucleo.nombres import partes_cita
 from nucleo.similitud import normalizar
 
@@ -43,13 +43,20 @@ def sospechosas():
         if modelo.__name__.startswith('Historical') or modelo._meta.app_label not in propias:
             continue
         campos = campos_fecha(modelo)
+        # Las publicaciones "sin fecha" también se buscan en Crossref (si no aparecen, se quedan igual).
+        publicacion = issubclass(modelo, EstadoPublicacion) or hasattr(modelo, 'autores') and any(
+            f.name == 'titulo' for f in modelo._meta.fields)
+        minimo = date(ANIO_MINIMO, 1, 1) if publicacion else None
         filtro = Q()
         for campo in campos:
-            filtro |= Q(**{f'{campo}__lt': date(ANIO_MINIMO, 1, 1)}) | Q(**{f'{campo}__gt': limite})
+            filtro |= (Q(**{f'{campo}__lt': minimo}) if minimo else
+                       Q(**{f'{campo}__gt': SIN_FECHA, f'{campo}__lt': date(ANIO_MINIMO, 1, 1)}))
+            filtro |= Q(**{f'{campo}__gt': limite})
         if not campos:
             continue
         for obj in modelo._default_manager.filter(filtro):
-            malos = [c for c in campos if getattr(obj, c) and not date(ANIO_MINIMO, 1, 1) <= getattr(obj, c) <= limite]
+            malos = [c for c in campos if getattr(obj, c) and (publicacion or not es_sin_fecha(getattr(obj, c)))
+                     and not date(ANIO_MINIMO, 1, 1) <= getattr(obj, c) <= limite]
             yield obj, malos
 
 
@@ -88,13 +95,10 @@ def en_crossref(obj):
     return None
 
 
-PLACEHOLDER = date(1900, 1, 1)  # "Sin fecha" en el SIA anterior.
-
-
 def por_digito(fecha, antes_de=None, despues_de=None):
     """Año con un dígito mal tecleado (2916 → 2016): el único año válido que resulta de cambiar un dígito, o el más
     cercano a la otra fecha del registro, respetando el orden inicio ≤ fin. None si no hay uno claro."""
-    if fecha == PLACEHOLDER:
+    if es_sin_fecha(fecha):
         return None
     anio, hoy = str(fecha.year), date.today()
     candidatos = set()
@@ -128,6 +132,8 @@ def correcciones(obj, campos):
     resultado = {}
     for campo in campos:
         valor = getattr(obj, campo)
+        if es_sin_fecha(valor):
+            continue  # Ya es "sin fecha".
         inicio_valido = getattr(obj, 'fecha_inicio', None) if _valida(getattr(obj, 'fecha_inicio', None)) else None
         fin_valido = getattr(obj, 'fecha_fin', None) if _valida(getattr(obj, 'fecha_fin', None)) else None
         despues = inicio_valido if campo == 'fecha_fin' else None
@@ -136,8 +142,8 @@ def correcciones(obj, campos):
             resultado[campo] = (nueva, f'año mal tecleado ({valor.year} → {nueva.year})')
         elif isinstance(obj, Evento) and campo == 'fecha_fin' and inicio_valido:
             resultado[campo] = (inicio_valido, 'evento de un día: término = inicio')
-        elif type(obj)._meta.get_field(campo).null:
-            resultado[campo] = (None, 'sin fecha conocida')
+        else:
+            resultado[campo] = (SIN_FECHA, 'sin fecha conocida')
     return resultado
 
 
@@ -150,10 +156,13 @@ class Command(BaseCommand):
     def handle(self, *args, aplicar=False, **options):
         total = con_crossref = deducidas = sin_fecha = 0
         for obj, campos in list(sospechosas()):
+            encontrado = en_crossref(obj) if hasattr(obj, 'titulo') and hasattr(obj, 'autores') else None
+            if not encontrado and all(es_sin_fecha(getattr(obj, c)) for c in campos):
+                continue  # Publicación "sin fecha" que tampoco está en Crossref: se queda así.
             total += 1
             texto = ', '.join(f'{c}={getattr(obj, c)}' for c in campos)
             self.stdout.write(f'{obj._meta.verbose_name} #{obj.pk} «{str(obj)[:70]}» — {texto}')
-            if hasattr(obj, 'titulo') and hasattr(obj, 'autores') and (encontrado := en_crossref(obj)):
+            if encontrado:
                 fecha, doi, titulo = encontrado
                 con_crossref += 1
                 self.stdout.write(self.style.SUCCESS(f'    Crossref: {fecha} · DOI {doi} · «{titulo[:70]}»'))
@@ -162,8 +171,8 @@ class Command(BaseCommand):
                 continue
             cambios = correcciones(obj, campos)
             for campo, (valor, motivo) in cambios.items():
-                self.stdout.write(f'    {campo} → {valor or "sin fecha"} ({motivo})')
-                if valor is None:
+                self.stdout.write(f'    {campo} → {"sin fecha (1900)" if valor == SIN_FECHA else valor} ({motivo})')
+                if valor == SIN_FECHA:
                     sin_fecha += 1
                 else:
                     deducidas += 1
@@ -177,7 +186,7 @@ class Command(BaseCommand):
         estado = 'aplicadas' if aplicar else 'propuestas (usa --aplicar)'
         self.stdout.write(self.style.WARNING(
             f'{total} registros con fechas sospechosas. Correcciones {estado}: {con_crossref} con Crossref, '
-            f'{deducidas} fechas deducidas, {sin_fecha} fechas a "sin fecha".'))
+            f'{deducidas} fechas deducidas, {sin_fecha} fechas a "sin fecha" (1900).'))
 
     @transaction.atomic
     def _aplicar(self, obj, campos, fecha, doi):

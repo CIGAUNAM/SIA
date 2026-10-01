@@ -26,7 +26,7 @@ class LineaInvestigacion(models.Model):
     descripcion = models.TextField('descripción', blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución')
-    fecha_inicio = models.DateField('fecha de inicio', null=True)
+    fecha_inicio = models.DateField('fecha de inicio')
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='lineas_investigacion')
 
     class Meta:

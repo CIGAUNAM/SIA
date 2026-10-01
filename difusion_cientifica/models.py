@@ -83,7 +83,7 @@ class ParticipacionEventoAcademico(models.Model):
     pais = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name='país')
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución organizadora')
-    fecha = models.DateField(null=True)
+    fecha = models.DateField()
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     por_invitacion = models.BooleanField('por invitación', default=False,
                                          help_text='La ponencia fue por invitación expresa de los organizadores.')

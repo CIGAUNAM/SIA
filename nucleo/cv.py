@@ -23,7 +23,8 @@ from unfold.widgets import (UnfoldAdminCheckboxSelectMultipleWidget, UnfoldAdmin
 
 from .admin_base import es_administrador, persona_de
 from .documentos import ErrorDocumento, respuesta_documento
-from .models import ConfiguracionEntidad, Libro, LibroParticipante, NivelAcademico, StatusPublicacion, User
+from .models import (ConfiguracionEntidad, Libro, LibroParticipante, NivelAcademico, StatusPublicacion, User, anio_o_sf,
+                     es_sin_fecha)
 from .utils import personas_ordenadas, prefetch_personas
 
 
@@ -97,18 +98,16 @@ def _personas(obj, campo='autores'):
 
 
 def _anio(fecha):
-    return fecha.year if fecha else None
+    return fecha.year if fecha and not es_sin_fecha(fecha) else None
 
 
 def _anio_texto(fecha):
-    return str(fecha.year) if fecha else 's.f.'
+    return anio_o_sf(fecha)
 
 
 def _texto_periodo(obj):
-    if obj.fecha_inicio is None:
-        return 's.f.'  # Sin fecha (dato heredado que nadie ha completado).
-    inicio = obj.fecha_inicio.year
-    fin = obj.fecha_fin.year if obj.fecha_fin else 'actual'
+    inicio = anio_o_sf(obj.fecha_inicio)
+    fin = anio_o_sf(obj.fecha_fin) if obj.fecha_fin else 'actual'
     return f'{inicio}' if fin == inicio else f'{inicio}–{fin}'
 
 
@@ -127,7 +126,7 @@ def en_fecha(obj, fecha, *partes):
 
 
 def en_periodo(obj, *partes):
-    fin = obj.fecha_fin.year if obj.fecha_fin else None
+    fin = _anio(obj.fecha_fin)
     return Entrada(_unir(*partes, _texto_periodo(obj)), _anio(obj.fecha_inicio), fin, obj)
 
 
@@ -224,7 +223,7 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
     secciones = [
         ('Formación académica', [
             ('Grados académicos', [
-                en_fecha(g, g.fecha_grado, b(g.titulo_obtenido), g.institucion.nombre, str(g.fecha_grado.year),
+                en_fecha(g, g.fecha_grado, b(g.titulo_obtenido), g.institucion.nombre, anio_o_sf(g.fecha_grado),
                          [('Tesis: ', ''), *i(g.titulo_tesis)] if g.titulo_tesis else '', g.distincion_obtenida)
                 for g in grados]),
             ('Estancias postdoctorales', [

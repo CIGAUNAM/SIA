@@ -6,7 +6,7 @@ from nucleo.models import anio_o_sf, Ambito, Distincion, Institucion, NivelAcade
 
 class DistincionAcademico(models.Model):
     distincion = models.ForeignKey(Distincion, on_delete=models.PROTECT, verbose_name='distinción')
-    fecha = models.DateField(null=True)
+    fecha = models.DateField()
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='distinciones')
 
     class Meta:

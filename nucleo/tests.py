@@ -890,7 +890,7 @@ class RevisarFechasTests(Datos):
         self.assertEqual((seguro.status, seguro.fecha_publicado, seguro.fecha_aceptado, seguro.doi),
                          ('PUBLICADO', date(2017, 7, 1), None, '10.1111/gcb.13589'))
         self.assertEqual(seguro.history.first().history_change_reason, 'Fecha corregida con Crossref (revisar_fechas)')
-        self.assertIsNone(dudoso.fecha_enviado)  # Sin dato seguro: no se inventa, queda "sin fecha".
+        self.assertEqual(dudoso.fecha_enviado, date(1900, 1, 1))  # Sin dato seguro: "sin fecha" (1900).
 
     def test_anio_mal_tecleado(self):
         from nucleo.management.commands.revisar_fechas import por_digito
@@ -903,12 +903,21 @@ class RevisarFechasTests(Datos):
     def test_evento_de_un_dia_y_sin_fecha(self):
         from nucleo.management.commands.revisar_fechas import correcciones
         evento = Evento.objects.create(nombre='Taller', tipo=TipoEvento.objects.create(nombre='Taller'),
-                                       fecha_inicio=date(2015, 12, 3), fecha_fin=date(1900, 1, 1), pais=self.mexico)
+                                       fecha_inicio=date(2015, 12, 3), fecha_fin=date(1925, 1, 1), pais=self.mexico)
         self.assertEqual(correcciones(evento, ['fecha_fin'])['fecha_fin'][0], date(2015, 12, 3))
         otro = Evento.objects.create(nombre='Pendiente', tipo=evento.tipo, fecha_inicio=date(1900, 1, 1),
                                      fecha_fin=date(1900, 1, 1), pais=self.mexico)
-        self.assertEqual({c: v for c, (v, _) in correcciones(otro, ['fecha_inicio', 'fecha_fin']).items()},
-                         {'fecha_inicio': None, 'fecha_fin': None})
-        self.assertEqual(str(Evento.objects.get(pk=otro.pk)).endswith('(1900)'), True)
-        Evento.objects.filter(pk=otro.pk).update(fecha_inicio=None, fecha_fin=None)
-        self.assertEqual(str(Evento.objects.get(pk=otro.pk)), 'Pendiente (s.f.)')
+        self.assertEqual(correcciones(otro, ['fecha_inicio', 'fecha_fin']), {})  # 1900 ya es "sin fecha".
+        self.assertEqual(str(otro), 'Pendiente (s.f.)')
+        Evento.objects.filter(pk=otro.pk).update(fecha_inicio=date(1925, 3, 1))
+        self.assertEqual(correcciones(Evento.objects.get(pk=otro.pk), ['fecha_inicio'])['fecha_inicio'][0],
+                         date(1900, 1, 1))  # Imposible y sin dato: pasa a "sin fecha".
+
+    def test_formulario_acepta_sin_fecha_y_lo_explica(self):
+        self.client.force_login(self.ana)
+        url = reverse('admin:experiencia_profesional_lineainvestigacion_add')
+        self.assertContains(self.client.get(url), 'Si no se conoce, escribe 01/01/1900')
+        self.client.post(url, {'nombre': 'Geografía histórica', 'fecha_inicio': '15/03/1850', **SIN_EVIDENCIAS})
+        from experiencia_profesional.models import LineaInvestigacion
+        linea = LineaInvestigacion.objects.get(nombre='Geografía histórica')
+        self.assertEqual(linea.fecha_inicio, date(1900, 1, 1))  # Cualquier fecha ≤ 1900 se guarda igual.

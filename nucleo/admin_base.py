@@ -34,14 +34,13 @@ from unfold.forms import PaginationInlineFormSet
 
 from .fusion import ErrorFusion, fusionar, resumen_referencias
 from .informe import anio_cierre
-from .models import EstadoPublicacion, Evidencia, PeriodoInforme, Persona
+from .models import SIN_FECHA, EstadoPublicacion, Evidencia, PeriodoInforme, Persona, es_sin_fecha
 from .permisos import es_sysadmin
 from .utils import personas_ordenadas
 
 TODAS_LAS_ACCIONES = ('add', 'change', 'delete', 'view')
 #: Apps de trayectoria (no producción regular): se capturan desde "Mi perfil" y no aparecen en el menú de los académicos.
 SECCIONES_PERFIL = ('formacion_academica', 'experiencia_profesional')
-ANIO_MINIMO = 1900
 ANIOS_A_FUTURO = 2
 
 
@@ -154,14 +153,26 @@ class FormularioSIA(forms.ModelForm):
     _model_admin = None
     _request = None
 
+    NOTA_SIN_FECHA = ' Si no se conoce, escribe 01/01/1900 (o una fecha anterior): se mostrará como «s.f.» (sin fecha).'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for campo in self.fields.values():
+            if isinstance(campo, forms.DateField) and campo.required:
+                campo.help_text = (campo.help_text or '') + self.NOTA_SIN_FECHA
+
     def clean(self):
         datos = super().clean()
         hoy = date.today()
         for nombre, valor in list(datos.items()):
             campo = self.fields.get(nombre)
-            if (isinstance(valor, date) and isinstance(campo, forms.DateField) and nombre in self.changed_data
-                    and not ANIO_MINIMO <= valor.year <= hoy.year + ANIOS_A_FUTURO):
-                self.add_error(nombre, f'Revisa el año: debe estar entre {ANIO_MINIMO} y {hoy.year + ANIOS_A_FUTURO}.')
+            if not (isinstance(valor, date) and isinstance(campo, forms.DateField) and nombre in self.changed_data):
+                continue
+            if es_sin_fecha(valor):
+                datos[nombre] = SIN_FECHA  # 1900 o antes: "sin fecha", se guarda siempre igual.
+            elif valor.year > hoy.year + ANIOS_A_FUTURO:
+                self.add_error(nombre, f'Revisa el año: no puede ser posterior a {hoy.year + ANIOS_A_FUTURO} '
+                                       '(si no se conoce, escribe 01/01/1900).')
         return datos
 
     def _post_clean(self):

@@ -1,6 +1,6 @@
 """Reglas del informe anual: a qué año pertenece un registro para efectos de cierre."""
 
-from .models import EstadoPublicacion, PeriodoInforme, StatusPublicacion
+from .models import EstadoPublicacion, PeriodoInforme, StatusPublicacion, es_sin_fecha
 
 
 def valor_ruta(obj, ruta):
@@ -20,13 +20,14 @@ def anio_cierre(obj, campo_fecha=None):
     - Registros con una sola fecha: el año de esa fecha (`campo_fecha`).
     """
     if isinstance(obj, EstadoPublicacion):
-        return obj.fecha.year if obj.status == StatusPublicacion.PUBLICADO and obj.fecha else None
-    if hasattr(obj, 'fecha_inicio') and hasattr(obj, 'fecha_fin'):
-        return obj.fecha_fin.year if obj.fecha_fin else None
-    if campo_fecha:
+        fecha = obj.fecha if obj.status == StatusPublicacion.PUBLICADO else None
+    elif hasattr(obj, 'fecha_inicio') and hasattr(obj, 'fecha_fin'):
+        fecha = obj.fecha_fin
+    elif campo_fecha:
         fecha = valor_ruta(obj, campo_fecha)
-        return fecha.year if fecha else None
-    return None
+    else:
+        fecha = None
+    return fecha.year if fecha and not es_sin_fecha(fecha) else None  # "Sin fecha" (1900) no cae en ningún informe.
 
 
 def esta_cerrado(obj, campo_fecha=None, anios_cerrados=None):
