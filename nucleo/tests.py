@@ -1002,3 +1002,16 @@ class CatalogosNormativosTests(Datos):
         self.assertNotIn('pais_sede', formulario.fields)  # Se muestra, pero de solo lectura.
         self.client.force_login(self.admin)
         self.assertIn('pais_sede', self.client.get(url).context['adminform'].form.fields)
+
+
+class SinComillasTests(Datos):
+    def test_titulos_se_guardan_sin_comillas_y_las_descripciones_no_se_tocan(self):
+        from nucleo.normalizacion import sin_comillas
+        self.assertEqual(sin_comillas('“De la Brújula al GPS”.'), 'De la Brújula al GPS.')
+        self.assertEqual(sin_comillas('Facultad de Economía "Vasco de Quiroga" UMSNH'),
+                         'Facultad de Economía Vasco de Quiroga UMSNH')
+        self.client.force_login(self.ana)
+        url = reverse('admin:experiencia_profesional_lineainvestigacion_add')
+        self.client.post(url, {'nombre': '«Geografía histórica»', 'fecha_inicio': '15/03/2010', **SIN_EVIDENCIAS})
+        from experiencia_profesional.models import LineaInvestigacion
+        self.assertTrue(LineaInvestigacion.objects.filter(nombre='Geografía histórica').exists())

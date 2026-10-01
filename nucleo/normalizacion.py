@@ -13,6 +13,17 @@ def _clave(texto):
     return re.sub(r'\s+', ' ', texto).strip()
 
 
+COMILLAS = '«»“”„"'
+
+
+def sin_comillas(texto):
+    """Quita las comillas de un título o nombre: el campo es el dato, no su representación."""
+    for comilla in COMILLAS:
+        texto = texto.replace(comilla, '')
+    texto = re.sub(r'[ \t]+', ' ', texto)
+    return re.sub(r'\s+([.,;:])', r'\1', texto).strip()
+
+
 def _normalizar_doi(valor):
     valor = (valor or '').strip()
     valor = re.sub(r'^(https?://)?(dx\.)?doi\.org/', '', valor, flags=re.IGNORECASE)

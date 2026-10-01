@@ -35,6 +35,7 @@ from unfold.forms import PaginationInlineFormSet
 from .fusion import ErrorFusion, fusionar, resumen_referencias
 from .informe import anio_cierre
 from .models import SIN_FECHA, EstadoPublicacion, Evidencia, PeriodoInforme, Persona, es_sin_fecha
+from .normalizacion import sin_comillas
 from .permisos import es_sysadmin
 from .utils import personas_ordenadas
 
@@ -190,6 +191,10 @@ class FormularioSIA(forms.ModelForm):
         hoy = date.today()
         for nombre, valor in list(datos.items()):
             campo = self.fields.get(nombre)
+            texto_corto = type(campo) is forms.CharField and isinstance(campo.widget, forms.TextInput)
+            if isinstance(valor, str) and texto_corto:
+                datos[nombre] = sin_comillas(valor)  # Títulos y nombres (no textos libres ni opciones).
+                continue
             if not (isinstance(valor, date) and isinstance(campo, forms.DateField) and nombre in self.changed_data):
                 continue
             if es_sin_fecha(valor):
