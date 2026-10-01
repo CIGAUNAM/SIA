@@ -5,7 +5,8 @@
 - **Administración** (personal administrativo): ve y edita la producción de todos (con motivo obligatorio al
   editar un registro ajeno, que queda en el historial), mantiene catálogos, el informe anual, la configuración de
   la entidad y las cuentas. No borra producción ajena ni gestiona superusuarios, grupos o permisos.
-- **Sysadmin**: el superusuario de Django (sin grupo).
+- **Sysadmin**: el superusuario de Django (sin grupo). Es el único que modifica los catálogos normativos
+  (`solo_sysadmin`: nombramientos, áreas de conocimiento, ODS) y la parte de operación de la configuración.
 
 El `tipo` de la cuenta (investigador, técnico...) describe a la persona, no su acceso.
 """
@@ -50,6 +51,8 @@ def _acciones_administracion(modelo, model_admin):
 
     if modelo._meta.app_label in APPS_SOLO_SYSADMIN:
         return ()
+    if getattr(model_admin, 'solo_sysadmin', False):
+        return ('view',)
     if isinstance(model_admin, (CompartidoAdmin, CatalogoAdmin)):
         return ('view', 'add', 'change', 'delete')  # Borrar catálogos es parte de fusionar duplicados.
     return ('view', 'add', 'change')  # Producción y cuentas: sin borrar.

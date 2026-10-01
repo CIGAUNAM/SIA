@@ -978,3 +978,27 @@ class CatalogosDepuradosTests(Datos):
         texto = str(secciones_cv(self.ana))
         self.assertIn('Comisión evaluadora de aspirantes a posgrado, Posgrado en Geografía '
                       '(evaluador(a) / dictaminador(a))', texto)
+
+
+class CatalogosNormativosTests(Datos):
+    """Nombramientos, áreas y ODS los mantiene el Sysadmin; Administración edita la configuración salvo Operación."""
+
+    def test_administracion_solo_consulta_los_catalogos_normativos(self):
+        self.client.force_login(self.administrativa)
+        for nombre in ('admin:nucleo_nombramiento_add', 'admin:nucleo_areaconocimiento_add',
+                       'admin:investigacion_objetivodesarrollosostenible_add'):
+            self.assertEqual(self.client.get(reverse(nombre)).status_code, 403, nombre)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_nombramiento_changelist')).status_code, 200)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_tipoevento_add')).status_code, 200)
+        self.client.force_login(self.admin)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_nombramiento_add')).status_code, 200)
+
+    def test_administracion_no_cambia_la_operacion_de_la_entidad(self):
+        configuracion = ConfiguracionEntidad.objects.get()
+        url = reverse('admin:nucleo_configuracionentidad_change', args=[configuracion.pk])
+        self.client.force_login(self.administrativa)
+        formulario = self.client.get(url).context['adminform'].form
+        self.assertIn('titular', formulario.fields)
+        self.assertNotIn('pais_sede', formulario.fields)  # Se muestra, pero de solo lectura.
+        self.client.force_login(self.admin)
+        self.assertIn('pais_sede', self.client.get(url).context['adminform'].form.fields)

@@ -21,6 +21,7 @@ ESTADO_EDITORIAL = ('Estado editorial', {'fields': (
 
 @admin.register(ObjetivoDesarrolloSostenible)
 class ObjetivoDesarrolloSostenibleAdmin(CatalogoAdmin):
+    solo_sysadmin = True
     search_fields = ['nombre']
 
 

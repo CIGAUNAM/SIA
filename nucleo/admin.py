@@ -420,6 +420,7 @@ class InstitucionAdmin(CompartidoAdmin):
 
 @admin.register(AreaConocimiento)
 class AreaConocimientoAdmin(CatalogoAdmin):
+    solo_sysadmin = True
     list_display = ['nombre', 'categoria']
     list_filter = ['categoria']
     search_fields = ['nombre']
@@ -458,6 +459,7 @@ class CargoAdmin(CompartidoAdmin):
 
 @admin.register(Nombramiento)
 class NombramientoAdmin(CatalogoAdmin):
+    solo_sysadmin = True
     list_display = ['nombre', 'clave']
     search_fields = ['nombre', 'clave']
 
@@ -611,8 +613,16 @@ class ConfiguracionEntidadAdmin(SimpleHistoryAdmin, ModelAdmin):
         ('Dirección y contacto', {'fields': ('titular', 'cargo_titular', 'ciudad', 'direccion', 'telefono', 'correo',
                                              'sitio_web')}),
         ('Documentos', {'fields': ('consejo_tecnico',)}),
-        ('Operación', {'fields': ('pais_sede', 'remitente', 'anios_tablero', 'meses_publicacion_pendiente')}),
+        ('Operación', {'fields': ('pais_sede', 'remitente', 'anios_tablero', 'meses_publicacion_pendiente'),
+                       'description': 'Solo el Sysadmin modifica esta sección.'}),
     )
+
+    #: Ajustes técnicos: solo el Sysadmin los cambia; Administración edita identidad, contacto y documentos.
+    campos_operacion = ('pais_sede', 'remitente', 'anios_tablero', 'meses_publicacion_pendiente')
+
+    def get_readonly_fields(self, request, obj=None):
+        campos = super().get_readonly_fields(request, obj)
+        return campos if es_sysadmin(request.user) else (*campos, *self.campos_operacion)
 
     def has_add_permission(self, request):
         return super().has_add_permission(request) and not ConfiguracionEntidad.objects.exists()

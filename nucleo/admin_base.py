@@ -698,4 +698,7 @@ class CompartidoAdmin(BaseAdmin):
 
 class CatalogoAdmin(BaseAdmin):
     permisos_investigador = ('view',)
+    #: Catálogos normativos (nombramientos, áreas de conocimiento, ODS): solo el Sysadmin los modifica;
+    #: Administración y académicos los consultan.
+    solo_sysadmin = False
     list_per_page = 100
