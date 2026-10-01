@@ -4,15 +4,20 @@ from unfold.sites import UnfoldAdminSite
 
 
 class AutocompleteSIA(AutocompleteJsonView):
-    """En los buscadores de los formularios, cada persona indica si está adscrita (el script la colorea)."""
+    """En los buscadores de los formularios, cada persona indica si está adscrita (el script la colorea), los catálogos
+    con ayuda la mandan para mostrarla bajo el campo y las becas muestran quién las otorga."""
 
     def serialize_result(self, obj, to_field_name):
         from nucleo.admin_base import adscripcion
-        from nucleo.models import Persona
+        from nucleo.models import Beca, Persona
 
         resultado = super().serialize_result(obj, to_field_name)
         if isinstance(obj, Persona):
             resultado['adscripcion'] = adscripcion(obj)
+        if getattr(obj, 'ayuda', ''):
+            resultado['ayuda'] = obj.ayuda
+        if isinstance(obj, Beca) and obj.institucion_id:
+            resultado['text'] = f'{obj} — {obj.institucion.nombre}'
         return resultado
 
 

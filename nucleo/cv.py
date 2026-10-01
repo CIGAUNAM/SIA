@@ -163,6 +163,18 @@ def _capitulo(obj):
                     [('En: ', ''), *i(libro.titulo)], libro.editorial, _paginas(obj))
 
 
+def _con_detalle(nombre, detalle='', funcion=''):
+    """«Catálogo, detalle (función)»: lo específico del registro acompaña al nombre del catálogo."""
+    texto = f'{nombre}, {detalle}' if detalle else str(nombre)
+    return f'{texto} ({funcion.lower()})' if funcion else texto
+
+
+def _otorgante(registro):
+    """Institución que otorgó la distinción: la del registro o, si no tiene, la del catálogo."""
+    institucion = registro.institucion or registro.distincion.institucion
+    return institucion.nombre if institucion else ''
+
+
 def _con_institucion(parte, obj, campo='institucion'):
     institucion = getattr(obj, campo, None)
     return [*_segmentos(parte), (f'. {institucion.nombre}', '')] if institucion else parte
@@ -244,13 +256,13 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
         ]),
         ('Compromiso institucional', [
             ('Labores directivas y de coordinación', [
-                en_periodo(x, _con_institucion(str(x.cargo), x))
+                en_periodo(x, _con_institucion(_con_detalle(x.cargo, x.detalle), x))
                 for x in LaborDirectivaCoordinacion.objects.filter(usuario=u).select_related('cargo', 'institucion')]),
             ('Representación ante órganos colegiados', [
                 en_periodo(x, _con_institucion(str(x), x))
                 for x in RepresentacionOrganoColegiado.objects.filter(usuario=u).select_related('institucion')]),
             ('Comisiones institucionales', [
-                en_periodo(x, _con_institucion(str(x.comision), x))
+                en_periodo(x, _con_institucion(_con_detalle(x.comision, x.detalle, x.get_funcion_display()), x))
                 for x in ComisionInstitucional.objects.filter(usuario=u).select_related('comision', 'institucion')]),
             ('Apoyo institucional', [
                 en_periodo(x, str(x.actividad), x.descripcion)
@@ -378,11 +390,13 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
         ]),
         ('Distinciones', [
             ('Distinciones recibidas', [
-                en_fecha(x, x.fecha, b(str(x.distincion)),
-                         x.distincion.institucion.nombre if x.distincion.institucion else '', _anio_texto(x.fecha))
-                for x in DistincionAcademico.objects.filter(usuario=u).select_related('distincion__institucion')]),
+                en_fecha(x, x.fecha, b(_con_detalle(x.distincion, x.detalle)),
+                         _otorgante(x),
+                         _anio_texto(x.fecha))
+                for x in DistincionAcademico.objects.filter(usuario=u).select_related('distincion__institucion',
+                                                                                       'institucion')]),
             ('Distinciones de alumnos tutorados', [
-                en_fecha(x, x.fecha, f'{x.alumno}: {x.distincion}', _anio_texto(x.fecha))
+                en_fecha(x, x.fecha, f'{x.alumno}: {_con_detalle(x.distincion, x.detalle)}', _anio_texto(x.fecha))
                 for x in DistincionAlumno.objects.filter(tutores=p).select_related('alumno', 'distincion')]),
             ('Comisiones de expertos', [
                 en_periodo(x, _con_institucion(x.nombre, x))

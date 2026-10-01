@@ -453,13 +453,39 @@ class Asignatura(Compartido):
 
 
 class Beca(Compartido):
-    nombre = models.CharField(max_length=200, unique=True)
+    class Clase(models.TextChoices):
+        SECIHTI = 'SECIHTI', 'SECIHTI'
+        PAPIIT = 'PAPIIT', 'PAPIIT'
+        PAPIME = 'PAPIME', 'PAPIME'
+        UNAM = 'UNAM', 'Otros programas UNAM'
+        IE_NACIONAL = 'IE_NACIONAL', 'Ingresos extraordinarios nacionales'
+        IE_INTERNACIONAL = 'IE_INTERNACIONAL', 'Ingresos extraordinarios internacionales'
+
+    nombre = models.CharField(max_length=200)
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name='institución que la otorga')
+    clase = models.CharField(max_length=20, choices=Clase.choices, blank=True,
+                             help_text='Clasificación para las gráficas del informe.')
+    ayuda = models.CharField(max_length=255, blank=True,
+                             help_text='Indicación que se muestra al capturar (p. ej. qué escribir en el detalle). No sale en los reportes.')
 
     class Meta:
         ordering = ['nombre']
+        constraints = [models.UniqueConstraint(fields=['nombre', 'institucion'], name='beca_unica')]
 
     def __str__(self):
         return self.nombre
+
+
+class ModalidadBeca(models.TextChoices):
+    LICENCIATURA = 'LICENCIATURA', 'Licenciatura'
+    MAESTRIA = 'MAESTRIA', 'Maestría'
+    DOCTORADO = 'DOCTORADO', 'Doctorado'
+    TITULACION = 'TITULACION', 'Titulación'
+    CONCLUSION = 'CONCLUSION', 'Conclusión de estudios'
+    MOVILIDAD = 'MOVILIDAD', 'Movilidad'
+    POSDOCTORAL = 'POSDOCTORAL', 'Posdoctoral'
+    SERVICIO_SOCIAL = 'SERVICIO_SOCIAL', 'Servicio social'
 
 
 class Cargo(Compartido):
@@ -471,6 +497,8 @@ class Cargo(Compartido):
 
     nombre = models.CharField(max_length=255)
     tipo = models.CharField(max_length=20, choices=Tipo.choices, default=Tipo.OTRO)
+    ayuda = models.CharField(max_length=255, blank=True,
+                             help_text='Indicación que se muestra al capturar (p. ej. qué escribir en el detalle). No sale en los reportes.')
 
     class Meta:
         ordering = ['nombre']
@@ -501,15 +529,17 @@ class Distincion(Compartido):
         RECONOCIMIENTO = 'RECONOCIMIENTO', 'Reconocimiento'
         MEDALLA = 'MEDALLA', 'Medalla'
         DIPLOMA = 'DIPLOMA', 'Diploma'
-        GUGGENHEIM = 'GUGGENHEIM', 'Beca Guggenheim'
+        ESTIMULO = 'ESTIMULO', 'Programa de estímulos'
+        BECA = 'BECA', 'Beca'
         HONORIS_CAUSA = 'HONORIS_CAUSA', 'Doctorado Honoris Causa'
-        OTRO = 'OTRO', 'Otro'
 
     nombre = models.CharField(max_length=255, unique=True)
     tipo = models.CharField(max_length=20, choices=Tipo.choices)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución que la otorga')
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices, blank=True)
+    ayuda = models.CharField(max_length=255, blank=True,
+                             help_text='Indicación que se muestra al capturar (p. ej. qué escribir en el detalle). No sale en los reportes.')
 
     class Meta:
         ordering = ['nombre']

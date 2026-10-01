@@ -126,13 +126,37 @@ def _marcar_opciones(widget):
     widget.create_option = create_option
 
 
+def tiene_ayuda(modelo):
+    """Catálogos con texto de ayuda para quien captura (comisiones, cargos, becas, distinciones)."""
+    return any(f.name == 'ayuda' for f in modelo._meta.get_fields())
+
+
+def _marcar_ayuda(widget, modelo):
+    """Agrega `data-ayuda` a la opción ya elegida (el script `sia/personas.js` la muestra bajo el campo)."""
+    original = widget.create_option
+
+    def create_option(name, value, label, selected, index, subindex=None, attrs=None):
+        opcion = original(name, value, label, selected, index, subindex, attrs)
+        pk = getattr(value, 'value', value)
+        if pk not in (None, ''):
+            ayuda = modelo._default_manager.filter(pk=pk).values_list('ayuda', flat=True).first()
+            if ayuda:
+                opcion['attrs']['data-ayuda'] = ayuda
+        return opcion
+
+    widget.create_option = create_option
+
+
 class EtiquetaPersonaMixin:
-    """Los campos que eligen personas distinguen (por color) a quienes están adscritos a la entidad."""
+    """Los campos que eligen personas distinguen (por color) a quienes están adscritos a la entidad; los que eligen
+    un catálogo con ayuda la muestran bajo el campo."""
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         campo = super().formfield_for_foreignkey(db_field, request, **kwargs)
         if campo is not None and db_field.related_model is Persona:
             _marcar_opciones(campo.widget)
+        elif campo is not None and tiene_ayuda(db_field.related_model):
+            _marcar_ayuda(campo.widget, db_field.related_model)
         return campo
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):

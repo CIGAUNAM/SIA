@@ -441,12 +441,16 @@ class AsignaturaAdmin(CompartidoAdmin):
 
 @admin.register(Beca)
 class BecaAdmin(CompartidoAdmin):
-    list_display = ['nombre']
-    search_fields = ['nombre']
+    permisos_investigador = ('view',)  # Lo mantiene Administración; el académico solo elige.
+    list_display = ['nombre', 'institucion', 'clase']
+    list_filter = ['clase']
+    search_fields = ['nombre', 'institucion__nombre']
+    autocomplete_fields = ['institucion']
 
 
 @admin.register(Cargo)
 class CargoAdmin(CompartidoAdmin):
+    permisos_investigador = ('view',)  # Lo mantiene Administración; el académico solo elige.
     list_display = ['nombre', 'tipo']
     list_filter = ['tipo']
     search_fields = ['nombre']
@@ -460,9 +464,10 @@ class NombramientoAdmin(CatalogoAdmin):
 
 @admin.register(Distincion)
 class DistincionAdmin(CompartidoAdmin):
+    permisos_investigador = ('view',)  # Lo mantiene Administración; el académico solo elige.
     list_display = ['nombre', 'tipo', 'institucion', 'ambito']
     list_filter = ['tipo', 'ambito']
-    search_fields = ['nombre']
+    search_fields = ['nombre', 'institucion__nombre']
     autocomplete_fields = ['institucion']
 
 

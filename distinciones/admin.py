@@ -7,11 +7,11 @@ from .models import ComisionExpertos, DistincionAcademico, DistincionAlumno, Soc
 
 @admin.register(DistincionAcademico)
 class DistincionAcademicoAdmin(PropietarioAdmin):
-    list_display = ['distincion', 'fecha']
+    list_display = ['distincion', 'detalle', 'fecha']
     campo_fecha = 'fecha'
     list_filter = ['distincion__tipo', 'distincion__ambito']
-    search_fields = ['distincion__nombre']
-    autocomplete_fields = ['distincion']
+    search_fields = ['distincion__nombre', 'detalle']
+    autocomplete_fields = ['distincion', 'institucion']
     date_hierarchy = 'fecha'
 
 
@@ -19,11 +19,11 @@ class DistincionAcademicoAdmin(PropietarioAdmin):
 class DistincionAlumnoAdmin(PropietarioAdmin):
     propietarios = ('tutores__usuario',)
     autoria = 'tutores'
-    list_display = ['distincion', 'alumno', 'nivel', 'fecha']
+    list_display = ['distincion', 'detalle', 'alumno', 'nivel', 'fecha']
     campo_fecha = 'fecha'
     list_filter = ['nivel']
-    search_fields = ['distincion__nombre', 'alumno__nombre']
-    autocomplete_fields = ['distincion', 'alumno', 'tutores']
+    search_fields = ['distincion__nombre', 'detalle', 'alumno__nombre']
+    autocomplete_fields = ['distincion', 'institucion', 'alumno', 'tutores']
 
 
 @admin.register(ComisionExpertos)

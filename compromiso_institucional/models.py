@@ -5,7 +5,20 @@ from nucleo.models import anio_o_sf, Cargo, Institucion, Periodo, Compartido, re
 
 
 class Comision(Compartido):
+    class Seccion(models.TextChoices):
+        UNAM = 'UNAM', 'Comisiones UNAM'
+        ENTIDAD = 'ENTIDAD', 'Comisiones de la entidad'
+        COLEGIADO = 'COLEGIADO', 'Cuerpos colegiados UNAM'
+        REPRESENTACION = 'REPRESENTACION', 'Representaciones UNAM'
+        EXTERNA = 'EXTERNA', 'Comisiones de evaluación académica externas'
+        DOCENCIA = 'DOCENCIA', 'Comités de planeación y evaluación docente'
+        ARBITRAJE = 'ARBITRAJE', 'Otras actividades de arbitraje'
+        NO_ACADEMICA = 'NO_ACADEMICA', 'Vinculación con entidades no académicas'
+
     nombre = models.CharField(max_length=255, unique=True)
+    seccion = models.CharField('sección del informe', max_length=20, choices=Seccion.choices)
+    ayuda = models.CharField(max_length=255, blank=True,
+                             help_text='Indicación que se muestra al capturar (p. ej. qué escribir en el detalle). No sale en los reportes.')
 
     class Meta:
         ordering = ['nombre']
@@ -14,6 +27,11 @@ class Comision(Compartido):
 
     def __str__(self):
         return self.nombre
+
+    @property
+    def ambito_sugerido(self):
+        interior = self.seccion in (self.Seccion.UNAM, self.Seccion.ENTIDAD)
+        return ComisionInstitucional.Ambito.INTERIOR if interior else ComisionInstitucional.Ambito.EXTERIOR
 
 
 class ActividadApoyo(models.Model):
@@ -31,6 +49,8 @@ class ActividadApoyo(models.Model):
 
 class LaborDirectivaCoordinacion(Periodo):
     cargo = models.ForeignKey(Cargo, on_delete=models.PROTECT)
+    detalle = models.CharField(max_length=255, blank=True,
+                               help_text='Laboratorio, unidad, programa o departamento (p. ej. Laboratorio de Drones).')
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución')
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='labores_directivas')
@@ -85,7 +105,25 @@ class ComisionInstitucional(Periodo):
         INTERIOR = 'INTERIOR', 'Al interior de la entidad'
         EXTERIOR = 'EXTERIOR', 'Al exterior de la entidad'
 
+    class Funcion(models.TextChoices):
+        PRESIDENTE = 'PRESIDENTE', 'Presidente(a)'
+        COORDINADOR = 'COORDINADOR', 'Coordinador(a)'
+        SECRETARIO = 'SECRETARIO', 'Secretario(a)'
+        SECRETARIO_TECNICO = 'SECRETARIO_TECNICO', 'Secretario(a) técnico(a)'
+        VOCAL = 'VOCAL', 'Vocal'
+        INTEGRANTE = 'INTEGRANTE', 'Integrante'
+        TITULAR = 'TITULAR', 'Representante propietario(a) / titular'
+        SUPLENTE = 'SUPLENTE', 'Representante suplente'
+        EVALUADOR = 'EVALUADOR', 'Evaluador(a) / dictaminador(a)'
+        JURADO = 'JURADO', 'Jurado'
+        COMENTARISTA = 'COMENTARISTA', 'Comentarista / moderador(a)'
+        ENLACE = 'ENLACE', 'Enlace institucional'
+        ASESOR = 'ASESOR', 'Asesor(a)'
+
     comision = models.ForeignKey(Comision, on_delete=models.PROTECT, verbose_name='comisión')
+    funcion = models.CharField('función', max_length=20, choices=Funcion.choices, default=Funcion.INTEGRANTE)
+    detalle = models.CharField(max_length=255, blank=True,
+                               help_text='Programa, convocatoria o nombre específico (según indique la comisión).')
     ambito = models.CharField('ámbito', max_length=20, choices=Ambito.choices)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True,
                                     verbose_name='institución')

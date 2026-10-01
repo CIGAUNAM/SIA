@@ -3,8 +3,8 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 
-from nucleo.models import (anio_o_sf, Beca, Distincion, Institucion, NivelAcademico, Participante, Periodo, Persona,
-                           ProgramaAcademico, requerido_si, validar_programa)
+from nucleo.models import (anio_o_sf, Beca, Distincion, Institucion, ModalidadBeca, NivelAcademico, Participante,
+                           Periodo, Persona, ProgramaAcademico, requerido_si, validar_programa)
 
 
 class AsesoriaEstudiante(Periodo):
@@ -20,6 +20,9 @@ class AsesoriaEstudiante(Periodo):
     nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
     programa = models.ForeignKey(ProgramaAcademico, on_delete=models.PROTECT, null=True, blank=True)
     beca = models.ForeignKey(Beca, on_delete=models.PROTECT, null=True, blank=True)
+    modalidad_beca = models.CharField('modalidad de la beca', max_length=20, choices=ModalidadBeca.choices, blank=True)
+    detalle_beca = models.CharField('detalle de la beca', max_length=255, blank=True,
+                                    help_text='Clave del proyecto que paga la beca (p. ej. IN303309).')
     proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
     periodo_academico = models.CharField('periodo académico', max_length=200, blank=True)
@@ -44,6 +47,9 @@ class SupervisionPostdoctoral(Periodo):
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
     proyecto = models.ForeignKey('investigacion.ProyectoInvestigacion', on_delete=models.SET_NULL, null=True, blank=True)
     beca = models.ForeignKey(Beca, on_delete=models.PROTECT, null=True, blank=True)
+    modalidad_beca = models.CharField('modalidad de la beca', max_length=20, choices=ModalidadBeca.choices, blank=True)
+    detalle_beca = models.CharField('detalle de la beca', max_length=255, blank=True,
+                                    help_text='Clave del proyecto que paga la beca (p. ej. IN303309).')
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='supervisiones')
 
     class Meta:
@@ -82,7 +88,12 @@ class DireccionTesis(Periodo):
     fecha_examen = models.DateField('fecha del examen', null=True, blank=True)
     institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, verbose_name='institución')
     beca = models.ForeignKey(Beca, on_delete=models.PROTECT, null=True, blank=True)
+    modalidad_beca = models.CharField('modalidad de la beca', max_length=20, choices=ModalidadBeca.choices, blank=True)
+    detalle_beca = models.CharField('detalle de la beca', max_length=255, blank=True,
+                                    help_text='Clave del proyecto que paga la beca (p. ej. IN303309).')
     reconocimiento = models.ForeignKey(Distincion, on_delete=models.PROTECT, null=True, blank=True)
+    detalle_reconocimiento = models.CharField('detalle del reconocimiento', max_length=255, blank=True,
+                                              help_text='P. ej. Mención honorífica.')
     director = models.ForeignKey(Persona, on_delete=models.PROTECT, null=True, blank=True,
                                  related_name='tesis_dirigidas')
     codirector = models.ForeignKey(Persona, on_delete=models.PROTECT, null=True, blank=True,

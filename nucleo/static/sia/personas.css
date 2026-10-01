@@ -7,3 +7,6 @@
 .dark .sia-persona--externa { color: #9ca3af; }
 /* La opción resaltada en la lista usa el color del resaltado. */
 .select2-results__option--highlighted .sia-persona { color: inherit; }
+/* Ayuda del catálogo elegido (ver sia/personas.js). */
+.sia-ayuda { margin-top: .375rem; font-size: .8125rem; color: #6b7280; }
+.dark .sia-ayuda { color: #9ca3af; }

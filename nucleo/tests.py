@@ -921,3 +921,60 @@ class RevisarFechasTests(Datos):
         from experiencia_profesional.models import LineaInvestigacion
         linea = LineaInvestigacion.objects.get(nombre='Geografía histórica')
         self.assertEqual(linea.fecha_inicio, date(1900, 1, 1))  # Cualquier fecha ≤ 1900 se guarda igual.
+
+
+class CatalogosDepuradosTests(Datos):
+    """Comisiones, cargos, becas y distinciones: el catálogo es el tipo; lo específico va en el registro."""
+
+    def setUp(self):
+        super().setUp()
+        from compromiso_institucional.models import Comision
+        from nucleo.models import Beca
+        self.comision = Comision.objects.create(
+            nombre='Comisión evaluadora de aspirantes a posgrado', seccion=Comision.Seccion.DOCENCIA,
+            ayuda='Escribe en el detalle el programa y la convocatoria.')
+        self.beca = Beca.objects.create(nombre='Beca de proyecto', institucion=self.institucion, clase=Beca.Clase.UNAM,
+                                        ayuda='Escribe en el detalle la clave del proyecto.')
+
+    def test_ambito_sale_de_la_seccion(self):
+        from compromiso_institucional.models import Comision, ComisionInstitucional
+        self.assertEqual(self.comision.ambito_sugerido, ComisionInstitucional.Ambito.EXTERIOR)
+        interna = Comision(nombre='Consejo Interno', seccion=Comision.Seccion.ENTIDAD)
+        self.assertEqual(interna.ambito_sugerido, ComisionInstitucional.Ambito.INTERIOR)
+
+    def test_academicos_solo_eligen_del_catalogo(self):
+        self.client.force_login(self.ana)
+        self.assertEqual(self.client.get(reverse('admin:compromiso_institucional_comision_add')).status_code, 403)
+        self.assertEqual(self.client.get(reverse('admin:nucleo_beca_add')).status_code, 403)
+        self.client.force_login(self.administrativa)
+        self.assertEqual(self.client.get(reverse('admin:compromiso_institucional_comision_add')).status_code, 200)
+
+    def test_buscador_manda_la_ayuda_y_la_institucion_de_la_beca(self):
+        self.client.force_login(self.ana)
+        resultados = self.client.get(reverse('admin:autocomplete'), {
+            'app_label': 'formacion_recursos_humanos', 'model_name': 'direcciontesis', 'field_name': 'beca',
+            'term': 'proyecto'}).json()['results']
+        self.assertEqual(resultados, [{'id': str(self.beca.pk), 'text': 'Beca de proyecto — UNAM',
+                                       'ayuda': 'Escribe en el detalle la clave del proyecto.'}])
+        self.assertEqual(str(self.beca), 'Beca de proyecto')  # En reportes, sin la institución.
+
+    def test_formulario_muestra_la_ayuda_de_la_comision_elegida(self):
+        from compromiso_institucional.models import ComisionInstitucional
+        registro = ComisionInstitucional.objects.create(
+            comision=self.comision, funcion=ComisionInstitucional.Funcion.EVALUADOR, detalle='Posgrado en Geografía',
+            ambito=ComisionInstitucional.Ambito.EXTERIOR, fecha_inicio=date(2026, 4, 1), usuario=self.ana)
+        self.client.force_login(self.ana)
+        pagina = self.client.get(reverse('admin:compromiso_institucional_comisioninstitucional_change',
+                                         args=[registro.pk]))
+        self.assertContains(pagina, 'data-ayuda="Escribe en el detalle el programa y la convocatoria."')
+
+    def test_cv_muestra_detalle_y_funcion(self):
+        from compromiso_institucional.models import ComisionInstitucional
+        from nucleo.cv import secciones_cv
+        ComisionInstitucional.objects.create(
+            comision=self.comision, funcion=ComisionInstitucional.Funcion.EVALUADOR, detalle='Posgrado en Geografía',
+            institucion=self.institucion, ambito=ComisionInstitucional.Ambito.EXTERIOR,
+            fecha_inicio=date(2026, 4, 1), usuario=self.ana)
+        texto = str(secciones_cv(self.ana))
+        self.assertIn('Comisión evaluadora de aspirantes a posgrado, Posgrado en Geografía '
+                      '(evaluador(a) / dictaminador(a))', texto)

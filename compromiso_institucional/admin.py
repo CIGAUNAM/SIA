@@ -8,7 +8,9 @@ from .models import (ActividadApoyo, ApoyoInstitucional, Comision, ComisionInsti
 
 @admin.register(Comision)
 class ComisionAdmin(CompartidoAdmin):
-    list_display = ['nombre']
+    permisos_investigador = ('view',)  # Lo mantiene Administración; el académico solo elige.
+    list_display = ['nombre', 'seccion']
+    list_filter = ['seccion']
     search_fields = ['nombre']
 
 
@@ -19,8 +21,8 @@ class ActividadApoyoAdmin(CatalogoAdmin):
 
 @admin.register(LaborDirectivaCoordinacion)
 class LaborDirectivaCoordinacionAdmin(PropietarioAdmin):
-    list_display = ['cargo', 'institucion', 'fecha_inicio', 'fecha_fin']
-    search_fields = ['cargo__nombre', 'institucion__nombre']
+    list_display = ['cargo', 'detalle', 'institucion', 'fecha_inicio', 'fecha_fin']
+    search_fields = ['cargo__nombre', 'detalle', 'institucion__nombre']
     autocomplete_fields = ['cargo', 'institucion']
 
 
@@ -34,9 +36,9 @@ class RepresentacionOrganoColegiadoAdmin(PropietarioAdmin):
 
 @admin.register(ComisionInstitucional)
 class ComisionInstitucionalAdmin(PropietarioAdmin):
-    list_display = ['comision', 'ambito', 'institucion', 'fecha_inicio', 'fecha_fin']
-    list_filter = ['ambito']
-    search_fields = ['comision__nombre', 'institucion__nombre']
+    list_display = ['comision', 'funcion', 'detalle', 'institucion', 'fecha_inicio', 'fecha_fin']
+    list_filter = ['comision__seccion', 'funcion', 'ambito']
+    search_fields = ['comision__nombre', 'detalle', 'institucion__nombre']
     autocomplete_fields = ['comision', 'institucion']
 
 

@@ -302,7 +302,7 @@ class Conversor:
 
         for pk, f in self.fuente('nucleo.distincion').items():
             self.agregar('nucleo.distincion', pk, {
-                'nombre': txt(f['nombre']), 'tipo': f['tipo'], 'institucion': self.institucion(f),
+                'nombre': txt(f['nombre']), 'tipo': self.tipo_distincion(f['tipo']), 'institucion': self.institucion(f),
                 'ambito': opcion(f['ambito'], {'INSTITUCIONAL', 'REGIONAL', 'NACIONAL', 'INTERNACIONAL'}),
                 **self.alta()})
             self.indexar('nucleo.distincion', pk, f['nombre'])
@@ -816,7 +816,7 @@ class Conversor:
 
         def distincion(f):
             pk = f['distincion'] or self.catalogo_por_nombre('nucleo.distincion', f['distincion_text'],
-                                                             tipo=opcion(f['tipo'], self.TIPOS_DISTINCION, 'OTRO'))
+                                                             tipo=self.tipo_distincion(f['tipo']))
             campos = catalogo.get(pk)
             if campos is not None:  # Completa el catálogo con los datos capturados en el registro.
                 campos['institucion'] = campos['institucion'] or f.get('institucion')
@@ -844,8 +844,11 @@ class Conversor:
                 'fecha_inicio': f['fecha_inicio'], 'fecha_fin': f['fecha_fin'], 'usuario': f['usuario']})
         self.fuente('distinciones.citapublicacion')
 
-    TIPOS_DISTINCION = {'PREMIO', 'DISTINCION', 'RECONOCIMIENTO', 'MEDALLA', 'DIPLOMA', 'GUGGENHEIM',
-                        'HONORIS_CAUSA', 'OTRO'}
+    TIPOS_DISTINCION = {'PREMIO', 'DISTINCION', 'RECONOCIMIENTO', 'MEDALLA', 'DIPLOMA', 'HONORIS_CAUSA'}
+
+    def tipo_distincion(self, tipo):
+        """Los tipos «Beca Guggenheim» y «Otro» del SIA anterior ya no existen (ver `depurar_catalogos`)."""
+        return {'GUGGENHEIM': 'BECA'}.get(tipo) or opcion(tipo, self.TIPOS_DISTINCION, 'RECONOCIMIENTO')
 
 
 class Command(BaseCommand):

@@ -6,6 +6,10 @@ from nucleo.models import anio_o_sf, Ambito, Distincion, Institucion, NivelAcade
 
 class DistincionAcademico(models.Model):
     distincion = models.ForeignKey(Distincion, on_delete=models.PROTECT, verbose_name='distinción')
+    detalle = models.CharField(max_length=255, blank=True, help_text='Nivel, área, año o edición (p. ej. Nivel D).')
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True, related_name='+',
+                                    verbose_name='institución que la otorga',
+                                    help_text='Solo si no es la de la distinción (mención de grado, beca de estudios…).')
     fecha = models.DateField()
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='distinciones')
 
@@ -20,6 +24,10 @@ class DistincionAcademico(models.Model):
 
 class DistincionAlumno(models.Model):
     distincion = models.ForeignKey(Distincion, on_delete=models.PROTECT, verbose_name='distinción')
+    detalle = models.CharField(max_length=255, blank=True, help_text='Nivel, área, año o edición (p. ej. Nivel D).')
+    institucion = models.ForeignKey(Institucion, on_delete=models.PROTECT, null=True, blank=True, related_name='+',
+                                    verbose_name='institución que la otorga',
+                                    help_text='Solo si no es la de la distinción (mención de grado, beca de estudios…).')
     alumno = models.ForeignKey(Persona, on_delete=models.PROTECT, related_name='distinciones_alumno')
     nivel = models.CharField(max_length=20, choices=NivelAcademico.choices)
     tutores = models.ManyToManyField(Persona, related_name='distinciones_alumnos_tutorados')
