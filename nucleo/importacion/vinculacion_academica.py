@@ -53,6 +53,11 @@ def evento(ctx, nombre, tipo, inicio, fin, pais, ciudad, ambito_, ponentes=None,
 
 def _usuario(ctx, hoja, fila, *valores):
     for v in valores:
+        u = ctx.cuenta(v, hoja, fila, crear=False)
+        if u:
+            return u
+    # Sin cuenta: se crea con la forma más completa del nombre («Monroy Sais, Ana Sofía» mejor que «Monroy, Sofía»).
+    for v in sorted(valores, key=lambda v: -len(texto(v))):
         u = ctx.cuenta(v, hoja, fila)
         if u:
             return u
@@ -300,7 +305,7 @@ def redes(ctx, libro):
                 hoja.creado(RedAcademica)
             else:
                 ctx.reportado(red, hoja)
-            ctx.vigencia(red, f.get(' 2'))  # La columna del periodo no tiene encabezado en esta hoja.
+            ctx.vigencia(red, f.get(''))  # La columna del periodo no tiene encabezado en esta hoja.
             personas = ctx.autores(f['academicos de la entidad participantes'])
             registrante = ctx.usuario(f['registrado por'])
             if registrante:

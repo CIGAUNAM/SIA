@@ -262,7 +262,7 @@ def hojas_sueltas(ctx, libro):
             if not texto(f['nombre de estudiante']):
                 continue
             hoja.filas += 1
-            usuario = ctx.usuario(f['nombre del tutor principal'])
+            usuario = ctx.cuenta(f['nombre del tutor principal'], hoja, fila)
             if usuario is None:
                 hoja.rechazo(fila, f'No se reconoce al tutor «{texto(f["nombre del tutor principal"])}».')
                 continue
@@ -276,7 +276,7 @@ def hojas_sueltas(ctx, libro):
             if not texto(f['nombre de estudiante']):
                 continue
             hoja.filas += 1
-            usuario = ctx.usuario(f['nombre del tutor principal'])
+            usuario = ctx.cuenta(f['nombre del tutor principal'], hoja, fila)
             if usuario is None:
                 hoja.rechazo(fila, f'No se reconoce al tutor «{texto(f["nombre del tutor principal"])}».')
                 continue

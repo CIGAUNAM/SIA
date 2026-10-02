@@ -198,13 +198,11 @@ def publicaciones(periodo):
 
 
 def cuartiles(periodo):
-    """Figura 20: artículos WoS/Scopus por cuartil de la revista (%)."""
+    """Figura 20: artículos por cuartil de la revista (%), sobre todos los del periodo; sin cuartil, «n/d»."""
     from investigacion.models import ArticuloCientifico
 
     r = Counter()
-    for a in ArticuloCientifico.objects.filter(periodo.contiene('fecha_publicado'),
-                                               revista__indices__nombre__in=['Scopus', 'Web of Science: SCI/SSCI/SCI-EX']) \
-            .distinct().select_related('revista'):
+    for a in ArticuloCientifico.objects.filter(periodo.contiene('fecha_publicado')).select_related('revista'):
         metrica = a.revista.metricas.filter(anio=a.fecha_publicado.year).first()
         r[metrica.cuartil if metrica and metrica.cuartil else 'n/d'] += 1
     total = sum(r.values())
@@ -267,22 +265,21 @@ def es_unam(institucion):
 
 
 def tesis(periodo):
-    """Figura 28: direcciones de tesis concluidas y en proceso, una por cada académico de la entidad que la dirige."""
+    """Figura 28: direcciones de tesis concluidas y en proceso; una tesis codirigida por dos académicos cuenta una vez."""
     from formacion_recursos_humanos.models import DireccionTesis as T
 
     r = Counter()
     vigentes = T.objects.filter(Q(status=T.Status.EN_PROCESO, fecha_inicio__lte=periodo.fin)
                                 | Q(status=T.Status.TERMINADA) & periodo.contiene('fecha_examen')) \
-        .select_related('institucion__padre', 'director__usuario', 'codirector__usuario')
+        .select_related('institucion__padre', 'programa')
     for t in vigentes:
         if t.status == T.Status.EN_PROCESO and t.fecha_inicio.year < periodo.fin.year - PLAZO_TESIS[t.nivel]:
             continue
-        academicos = sum(1 for p in (t.director, t.codirector) if p and hasattr(p, 'usuario'))
         # «UNAM» en el informe: licenciaturas de la UNAM y su Posgrado en Geografía; los demás posgrados, «otras».
         unam = es_unam(t.institucion) and (t.nivel == 'LICENCIATURA' or (
             t.programa is not None and 'geograf' in t.programa.nombre.lower()))
         estado = 'Concluidas' if t.status == T.Status.TERMINADA else 'En proceso'
-        r[f'{estado} · {t.get_nivel_display()} · {"UNAM" if unam else "otras"}'] += max(academicos, 1)
+        r[f'{estado} · {t.get_nivel_display()} · {"UNAM" if unam else "otras"}'] += 1
     resultado = OrderedDict()
     for estado in ('Concluidas', 'En proceso'):
         resultado[estado] = sum(n for k, n in r.items() if k.startswith(estado))

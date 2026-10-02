@@ -9,6 +9,7 @@ from datetime import date, datetime
 from difflib import SequenceMatcher
 
 from cities_light.models import Country
+from django.db.models import Q
 
 from nucleo.models import DOMINIO_SIN_CORREO as DOMINIO, SIN_FECHA, Institucion, Persona, Revista, User
 from nucleo.nombres import formato_cita
@@ -224,29 +225,59 @@ class Contexto:
             self._libros[archivo] = openpyxl.load_workbook(self.carpeta / archivo, read_only=True, data_only=True)
         return self._libros[archivo]
 
-    def cuenta(self, valor, hoja=None, fila=None):
-        """Como `usuario`, pero si viene «Nombre Apellido(login)» de alguien sin cuenta, la crea (registró
-        producción en el sistema con que se armó el informe, así que es personal de la entidad)."""
+    def cuenta(self, valor, hoja=None, fila=None, crear=True):  # crear: True, False o 'posdoc' (solo posdocs)
+        """Como `usuario`, pero si quien registró algo no tiene cuenta, la crea: registró producción en el sistema con
+        que se armó el informe, así que es de la entidad. Viene como «Nombre Apellido(login)» o «Apellidos, Nombre»."""
         usuario = self.usuario(valor)
-        m = re.match(r'^(.+?)\(([\w.\-]+)\)\s*$', texto(valor))
-        if usuario or not m or normalizar(m.group(1)) in ('desconocido', ''):
+        t = texto(valor)
+        m = re.match(r'^(.+?)\(([\w.\-]+)\)\s*$', t)
+        if usuario or not crear:
             return usuario
-        partes = m.group(1).title().split()
-        corte = -2 if len(partes) >= 3 else -1
-        usuario = User(email=f'{m.group(2).lower()}@{DOMINIO}', first_name=' '.join(partes[:corte]),
-                       last_name=' '.join(partes[corte:]), is_active=True, is_staff=True, tipo=User.Tipo.OTRO)
+        if m and normalizar(m.group(1)) not in ('desconocido', ''):
+            partes = m.group(1).title().split()
+            corte = -2 if len(partes) >= 3 else -1
+            nombre, apellidos, login = ' '.join(partes[:corte]), ' '.join(partes[corte:]), m.group(2).lower()
+        else:
+            m = re.match(r'^([^\W\d][\w\'\- ]+),\s*([^\W\d][\w\'\- ]+)$', t)
+            if not m or any(len(p) < 3 for p in (m.group(1).strip(), m.group(2).strip())):
+                return None  # «Lupita» o iniciales: no alcanza para saber quién es.
+            apellidos, nombre = m.group(1).strip(), m.group(2).strip()
+            login = None
+        foto = self._foto_posdoc(nombre, apellidos)
+        if crear == 'posdoc' and not foto:
+            return None
+        login = login or foto or re.sub(r'[^a-z]', '', normalizar(nombre)[:1] + normalizar(apellidos.split('-')[0].split()[0]))
+        usuario = User(email=f'{login}@{DOMINIO}', first_name=nombre, last_name=apellidos, is_active=True, is_staff=True,
+                       tipo=User.Tipo.POSTDOCTORADO if foto else User.Tipo.OTRO)
         usuario.set_unusable_password()
         self.guardar(usuario)
         self.registrar_usuario(usuario)
         if hoja is not None:
-            hoja.aviso(fila, f'Se creó la cuenta de «{usuario}» ({m.group(2)}): falta indicar su tipo (posdoc, técnico…).')
+            tipo = 'posdoc (su foto viene con las de posdoctorado)' if foto else 'falta indicar su tipo (posdoc, técnico…)'
+            hoja.aviso(fila, f'Se creó la cuenta de «{usuario}» ({login}): {tipo}.')
         return usuario
 
+    def _foto_posdoc(self, nombre, apellidos):
+        """Login de un posdoc según el nombre de su foto en «Copia de Posdoc.zip» (inicial(es) + primer apellido)."""
+        import zipfile
+
+        if not hasattr(self, '_fotos'):
+            self._fotos = []
+            for archivo in (self.carpeta.glob('*Posdoc*.zip') if self.carpeta else []):
+                with zipfile.ZipFile(archivo) as z:
+                    self._fotos += [re.sub(r'[^a-z]', '', normalizar(n.rsplit('.', 1)[0])) for n in z.namelist()]
+        apellido = re.sub(r'[^a-z]', '', normalizar(apellidos.split('-')[0].split()[0]))
+        inicial = normalizar(nombre)[:1]
+        return next((f for f in self._fotos if f.endswith(apellido) and f.startswith(inicial)
+                     and len(f) - len(apellido) <= 3), None)
+
     def cuentas(self, valor, hoja=None, fila=None):
-        """Cuentas de varios académicos en una celda («Ruiz, Cinthia & Vieyra, Antonio»), en orden."""
+        """Cuentas de varios académicos en una celda («Ruiz, Cinthia & Vieyra, Antonio»), en orden. Con varios nombres
+        suele ir algún coautor externo, así que entonces solo se crea la cuenta de quien es posdoc de la entidad."""
         resultado = []
-        for parte in re.split(r'\s*(?:&|;|/|\s+y\s+|\s+a\s+)\s*', texto(valor)):
-            usuario = self.cuenta(parte, hoja, fila) if parte.strip() else None
+        partes = [p for p in re.split(r'\s*(?:&|;|/|\s+y\s+|\s+a\s+)\s*', texto(valor)) if p.strip()]
+        for parte in partes:
+            usuario = self.cuenta(parte, hoja, fila, crear=True if len(partes) == 1 else 'posdoc')
             if usuario and usuario not in resultado:
                 resultado.append(usuario)
         return resultado
@@ -260,8 +291,8 @@ class Contexto:
         return self.hojas[-1]
 
     def vigencia(self, obj, periodo):
-        """Anota en qué periodo se reportó un registro sin fecha de término (sociedad, red, comisión, comité).
-        Al final, lo que no se volvió a reportar en el último periodo se cierra al terminar el suyo."""
+        """Anota en qué periodo se reportó un registro (sociedad, red, comisión, comité). Al final, lo que no se volvió
+        a reportar en el último periodo se cierra al terminar el suyo."""
         inicio = inicio_periodo(periodo)
         if inicio:
             clave = (type(obj), obj.pk)
@@ -277,9 +308,11 @@ class Contexto:
         for (modelo, pk), inicio in self._vigencias.items():
             if inicio >= ultimo:
                 continue
-            obj = modelo.objects.filter(pk=pk, fecha_fin__isnull=True).first()
+            fin = fecha_(inicio.year + 1, 6, 30)
+            # También los que traían un término posterior: si no se volvió a reportar, no siguió.
+            obj = modelo.objects.filter(Q(fecha_fin__isnull=True) | Q(fecha_fin__gt=fin), pk=pk).first()
             if obj is not None:
-                obj.fecha_fin = fecha_(inicio.year + 1, 6, 30)
+                obj.fecha_fin = max(fin, getattr(obj, 'fecha_inicio', None) or fin)
                 obj._change_reason = 'Cerrado: no se volvió a reportar en el informe siguiente'
                 obj.save()
                 cerrados += 1
