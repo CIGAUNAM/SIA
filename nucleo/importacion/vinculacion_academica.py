@@ -206,8 +206,7 @@ def arbitraje_proyectos(ctx, libro):
             institucion = ctx.institucion(f['institucion'], f['pais'])
             if texto(f['dependencia']):
                 institucion = ctx.institucion(f['dependencia'], f['pais'], padre=institucion)
-            a = anio(f['ano fin']) or (inicio_periodo(f['informes ciga']) or SIN_FECHA).year
-            inicio = fecha(None, None, a)
+            inicio = fecha_en_periodo(f['ano fin'], f['informes ciga'])
             if OtraComision.objects.filter(usuario=usuario, tipo=tipo, descripcion__iexact=programa[:255],
                                            fecha_inicio=inicio).exists():
                 hoja.existente(OtraComision)

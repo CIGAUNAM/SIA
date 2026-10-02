@@ -163,7 +163,8 @@ def proyectos(ctx, libro):
                 hoja.existente(P)
             objetivos = []
             for col in ('objetivos del desarrollo sostenible1', 'objetivos del desarrollo sostenible2',
-                        'objetivos del desarrollo sostenible3', 'objetivos del desarrollo sostenible4'):
+                        'objetivos del desarrollo sostenible3', 'objetivos del desarrollo sostenible4',
+                        'objetivos del desarrollo sostenible'):
                 for nombre_ods in texto(f.get(col)).split(';'):
                     clave = normalizar(nombre_ods)
                     encontrado = next((o for k, o in ods.items() if clave and (

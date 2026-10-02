@@ -5,6 +5,8 @@ from datetime import date
 
 from nucleo.models import Nombramiento, SituacionAcademica, User
 
+from nucleo.similitud import normalizar
+
 from .base import fecha_celda, leer_hoja, numero, texto
 
 ARCHIVO = 'Eje2_PlantaAcademica_CISIC_2023-2026_GC.xlsx'
@@ -67,16 +69,16 @@ def importar(ctx, libro):
                 hoja.creado(User)
             else:
                 hoja.existente(User)
-            categoria = texto(f['categoria']).lower()
+            categoria = normalizar(texto(f['categoria']))
             usuario.tipo = User.Tipo.TECNICO if categoria.startswith('tec') else User.Tipo.INVESTIGADOR
             usuario.numero_trabajador = usuario.numero_trabajador or str(numero(f['clave academico']) or '')
             usuario.fecha_nacimiento = usuario.fecha_nacimiento or fecha_celda(f['fecha de nacimiento'], por_defecto=None)
             usuario.genero = usuario.genero or (User.Genero.FEMENINO if mujer else User.Genero.MASCULINO)
             grado = GRADOS.get(texto(f['grado academico']).upper())
             usuario.grado = usuario.grado or (grado[1 if mujer else 0] if grado else '')
-            antiguedad = numero(f['antiguedad 2026'])
-            if usuario.ingreso_entidad is None and antiguedad is not None:
-                usuario.ingreso_entidad = date(ANIO_CORTE - antiguedad, 8, 1)
+            antiguedad = numero(f['antiguedad 2026'])  # Antigüedad académica en la UNAM al corte de agosto.
+            if usuario.ingreso_unam is None and antiguedad is not None:
+                usuario.ingreso_unam = date(ANIO_CORTE - antiguedad, 8, 1)
             if texto(f['tipo de contrato']).upper() == 'BAJA' and usuario.egreso_entidad is None:
                 usuario.egreso_entidad = date(ANIO_CORTE, 8, 1)
             ctx.guardar(usuario)
@@ -90,8 +92,10 @@ def importar(ctx, libro):
             area = texto(f['area snii'])
             for anio_, (col_cat, col_pride, col_sni) in ANIOS.items():
                 codigo = texto(f[col_cat])
-                if codigo.upper() == 'BAJA':
-                    continue
+                if codigo.upper() == 'BAJA':  # Se fue al cierre: cuenta en el periodo con su último nombramiento.
+                    codigo = texto(f[ANIOS[anio_ - 1][0]]) if anio_ - 1 in ANIOS else ''
+                    if not codigo:
+                        continue
                 situacion, creada = SituacionAcademica.objects.get_or_create(usuario=usuario, anio=anio_)
                 situacion.nombramiento = nombramiento(codigo)
                 if codigo and situacion.nombramiento is None and codigo.lower() != 'sin nivel':
