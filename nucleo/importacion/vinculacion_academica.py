@@ -74,8 +74,11 @@ def organizacion_eventos(ctx, libro):
             if not nombre:
                 continue
             hoja.filas += 1
-            usuario = _usuario(ctx, hoja, fila, f['registrado por'], f['organizadores'])
-            if not usuario:
+            # Si no se sabe quién lo registró («Lupita»), cuenta para los organizadores con cuenta.
+            registrante = ctx.cuenta(f['registrado por'], hoja, fila)
+            usuarios = [registrante] if registrante else ctx.cuentas(f['organizadores'], hoja, fila)
+            if not usuarios:
+                hoja.rechazo(fila, f'No se reconoce al académico «{texto(f["registrado por"])}».')
                 continue
             inicio = fecha(f['dia inicio'], f['mes inicio'], f['ano inicio'])
             ev = evento(ctx, nombre, tipo_evento(ctx, f['tipo de evento']), inicio,
@@ -87,11 +90,12 @@ def organizacion_eventos(ctx, libro):
                 else None
             participacion = 'COORDINADOR' if 'coordinador' in nivel else 'APOYO_TECNICO' if 'apoyo' in nivel \
                 else 'COMITE_ORGANIZADOR'
-            if OrganizacionEventoAcademico.objects.filter(evento=ev, usuario=usuario).exists():
-                hoja.existente(OrganizacionEventoAcademico)
-                continue
-            ctx.guardar(OrganizacionEventoAcademico(evento=ev, tipo_participacion=participacion, usuario=usuario))
-            hoja.creado(OrganizacionEventoAcademico)
+            for usuario in usuarios:
+                if OrganizacionEventoAcademico.objects.filter(evento=ev, usuario=usuario).exists():
+                    hoja.existente(OrganizacionEventoAcademico)
+                    continue
+                ctx.guardar(OrganizacionEventoAcademico(evento=ev, tipo_participacion=participacion, usuario=usuario))
+                hoja.creado(OrganizacionEventoAcademico)
     return hoja
 
 

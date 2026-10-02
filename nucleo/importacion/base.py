@@ -228,8 +228,9 @@ class Contexto:
     def cuenta(self, valor, hoja=None, fila=None, crear=True):  # crear: True, False o 'posdoc' (solo posdocs)
         """Como `usuario`, pero si quien registró algo no tiene cuenta, la crea: registró producción en el sistema con
         que se armó el informe, así que es de la entidad. Viene como «Nombre Apellido(login)» o «Apellidos, Nombre»."""
-        usuario = self.usuario(valor)
         t = texto(valor)
+        # «Merlo, A.»: con iniciales, como en las citas (solo si una sola cuenta coincide).
+        usuario = self.usuario(valor) or (self._usuario_de_cita(t) if re.search(r',\s*\w\.', t) else None)
         m = re.match(r'^(.+?)\(([\w.\-]+)\)\s*$', t)
         if usuario or not crear:
             return usuario
@@ -250,6 +251,11 @@ class Contexto:
         usuario = User(email=f'{login}@{DOMINIO}', first_name=nombre, last_name=apellidos, is_active=True, is_staff=True,
                        tipo=User.Tipo.POSTDOCTORADO if foto else User.Tipo.OTRO)
         usuario.set_unusable_password()
+        # Si ya figuraba como persona sin cuenta (sus publicaciones en el SIA), la cuenta queda con esa persona.
+        parecidas = personas_parecidas(Persona.objects.filter(usuario__isnull=True), formato_cita(nombre, apellidos),
+                                       limite=2)
+        if len(parecidas) == 1:
+            usuario.persona = parecidas[0]
         self.guardar(usuario)
         self.registrar_usuario(usuario)
         if hoja is not None:
