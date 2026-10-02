@@ -436,7 +436,7 @@ class Contexto:
         enes = re.match(r'^(enes|escuela nacional de estudios superiores)\s+(unidad\s+)?(\w+)', base)
         if enes:  # Las ENES de la UNAM se escriben de muchas formas: «ENES, Morelia», «ENES Morelia, UNAM»…
             encontrada = qs.filter(nombre__iregex=r'\(ENES\) Unidad ' + patron_sin_acentos(enes.group(3))).first()
-        for i in ([] if encontrada else qs.filter(nombre__iregex=r'\y' + re.escape(base.split()[0]) if base else '.')):
+        for i in ([] if encontrada else qs.filter(nombre__iregex=r'\y' + patron_sin_acentos(base.split()[0]) if base else '.')):
             nombre_i = normalizar(re.sub(r'\([^)]*\)', '', i.nombre))
             siglas_i = {normalizar(m) for m in re.findall(r'\(([^)]+)\)', i.nombre)}
             if nombre_i == base or (siglas and siglas & siglas_i) or base in siglas_i or (
