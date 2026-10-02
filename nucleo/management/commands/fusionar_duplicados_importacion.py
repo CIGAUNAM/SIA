@@ -33,6 +33,25 @@ MODELOS = [
     ('distinciones.SociedadCientifica', 'nombre', ('usuario_id',)),
 ]
 
+#: Parecidos revisados a mano y confirmados como el mismo registro: (modelo, nombre que queda, nombres que se unen).
+REVISADOS = [
+    ('nucleo.Institucion', 'El Colegio de Michoacán, A.C. (COLMICH)', ['El Colegio de Michoacán']),
+    ('nucleo.Revista', 'Journal for Nature Conservation', ['Journal of Nature Conservation']),
+    ('vinculacion.RedAcademica', 'Red de Científicos Españoles en México (RECEMX)',
+     ['Red de Científicos Españoles en México, AC', 'Red de Científicos Españoles en México- RECEMX']),
+    ('vinculacion.RedAcademica',
+     'Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica y el Caribe (REDEUS-LAC)',
+     ['Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica',
+      'Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica (REDEUS-LAC)',
+      'Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica y el Caribe']),
+    ('nucleo.ProgramaAcademico', 'Estudios Sociales y Gestión Local', ['Estudios Social y Gestión Local']),
+    ('nucleo.Asignatura', 'Cubiertas y Usos del Territorio', ['Cubierta y Uso del Territorio']),
+    ('nucleo.Asignatura', 'Fundamentos de Geoestadística', ['Fundamentos en Geoestadística']),
+    ('nucleo.Asignatura', 'Geoinformación y Riesgo', ['Geoinformación y Riesgos']),
+    ('nucleo.Asignatura', 'Introducción a la Percepción Remota', ['Introduccion a Percepcion Remota']),
+    ('nucleo.Asignatura', 'Métodos de Evaluación del Paisaje', ['Métodos de Evaluación de los Paisajes']),
+]
+
 
 def clave(texto):
     return re.sub(r'\s+', ' ', normalizar(re.sub(r'\([^)]*\)', ' ', texto or ''))).strip()
@@ -98,6 +117,23 @@ class Command(BaseCommand):
                     self.stdout.write(f'  = «{str(nuevo)[:70]}»')
                 for nuevo, anterior in dudosos[:detalle]:
                     self.stdout.write(self.style.WARNING(f'  ? «{str(nuevo)[:60]}»  ~  «{str(anterior)[:60]}»'))
+            self.stdout.write(self.style.MIGRATE_HEADING('Parecidos revisados'))
+            for etiqueta, final, nombres in REVISADOS:
+                modelo = apps.get_model(etiqueta)
+                grupo = list(modelo.objects.filter(nombre__in=[final, *nombres]))
+                if not grupo:
+                    continue
+                grupo.sort(key=completitud, reverse=True)
+                conservar, quitar = grupo[0], grupo[1:]
+                if any([completar(conservar, otro) for otro in quitar]):
+                    conservar._change_reason = 'Datos completados al fusionar con su duplicado'
+                    conservar.save()
+                fusionar(conservar, quitar)
+                if conservar.nombre != final:
+                    conservar.nombre = final
+                    conservar._change_reason = 'Nombre corregido al fusionar con su duplicado'
+                    conservar.save()
+                self.stdout.write(f'  = «{conservar}» ← {len(quitar)}')
             if not aplicar:
                 transaction.set_rollback(True)
         self.stdout.write(self.style.SUCCESS('Fusión aplicada.' if aplicar else 'Simulacro: nada se guardó (usa --aplicar).'))
