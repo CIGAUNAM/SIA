@@ -94,7 +94,7 @@ class Command(BaseCommand):
                 estado = '' if e is None else ('<span class="ok">=</span>' if c == e else '<span class="no">≠</span>')
                 filas.append(f'<tr><td>{html.escape(str(clave))}</td><td>{c}</td>'
                              f'<td>{"" if e is None else e}</td><td>{estado}</td></tr>')
-            graficables = [k for k in claves if k != 'total']
+            graficables = [k for k in claves if k != 'total' and not k.endswith('· horas')]  # Las horas van en la tabla.
             datos.append({'id': f'g{n}', 'etiquetas': graficables, 'sia': [calculado.get(k, 0) for k in graficables],
                           'informe': [esperado.get(k) for k in graficables]})
             imagen = ''

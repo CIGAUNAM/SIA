@@ -289,22 +289,24 @@ def tesis(periodo):
 
 
 def cursos_posgrado(periodo):
-    """Figura 26: cursos de posgrado por programa, categoría y nivel de participación."""
+    """Figura 26: participaciones docentes en posgrado (cada académico en cada curso) por programa, categoría y nivel
+    de participación, con los cursos distintos que se impartieron y las horas."""
     from docencia.models import CursoEscolarizado as C
 
-    r, vistos = Counter(), set()
+    r, cursos, horas = Counter(), {}, Counter()
     for c in C.objects.filter(periodo.contiene('fecha_inicio'), nivel__in=['MAESTRIA', 'DOCTORADO']) \
             .select_related('programa', 'usuario').order_by('pk'):
-        clave = (c.asignatura_id, c.fecha_inicio, c.institucion_id, c.nombramiento)
-        if clave in vistos:  # Un curso compartido por varios académicos cuenta una vez.
-            continue
-        vistos.add(clave)
         programa = 'Posgrado en Geografía' if c.programa and 'geograf' in c.programa.nombre.lower() else 'Otros posgrados'
         categoria = {'INVESTIGADOR': 'INV', 'TECNICO': 'TEC', 'POSTDOCTORADO': 'POSDOC'}.get(c.usuario.tipo, 'OTRO')
         r[f'{programa} · {categoria} · {c.get_nombramiento_display()}'] += 1
+        # Un curso que imparten varios académicos (titulares o invitados) es uno solo.
+        cursos.setdefault(programa, set()).add((c.asignatura_id, c.fecha_inicio, c.institucion_id))
+        horas[programa] += c.total_horas
     resultado = OrderedDict()
     for programa in ('Posgrado en Geografía', 'Otros posgrados'):
         resultado[programa] = sum(n for k, n in r.items() if k.startswith(programa))
+        resultado[f'{programa} · cursos impartidos'] = len(cursos.get(programa, ()))
+        resultado[f'{programa} · horas'] = horas[programa]
         for k in sorted(k for k in r if k.startswith(programa)):
             resultado[k] = r[k]
     return resultado
