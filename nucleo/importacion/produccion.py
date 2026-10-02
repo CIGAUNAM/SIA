@@ -160,7 +160,7 @@ def proyectos(ctx, libro):
                 ctx.guardar(proyecto)
                 hoja.creado(P)
             else:
-                hoja.existente(P)
+                ctx.reportado(proyecto, hoja)
             objetivos = []
             for col in ('objetivos del desarrollo sostenible1', 'objetivos del desarrollo sostenible2',
                         'objetivos del desarrollo sostenible3', 'objetivos del desarrollo sostenible4',

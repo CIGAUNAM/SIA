@@ -40,11 +40,13 @@ class Command(BaseCommand):
                 for nombre in solo or MODULOS:
                     modulo = importlib.import_module(f'nucleo.importacion.{nombre}')
                     modulo.importar(ctx, ctx.libro(modulo.ARCHIVO))
+                cerrados = ctx.cerrar_no_reportados()
                 if not aplicar:
                     raise _Simulacro
         except _Simulacro:
             pass
         self.reporte(ctx, detalle)
+        self.stdout.write(f'Registros sin término cerrados por no volver a reportarse: {cerrados}')
         estado = 'aplicada' if aplicar else 'simulada (nada se guardó; usa --aplicar)'
         self.stdout.write(self.style.SUCCESS(f'Importación {estado}.'))
 

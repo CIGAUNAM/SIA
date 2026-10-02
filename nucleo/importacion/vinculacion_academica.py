@@ -181,11 +181,14 @@ def consejos_editoriales(ctx, libro):
             es_coleccion = re.search(r'colecci|serie', nombre, re.IGNORECASE)
             revista = None if es_coleccion else ctx.revista(nombre, f['pais'] if origen == C.Origen.EXTRANJERA else 'México')
             filtro = {'revista': revista} if revista else {'publicacion__iexact': nombre}
-            if C.objects.filter(usuario=usuario, tipo=tipo, **filtro).exists():
-                hoja.existente(C)
+            existente = C.objects.filter(usuario=usuario, tipo=tipo, **filtro).first()
+            if existente:
+                ctx.reportado(existente, hoja)
+                ctx.vigencia(existente, f['informes ciga'])
                 continue
-            ctx.guardar(C(tipo=tipo, revista=revista, publicacion='' if revista else nombre[:255], origen=origen,
+            consejo = ctx.guardar(C(tipo=tipo, revista=revista, publicacion='' if revista else nombre[:255], origen=origen,
                           fecha_inicio=inicio_periodo(f['informes ciga']) or SIN_FECHA, usuario=usuario))
+            ctx.vigencia(consejo, f['informes ciga'])
             hoja.creado(C)
     hoja.aviso('-', 'Los comités editoriales no traen fechas: inicio = el del periodo en que se reportaron.')
     return hoja
@@ -265,13 +268,16 @@ def comisiones(ctx, libro, hoja_nombre, col_tipo, col_clase, col_nombre):
             if fin and fin < inicio:
                 fin = inicio
             funcion = F.EVALUADOR if comision.seccion in ('DOCENCIA', 'EXTERNA', 'ARBITRAJE', 'COLEGIADO') else F.INTEGRANTE
-            if ComisionInstitucional.objects.filter(usuario=usuario, comision=comision, fecha_inicio=inicio,
-                                                    detalle__iexact=nombre[:255]).exists():
-                hoja.existente(ComisionInstitucional)
+            existente = ComisionInstitucional.objects.filter(usuario=usuario, comision=comision, fecha_inicio=inicio,
+                                                             detalle__iexact=nombre[:255]).first()
+            if existente:
+                ctx.reportado(existente, hoja)
+                ctx.vigencia(existente, f['informes ciga'])
                 continue
-            ctx.guardar(ComisionInstitucional(comision=comision, funcion=funcion, detalle=nombre[:255],
-                                              institucion=institucion, ambito=comision.ambito_sugerido,
-                                              fecha_inicio=inicio, fecha_fin=fin, usuario=usuario))
+            nueva = ctx.guardar(ComisionInstitucional(comision=comision, funcion=funcion, detalle=nombre[:255],
+                                                      institucion=institucion, ambito=comision.ambito_sugerido,
+                                                      fecha_inicio=inicio, fecha_fin=fin, usuario=usuario))
+            ctx.vigencia(nueva, f['informes ciga'])
             hoja.creado(ComisionInstitucional)
     return hoja
 
@@ -293,7 +299,8 @@ def redes(ctx, libro):
                     objetivos=texto(f['objetivos']) or '—', fecha_constitucion=fecha(None, None, constitucion)))
                 hoja.creado(RedAcademica)
             else:
-                hoja.existente(RedAcademica)
+                ctx.reportado(red, hoja)
+            ctx.vigencia(red, f.get(' 2'))  # La columna del periodo no tiene encabezado en esta hoja.
             personas = ctx.autores(f['academicos de la entidad participantes'])
             registrante = ctx.usuario(f['registrado por'])
             if registrante:
@@ -314,17 +321,20 @@ def sociedades(ctx, libro):
             usuario = _usuario(ctx, hoja, fila, f['registrado por'])
             if not usuario:
                 continue
-            if S.objects.filter(usuario=usuario, nombre__iexact=nombre[:255]).exists():
-                hoja.existente(S)
+            existente = S.objects.filter(usuario=usuario, nombre__iexact=nombre[:255]).first()
+            if existente:
+                ctx.reportado(existente, hoja)
+                ctx.vigencia(existente, f['informes ciga'])
                 continue
             participacion = normalizar(texto(f['participacion']))
             cargo = texto(f['cargo'])
             inicio = fecha(f['dia inicio'], f['mes inicio'], f['ano inicio'], por_defecto=inicio_periodo(f['informes ciga']))
             fin = fecha(f['dia fin'], f['mes fin'], f['ano fin'], por_defecto=None) if anio(f['ano fin']) else None
-            ctx.guardar(S(nombre=nombre[:255], descripcion=cargo if len(cargo) < 120 else '',
+            sociedad = ctx.guardar(S(nombre=nombre[:255], descripcion=cargo if len(cargo) < 120 else '',
                           tipo=S.Tipo.ELECCION if 'eleccion' in participacion else S.Tipo.INVITACION,
                           ambito=ambito(f['ambito'], Ambito.INTERNACIONAL), fecha_inicio=inicio,
                           fecha_fin=fin if fin and fin >= inicio else None, usuario=usuario))
+            ctx.vigencia(sociedad, f['informes ciga'])
             hoja.creado(S)
     return hoja
 

@@ -54,12 +54,6 @@ ADSCRIPCION = ('Adscripción', {'fields': ('numero_trabajador', 'ingreso_unam', 
                                            'ultimo_contrato')})
 
 
-class SituacionAcademicaInline(TabularInline):
-    """Nombramiento, PRIDE, SNII y contrato de cada año (corte de agosto); solo lo mantiene Administración."""
-    model = SituacionAcademica
-    fields = ['anio', 'nombramiento', 'pride', 'sni', 'area_sni', 'contrato']
-    autocomplete_fields = ['nombramiento']
-    extra = 0
 
 
 admin.site.unregister(Group)
@@ -117,7 +111,6 @@ class UserAdmin(EtiquetaPersonaMixin, BaseUserAdmin, ModelAdmin):
         PERFIL,
         ADSCRIPCION,
     )
-    inlines = [SituacionAcademicaInline]
     #: Debajo del formulario: formación académica y experiencia profesional de la cuenta.
     change_form_after_template = 'admin/nucleo/perfil_trayectoria.html'
 
@@ -142,9 +135,6 @@ class UserAdmin(EtiquetaPersonaMixin, BaseUserAdmin, ModelAdmin):
         form = super().get_form(request, obj, **kwargs)
         form.administrador = es_administrador(request.user)
         return form
-
-    def get_inlines(self, request, obj):
-        return self.inlines if es_administrador(request.user) and not self.es_mi_perfil(request, obj) else []
 
     def get_fieldsets(self, request, obj=None):
         if obj is not None and (not es_administrador(request.user) or self.es_mi_perfil(request, obj)):
@@ -419,6 +409,16 @@ class PaisAdmin(ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
+
+
+@admin.register(SituacionAcademica)
+class SituacionAcademicaAdmin(CatalogoAdmin):
+    """Nombramiento, PRIDE, SNII y contrato de cada académico por año (corte de agosto). Lo mantiene Administración."""
+    permisos_investigador = ()
+    list_display = ['usuario', 'anio', 'nombramiento', 'pride', 'sni', 'contrato']
+    list_filter = ['anio', 'pride', 'sni', 'contrato']
+    search_fields = ['usuario__first_name', 'usuario__last_name', 'usuario__email']
+    autocomplete_fields = ['usuario', 'nombramiento']
 
 
 @admin.register(Institucion)

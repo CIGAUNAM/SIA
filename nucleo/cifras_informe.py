@@ -11,6 +11,8 @@ from statistics import mean
 
 from django.db.models import Q
 
+from .similitud import normalizar
+
 
 @dataclass(frozen=True)
 class Periodo:
@@ -235,9 +237,12 @@ def vinculacion(periodo):
                                         participantes__usuario__isnull=False).distinct()
     r['Redes · nacionales'] = redes.exclude(ambito='INTERNACIONAL').count()
     r['Redes · internacionales'] = redes.filter(ambito='INTERNACIONAL').count()
-    sociedades = SociedadCientifica.objects.filter(periodo.vigente())
-    r['Sociedades · nacionales'] = sociedades.exclude(ambito='INTERNACIONAL').count()
-    r['Sociedades · internacionales'] = sociedades.filter(ambito='INTERNACIONAL').count()
+    # Sociedades distintas (varios académicos en la misma sociedad cuentan una vez), como en el informe.
+    sociedades = {}
+    for s in SociedadCientifica.objects.filter(periodo.vigente()).order_by('pk'):
+        sociedades.setdefault(normalizar(s.nombre), s.ambito)
+    r['Sociedades · nacionales'] = sum(1 for a in sociedades.values() if a != 'INTERNACIONAL')
+    r['Sociedades · internacionales'] = sum(1 for a in sociedades.values() if a == 'INTERNACIONAL')
     editoriales = ConsejoEditorial.objects.filter(periodo.vigente())
     r['Comités/consejos editoriales · nacionales'] = editoriales.filter(origen='NACIONAL').count()
     r['Comités/consejos editoriales · extranjeros'] = editoriales.filter(origen='EXTRANJERA').count()

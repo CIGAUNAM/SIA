@@ -196,6 +196,7 @@ class Contexto:
         self.motivo = motivo[:100]
         self.carpeta = carpeta
         self._libros = {}
+        self._vigencias = {}
         self.usuarios = []
         self._usuario_tokens = []
         for u in User.objects.select_related('persona'):
@@ -257,6 +258,39 @@ class Contexto:
     def hoja(self, nombre):
         self.hojas.append(Hoja(nombre))
         return self.hojas[-1]
+
+    def vigencia(self, obj, periodo):
+        """Anota en qué periodo se reportó un registro sin fecha de término (sociedad, red, comisión, comité).
+        Al final, lo que no se volvió a reportar en el último periodo se cierra al terminar el suyo."""
+        inicio = inicio_periodo(periodo)
+        if inicio:
+            clave = (type(obj), obj.pk)
+            self._vigencias[clave] = max(self._vigencias.get(clave, inicio), inicio)
+
+    def cerrar_no_reportados(self):
+        from datetime import date as fecha_
+
+        if not self._vigencias:
+            return 0
+        ultimo = max(self._vigencias.values())
+        cerrados = 0
+        for (modelo, pk), inicio in self._vigencias.items():
+            if inicio >= ultimo:
+                continue
+            obj = modelo.objects.filter(pk=pk, fecha_fin__isnull=True).first()
+            if obj is not None:
+                obj.fecha_fin = fecha_(inicio.year + 1, 6, 30)
+                obj._change_reason = 'Cerrado: no se volvió a reportar en el informe siguiente'
+                obj.save()
+                cerrados += 1
+        return cerrados
+
+    def reportado(self, obj, hoja):
+        """Un registro que ya existía y el informe vuelve a reportar: queda en su historial (así no se cierra como
+        registro abandonado del SIA anterior)."""
+        hoja.existente(type(obj))
+        obj._change_reason = 'Reportado de nuevo en las hojas del informe anual'
+        obj.save()
 
     def guardar(self, obj, **kwargs):
         obj._change_reason = self.motivo
