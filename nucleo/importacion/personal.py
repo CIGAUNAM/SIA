@@ -83,6 +83,7 @@ def importar(ctx, libro):
                 usuario.egreso_entidad = date(ANIO_CORTE, 8, 1)
             ctx.guardar(usuario)
             ctx.registrar_usuario(usuario)
+            ctx.dar_acceso(usuario)
             if not any(texto(f[c]) for c in ('formacion lic', 'formacion mae', 'formacion doc')):
                 pass
             elif not usuario.grados.exists():
@@ -152,6 +153,7 @@ def posdoctorantes(ctx):
                 usuario.egreso_entidad = usuario.egreso_entidad or fecha(f['dia fin'], f['mes fin'], f['ano fin'])
             ctx.guardar(usuario)
             ctx.registrar_usuario(usuario)
+            ctx.dar_acceso(usuario)
             if ixm:
                 for anio_ in range(max(inicio.year, 2023), ANIO_CORTE + 1):
                     situacion, creada = SituacionAcademica.objects.get_or_create(usuario=usuario, anio=anio_)

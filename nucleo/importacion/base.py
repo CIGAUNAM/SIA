@@ -217,6 +217,15 @@ class Contexto:
         self._usuario_tokens.append((usuario, _tokens(f'{usuario.first_name} {usuario.last_name}'),
                                      usuario.email.split('@')[0].lower()))
 
+    def dar_acceso(self, usuario):
+        """El personal académico entra al grupo Académicos, como las cuentas que se crean desde el admin."""
+        from django.contrib.auth.models import Group
+
+        from nucleo.permisos import GRUPO_ACADEMICOS
+
+        if usuario.tipo != User.Tipo.ADMINISTRATIVO and usuario.is_active:
+            usuario.groups.add(Group.objects.get_or_create(name=GRUPO_ACADEMICOS)[0])
+
     def libro(self, archivo):
         """Libro de Excel de la carpeta del informe (abierto una sola vez)."""
         import openpyxl
@@ -259,6 +268,7 @@ class Contexto:
             usuario.persona = parecidas[0]
         self.guardar(usuario)
         self.registrar_usuario(usuario)
+        self.dar_acceso(usuario)
         if hoja is not None:
             tipo = 'posdoc (su foto viene con las de posdoctorado)' if foto else 'falta indicar su tipo (posdoc, técnico…)'
             hoja.aviso(fila, f'Se creó la cuenta de «{usuario}» ({login}): {tipo}.')
