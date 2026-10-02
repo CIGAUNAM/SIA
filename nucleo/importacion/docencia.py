@@ -119,10 +119,13 @@ def formacion(ctx, libro):
                 continue
             hoja.filas += 1
             usuarios = ctx.cuentas(f['registrado por'], hoja, fila)
-            if not usuarios:
-                hoja.rechazo(fila, f'No se reconoce al académico «{texto(f["registrado por"])}».')
+            # Una tesis que registró un tutor externo del posgrado entra con él como persona (sin cuenta); lo demás
+            # (comités, sinodalías, movilidad…) es solo del personal de la entidad.
+            externo = None if usuarios or 'direccion de tesis' not in tipo else ctx.persona(f['registrado por'])
+            if not usuarios and externo is None:
+                hoja.rechazo(fila, f'«{texto(f["registrado por"])}» no es personal de la entidad (no tiene cuenta).')
                 continue
-            usuario, otros = usuarios[0], [u.persona for u in usuarios[1:]]
+            usuario, otros = (usuarios[0] if usuarios else None), [u.persona for u in usuarios[1:]]
             alumno = estudiante(ctx, f['nombre de estudiante'], f)
             nivel_ = nivel(f['grado academico'], f.get('programa academico carrera'))
             prog = programa(ctx, f.get('programa academico carrera'), nivel_)
@@ -135,7 +138,8 @@ def formacion(ctx, libro):
             if tutor is None and otros:
                 tutor = otros[0] if 'direccion de tesis' not in tipo else None
             if 'direccion de tesis' in tipo:
-                tesis(ctx, hoja, fila, f, usuario, alumno, nivel_, prog, inst, inicio, fin, titulo_, tutor,
+                tesis(ctx, hoja, fila, f, usuario.persona if usuario else externo, alumno, nivel_, prog, inst, inicio, fin,
+                      titulo_, tutor,
                       concluida='concluida' in tipo, codirector=otros[0] if otros else None)
             elif 'comites tutorales' in tipo:
                 if ComiteTutoral.objects.filter(estudiante=alumno, comitetutoralmiembro__persona=usuario.persona).exists():
@@ -180,7 +184,7 @@ def formacion(ctx, libro):
     return hoja
 
 
-def tesis(ctx, hoja, fila, f, usuario, alumno, nivel_, prog, inst, inicio, fin, titulo_, tutor, concluida,
+def tesis(ctx, hoja, fila, f, responsable, alumno, nivel_, prog, inst, inicio, fin, titulo_, tutor, concluida,
           codirector=None):
     if not titulo_:
         titulo_ = f'Tesis de {alumno} ({N(nivel_).label.lower()})'
@@ -192,9 +196,9 @@ def tesis(ctx, hoja, fila, f, usuario, alumno, nivel_, prog, inst, inicio, fin, 
             ctx.guardar(existente)
         hoja.existente(DireccionTesis)
         return
-    director, codirector = usuario.persona, codirector or ctx.persona(f.get('cotutor'))
-    if tutor and tutor != usuario.persona:
-        director, codirector = tutor, usuario.persona
+    director, codirector = responsable, codirector or ctx.persona(f.get('cotutor'))
+    if tutor and tutor != responsable:
+        director, codirector = tutor, responsable
     beca_ = beca(f.get('cuenta con beca'), nivel_)
     reconocimiento = texto(f.get('reconocimiento'))
     t = DireccionTesis(titulo_tesis=titulo_[:255], nivel=nivel_, programa=prog, asesorado=alumno, institucion=inst,

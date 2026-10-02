@@ -225,9 +225,10 @@ class Contexto:
             self._libros[archivo] = openpyxl.load_workbook(self.carpeta / archivo, read_only=True, data_only=True)
         return self._libros[archivo]
 
-    def cuenta(self, valor, hoja=None, fila=None, crear=True):  # crear: True, False o 'posdoc' (solo posdocs)
-        """Como `usuario`, pero si quien registró algo no tiene cuenta, la crea: registró producción en el sistema con
-        que se armó el informe, así que es de la entidad. Viene como «Nombre Apellido(login)» o «Apellidos, Nombre»."""
+    def cuenta(self, valor, hoja=None, fila=None, crear=True):
+        """Como `usuario`, pero crea la cuenta del personal de la entidad que aún no la tiene: quien viene como
+        «Nombre Apellido(login)» (entró al sistema con que se armó el informe) o un posdoc (su foto viene con las de
+        posdoctorado). A los externos no se les crea cuenta: figuran solo como personas."""
         t = texto(valor)
         # «Merlo, A.»: con iniciales, como en las citas (solo si una sola cuenta coincide).
         usuario = self.usuario(valor) or (self._usuario_de_cita(t) if re.search(r',\s*\w\.', t) else None)
@@ -245,8 +246,8 @@ class Contexto:
             apellidos, nombre = m.group(1).strip(), m.group(2).strip()
             login = None
         foto = self._foto_posdoc(nombre, apellidos)
-        if crear == 'posdoc' and not foto:
-            return None
+        if login is None and not foto:
+            return None  # Solo tiene cuenta el personal de la entidad: quien entró al sistema (login) o es posdoc.
         login = login or foto or re.sub(r'[^a-z]', '', normalizar(nombre)[:1] + normalizar(apellidos.split('-')[0].split()[0]))
         usuario = User(email=f'{login}@{DOMINIO}', first_name=nombre, last_name=apellidos, is_active=True, is_staff=True,
                        tipo=User.Tipo.POSTDOCTORADO if foto else User.Tipo.OTRO)
@@ -278,12 +279,10 @@ class Contexto:
                      and len(f) - len(apellido) <= 3), None)
 
     def cuentas(self, valor, hoja=None, fila=None):
-        """Cuentas de varios académicos en una celda («Ruiz, Cinthia & Vieyra, Antonio»), en orden. Con varios nombres
-        suele ir algún coautor externo, así que entonces solo se crea la cuenta de quien es posdoc de la entidad."""
+        """Cuentas de varios académicos en una celda («Ruiz, Cinthia & Vieyra, Antonio»), en orden."""
         resultado = []
-        partes = [p for p in re.split(r'\s*(?:&|;|/|\s+y\s+|\s+a\s+)\s*', texto(valor)) if p.strip()]
-        for parte in partes:
-            usuario = self.cuenta(parte, hoja, fila, crear=True if len(partes) == 1 else 'posdoc')
+        for parte in re.split(r'\s*(?:&|;|/|\s+y\s+|\s+a\s+)\s*', texto(valor)):
+            usuario = self.cuenta(parte, hoja, fila) if parte.strip() else None
             if usuario and usuario not in resultado:
                 resultado.append(usuario)
         return resultado
