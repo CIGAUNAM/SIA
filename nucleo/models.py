@@ -732,7 +732,7 @@ class Libro(Compartido, EstadoPublicacion):
         DIVULGACION = 'DIVULGACION', 'Divulgación'
         DOCENCIA = 'DOCENCIA', 'Docencia'
 
-    titulo = models.CharField('título', max_length=255, unique=True)
+    titulo = models.CharField('título', max_length=255)
     tipo = models.CharField(max_length=20, choices=Tipo.choices)
     participantes = models.ManyToManyField('Persona', through='LibroParticipante', related_name='libros')
     agradecimientos = models.ManyToManyField('Persona', blank=True, related_name='libros_agradecimientos')
@@ -749,10 +749,11 @@ class Libro(Compartido, EstadoPublicacion):
                                           help_text='El libro pasó por dictamen de pares académicos antes de publicarse.')
 
     class Meta:
-        ordering = ['titulo']
+        ordering = ['titulo', 'numero_edicion']
+        constraints = [models.UniqueConstraint(fields=['titulo', 'numero_edicion'], name='libro_edicion_unica')]
 
     def __str__(self):
-        return self.titulo
+        return self.titulo if self.numero_edicion == 1 else f'{self.titulo} ({self.numero_edicion}.ª ed.)'
 
 
 class LibroParticipante(Participante):

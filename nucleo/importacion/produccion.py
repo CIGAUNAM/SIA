@@ -250,12 +250,23 @@ def articulos(ctx, libro):
 # --------------------------------------------------------------------------------------------------- libros
 def _libro(ctx, f, nombre, tipo, periodo, col_anio='ano de publicacion', col_estado='estado de la publicacion'):
     existente = _duplicado(Libro, 'titulo', nombre)
+    edicion = numero(f.get('numero de edicion')) or 1
     if existente:
-        return existente, False
+        ediciones = Libro.objects.filter(titulo=existente.titulo)
+        isbn, limpio = _isbn(f.get('isbn')), lambda v: re.sub(r'[^\dX]', '', (v or '').upper())
+        anio_ = anio(f.get(col_anio))
+        # Otra edición solo si cambian el ISBN y el año: el ISBN del Excel a veces es otro del mismo libro y un año
+        # distinto suele ser el mismo libro reportado en prensa.
+        if not isbn or not anio_ or any(limpio(e.isbn) in (limpio(isbn), '') or e.fecha_publicado is None
+                                        or e.fecha_publicado.year == anio_ for e in ediciones):
+            return next((e for e in ediciones if limpio(e.isbn) == limpio(isbn)), existente), False
+        # El Excel suele dejar «1» en el número de edición.
+        nombre = existente.titulo
+        edicion = max(edicion, max(e.numero_edicion for e in ediciones) + 1)
     libro_ = Libro(titulo=nombre[:255], tipo=tipo, editorial=texto(f.get('casa s editorial es'))[:255],
                    pais=_pais(f.get('pais')) or ctx.mexico, ciudad=texto(f.get('ciudad'))[:255],
                    coleccion=texto(f.get('coleccion serie numero o volumen'))[:255],
-                   numero_edicion=numero(f.get('numero de edicion')) or 1,
+                   numero_edicion=edicion,
                    numero_paginas=numero(f.get('paginas totales del libro')) or None,
                    isbn=_isbn(f.get('isbn')), url=texto(f.get('vinculo web'))[:200] if texto(f.get('vinculo web')).startswith('http') else '',
                    arbitrado_pares=si_no(f.get('arbitrado por pares academicos')))

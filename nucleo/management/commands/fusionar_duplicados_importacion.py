@@ -26,7 +26,7 @@ MODELOS = [
     ('nucleo.Asignatura', 'nombre', ()),
     ('nucleo.ProgramaAcademico', 'nombre', ('nivel',)),
     ('nucleo.MedioDivulgacion', 'nombre', ('tipo',)),
-    ('nucleo.Libro', 'titulo', ()),
+    ('nucleo.Libro', 'titulo', ('numero_edicion',)),
     ('vinculacion.RedAcademica', 'nombre', ()),
     ('investigacion.ProyectoInvestigacion', 'nombre', ()),
     ('investigacion.ArticuloCientifico', 'titulo', ()),
