@@ -458,10 +458,10 @@ class Conversor:
             self.participantes('investigacion.articulocientificoautor', 'articulo', pk, f['autores'])
 
         for pk, f in self.fuente('investigacion.capitulolibroinvestigacion').items():
-            self.agregar('investigacion.capitulolibroinvestigacion', pk, {
+            self.agregar('nucleo.capitulolibro', pk, {
                 'titulo': txt(f['titulo']), 'libro': f['libro'], 'pagina_inicio': f['pagina_inicio'],
                 'pagina_fin': f['pagina_fin']})
-            self.participantes('investigacion.capitulolibroinvestigacionautor', 'capitulo', pk, f['autores'])
+            self.participantes('nucleo.capitulolibroautor', 'capitulo', pk, f['autores'])
 
         for pk, f in self.fuente('investigacion.mapaarbitrado').items():
             self.agregar('investigacion.mapaarbitrado', pk, {
@@ -605,12 +605,13 @@ class Conversor:
                 'url': txt(f['url']), 'solo_electronico': f['solo_electronico'],
                 'agradecimientos': [p for p in f['agradecimientos'] if self.persona(p)], **self.publicacion(f)})
             self.participantes('divulgacion_cientifica.articulodivulgacionautor', 'articulo', pk, f['autores'])
-        for pk, f in self.fuente('divulgacion_cientifica.capitulolibrodivulgacion').items():
-            self.agregar('divulgacion_cientifica.capitulolibrodivulgacion', pk, {
+        # Los capítulos de divulgación van al mismo modelo que los de investigación (el tipo lo da el libro).
+        for f in self.fuente('divulgacion_cientifica.capitulolibrodivulgacion').values():
+            pk = self.agregar('nucleo.capitulolibro', self.nuevo_pk('nucleo.capitulolibro'), {
                 'titulo': txt(f['titulo']), 'libro': f['libro'], 'pagina_inicio': f['pagina_inicio'],
                 'pagina_fin': f['pagina_fin']})
             autores = f['autores'] or ([f['usuario']] if f.get('usuario') else [])
-            self.participantes('divulgacion_cientifica.capitulolibrodivulgacionautor', 'capitulo', pk, autores)
+            self.participantes('nucleo.capitulolibroautor', 'capitulo', pk, autores)
         for pk, f in self.fuente('divulgacion_cientifica.organizacioneventodivulgacion').items():
             evento = (self.mapa_eventos['divulgacion'].get(f['evento'])
                       or self.mapa_eventos['nucleo'].get(f['evento2']))

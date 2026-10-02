@@ -169,8 +169,8 @@ def prioridades(periodo):
 # --------------------------------------------------------------------------------------------------- publicaciones
 def publicaciones(periodo):
     """Figura 15: productos publicados por tipo y origen (i: internacional, n: nacional)."""
-    from investigacion.models import ArticuloCientifico, CapituloLibroInvestigacion
-    from .models import Libro
+    from investigacion.models import ArticuloCientifico
+    from .models import CapituloLibro, Libro
 
     def origen(pais):
         return 'n' if pais.code2 == 'MX' else 'i'
@@ -186,7 +186,8 @@ def publicaciones(periodo):
     for libro in Libro.objects.filter(periodo.contiene('fecha_publicado'), tipo=Libro.Tipo.INVESTIGACION,
                                       libroparticipante__persona__usuario__isnull=False).distinct().select_related('pais'):
         r[f'Libros ({origen(libro.pais)})'] += 1
-    for c in CapituloLibroInvestigacion.objects.filter(periodo.contiene('libro__fecha_publicado')) \
+    for c in CapituloLibro.objects.filter(periodo.contiene('libro__fecha_publicado'),
+                                          libro__tipo=Libro.Tipo.INVESTIGACION) \
             .select_related('libro__pais'):
         r[f'Capítulos ({origen(c.libro.pais)})'] += 1
     resultado = OrderedDict(total=sum(r.values()))

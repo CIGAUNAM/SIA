@@ -6,14 +6,12 @@ from datetime import date
 from difflib import SequenceMatcher
 from decimal import Decimal, InvalidOperation
 
-from divulgacion_cientifica.models import (ArticuloDivulgacion, ArticuloDivulgacionAutor, CapituloLibroDivulgacion,
-                                           CapituloLibroDivulgacionAutor)
+from divulgacion_cientifica.models import ArticuloDivulgacion, ArticuloDivulgacionAutor
 from difusion_cientifica.models import MemoriaInExtenso, MemoriaInExtensoAutor
-from investigacion.models import (ArticuloCientifico, ArticuloCientificoAutor, CapituloLibroInvestigacion,
-                                  CapituloLibroInvestigacionAutor, MapaArbitrado, MapaArbitradoAutor,
+from investigacion.models import (ArticuloCientifico, ArticuloCientificoAutor, MapaArbitrado, MapaArbitradoAutor,
                                   ObjetivoDesarrolloSostenible, ProyectoInvestigacion, ProyectoResponsable,
                                   PublicacionTecnica, PublicacionTecnicaAutor)
-from nucleo.models import SIN_FECHA, Indice, Libro, LibroParticipante, MetricaRevista, Revista, StatusPublicacion
+from nucleo.models import SIN_FECHA, CapituloLibro, CapituloLibroAutor, Indice, Libro, LibroParticipante, MetricaRevista, Revista, StatusPublicacion
 from nucleo.similitud import normalizar
 
 from .base import _pais, anio, fecha, fecha_en_periodo, inicio_periodo, leer_hoja, numero, si_no, texto, titulo
@@ -291,8 +289,7 @@ def libros(ctx, libro, hoja_nombre='Libros publicados', tipo=Libro.Tipo.INVESTIG
     return hoja
 
 
-def capitulos(ctx, libro, hoja_nombre='Capítulos', tipo=Libro.Tipo.INVESTIGACION, modelo=CapituloLibroInvestigacion,
-              through=CapituloLibroInvestigacionAutor, col_autores='autores del capitulo'):
+def capitulos(ctx, libro, hoja_nombre='Capítulos', tipo=Libro.Tipo.INVESTIGACION, col_autores='autores del capitulo'):
     hoja = ctx.hoja(f'{ARCHIVO} › {hoja_nombre}')
     for fila, f in leer_hoja(libro, hoja_nombre):
         with ctx.fila(hoja, fila):
@@ -306,15 +303,20 @@ def capitulos(ctx, libro, hoja_nombre='Capítulos', tipo=Libro.Tipo.INVESTIGACIO
                 hoja.creado(Libro)
                 editores = ctx.autores(f.get('editores coordinadores del libro'))
                 _participantes(ctx, LibroParticipante, 'libro', libro_, editores, rol=LibroParticipante.Rol.EDITOR)
-            existente = modelo.objects.filter(libro=libro_, titulo__iexact=nombre).first()
+            # El mismo capítulo a veces se reporta en dos hojas con el título algo distinto («… en Michoacán»).
+            clave = normalizar(nombre)
+            existente = next((c for c in CapituloLibro.objects.filter(libro=libro_)
+                              if min(len(clave), len(c.titulo)) >= 25 and (
+                                  clave.startswith(normalizar(c.titulo)) or normalizar(c.titulo).startswith(clave)
+                                  or SequenceMatcher(None, clave, normalizar(c.titulo)).ratio() >= 0.9)), None)
             if existente:
-                hoja.existente(modelo)
+                hoja.existente(CapituloLibro)
                 continue
-            capitulo = modelo(libro=libro_, titulo=nombre[:255])
+            capitulo = CapituloLibro(libro=libro_, titulo=nombre[:255])
             _paginas(capitulo, f.get('pagina de inicio', f.get('paginas inicio')), f.get('pagina de termino', f.get('paginas fin')))
             ctx.guardar(capitulo)
-            hoja.creado(modelo)
-            _participantes(ctx, through, 'capitulo', capitulo, _autores(ctx, f, col_autores))
+            hoja.creado(CapituloLibro)
+            _participantes(ctx, CapituloLibroAutor, 'capitulo', capitulo, _autores(ctx, f, col_autores))
     return hoja
 
 
@@ -457,5 +459,4 @@ def importar(ctx, libro):
     resenas(ctx, libro)
     articulos_divulgacion(ctx, libro)
     libros(ctx, libro, 'lib div', Libro.Tipo.DIVULGACION, encabezado=1, col_rol='nivel de responsabilidad')
-    capitulos(ctx, libro, 'cap divulg', Libro.Tipo.DIVULGACION, CapituloLibroDivulgacion,
-              CapituloLibroDivulgacionAutor, col_autores='autor es')
+    capitulos(ctx, libro, 'cap divulg', Libro.Tipo.DIVULGACION, col_autores='autor es')

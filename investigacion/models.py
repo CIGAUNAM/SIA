@@ -2,7 +2,7 @@ from cities_light.models import Country
 from django.conf import settings
 from django.db import models
 
-from nucleo.models import (anio_o_sf, CapituloLibro, EstadoPublicacion, Institucion, Participante, Periodo, Persona,
+from nucleo.models import (anio_o_sf, EstadoPublicacion, Institucion, Participante, Periodo, Persona,
                            Revista, normalizar_doi, requerido_si, validar_paginas)
 
 
@@ -186,25 +186,6 @@ class ArticuloCientificoAutor(Participante):
         verbose_name = 'autor'
         verbose_name_plural = 'autores'
         constraints = [models.UniqueConstraint(fields=['articulo', 'persona'], name='articulo_cientifico_autor_unico')]
-
-
-class CapituloLibroInvestigacion(CapituloLibro):
-    autores = models.ManyToManyField(Persona, through='CapituloLibroInvestigacionAutor',
-                                     related_name='capitulos_investigacion')
-
-    class Meta(CapituloLibro.Meta):
-        verbose_name = 'capítulo en libro de investigación'
-        verbose_name_plural = 'capítulos en libros de investigación'
-        constraints = [models.UniqueConstraint(fields=['titulo', 'libro'], name='capitulo_investigacion_unico')]
-
-
-class CapituloLibroInvestigacionAutor(Participante):
-    capitulo = models.ForeignKey(CapituloLibroInvestigacion, on_delete=models.CASCADE)
-
-    class Meta(Participante.Meta):
-        verbose_name = 'autor'
-        verbose_name_plural = 'autores'
-        constraints = [models.UniqueConstraint(fields=['capitulo', 'persona'], name='capitulo_investigacion_autor_unico')]
 
 
 class MapaArbitrado(EstadoPublicacion):

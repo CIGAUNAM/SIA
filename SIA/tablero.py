@@ -38,8 +38,8 @@ PUBLICADO = {'status': StatusPublicacion.PUBLICADO}
 INDICADORES = [
     Indicador('Artículos científicos publicados', 'investigacion.ArticuloCientifico', 'fecha_publicado',
               'autores__usuario', PUBLICADO),
-    Indicador('Capítulos en libros de investigación', 'investigacion.CapituloLibroInvestigacion',
-              'libro__fecha_publicado', 'autores__usuario', {'libro__status': StatusPublicacion.PUBLICADO}),
+    Indicador('Capítulos en libros de investigación', 'nucleo.CapituloLibro', 'libro__fecha_publicado',
+              'autores__usuario', {'libro__status': StatusPublicacion.PUBLICADO, 'libro__tipo': 'INVESTIGACION'}),
     Indicador('Libros publicados', 'nucleo.Libro', 'fecha_publicado', 'participantes__usuario', PUBLICADO),
     Indicador('Proyectos de investigación iniciados', 'investigacion.ProyectoInvestigacion', 'fecha_inicio',
               'responsables__usuario'),

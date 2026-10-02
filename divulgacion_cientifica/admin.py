@@ -3,8 +3,8 @@ from django.contrib import admin
 from nucleo.admin_base import ParticipanteInline, PropietarioAdmin, lista_personas
 from nucleo.utils import prefetch_personas
 
-from .models import (ArticuloDivulgacion, ArticuloDivulgacionAutor, CapituloLibroDivulgacion,
-                     CapituloLibroDivulgacionAutor, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion,
+from .models import (ArticuloDivulgacion, ArticuloDivulgacionAutor, OrganizacionEventoDivulgacion,
+                     ParticipacionEventoDivulgacion,
                      ParticipacionEventoDivulgacionAutor, ProgramaMedio)
 
 
@@ -36,22 +36,6 @@ class ArticuloDivulgacionAdmin(PropietarioAdmin):
     @admin.display(description='autores')
     def autores_(self, obj):
         return lista_personas(obj, 'autores')
-
-
-class CapituloLibroDivulgacionAutorInline(ParticipanteInline):
-    model = CapituloLibroDivulgacionAutor
-
-
-@admin.register(CapituloLibroDivulgacion)
-class CapituloLibroDivulgacionAdmin(PropietarioAdmin):
-    propietarios = ('autores__usuario',)
-    autoria = 'autores'
-    list_display = ['titulo', 'libro']
-    search_fields = ['titulo', 'libro__titulo']
-    campo_fecha = 'libro__fecha_publicado'
-    campos_similitud = ('titulo',)
-    autocomplete_fields = ['libro']
-    inlines = [CapituloLibroDivulgacionAutorInline]
 
 
 @admin.register(OrganizacionEventoDivulgacion)

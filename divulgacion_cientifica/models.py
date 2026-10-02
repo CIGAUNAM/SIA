@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 
 from difusion_cientifica.models import TipoParticipacionOrganizacion
-from nucleo.models import (Ambito, CapituloLibro, EstadoPublicacion, Evento, Institucion, MedioDivulgacion,
+from nucleo.models import (Ambito, EstadoPublicacion, Evento, Institucion, MedioDivulgacion,
                            Participante, Persona, Revista, requerido_si, validar_paginas)
 
 
@@ -38,25 +38,6 @@ class ArticuloDivulgacionAutor(Participante):
         verbose_name = 'autor'
         verbose_name_plural = 'autores'
         constraints = [models.UniqueConstraint(fields=['articulo', 'persona'], name='articulo_divulgacion_autor_unico')]
-
-
-class CapituloLibroDivulgacion(CapituloLibro):
-    autores = models.ManyToManyField(Persona, through='CapituloLibroDivulgacionAutor',
-                                     related_name='capitulos_divulgacion')
-
-    class Meta(CapituloLibro.Meta):
-        verbose_name = 'capítulo en libro de divulgación'
-        verbose_name_plural = 'capítulos en libros de divulgación'
-        constraints = [models.UniqueConstraint(fields=['titulo', 'libro'], name='capitulo_divulgacion_unico')]
-
-
-class CapituloLibroDivulgacionAutor(Participante):
-    capitulo = models.ForeignKey(CapituloLibroDivulgacion, on_delete=models.CASCADE)
-
-    class Meta(Participante.Meta):
-        verbose_name = 'autor'
-        verbose_name_plural = 'autores'
-        constraints = [models.UniqueConstraint(fields=['capitulo', 'persona'], name='capitulo_divulgacion_autor_unico')]
 
 
 class OrganizadoPor(models.TextChoices):

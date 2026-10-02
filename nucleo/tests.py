@@ -229,8 +229,7 @@ class CatalogoCompartidoTests(Datos):
         self.assertEqual(self.editar_revista(self.administrativa).status_code, 302)
 
     def test_libro_lo_editan_todos_sus_autores_con_cuenta(self):
-        from investigacion.models import CapituloLibroInvestigacion, CapituloLibroInvestigacionAutor
-        from nucleo.models import Libro, LibroParticipante
+        from nucleo.models import CapituloLibro, CapituloLibroAutor, Libro, LibroParticipante
         libro = Libro.objects.create(titulo='Atlas', tipo='INVESTIGACION', pais=self.mexico, status='PUBLICADO',
                                      fecha_publicado=date(2018, 1, 1))
         LibroParticipante.objects.create(libro=libro, persona=self.ana.persona, orden=1)
@@ -245,9 +244,8 @@ class CatalogoCompartidoTests(Datos):
         self.client.force_login(tercero)  # No figura en el libro: solo lo consulta.
         self.assertFalse(self.client.get(url).context['has_change_permission'])
         self.assertContains(self.client.get(url), 'quienes figuran en él')
-        capitulo = CapituloLibroInvestigacion.objects.create(libro=libro, titulo='Cap. de Carla', pagina_inicio=1,
-                                                             pagina_fin=9)
-        CapituloLibroInvestigacionAutor.objects.create(capitulo=capitulo, persona=tercero.persona, orden=1)
+        capitulo = CapituloLibro.objects.create(libro=libro, titulo='Cap. de Carla', pagina_inicio=1, pagina_fin=9)
+        CapituloLibroAutor.objects.create(capitulo=capitulo, persona=tercero.persona, orden=1)
         self.client.force_login(self.ana)
         self.assertTrue(self.client.get(url).context['has_change_permission'])  # Aunque otros lo usen.
 

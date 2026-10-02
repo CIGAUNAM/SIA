@@ -437,7 +437,8 @@ class Contexto:
 
     def autores(self, cadena, adscritos=''):
         """Personas de una lista de autores en cualquiera de los formatos de `_nombres_en_lista`."""
-        t = texto(cadena) or texto(adscritos)
+        # Un autor por renglón («Borrego, Armonía⏎Rivas, Hilda»): el salto de línea separa como «;».
+        t = texto(re.sub(r'\s*[\r\n]+\s*', '; ', str(cadena)) if cadena else '') or texto(adscritos)
         if not t:
             return []
         resultado = []

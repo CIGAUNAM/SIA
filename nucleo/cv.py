@@ -23,8 +23,8 @@ from unfold.widgets import (UnfoldAdminCheckboxSelectMultipleWidget, UnfoldAdmin
 
 from .admin_base import es_administrador, persona_de
 from .documentos import ErrorDocumento, respuesta_documento
-from .models import (ConfiguracionEntidad, Libro, LibroParticipante, NivelAcademico, StatusPublicacion, User, anio_o_sf,
-                     es_sin_fecha)
+from .models import (CapituloLibro, ConfiguracionEntidad, Libro, LibroParticipante, NivelAcademico, StatusPublicacion,
+                     User, anio_o_sf, es_sin_fecha)
 from .utils import personas_ordenadas, prefetch_personas
 
 
@@ -195,8 +195,7 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
     from difusion_cientifica.models import (MemoriaInExtenso, OrganizacionEventoAcademico,
                                             ParticipacionEventoAcademico)
     from distinciones.models import ComisionExpertos, DistincionAcademico, DistincionAlumno, SociedadCientifica
-    from divulgacion_cientifica.models import (ArticuloDivulgacion, CapituloLibroDivulgacion,
-                                               OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion,
+    from divulgacion_cientifica.models import (ArticuloDivulgacion, OrganizacionEventoDivulgacion, ParticipacionEventoDivulgacion,
                                                ProgramaMedio)
     from docencia.models import ArticuloDocencia, CursoEscolarizado, CursoExtracurricular, ProgramaEstudio
     from experiencia_profesional.models import CapacidadPotencialidad, ExperienciaProfesional, LineaInvestigacion
@@ -204,7 +203,7 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
     from formacion_recursos_humanos.models import (AsesoriaEstudiante, ComiteCandidaturaDoctoral, ComiteTutoral,
                                                    DireccionTesis, GrupoInvestigacionInterno,
                                                    SupervisionPostdoctoral)
-    from investigacion.models import (ArticuloCientifico, CapituloLibroInvestigacion, MapaArbitrado,
+    from investigacion.models import (ArticuloCientifico, MapaArbitrado,
                                       ProyectoInvestigacion, PublicacionTecnica)
     from movilidad_academica.models import MovilidadAcademica
     from vinculacion.models import ArbitrajePublicacion, Convenio, OtraComision, RedAcademica, ServicioAsesoriaExterna
@@ -280,8 +279,8 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
                     'revista')]),
             ('Libros', libros(Libro.Tipo.INVESTIGACION)),
             ('Capítulos en libros', [
-                _capitulo(x) for x in con_autores(CapituloLibroInvestigacion.objects.filter(autores=p)).select_related(
-                    'libro')]),
+                _capitulo(x) for x in con_autores(CapituloLibro.objects.filter(
+                    autores=p, libro__tipo=Libro.Tipo.INVESTIGACION)).select_related('libro')]),
             ('Mapas arbitrados', [
                 _publicacion(x, x.publicacion) for x in con_autores(MapaArbitrado.objects.filter(autores=p))]),
             ('Publicaciones técnicas', [
@@ -314,8 +313,8 @@ def secciones_cv(usuario, desde=None, hasta=None, incluir=None):
                     'revista')]),
             ('Libros', libros(Libro.Tipo.DIVULGACION)),
             ('Capítulos en libros', [
-                _capitulo(x) for x in con_autores(CapituloLibroDivulgacion.objects.filter(autores=p)).select_related(
-                    'libro')]),
+                _capitulo(x) for x in con_autores(CapituloLibro.objects.filter(
+                    autores=p, libro__tipo=Libro.Tipo.DIVULGACION)).select_related('libro')]),
             ('Participación en eventos de divulgación', [
                 en_fecha(x, x.fecha, f'{_personas(x)} ({_anio_texto(x.fecha)})', b(x.titulo), i(x.evento.nombre))
                 for x in con_autores(ParticipacionEventoDivulgacion.objects.filter(autores=p)).select_related(

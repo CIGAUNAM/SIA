@@ -757,8 +757,9 @@ class Libro(Compartido, EstadoPublicacion):
 
 
 class LibroParticipante(Participante):
+    """Quien escribió el libro completo o lo coordinó; los autores de un capítulo van en `CapituloLibroAutor`."""
     class Rol(models.TextChoices):
-        AUTOR = 'AUTOR', 'Autor'
+        AUTOR = 'AUTOR', 'Autor del libro completo'
         EDITOR = 'EDITOR', 'Editor'
         COORDINADOR = 'COORDINADOR', 'Coordinador'
         COMPILADOR = 'COMPILADOR', 'Compilador'
@@ -767,21 +768,24 @@ class LibroParticipante(Participante):
     rol = models.CharField(max_length=20, choices=Rol.choices, default=Rol.AUTOR)
 
     class Meta(Participante.Meta):
-        verbose_name = 'participante'
-        verbose_name_plural = 'participantes'
+        verbose_name = 'autor o coordinador'
+        verbose_name_plural = 'autores y coordinadores del libro'
         constraints = [models.UniqueConstraint(fields=['libro', 'persona', 'rol'], name='libro_participante_unico')]
 
 
 class CapituloLibro(models.Model):
-    """Base de los capítulos en libros (investigación y divulgación)."""
-    titulo = models.CharField('título', max_length=255)
-    libro = models.ForeignKey(Libro, on_delete=models.PROTECT)
+    """Capítulo de un libro, con sus propios autores. Es de investigación o de divulgación según el tipo del libro."""
+    libro = models.ForeignKey(Libro, on_delete=models.PROTECT, related_name='capitulos')
+    titulo = models.CharField('título del capítulo', max_length=255)
     pagina_inicio = models.PositiveIntegerField('página inicial', null=True, blank=True)
     pagina_fin = models.PositiveIntegerField('página final', null=True, blank=True)
+    autores = models.ManyToManyField('Persona', through='CapituloLibroAutor', related_name='capitulos')
 
     class Meta:
-        abstract = True
-        ordering = ['titulo']
+        ordering = ['libro', 'pagina_inicio', 'titulo']
+        verbose_name = 'capítulo de libro'
+        verbose_name_plural = 'capítulos de libros'
+        constraints = [models.UniqueConstraint(fields=['titulo', 'libro'], name='capitulo_libro_unico')]
 
     def __str__(self):
         return f'{self.titulo} — {self.libro}'
@@ -789,6 +793,15 @@ class CapituloLibro(models.Model):
     def clean(self):
         super().clean()
         validar_paginas(self)
+
+
+class CapituloLibroAutor(Participante):
+    capitulo = models.ForeignKey(CapituloLibro, on_delete=models.CASCADE)
+
+    class Meta(Participante.Meta):
+        verbose_name = 'autor del capítulo'
+        verbose_name_plural = 'autores del capítulo'
+        constraints = [models.UniqueConstraint(fields=['capitulo', 'persona'], name='capitulo_libro_autor_unico')]
 
 
 # ---------------------------------------------------------------------------

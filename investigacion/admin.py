@@ -11,7 +11,7 @@ from nucleo.models import normalizar_doi
 from nucleo.utils import prefetch_personas
 
 from .models import (ActividadApoyoTecnico, ApoyoTecnico, ArticuloCientifico, ArticuloCientificoAutor,
-                     CapituloLibroInvestigacion, CapituloLibroInvestigacionAutor, MapaArbitrado, MapaArbitradoAutor,
+                     MapaArbitrado, MapaArbitradoAutor,
                      ObjetivoDesarrolloSostenible, ProyectoInvestigacion, ProyectoResponsable, PublicacionTecnica,
                      PublicacionTecnicaAutor)
 
@@ -143,29 +143,6 @@ class ArticuloCientificoAdmin(PropietarioAdmin):
         if instancia.doi:
             mismo_doi = list(ArticuloCientifico.objects.filter(doi=normalizar_doi(instancia.doi)).exclude(pk=instancia.pk))
         return mismo_doi or super().posibles_duplicados(request, instancia)
-
-
-class CapituloLibroInvestigacionAutorInline(ParticipanteInline):
-    model = CapituloLibroInvestigacionAutor
-
-
-@admin.register(CapituloLibroInvestigacion)
-class CapituloLibroInvestigacionAdmin(PropietarioAdmin):
-    propietarios = ('autores__usuario',)
-    autoria = 'autores'
-    list_display = ['titulo', 'libro', 'autores_']
-    search_fields = ['titulo', 'libro__titulo']
-    campo_fecha = 'libro__fecha_publicado'
-    campos_similitud = ('titulo',)
-    autocomplete_fields = ['libro']
-    inlines = [CapituloLibroInvestigacionAutorInline]
-
-    def get_queryset(self, request):
-        return super().get_queryset(request).select_related('libro').prefetch_related(prefetch_personas(self.model, 'autores'))
-
-    @admin.display(description='autores')
-    def autores_(self, obj):
-        return lista_personas(obj, 'autores')
 
 
 class MapaArbitradoAutorInline(ParticipanteInline):

@@ -15,19 +15,19 @@ from django.utils.html import format_html
 from django.utils.http import urlencode
 from django.utils.text import capfirst
 from simple_history.admin import SimpleHistoryAdmin
-from unfold.admin import ModelAdmin, TabularInline
+from unfold.admin import ModelAdmin, StackedInline, TabularInline
 from unfold.decorators import action
 from unfold.forms import AdminPasswordChangeForm
 from unfold.widgets import UnfoldAdminTextareaWidget
 
 from .admin_base import (CatalogoAdmin, EtiquetaPersonaMixin, FormularioSIA, ParticipanteInline, CompartidoAdmin,
-                         es_administrador)
+                         PropietarioAdmin, es_administrador, lista_personas)
 from .externos import ErrorServicio, datos_orcid, orcid_por_correo
 from .formularios import UserChangeForm, UserCreationForm, registros_de
 from .widgets import BuscarOrcidWidget
 from .admin_base import SECCIONES_PERFIL
 from .nombres import normalizar_orcid
-from .models import (AreaConocimiento, Asignatura, Beca, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
+from .models import (AreaConocimiento, Asignatura, Beca, CapituloLibro, CapituloLibroAutor, Cargo, ConfiguracionEntidad, ConfirmacionInforme, Distincion,
                      Evento, Indice, Institucion, Libro, LibroParticipante, MedioDivulgacion, MetricaRevista,
                      Nombramiento, PeriodoInforme, Persona, ProgramaAcademico, Revista, SituacionAcademica, TipoEvento,
                      User, anio_o_sf)
@@ -535,6 +535,43 @@ class LibroParticipanteInline(ParticipanteInline):
     fields = ['persona', 'rol', 'orden']
 
 
+def _permiso_libro(inline, request, obj):
+    """Los capítulos dentro de la ficha del libro los edita quien puede editar el libro; los demás autores de un
+    capítulo lo registran desde «Capítulos de libros»."""
+    libro_admin = inline.admin_site._registry[Libro]
+    libro = obj if isinstance(obj, Libro) else getattr(obj, 'libro', None)
+    return libro_admin.has_change_permission(request, libro) if libro is not None and libro.pk \
+        else libro_admin.has_add_permission(request)
+
+
+class CapituloLibroAutorInline(ParticipanteInline):
+    model = CapituloLibroAutor
+
+
+class AutorDeCapituloEnLibroInline(CapituloLibroAutorInline):
+    def _permiso_padre(self, request, obj):
+        return _permiso_libro(self, request, obj)
+
+
+class CapituloEnLibroInline(StackedInline):
+    model = CapituloLibro
+    verbose_name = 'capítulo'
+    verbose_name_plural = 'capítulos del libro'
+    fields = ['titulo', ('pagina_inicio', 'pagina_fin')]
+    inlines = [AutorDeCapituloEnLibroInline]
+    extra = 0
+    show_change_link = True
+
+    def has_add_permission(self, request, obj=None):
+        return super().has_add_permission(request, obj) and _permiso_libro(self, request, obj)
+
+    def has_change_permission(self, request, obj=None):
+        return super().has_change_permission(request, obj) and _permiso_libro(self, request, obj)
+
+    def has_delete_permission(self, request, obj=None):
+        return super().has_delete_permission(request, obj) and _permiso_libro(self, request, obj)
+
+
 class MisLibrosFilter(admin.SimpleListFilter):
     title = 'participación'
     parameter_name = 'mios'
@@ -555,7 +592,7 @@ class LibroAdmin(CompartidoAdmin):
     search_fields = ['titulo', 'editorial', 'isbn']
     campos_similitud = ('titulo',)
     autocomplete_fields = ['pais', 'agradecimientos']
-    inlines = [LibroParticipanteInline]
+    inlines = [LibroParticipanteInline, CapituloEnLibroInline]
     fieldsets = (
         (None, {'fields': ('titulo', 'tipo', 'editorial', 'coleccion', 'volumen', 'numero_edicion', 'numero_paginas',
                            'isbn', 'url', 'pais', 'ciudad', 'arbitrado_pares')}),
@@ -571,6 +608,35 @@ class LibroAdmin(CompartidoAdmin):
         libro = form.instance
         if not change and not libro.participantes.exists():
             LibroParticipante.objects.create(libro=libro, persona=request.user.persona, orden=1)
+
+
+@admin.register(CapituloLibro)
+class CapituloLibroAdmin(PropietarioAdmin):
+    """Capítulos de libros (de investigación o de divulgación, según el libro). Desde aquí registra su capítulo quien
+    no coordina el libro; quien lo coordina también ve y edita los capítulos en la ficha del libro."""
+    propietarios = ('autores__usuario',)
+    autoria = 'autores'
+    list_display = ['titulo', 'libro', 'tipo', 'autores_']
+    list_filter = ['libro__tipo']
+    search_fields = ['titulo', 'libro__titulo']
+    campo_fecha = 'libro__fecha_publicado'
+    campos_similitud = ('titulo',)
+    autocomplete_fields = ['libro']
+    inlines = [CapituloLibroAutorInline]
+
+    def get_queryset(self, request):
+        from .utils import prefetch_personas
+
+        return super().get_queryset(request).select_related('libro').prefetch_related(
+            prefetch_personas(self.model, 'autores'))
+
+    @admin.display(description='tipo', ordering='libro__tipo')
+    def tipo(self, obj):
+        return obj.libro.get_tipo_display()
+
+    @admin.display(description='autores')
+    def autores_(self, obj):
+        return lista_personas(obj, 'autores')
 
 
 @admin.register(PeriodoInforme)
