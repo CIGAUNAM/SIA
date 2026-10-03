@@ -18,7 +18,7 @@ from unfold.widgets import UnfoldAdminTextInputWidget, UnfoldBooleanWidget
 from nucleo.admin_base import CatalogoAdmin
 from nucleo.models import ConfiguracionEntidad
 
-from .indicadores import calcular
+from .indicadores import calcular, comparacion
 from .models import Emision, Grafica, Informe, validar_periodo
 
 
@@ -188,6 +188,7 @@ class InformeAdmin(CatalogoAdmin):
             **self.admin_site.each_context(request), 'title': informe.nombre, 'opts': self.model._meta,
             'original': informe, 'informe': informe, 'datos': datos, 'entidad': entidad, 'emision': emision,
             'emisiones': informe.emisiones.all(), 'diferencias': diferencias, 'cambios': cambios,
+            'comparaciones': {g['id']: comparacion(g['indicador'], informe.periodo) for g in datos['graficas']},
             'parametros': {'version': emision.version} if emision else {'vivo': 1},
             'excel_url': reverse('admin:informes_excel', args=[informe.pk]) +
                          (f'?version={emision.version}' if emision else '?vivo=1'),

@@ -366,3 +366,32 @@ def calcular(grafica, periodo_texto):
         return {'error': f'Indicador desconocido: {grafica.indicador}'}
     periodo = _periodo(periodo_texto)
     return indicador.funcion(periodo, grafica.periodos if indicador.historico else 1)
+
+
+#: Figura del informe anual publicado con que se compara cada indicador (ver `nucleo.cifras_informe`).
+FIGURA_DEL_INFORME = {
+    'planta': '6. Planta académica', 'antiguedad': '7. Antigüedad promedio', 'contratos': '8. Contratos',
+    'proyectos_financiamiento': '11. Proyectos por financiamiento', 'tipos_proyectos': '12. Tipos de proyectos',
+    'ods': '13. ODS', 'prioridades': '14. Problemas nacionales', 'publicaciones': '15. Publicaciones',
+    'cuartiles': '20. Cuartiles', 'pride': '21. PRIDE', 'snii': '22. SNII', 'vinculacion': '24. Vinculación académica',
+    'cursos_posgrado': '26. Cursos de posgrado', 'tesis': '28. Tesis',
+}
+
+
+def comparacion(indicador, periodo_texto):
+    """Cifras del SIA frente a las del informe publicado del periodo, con el motivo de cada diferencia; None si no hay
+    informe publicado de referencia para ese periodo o indicador."""
+    from nucleo.cifras_informe import FIGURAS, REFERENCIA_2025_2026, Periodo, explicacion
+
+    figura = FIGURA_DEL_INFORME.get(indicador)
+    if periodo_texto != '2025-2026' or figura not in REFERENCIA_2025_2026:
+        return None
+    calculado, publicado = FIGURAS[figura](Periodo.de(periodo_texto)), REFERENCIA_2025_2026[figura]
+    filas = []
+    for clave, valor in publicado.items():
+        sia = calculado.get(clave, 0)
+        motivo = None if sia == valor else explicacion(figura, clave)
+        filas.append({'clave': clave, 'sia': sia, 'informe': valor,
+                      'estado': 'igual' if sia == valor else (motivo[0] if motivo else 'sin explicar'),
+                      'motivo': motivo[1] if motivo else ''})
+    return {'figura': figura, 'filas': filas, 'iguales': sum(f['estado'] == 'igual' for f in filas)}
