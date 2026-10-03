@@ -121,3 +121,47 @@ class CifrasHistoricasTests(Datos):
         self.assertEqual(datos['categorias'], ['2024-2025', '2025-2026'])
         nivel_i = next(s for s in datos['series'] if s['nombre'] == 'Nivel I')
         self.assertEqual(nivel_i['valores'], [13, 0])  # 2026 se calcula: aún no hay académicos con SNII.
+
+
+class IndicadoresPersonalizadosTests(Datos):
+    def test_contar_filtrar_y_agrupar(self):
+        from nucleo.cifras_informe import Periodo
+
+        from .models import FiltroIndicador, IndicadorPersonalizado
+        from .personalizados import calcular
+
+        self.articulo('Uno', self.ana.persona)
+        self.articulo('Dos', self.beto.persona)
+        indicador = IndicadorPersonalizado.objects.create(
+            nombre='Artículos por país', modelo='investigacion.ArticuloCientifico', campo_fecha='fecha_publicado',
+            agrupar_por='revista__pais')
+        indicador.full_clean()
+        datos = calcular(indicador, Periodo.de('2017-2018'))['paneles'][0]
+        self.assertEqual(datos['categorias'], ['México'])
+        self.assertEqual(datos['series'][0]['valores'], [2])
+        FiltroIndicador.objects.create(indicador=indicador, campo='titulo', operador='es', valor='Uno')
+        self.assertEqual(calcular(indicador, Periodo.de('2017-2018'))['paneles'][0]['series'][0]['valores'], [1])
+        self.assertEqual(calcular(indicador, Periodo.de('2019-2020'))['paneles'][0]['categorias'], [])
+
+    def test_campo_ajeno_no_valida(self):
+        from django.core.exceptions import ValidationError
+
+        from .models import IndicadorPersonalizado
+
+        indicador = IndicadorPersonalizado(nombre='x', modelo='investigacion.ArticuloCientifico',
+                                           agrupar_por='usuario__password')
+        with self.assertRaises(ValidationError):
+            indicador.full_clean()
+
+    def test_formulario_y_grafica(self):
+        from .models import IndicadorPersonalizado
+
+        indicador = IndicadorPersonalizado.objects.create(
+            nombre='Artículos por año', modelo='investigacion.ArticuloCientifico', agrupar_por='fecha_publicado')
+        self.client.force_login(self.administrativa)
+        url = reverse('admin:informes_indicadorpersonalizado_change', args=[indicador.pk])
+        self.assertContains(self.client.get(url), 'resultado en el periodo actual')
+        informe = Informe.objects.get(es_plantilla=True)
+        Grafica.objects.create(informe=informe, indicador='personalizado', personalizado=indicador, tipo='columnas',
+                               titulo='Artículos por año', orden=99)
+        self.assertEqual(self.client.get(reverse('admin:informes_ver', args=[informe.pk])).status_code, 200)

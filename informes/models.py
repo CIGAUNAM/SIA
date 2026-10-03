@@ -9,6 +9,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 
 from .indicadores import OPCIONES_INDICADOR, TIPOS
+from .personalizados import MEDIDAS, OPERADORES, opciones_modelo
 
 #: Colores de las gráficas del informe anual (en el orden en que se asignan a las series).
 PALETA = ['#7A8B3A', '#4A7C8C', '#B87333', '#C4A85A', '#949A90', '#A5B07A', '#2D3A2E', '#7FA1B0']
@@ -60,12 +61,80 @@ class Informe(models.Model):
         return copia
 
 
+class IndicadorPersonalizado(models.Model):
+    """Indicador definido en el sitio: qué registros, con qué fecha caen en el periodo, filtros, agrupación y medida."""
+    nombre = models.CharField(max_length=255, unique=True)
+    descripcion = models.TextField('descripción', blank=True)
+    modelo = models.CharField('registros', max_length=100, choices=opciones_modelo,
+                              help_text='Qué se cuenta. Guarda para poder elegir los campos.')
+    campo_fecha = models.CharField('fecha que lo ubica en el periodo', max_length=150, blank=True,
+                                   help_text='Vacío: todos los registros, sin importar la fecha.')
+    agrupar_por = models.CharField('agrupar por', max_length=150, blank=True,
+                                   help_text='Las barras o rebanadas (p. ej. nivel, país). Vacío: un solo total.')
+    series_por = models.CharField('separar en series por', max_length=150, blank=True,
+                                  help_text='Opcional: colores por otro campo, o «Periodo» para comparar años.')
+    medida = models.CharField(max_length=20, choices=MEDIDAS, default='contar')
+    campo_medida = models.CharField('campo de la medida', max_length=150, blank=True,
+                                    help_text='Para contar distintos o sumar (p. ej. horas).')
+    maximo_categorias = models.PositiveSmallIntegerField('máximo de categorías', default=12,
+                                                         help_text='Las demás se juntan en «Otros». 0: sin límite.')
+    creado_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True,
+                                   editable=False, related_name='+')
+    creado = models.DateTimeField(auto_now_add=True)
+    actualizado = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['nombre']
+        verbose_name = 'indicador personalizado'
+        verbose_name_plural = 'indicadores personalizados'
+
+    def __str__(self):
+        return self.nombre
+
+    def clean(self):
+        super().clean()
+        from .personalizados import PERIODO, VIGENTE, modelo_de, opciones_campos
+
+        modelo = modelo_de(self.modelo)
+        if modelo is None:
+            return
+        validos = {r for r, _ in opciones_campos(modelo, 'todos')}
+        errores = {}
+        for campo, extra in (('campo_fecha', {VIGENTE}), ('agrupar_por', set()), ('series_por', {PERIODO}),
+                             ('campo_medida', set())):
+            valor = getattr(self, campo)
+            if valor and valor not in validos | extra:
+                errores[campo] = 'Ese campo no pertenece a los registros elegidos.'
+        if self.medida != 'contar' and not self.campo_medida:
+            errores['campo_medida'] = 'Elige el campo que se cuenta o se suma.'
+        if errores:
+            raise ValidationError(errores)
+
+
+class FiltroIndicador(models.Model):
+    indicador = models.ForeignKey(IndicadorPersonalizado, on_delete=models.CASCADE, related_name='filtros')
+    campo = models.CharField(max_length=150)
+    operador = models.CharField(max_length=20, choices=OPERADORES, default='es')
+    valor = models.CharField(max_length=255, blank=True,
+                             help_text='Texto tal como se ve (p. ej. «Doctorado», «México», «Sí»).')
+
+    class Meta:
+        verbose_name = 'filtro'
+        verbose_name_plural = 'filtros'
+
+    def __str__(self):
+        return f'{self.campo} {self.get_operador_display()} {self.valor}'.strip()
+
+
 class Grafica(models.Model):
     informe = models.ForeignKey(Informe, on_delete=models.CASCADE, related_name='graficas')
     orden = models.PositiveSmallIntegerField(default=0)
     seccion = models.CharField('sección', max_length=255, blank=True,
                                help_text='Encabezado bajo el que va la gráfica, p. ej. «Eje 2 · Investigación».')
     indicador = models.CharField(max_length=40, choices=OPCIONES_INDICADOR)
+    personalizado = models.ForeignKey(IndicadorPersonalizado, on_delete=models.PROTECT, null=True, blank=True,
+                                      related_name='graficas', verbose_name='indicador personalizado',
+                                      help_text='Si el indicador es «Indicador personalizado».')
     tipo = models.CharField('tipo de gráfica', max_length=20, choices=TIPOS)
     titulo = models.CharField('título', max_length=255,
                               help_text='Se puede usar {entidad}, {periodo}, {anio}, {inicio} y {fin}.')
@@ -93,6 +162,8 @@ class Grafica(models.Model):
         from .indicadores import INDICADORES
 
         indicador = INDICADORES.get(self.indicador)
+        if self.indicador == 'personalizado' and not self.personalizado_id:
+            raise ValidationError({'personalizado': 'Elige el indicador personalizado.'})
         if indicador and self.tipo and self.tipo not in indicador.tipos:
             nombres = dict(TIPOS)
             raise ValidationError({'tipo': 'Para este indicador elige: ' +

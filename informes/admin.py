@@ -13,13 +13,13 @@ from django.urls import path, reverse
 from django.utils.html import format_html
 from unfold.admin import TabularInline
 from unfold.decorators import action
-from unfold.widgets import UnfoldAdminTextInputWidget, UnfoldBooleanWidget
+from unfold.widgets import UnfoldAdminSelectWidget, UnfoldAdminTextInputWidget, UnfoldBooleanWidget
 
 from nucleo.admin_base import CatalogoAdmin
 from nucleo.models import ConfiguracionEntidad
 
 from .indicadores import calcular, comparacion
-from .models import CifraHistorica, Emision, Grafica, Informe, validar_periodo
+from .models import CifraHistorica, Emision, FiltroIndicador, Grafica, IndicadorPersonalizado, Informe, validar_periodo
 
 
 def textos(informe, entidad):
@@ -52,7 +52,7 @@ def datos_informe(informe, entidad):
 
 class GraficaInline(TabularInline):
     model = Grafica
-    fields = ['orden', 'seccion', 'indicador', 'tipo', 'titulo', 'periodos', 'visible']
+    fields = ['orden', 'seccion', 'indicador', 'personalizado', 'tipo', 'titulo', 'periodos', 'visible']
     ordering_field = 'orden'
     hide_ordering_field = True
     extra = 0
@@ -476,7 +476,7 @@ class GraficaAdmin(CatalogoAdmin):
     list_filter = ['informe', 'indicador', 'tipo']
     search_fields = ['titulo', 'informe__nombre']
     fieldsets = (
-        (None, {'fields': ('informe', 'orden', 'seccion', 'indicador', 'tipo', 'periodos', 'visible')}),
+        (None, {'fields': ('informe', 'orden', 'seccion', 'indicador', 'personalizado', 'tipo', 'periodos', 'visible')}),
         ('Textos', {'fields': ('titulo', 'subtitulo', 'nota')}),
         ('Estilo', {'fields': ('colores', 'mostrar_total', 'mostrar_valores', 'apilado')}),
     )
@@ -498,3 +498,107 @@ class CifraHistoricaAdmin(CatalogoAdmin):
     list_filter = ['indicador', 'panel']
     list_editable = ['valor']
     search_fields = ['categoria', 'fuente']
+
+
+def periodo_actual():
+    """El periodo julio–junio en curso (p. ej. en octubre de 2026, «2026-2027»)."""
+    from datetime import date
+
+    from nucleo.cifras_informe import Periodo
+
+    hoy = date.today()
+    inicio = hoy.year if hoy.month >= 7 else hoy.year - 1
+    return Periodo.de(f'{inicio}-{inicio + 1}')
+
+
+def _desplegable(opciones, vacio='—'):
+    return forms.ChoiceField(required=False, choices=[('', vacio), *opciones], widget=UnfoldAdminSelectWidget)
+
+
+class FiltroInline(TabularInline):
+    model = FiltroIndicador
+    fields = ['campo', 'operador', 'valor']
+    extra = 1
+
+    def get_formset(self, request, obj=None, **kwargs):
+        from .personalizados import modelo_de, opciones_campos
+
+        formset = super().get_formset(request, obj, **kwargs)
+        modelo = modelo_de(obj.modelo) if obj else None
+        formset.form.base_fields['campo'] = forms.ChoiceField(
+            choices=[('', 'Guarda primero para elegir campos' if modelo is None else '—'),
+                     *opciones_campos(modelo, 'todos')], widget=UnfoldAdminSelectWidget)
+        return formset
+
+
+@admin.register(IndicadorPersonalizado)
+class IndicadorPersonalizadoAdmin(CatalogoAdmin):
+    """Indicadores que Administración arma sin programar; se usan en las gráficas de los informes."""
+    permisos_investigador = ()
+    list_display = ['nombre', 'registros', 'agrupar_por', 'medida', 'num_graficas']
+    search_fields = ['nombre', 'descripcion']
+    inlines = [FiltroInline]
+    readonly_fields = ['vista_previa']
+    fieldsets = (
+        (None, {'fields': ('nombre', 'descripcion', 'modelo')}),
+        ('Qué se cuenta', {'fields': ('campo_fecha', 'agrupar_por', 'series_por', 'medida', 'campo_medida',
+                                      'maximo_categorias')}),
+        ('Vista previa', {'fields': ('vista_previa',)}),
+    )
+
+    @admin.display(description='registros')
+    def registros(self, obj):
+        return obj.get_modelo_display()
+
+    @admin.display(description='gráficas')
+    def num_graficas(self, obj):
+        return obj.graficas.count()
+
+    def get_form(self, request, obj=None, **kwargs):
+        from .personalizados import PERIODO, modelo_de, opciones_campos
+
+        form = super().get_form(request, obj, **kwargs)
+        modelo = modelo_de(obj.modelo) if obj else None
+        if modelo is not None:
+            campos = {
+                'campo_fecha': _desplegable(opciones_campos(modelo, 'fecha'), 'Todos (sin importar la fecha)'),
+                'agrupar_por': _desplegable(opciones_campos(modelo, 'agrupar'), 'Un solo total'),
+                'series_por': _desplegable([(PERIODO, 'Periodo (para comparar años)'),
+                                            *opciones_campos(modelo, 'agrupar')], 'Una sola serie'),
+                'campo_medida': _desplegable(opciones_campos(modelo, 'todos')),
+            }
+            for nombre, campo in campos.items():
+                campo.label = form.base_fields[nombre].label
+                campo.help_text = form.base_fields[nombre].help_text
+                form.base_fields[nombre] = campo
+        return form
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.creado_por = request.user
+        super().save_model(request, obj, form, change)
+
+    def response_add(self, request, obj, post_url_continue=None):
+        # Al crearlo se vuelve al formulario: ahí ya se pueden elegir los campos.
+        return redirect('admin:informes_indicadorpersonalizado_change', obj.pk)
+
+    @admin.display(description='resultado en el periodo actual')
+    def vista_previa(self, obj):
+        from django.utils.html import format_html_join
+
+        from .personalizados import calcular as calcular_personalizado
+
+        if obj is None or not obj.pk:
+            return 'Guarda el indicador para ver el resultado.'
+        periodo = periodo_actual()
+        try:
+            datos = calcular_personalizado(obj, periodo, 3)
+        except Exception as error:
+            return f'No se pudo calcular: {error}'
+        if datos.get('error'):
+            return datos['error']
+        filas = tabla_de(datos)
+        return format_html('<p class="mb-2">Periodo {} (julio a junio)</p><table class="text-sm">{}</table>',
+                           periodo.nombre, format_html_join('', '<tr>{}</tr>', (
+                               (format_html_join('', '<td class="px-2 py-1 border-b border-base-200">{}</td>',
+                                                 ((c,) for c in fila)),) for fila in filas[:40])))

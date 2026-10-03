@@ -413,6 +413,10 @@ INDICADORES = OrderedDict((i.clave, i) for i in [
               tesis),
 ])
 
+INDICADORES['personalizado'] = Indicador(
+    'personalizado', 'Indicador personalizado', 'Definido en «Indicadores personalizados».',
+    ['columnas', 'barras', 'dona', 'pastillas', 'tabla'], None, historico=True)
+
 OPCIONES_INDICADOR = [(clave, i.nombre) for clave, i in INDICADORES.items()]
 
 
@@ -422,6 +426,12 @@ def calcular(grafica, periodo_texto):
     if indicador is None:
         return {'error': f'Indicador desconocido: {grafica.indicador}'}
     periodo = _periodo(periodo_texto)
+    if grafica.indicador == 'personalizado':
+        from .personalizados import calcular as calcular_personalizado
+
+        if grafica.personalizado is None:
+            return {'error': 'Falta elegir el indicador personalizado.'}
+        return calcular_personalizado(grafica.personalizado, periodo, grafica.periodos)
     return indicador.funcion(periodo, grafica.periodos if indicador.historico else 1)
 
 
