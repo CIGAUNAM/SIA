@@ -927,7 +927,9 @@ class Evidencia(models.Model):
 # ---------------------------------------------------------------------------
 
 class PeriodoInforme(models.Model):
-    """Año de informe. Al cerrarse, los académicos ya no pueden modificar los registros de ese año."""
+    """Año de informe. Al cerrarse, lo ya registrado de ese año queda protegido: el académico lo corrige solo con un
+    motivo (queda en el historial) y no lo borra; lo que registre después (p. ej. al llenar su CV) se marca como
+    posterior al cierre. Nada impide capturar años anteriores."""
     anio = models.PositiveSmallIntegerField('año', unique=True)
     fecha_limite = models.DateField('fecha límite de captura')
     cerrado = models.BooleanField(default=False)

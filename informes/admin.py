@@ -183,7 +183,7 @@ class InformeAdmin(CatalogoAdmin):
         diferencias = cambios = 0
         if emision and emision == informe.emisiones.first():
             diferencias = len(diferencias_con_actual(emision, datos_informe(informe, entidad)))
-            cambios = len(cambios_desde(emision.emitido_en, limite=500))
+            cambios = len(cambios_desde(emision.emitido_en, limite=500, periodo=informe.periodo))
         return TemplateResponse(request, 'admin/informes/ver.html', {
             **self.admin_site.each_context(request), 'title': informe.nombre, 'opts': self.model._meta,
             'original': informe, 'informe': informe, 'datos': datos, 'entidad': entidad, 'emision': emision,
@@ -210,7 +210,7 @@ class InformeAdmin(CatalogoAdmin):
             return redirect(f"{reverse('admin:informes_ver', args=[informe.pk])}?version={emision.version}")
         contexto = {**self.admin_site.each_context(request), 'opts': self.model._meta, 'original': informe,
                     'title': f'Emitir «{informe}»', 'form': form, 'informe': informe, 'anterior': anterior,
-                    'cambios': len(cambios_desde(anterior.emitido_en, limite=500)) if anterior else None}
+                    'cambios': len(cambios_desde(anterior.emitido_en, limite=500, periodo=informe.periodo)) if anterior else None}
         return TemplateResponse(request, 'admin/informes/emitir.html', contexto)
 
     def cambios_view(self, request, pk):
@@ -223,7 +223,7 @@ class InformeAdmin(CatalogoAdmin):
         contexto = {**self.admin_site.each_context(request), 'opts': self.model._meta, 'original': informe,
                     'title': f'Cambios desde la versión {emision.version}', 'informe': informe, 'emision': emision,
                     'diferencias': diferencias_con_actual(emision, actuales),
-                    'cambios': cambios_desde(emision.emitido_en),
+                    'cambios': cambios_desde(emision.emitido_en, periodo=informe.periodo),
                     'encabezados': ['Fecha', 'Tipo', 'Qué', 'Registro', 'Quién', 'Motivo'],
                     'url_version': f"{reverse('admin:informes_ver', args=[informe.pk])}?version={emision.version}",
                     'url_vivo': f"{reverse('admin:informes_ver', args=[informe.pk])}?vivo=1"}
@@ -334,9 +334,15 @@ def diferencias_con_actual(emision, actuales):
     return resultado
 
 
-def cambios_desde(momento, limite=300):
-    """Registros creados, modificados o borrados después de `momento`, según el historial de cada modelo."""
+def cambios_desde(momento, limite=300, periodo=None):
+    """Registros de producción creados, modificados o borrados después de `momento`, según el historial de cada
+    modelo; con `periodo` («2025-2026»), solo los que caen en sus años (o no tienen fecha que los ubique)."""
     from django.apps import apps
+
+    from nucleo.admin_base import PropietarioAdmin
+    from nucleo.informe import anio_cierre
+
+    anios = {int(a) for a in periodo.split('-')} if periodo else None
 
     tipos = {'+': 'Alta', '~': 'Cambio', '-': 'Baja'}
     cambios = []
@@ -345,8 +351,15 @@ def cambios_desde(momento, limite=300):
         if not modelo.__name__.startswith('Historical') or original is None or \
                 original._meta.app_label in ('informes', 'auth', 'sessions', 'admin', 'contenttypes'):
             continue
+        model_admin = admin.site._registry.get(original)
+        if not isinstance(model_admin, PropietarioAdmin):
+            continue  # Catálogos (personas, revistas…): no son producción del periodo.
         for h in modelo.objects.filter(history_date__gt=momento).select_related('history_user').order_by(
                 '-history_date')[:limite]:
+            if anios is not None:
+                anio = anio_cierre(h.instance, model_admin.campo_fecha)
+                if anio is not None and anio not in anios:
+                    continue
             enlace = ''
             if h.history_type != '-':
                 try:

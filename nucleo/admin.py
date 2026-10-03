@@ -664,12 +664,13 @@ class PeriodoInformeAdmin(CatalogoAdmin):
     @admin.action(description='Cerrar los periodos seleccionados')
     def cerrar(self, request, queryset):
         total = queryset.filter(cerrado=False).update(cerrado=True, cerrado_en=timezone.now(), cerrado_por=request.user)
-        self.message_user(request, f'{total} periodo(s) cerrados: los académicos ya no pueden modificar esos años.')
+        self.message_user(request, f'{total} periodo(s) cerrados: lo ya registrado de esos años solo se corrige con '
+                                   'motivo (y lo borra Administración); lo que se agregue después queda marcado.')
 
     @admin.action(description='Reabrir los periodos seleccionados')
     def reabrir(self, request, queryset):
         total = queryset.filter(cerrado=True).update(cerrado=False, cerrado_en=None, cerrado_por=None)
-        self.message_user(request, f'{total} periodo(s) reabiertos.')
+        self.message_user(request, f'{total} periodo(s) reabiertos: sus registros vuelven a corregirse sin motivo.')
 
 
 @admin.register(ConfirmacionInforme)

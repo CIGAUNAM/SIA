@@ -8,6 +8,7 @@ from django.core import mail
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import override_settings
 from django.urls import reverse
+from django.utils import timezone
 
 from investigacion.models import ArticuloCientifico, ArticuloCientificoAutor
 from nucleo.fusion import ErrorFusion, fusionar
@@ -109,17 +110,45 @@ class ValidacionesTests(Datos):
 
 
 class PeriodoCerradoTests(Datos):
-    def setUp(self):
-        PeriodoInforme.objects.create(anio=2018, fecha_limite=date(2019, 1, 31), cerrado=True)
-        self.publicado = self.articulo('Publicado en 2018', self.ana.persona)
+    """Cerrar un año protege lo ya reportado (corrección con motivo, sin borrar) sin impedir capturar."""
 
-    def test_investigador_no_modifica_ni_crea_en_anio_cerrado(self):
+    def setUp(self):
+        super().setUp()
+        self.publicado = self.articulo('Publicado en 2018', self.ana.persona)
+        PeriodoInforme.objects.create(anio=2018, fecha_limite=date(2019, 1, 31), cerrado=True, cerrado_en=timezone.now())
+
+    def editar(self, articulo, **extra):
+        autor = articulo.articulocientificoautor_set.get()
+        return self.client.post(reverse('admin:investigacion_articulocientifico_change', args=[articulo.pk]),
+                                datos_articulo(self.revista, titulo=articulo.titulo, status='PUBLICADO',
+                                               fecha_publicado='01/05/2018', **{
+                                                   f'{PREFIJO}-TOTAL_FORMS': 1, f'{PREFIJO}-INITIAL_FORMS': 1,
+                                                   f'{PREFIJO}-0-id': autor.pk, f'{PREFIJO}-0-articulo': articulo.pk,
+                                                   f'{PREFIJO}-0-persona': self.ana.persona.pk,
+                                                   f'{PREFIJO}-0-orden': 0}, **extra))
+
+    def test_lo_reportado_se_corrige_con_motivo_y_no_se_borra(self):
         self.client.force_login(self.ana)
         url = reverse('admin:investigacion_articulocientifico_change', args=[self.publicado.pk])
-        self.assertFalse(self.client.get(url).context['has_change_permission'])
-        respuesta = self.client.post(reverse('admin:investigacion_articulocientifico_add'),
-                                     datos_articulo(self.revista, status='PUBLICADO', fecha_publicado='01/06/2018'))
-        self.assertContains(respuesta, 'El informe 2018 ya está cerrado')
+        respuesta = self.client.get(url)
+        self.assertTrue(respuesta.context['has_change_permission'])
+        self.assertFalse(respuesta.context['has_delete_permission'])
+        self.assertContains(respuesta, 'ya se reportó en el informe 2018')
+        self.assertEqual(self.editar(self.publicado).status_code, 200)  # Sin motivo no se guarda.
+        respuesta = self.editar(self.publicado, motivo_cambio='Faltaba el número de la revista', numero='3')
+        self.assertEqual(respuesta.status_code, 302)
+        self.assertEqual(self.publicado.history.first().history_change_reason, 'Faltaba el número de la revista')
+
+    def test_se_puede_capturar_un_anio_cerrado(self):
+        self.client.force_login(self.ana)
+        respuesta = self.client.post(reverse('admin:investigacion_articulocientifico_add'), datos_articulo(
+            self.revista, titulo='Artículo de 2018 que faltaba', status='PUBLICADO', fecha_publicado='01/06/2018'))
+        self.assertEqual(respuesta.status_code, 302)
+        nuevo = ArticuloCientifico.objects.get(titulo='Artículo de 2018 que faltaba')
+        self.assertEqual(nuevo.history.first().history_change_reason, 'Registrado después del cierre del informe 2018')
+        # Lo agregado después del cierre no estaba en lo reportado: se corrige y borra sin restricciones.
+        url = reverse('admin:investigacion_articulocientifico_change', args=[nuevo.pk])
+        self.assertTrue(self.client.get(url).context['has_delete_permission'])
 
     def test_administrador_si_puede(self):
         self.client.force_login(self.admin)

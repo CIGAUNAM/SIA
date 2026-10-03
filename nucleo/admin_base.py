@@ -5,7 +5,9 @@ Cada `ModelAdmin` declara en `permisos_investigador` qué acciones concede al gr
 
 - `PropietarioAdmin`: registros de producción académica. Un académico solo ve los
   registros en los que participa (según `propietarios`); los administradores ven todo.
-  Los registros de un periodo de informe cerrado quedan en solo lectura para los académicos.
+  Cerrar un periodo de informe no impide capturar (el CV de quien llega necesita los años anteriores): protege lo
+  que ya se había reportado. Corregirlo exige un motivo y borrarlo solo lo hace Administración; lo que se registra
+  después del cierre queda marcado en su historial. Las cifras emitidas de un informe no cambian en ningún caso.
 - `CompartidoAdmin`: catálogos que cualquier académico puede ampliar; quién los modifica depende de
   cuántas cuentas los usan (ver `nucleo.uso`).
 - `CatalogoAdmin`: catálogos que solo mantienen los administradores.
@@ -512,9 +514,13 @@ class PropietarioAdmin(BaseAdmin):
         return self.model._default_manager.filter(filtro, pk=obj.pk).exists()
 
     def requiere_motivo(self, request, obj):
-        """Administración (no el superusuario) debe justificar cada edición de la producción de otro académico."""
-        return (obj is not None and es_administrador(request.user) and not es_sysadmin(request.user)
-                and not self.es_propio(request, obj))
+        """Se justifica cada edición de la producción de otro académico (Administración, no el superusuario) y cada
+        corrección de lo que ya se reportó en un informe cerrado (el académico)."""
+        if obj is None:
+            return False
+        if es_administrador(request.user):
+            return not es_sysadmin(request.user) and not self.es_propio(request, obj)
+        return self.ya_reportado(obj) is not None
 
     def get_fieldsets(self, request, obj=None):
         fieldsets = super().get_fieldsets(request, obj)
@@ -525,6 +531,9 @@ class PropietarioAdmin(BaseAdmin):
     def has_delete_permission(self, request, obj=None):
         # Administración puede corregir la producción ajena, pero no borrarla.
         if obj is not None and not es_sysadmin(request.user) and not self.es_propio(request, obj):
+            return False
+        # Lo ya reportado en un informe cerrado no lo borra el académico (se le pide a Administración).
+        if obj is not None and not es_administrador(request.user) and self.ya_reportado(obj):
             return False
         return super().has_delete_permission(request, obj)
 
@@ -555,6 +564,11 @@ class PropietarioAdmin(BaseAdmin):
         motivo = form.cleaned_data.get('motivo_cambio')
         if motivo:
             obj._change_reason = motivo  # django-simple-history lo guarda en el historial.
+        elif getattr(self, 'sujeto_a_cierre', False) and not es_administrador(request.user):
+            # Lo que entra a un año ya cerrado (p. ej. el CV de quien acaba de llegar) queda marcado.
+            anio = self.anio_cierre(obj)
+            if anio and anio in PeriodoInforme.anios_cerrados():
+                obj._change_reason = f'Registrado después del cierre del informe {anio}'
         super().save_model(request, obj, form, change)
 
     def get_form(self, request, obj=None, **kwargs):
@@ -563,6 +577,9 @@ class PropietarioAdmin(BaseAdmin):
             # Copia: el campo declarado es el mismo objeto en todas las clases de formulario.
             campo_motivo = copy.deepcopy(form.base_fields['motivo_cambio'])
             campo_motivo.required = self.requiere_motivo(request, obj)
+            if campo_motivo.required and not es_administrador(request.user):
+                campo_motivo.help_text = ('Este registro ya se reportó en un informe cerrado: el motivo queda en su '
+                                          'historial junto con lo que cambió.')
             form.base_fields['motivo_cambio'] = campo_motivo
         campo = form.base_fields.get('usuario')
         if campo is not None and not es_administrador(request.user):
@@ -577,25 +594,24 @@ class PropietarioAdmin(BaseAdmin):
     def anio_cierre(self, obj):
         return anio_cierre(obj, self.campo_fecha) if self.sujeto_a_cierre else None
 
-    def puede_modificar(self, request, obj):
-        if es_administrador(request.user):
-            return True
+    def ya_reportado(self, obj):
+        """El periodo cerrado en que se reportó el registro (ya existía al cerrarse el de su año), o None."""
+        if obj is None or obj.pk is None:
+            return None
         anio = self.anio_cierre(obj)
-        return anio is None or anio not in PeriodoInforme.anios_cerrados()
-
-    def validar_instancia(self, request, form):
-        if es_administrador(request.user):
-            return
-        anio = self.anio_cierre(form.instance)
-        if anio is not None and anio in PeriodoInforme.anios_cerrados():
-            form.add_error(None, f'El informe {anio} ya está cerrado: no puedes registrar ni modificar actividades '
-                                 f'de ese año. Pide el cambio a un administrador.')
+        periodo = PeriodoInforme.objects.filter(anio=anio, cerrado=True).first() if anio else None
+        if periodo is None:
+            return None
+        historial = getattr(obj, 'history', None)
+        alta = historial.order_by('history_date').values_list('history_date', flat=True).first() if historial else None
+        return periodo if periodo.cerrado_en is None or alta is None or alta < periodo.cerrado_en else None
 
     def change_view(self, request, object_id, form_url='', extra_context=None):
         obj = self.get_object(request, object_id)
-        if obj is not None and not es_administrador(request.user) and not self.puede_modificar(request, obj):
-            messages.info(request, f'Este registro pertenece al informe {self.anio_cierre(obj)}, que ya está cerrado; '
-                                   'solo puedes consultarlo.')
+        periodo = self.ya_reportado(obj) if obj is not None and not es_administrador(request.user) else None
+        if periodo and request.method == 'GET':
+            messages.info(request, f'Este registro ya se reportó en el informe {periodo.anio}, que está cerrado: puedes '
+                                   'corregirlo indicando el motivo, que queda en su historial. Lo ya emitido no cambia.')
         return super().change_view(request, object_id, form_url, extra_context)
 
     # -- autoría ---------------------------------------------------------------
