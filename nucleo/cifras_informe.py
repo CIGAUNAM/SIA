@@ -377,3 +377,40 @@ REFERENCIA_2025_2026 = {
                   'En proceso · Maestría · otras': 11, 'En proceso · Licenciatura · UNAM': 14,
                   'En proceso · Licenciatura · otras': 3},
 }
+
+
+#: Por qué una cifra del SIA no es la del informe 2025-2026 publicado. El SIA da la cifra corregida.
+#: Categorías: «errata» (el informe contradice a su Excel o tiene un error), «regla» (criterio acordado para el SIA),
+#: «sin dato» (falta información para registrarlo) y «total» (suma de las anteriores).
+EXPLICACIONES_2025_2026 = {
+    '7. Antigüedad promedio': {
+        'Investigadores · Titular C': ('errata', 'El informe promedia sin G. Bocco, aunque lo cuenta en la planta')},
+    '12. Tipos de proyectos': {k: ('errata', 'El Excel da 17, 17, 10 y 2') for k in
+                               ('Multidisciplinario', 'Interdisciplinario', 'Transdisciplinario', 'Disciplinario')},
+    '13. ODS': {k: ('errata', 'El SIA da lo que dicen las hojas de proyectos')
+                for k in ('2', '4', '6', '7', '11', '12', '13', '14')},
+    '14. Problemas nacionales': {k: ('errata', 'El Excel da 22 y 4') for k in
+                                 ('Sistemas socioecológicos y sustentabilidad', 'Soberanía alimentaria')},
+    '15. Publicaciones': {
+        'total': ('total', 'Suma con los libros coordinados'),
+        **{k: ('regla', 'Cuentan también los libros que coordina o edita alguien de la entidad (5 venían solo en la '
+                        'hoja de capítulos)') for k in ('Libros', 'Libros · i', 'Libros · n')}},
+    '24. Vinculación académica': {
+        'Arbitraje · revistas nacionales': ('errata', 'Un dictamen para la Revista Internacional de Contaminación '
+                                                      'Ambiental (UNAM) venía marcado como extranjero'),
+        'Arbitraje · revistas extranjeras': ('errata', 'Ídem'),
+        'Sociedades · nacionales': ('errata', 'El Excel trae 8 sociedades nacionales'),
+        'Sociedades · internacionales': ('errata', 'La fila del ISTIC (Portugal) no traía ámbito y el informe no la '
+                                                   'contó'),
+        'Estancias · visitantes': ('sin dato', 'Lo registró una persona externa sin anfitrión de la entidad'),
+        'Sabáticos · visitantes': ('sin dato', 'Ídem (C. A. Téllez y L. Romo)'),
+        'total': ('total', 'Suma de lo anterior')},
+    '26. Cursos de posgrado': {k: ('regla', 'Cada académico en cada curso; el Excel junta a veces dos titulares en '
+                                            'una fila') for k in ('Posgrado en Geografía', 'Otros posgrados')},
+    '28. Tesis': {k: ('errata', 'El Excel tiene 14 tesis de doctorado del Posgrado en Geografía de la UNAM')
+                  for k in ('En proceso · Doctorado · UNAM', 'En proceso · Doctorado · otras')},
+}
+
+
+def explicacion(figura, clave):
+    return EXPLICACIONES_2025_2026.get(figura, {}).get(clave)

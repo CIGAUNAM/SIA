@@ -5,6 +5,8 @@ alcanza para corregirlo (p. ej. el contrato de alguien que causó baja), la corr
 historial. Se pueden aplicar varias veces. Sin --aplicar es un simulacro.
 """
 
+from datetime import date
+
 from cities_light.models import Country
 from django.core.management.base import BaseCommand
 from django.db import transaction
@@ -16,8 +18,16 @@ from nucleo.models import Institucion, Revista, SituacionAcademica
 CONTRATOS = [('Bocco Verdinelli', SituacionAcademica.Contrato.DEFINITIVO,
               'Contrato definitivo hasta su baja (así lo cuenta el informe)')]
 #: (nombre de la revista, país, motivo)
-PAISES_REVISTA = [('Revista Cartográfica', 'Desconocido',
-                   'Revista del IPGH, internacional según el informe')]
+PAISES_REVISTA = [('Revista Cartográfica', 'Desconocido', 'Revista del IPGH, internacional según el informe'),
+                  ('Revista de urbanismo', 'Chile', 'Revista de la Universidad de Chile')]
+#: (inicio del título, cambios, motivo): artículos que el Excel da por aceptados y ya se publicaron (el informe los cuenta).
+ARTICULOS_PUBLICADOS = [
+    ('De territorios excluidos a territorios de inclusión en el periurbano de Morelia',
+     {'status': 'PUBLICADO', 'fecha_publicado': date(2026, 6, 1), 'numero': '54',
+      'doi': '10.5354/0717-5051.2026.81172',
+      'url': 'https://revistaurbanismo.uchile.cl/index.php/RU/article/view/81172'},
+     'Publicado en Revista de Urbanismo 54 (junio de 2026)'),
+]
 #: (nombre que queda, siglas, nombres que se le unen): dependencias de la UNAM escritas de varias formas.
 DEPENDENCIAS_UNAM = [('Instituto de Geografía (IGg)', ['Instituto de Geografía', 'IGg', 'IGG',
                                                        'Instituto de Geografía de la UNAM'])]
@@ -42,6 +52,16 @@ class Command(BaseCommand):
                     r.pais, r._change_reason = destino, motivo
                     r.save()
                     self.stdout.write(f'  País de «{r.nombre}»: {pais}')
+            from investigacion.models import ArticuloCientifico
+
+            for inicio, cambios, motivo in ARTICULOS_PUBLICADOS:
+                for a in ArticuloCientifico.objects.filter(titulo__istartswith=inicio):
+                    if any(getattr(a, k) != v for k, v in cambios.items()):
+                        for k, v in cambios.items():
+                            setattr(a, k, v)
+                        a._change_reason = motivo
+                        a.save()
+                        self.stdout.write(f'  Publicado: «{a.titulo[:60]}»')
             mexico = Country.objects.get(code2='MX')
             for final, nombres in DEPENDENCIAS_UNAM:
                 # Solo las de México sin institución padre ajena a la UNAM (no el «Instituto de Geografía» de otra).

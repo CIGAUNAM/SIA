@@ -8,7 +8,9 @@ from pathlib import Path
 
 from django.core.management.base import BaseCommand
 
-from nucleo.cifras_informe import FIGURAS, REFERENCIA_2025_2026, Periodo
+from collections import Counter
+
+from nucleo.cifras_informe import FIGURAS, REFERENCIA_2025_2026, Periodo, explicacion
 
 #: Imagen original de cada figura (prefijo del nombre de archivo en la carpeta de gráficas).
 IMAGENES = {'6.': '6.E2.1', '7.': '7.E2.1', '8.': '8_Movimientos', '11.': '11.E2.2', '12.': '12.E2.2', '13.': '13.E2.2',
@@ -38,12 +40,16 @@ img {{ width:100%; border-radius:10px; border:1px solid var(--borde); }}
 table {{ width:100%; border-collapse:collapse; font-size:.9rem; margin-top:12px; }}
 td, th {{ padding:4px 6px; border-bottom:1px solid var(--borde); text-align:right; }} td:first-child, th:first-child {{ text-align:left; }}
 .ok {{ color:var(--igual); }} .no {{ color:var(--distinto); font-weight:600; }}
+.exp {{ color:var(--tenue); font-size:.8rem; text-align:left !important; }} .exp b {{ color:var(--informe); }}
 .lienzo {{ position:relative; height:var(--alto); }}
 </style></head><body><main>
 <h1>Informe anual {periodo}: gráficas calculadas por el SIA</h1>
 <div class="tenue">Del {inicio} al {fin}. Azul: SIA · Ocre: gráfica del informe hecha a mano.</div>
-<div class="resumen"><div class="cifra"><b>{iguales}</b>cifras iguales</div><div class="cifra"><b>{distintas}</b>cifras distintas</div>
-<div class="cifra"><b>{figuras}</b>figuras</div></div>
+<div class="resumen"><div class="cifra"><b>{iguales}</b>iguales al informe</div>{explicadas}
+<div class="cifra"><b>{distintas}</b>sin explicar</div><div class="cifra"><b>{figuras}</b>figuras</div></div>
+<p class="tenue">Donde no coinciden, el SIA da la cifra corregida: <b>errata</b>, el informe contradice a su Excel o tiene un
+error; <b>regla</b>, criterio acordado para el SIA; <b>sin dato</b>, falta información para registrarlo; <b>total</b>, suma
+de las anteriores.</p>
 {secciones}
 </main>
 <script>
@@ -82,16 +88,25 @@ class Command(BaseCommand):
         p = Periodo.de(periodo)
         referencia = REFERENCIA_2025_2026 if p.nombre == '2025-2026' else {}
         carpeta = Path(graficas) if graficas else None
-        secciones, datos, iguales, distintas = [], [], 0, 0
+        secciones, datos, iguales, distintas, explicadas = [], [], 0, 0, Counter()
         for n, (figura, funcion) in enumerate(FIGURAS.items()):
             calculado, esperado = funcion(p), referencia.get(figura, {})
             claves = list(dict.fromkeys([*esperado, *calculado]))
             filas = []
             for clave in claves:
                 c, e = calculado.get(clave, 0), esperado.get(clave)
-                if e is not None:
-                    iguales, distintas = iguales + (c == e), distintas + (c != e)
-                estado = '' if e is None else ('<span class="ok">=</span>' if c == e else '<span class="no">≠</span>')
+                motivo = explicacion(figura, clave) if referencia and e is not None and c != e else None
+                if e is None:
+                    estado = ''
+                elif c == e:
+                    iguales += 1
+                    estado = '<span class="ok">=</span>'
+                elif motivo:
+                    explicadas[motivo[0]] += 1
+                    estado = f'<span class="exp"><b>{motivo[0]}</b> · {html.escape(motivo[1])}</span>'
+                else:
+                    distintas += 1
+                    estado = '<span class="no">≠</span>'
                 filas.append(f'<tr><td>{html.escape(str(clave))}</td><td>{c}</td>'
                              f'<td>{"" if e is None else e}</td><td>{estado}</td></tr>')
             graficables = [k for k in claves if k != 'total' and not k.endswith('· horas')]  # Las horas van en la tabla.
@@ -111,6 +126,8 @@ class Command(BaseCommand):
                 f'<div>{imagen}</div></div></section>')
         Path(salida).write_text(PLANTILLA.format(
             periodo=p.nombre, inicio=p.inicio.strftime('%d/%m/%Y'), fin=p.fin.strftime('%d/%m/%Y'), iguales=iguales,
+            explicadas=''.join(f'<div class="cifra"><b>{n}</b>{c}</div>' for c, n in sorted(explicadas.items())),
             distintas=distintas, figuras=len(FIGURAS), secciones='\n'.join(secciones), datos=json.dumps(datos)),
             encoding='utf-8')
-        self.stdout.write(self.style.SUCCESS(f'Página escrita en {salida} ({iguales} iguales, {distintas} distintas).'))
+        self.stdout.write(self.style.SUCCESS(f'Página escrita en {salida} ({iguales} iguales, '
+                                             f'{sum(explicadas.values())} explicadas, {distintas} sin explicar).'))
