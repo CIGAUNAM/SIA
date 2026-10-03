@@ -17,6 +17,16 @@ from nucleo.fusion import fusionar, resumen_referencias
 from nucleo.similitud import normalizar
 
 IMPORTADO = 'Importado de las hojas del informe anual'
+REPORTADO = (IMPORTADO, 'Reportado de nuevo en las hojas del informe anual')
+
+
+def heredar_reporte(conservar, quitar):
+    """Si un duplicado lo reportó el informe, el registro que queda también figura como reportado (si no, el cierre de
+    registros del SIA anterior lo cerraría)."""
+    reportado = any(type(q).history.filter(id=q.pk, history_change_reason__in=REPORTADO).exists() for q in quitar)
+    if reportado and not type(conservar).history.filter(id=conservar.pk, history_change_reason__in=REPORTADO).exists():
+        conservar._change_reason = REPORTADO[1]
+        conservar.save()
 #: modelo → (campo de nombre, campos que también deben coincidir)
 MODELOS = [
     ('nucleo.Persona', 'nombre', ()),
@@ -43,7 +53,13 @@ REVISADOS = [
      'Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica y el Caribe (REDEUS-LAC)',
      ['Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica',
       'Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica (REDEUS-LAC)',
-      'Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica y el Caribe']),
+      'Red de Centros de Estudio en Desarrollo Urbano Sustentable de Latinoamérica y el Caribe',
+      'Red de Desarrollo Urbano Sustentable en Latinoamérica y el Caribe']),
+    ('vinculacion.RedAcademica', 'Red Temática Programa Mexicano del Carbono',
+     ['Red Temática Programa Mexicano de Carbono']),
+    ('vinculacion.RedAcademica', 'Red Temática de Socioecosistemas y Sustentabilidad',
+     ['Red temática de Socioecosistemas y Sustentabilidad', 'Red de Socioecosistemas y Sustentabilidad',
+      'Red de Socioecosistemas y sustentabilidad']),
     ('nucleo.ProgramaAcademico', 'Estudios Sociales y Gestión Local', ['Estudios Social y Gestión Local']),
     ('nucleo.Asignatura', 'Cubiertas y Usos del Territorio', ['Cubierta y Uso del Territorio']),
     ('nucleo.Asignatura', 'Fundamentos de Geoestadística', ['Fundamentos en Geoestadística']),
@@ -64,8 +80,21 @@ def completitud(obj):
 
 
 def completar(conservar, otro):
-    """Copia al registro que se conserva los datos que solo tenía el otro."""
+    """Copia al registro que se conserva los datos que solo tenía el otro; la vigencia es la unión de las dos (si el
+    informe reportó vigente al duplicado, el registro que queda también lo está)."""
     cambios = False
+    campos = {f.name for f in conservar._meta.concrete_fields}
+    if 'fecha_fin' in campos and conservar.fecha_fin is not None and (
+            otro.fecha_fin is None or otro.fecha_fin > conservar.fecha_fin):
+        conservar.fecha_fin = otro.fecha_fin
+        if 'ambito' in campos and otro.ambito:  # El duplicado es el reportado más recientemente: su ámbito es el oficial.
+            conservar.ambito = otro.ambito
+        cambios = True
+    for inicio in ('fecha_inicio', 'fecha_constitucion'):
+        if inicio in campos and getattr(otro, inicio) and getattr(conservar, inicio) and \
+                getattr(otro, inicio) < getattr(conservar, inicio):
+            setattr(conservar, inicio, getattr(otro, inicio))
+            cambios = True
     for f in conservar._meta.concrete_fields:
         if f.primary_key or f.name in ('creado', 'actualizado', 'creado_por'):
             continue
@@ -110,6 +139,7 @@ class Command(BaseCommand):
                     if completar(conservar, quitar):
                         conservar._change_reason = 'Datos completados al fusionar con su duplicado'
                         conservar.save()
+                    heredar_reporte(conservar, [quitar])
                     fusionar(conservar, [quitar])
                 titulo = f'{modelo._meta.verbose_name_plural}: {len(fusiones)} fusionados, {len(dudosos)} por revisar'
                 self.stdout.write(self.style.MIGRATE_HEADING(titulo))
@@ -128,6 +158,7 @@ class Command(BaseCommand):
                 if any([completar(conservar, otro) for otro in quitar]):
                     conservar._change_reason = 'Datos completados al fusionar con su duplicado'
                     conservar.save()
+                heredar_reporte(conservar, quitar)
                 fusionar(conservar, quitar)
                 if conservar.nombre != final:
                     conservar.nombre = final

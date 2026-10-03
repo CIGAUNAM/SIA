@@ -3,6 +3,8 @@ comisiones de evaluación, órganos colegiados, redes, sociedades científicas y
 visitantes)."""
 
 import re
+from collections import Counter
+from datetime import date
 
 from compromiso_institucional.models import Comision, ComisionInstitucional
 from difusion_cientifica.models import OrganizacionEventoAcademico, ParticipacionEventoAcademico, \
@@ -151,19 +153,20 @@ def arbitraje_publicaciones(ctx, libro):
                 continue
             tipo = texto(f['tipo']).lower()
             dictamen = fecha(None, f['mes'], f['ano'], por_defecto=inicio_periodo(f['informes ciga']))
+            dictamen = ctx.en_periodo_reportado(dictamen, f['informes ciga'], hoja, fila, 'El dictamen')
             extranjera = texto(f['publicacion']).lower().startswith('extr')
             if tipo.startswith('revista'):
                 revista = ctx.revista(obra, pais=None if extranjera else 'México')
-                if extranjera and revista.pais.name == 'México' and not revista.articulocientifico_set.exists():
-                    revista.pais = _pais('Desconocido') or revista.pais
-                    ctx.guardar(revista)
+                if extranjera:
+                    ctx.marcar_extranjera(revista)
                 _indices(revista, f['indice s que lo registran'])
                 datos = {'tipo': T.ARTICULO, 'revista': revista, 'obra': ''}
             else:
                 datos = {'tipo': T.CAPITULO_LIBRO if 'cap' in tipo else T.LIBRO, 'revista': None, 'obra': obra[:255],
                          'institucion': ctx.institucion(f['editorial'])}
-            if ArbitrajePublicacion.objects.filter(usuario=usuario, fecha_dictamen=dictamen,
-                                                   **{k: v for k, v in datos.items() if k != 'institucion'}).exists():
+            filtro = {k: v for k, v in datos.items() if k != 'institucion'}
+            if ctx.repetido(ArbitrajePublicacion.objects.filter(usuario=usuario, fecha_dictamen=dictamen, **filtro),
+                            usuario.pk, dictamen, *(getattr(v, 'pk', v) for v in filtro.values())):
                 hoja.existente(ArbitrajePublicacion)
                 continue
             ctx.guardar(ArbitrajePublicacion(fecha_dictamen=dictamen, usuario=usuario, **datos))
@@ -219,8 +222,8 @@ def arbitraje_proyectos(ctx, libro):
             if texto(f['dependencia']):
                 institucion = ctx.institucion(f['dependencia'], f['pais'], padre=institucion)
             inicio = fecha_en_periodo(f['ano fin'], f['informes ciga'])
-            if OtraComision.objects.filter(usuario=usuario, tipo=tipo, descripcion__iexact=programa[:255],
-                                           fecha_inicio=inicio).exists():
+            if ctx.repetido(OtraComision.objects.filter(usuario=usuario, tipo=tipo, descripcion__iexact=programa[:255],
+                                                        fecha_inicio=inicio), usuario.pk, programa.lower(), inicio):
                 hoja.existente(OtraComision)
                 continue
             ctx.guardar(OtraComision(tipo=tipo, descripcion=programa[:255], institucion=institucion, fecha_inicio=inicio,
@@ -294,6 +297,7 @@ def comisiones(ctx, libro, hoja_nombre, col_tipo, col_clase, col_nombre):
 # --------------------------------------------------------------------------------------------------- redes y sociedades
 def redes(ctx, libro):
     hoja = ctx.hoja(f'{ARCHIVO} › Redes')
+    votos = {}  # red → (periodo más reciente, Counter de ámbitos en ese periodo, en orden de aparición)
     for fila, f in leer_hoja(libro, 'Redes'):
         with ctx.fila(hoja, fila):
             nombre = titulo(f['nombre de la red'])
@@ -309,12 +313,26 @@ def redes(ctx, libro):
                 hoja.creado(RedAcademica)
             else:
                 ctx.reportado(red, hoja)
-            ctx.vigencia(red, f.get(''))  # La columna del periodo no tiene encabezado en esta hoja.
+            periodo = texto(f.get(''))  # La columna del periodo no tiene encabezado en esta hoja.
+            ctx.vigencia(red, periodo)
+            if texto(f['ambito']):
+                ultimo, cuenta = votos.get(red.pk, ('', Counter()))
+                if periodo > ultimo:
+                    ultimo, cuenta = periodo, Counter()
+                if periodo == ultimo:
+                    cuenta[ambito(f['ambito'], red.ambito)] += 1
+                votos[red.pk] = (ultimo, cuenta)
             personas = ctx.autores(f['academicos de la entidad participantes'])
             registrante = ctx.usuario(f['registrado por'])
             if registrante:
                 personas.append(registrante.persona)
             red.participantes.add(*personas)
+    # El ámbito oficial es el que más filas del último periodo reportado le dan (a la par, el de la primera fila).
+    for red in RedAcademica.objects.filter(pk__in=votos):
+        ambito_ = votos[red.pk][1].most_common(1)[0][0]
+        if red.ambito != ambito_:
+            red.ambito = ambito_
+            ctx.guardar(red)
     return hoja
 
 
@@ -369,10 +387,16 @@ def movilidad(ctx, libro, hoja_nombre, tipo, col_anfitrion='registrado por'):
             pais = f.get('pais') or f.get('pais que visita') or f.get('pais donde proviene')
             inicio = fecha(f['dia inicio'], f['mes inicio'], f['ano inicio'], por_defecto=inicio_periodo(f['informe ciga']))
             fin = fecha(f['dia fin'], f['mes fin'], f.get('ano inicio 2'), por_defecto=inicio)
-            if M.objects.filter(usuario=usuario, tipo=tipo, fecha_inicio=inicio).exists():
+            periodo = inicio_periodo(f['informe ciga'])
+            if periodo and (fin < periodo or inicio > date(periodo.year + 1, 6, 30)):  # Sin traslape con el periodo.
+                inicio = ctx.en_periodo_reportado(inicio, f['informe ciga'], hoja, fila, 'La estancia')
+                fin = inicio  # Cuenta solo en el periodo en que se reportó.
+            academico = (persona or str(usuario))[:255]
+            if ctx.repetido(M.objects.filter(usuario=usuario, tipo=tipo, fecha_inicio=inicio, academico=academico),
+                            usuario.pk, tipo, inicio, academico):
                 hoja.existente(M)
                 continue
-            ctx.guardar(M(tipo=tipo, academico=(persona or str(usuario))[:255], visitante=visitante,
+            ctx.guardar(M(tipo=tipo, academico=academico, visitante=visitante,
                           institucion=ctx.institucion(institucion_txt, pais), actividades=actividad or '—',
                           intercambio_unam=si_no(f.get('intercambio unam')), fecha_inicio=inicio,
                           fecha_fin=max(fin, inicio), usuario=usuario,

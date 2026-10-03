@@ -234,20 +234,28 @@ def vinculacion(periodo):
         - r['Arbitraje de proyectos · SECIHTI']
     redes = RedAcademica.objects.filter(Q(fecha_fin__isnull=True) | Q(fecha_fin__gte=periodo.inicio),
                                         participantes__usuario__isnull=False).distinct()
-    r['Redes · nacionales'] = redes.exclude(ambito='INTERNACIONAL').count()
+    # Como en el informe, solo los ámbitos nacional e internacional (no las redes institucionales, locales o regionales).
+    r['Redes · nacionales'] = redes.filter(ambito='NACIONAL').count()
     r['Redes · internacionales'] = redes.filter(ambito='INTERNACIONAL').count()
     # Sociedades distintas (varios académicos en la misma sociedad cuentan una vez), como en el informe.
     sociedades = {}
     for s in SociedadCientifica.objects.filter(periodo.vigente()).order_by('pk'):
         sociedades.setdefault(normalizar(s.nombre), s.ambito)
-    r['Sociedades · nacionales'] = sum(1 for a in sociedades.values() if a != 'INTERNACIONAL')
+    r['Sociedades · nacionales'] = sum(1 for a in sociedades.values() if a == 'NACIONAL')
     r['Sociedades · internacionales'] = sum(1 for a in sociedades.values() if a == 'INTERNACIONAL')
     editoriales = ConsejoEditorial.objects.filter(periodo.vigente())
-    r['Comités/consejos editoriales · nacionales'] = editoriales.filter(origen='NACIONAL').count()
-    r['Comités/consejos editoriales · extranjeros'] = editoriales.filter(origen='EXTRANJERA').count()
-    movilidad = M.objects.filter(periodo.contiene('fecha_inicio'))
-    r['Sabáticos y estancias · del personal'] = movilidad.exclude(tipo=M.Tipo.INVITACION).filter(visitante=False).count()
-    r['Sabáticos y estancias · visitantes'] = movilidad.filter(Q(tipo=M.Tipo.INVITACION) | Q(visitante=True)).count()
+    for nombre, tipos in (('Comités editoriales', [ConsejoEditorial.Tipo.COMITE_EDITORIAL]),
+                          ('Consejos editoriales', [ConsejoEditorial.Tipo.CONSEJO_EDITORIAL,
+                                                    ConsejoEditorial.Tipo.CONSEJO_CIENTIFICO])):
+        r[f'{nombre} · nacionales'] = editoriales.filter(tipo__in=tipos, origen='NACIONAL').count()
+        r[f'{nombre} · extranjeros'] = editoriales.filter(tipo__in=tipos, origen='EXTRANJERA').count()
+    movilidad = M.objects.filter(periodo.vigente())
+    for nombre, tipo in (('Estancias', M.Tipo.ESTANCIA), ('Sabáticos', M.Tipo.SABATICO)):
+        r[f'{nombre} · del personal'] = movilidad.filter(tipo=tipo, visitante=False).count()
+        r[f'{nombre} · visitantes'] = movilidad.filter(tipo=tipo, visitante=True).count()
+    # Académicos invitados: cada persona una vez aunque venga más de una vez en el periodo.
+    r['Académicos invitados'] = len({normalizar(a) for a in movilidad.filter(tipo=M.Tipo.INVITACION)
+                                     .values_list('academico', flat=True)})
     r['total'] = sum(r.values())
     return r
 
@@ -355,7 +363,11 @@ REFERENCIA_2025_2026 = {
                                   'Arbitraje de proyectos · DGAPA/UNAM': 4, 'Arbitraje de proyectos · SECIHTI': 17,
                                   'Arbitraje de proyectos · otros': 6, 'Redes · nacionales': 9,
                                   'Redes · internacionales': 23, 'Sociedades · nacionales': 7,
-                                  'Sociedades · internacionales': 17, 'total': 236},
+                                  'Sociedades · internacionales': 17, 'Comités editoriales · nacionales': 3,
+                                  'Comités editoriales · extranjeros': 6, 'Consejos editoriales · nacionales': 3,
+                                  'Consejos editoriales · extranjeros': 5, 'Estancias · del personal': 16,
+                                  'Estancias · visitantes': 1, 'Sabáticos · del personal': 6,
+                                  'Sabáticos · visitantes': 1, 'Académicos invitados': 7, 'total': 236},
     '26. Cursos de posgrado': {'Posgrado en Geografía': 43, 'Otros posgrados': 6},
     '28. Tesis': {'Concluidas': 32, 'En proceso': 80, 'Concluidas · Doctorado · UNAM': 9,
                   'Concluidas · Doctorado · otras': 3, 'Concluidas · Maestría · UNAM': 7,

@@ -64,4 +64,4 @@ class Command(BaseCommand):
                         self.stdout.write(f'    fila {fila}: {motivo}')
         self.stdout.write(f'\nPersonas nuevas: {ctx.personas_creadas}; instituciones nuevas: '
                           f'{getattr(ctx, "_creadas_instituciones", 0)}; revistas nuevas: '
-                          f'{getattr(ctx, "_creadas_revistas", 0)}')
+                          f'{len(ctx._revistas_nuevas)}')

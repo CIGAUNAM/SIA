@@ -205,6 +205,9 @@ class Contexto:
         self._personas = {}
         self._instituciones = {}
         self._revistas = {}
+        self._revistas_nuevas = set()
+        self._filas_iguales = Counter()
+        self.periodo_dato = {}  # (pk, campo) → periodo del informe que dio el valor (para que gane el más reciente).
         self.mexico = Country.objects.get(code2='MX')
         self.hojas = []
         self.personas_creadas = 0
@@ -312,6 +315,12 @@ class Contexto:
         if inicio:
             clave = (type(obj), obj.pk)
             self._vigencias[clave] = max(self._vigencias.get(clave, inicio), inicio)
+            # El informe es la versión oficial: si lo reporta vigente, no puede haber terminado antes del periodo
+            # (fechas de término viejas del SIA anterior).
+            if getattr(obj, 'fecha_fin', None) and obj.fecha_fin < inicio:
+                obj.fecha_fin = None
+                obj._change_reason = f'Reabierto: el informe {texto(periodo)} lo reporta vigente'[:100]
+                obj.save()
 
     def cerrar_no_reportados(self):
         from datetime import date as fecha_
@@ -485,7 +494,16 @@ class Contexto:
         enes = re.match(r'^(enes|escuela nacional de estudios superiores)\s+(unidad\s+)?(\w+)', base)
         if enes:  # Las ENES de la UNAM se escriben de muchas formas: «ENES, Morelia», «ENES Morelia, UNAM»…
             encontrada = qs.filter(nombre__iregex=r'\(ENES\) Unidad ' + patron_sin_acentos(enes.group(3))).first()
+        def de_la_misma(i):
+            """Una dependencia («Facultad de Filosofía y Letras») solo es la misma si es de la misma institución."""
+            if padre is None or i.padre_id == padre.pk:
+                return True
+            unam = lambda x: bool(x.pertenece_unam or 'UNAM' in x.nombre or 'Nacional Autónoma de México' in x.nombre)
+            return i.padre_id is None and unam(i) == unam(padre)
+
         for i in ([] if encontrada else qs.filter(nombre__iregex=r'\y' + patron_sin_acentos(base.split()[0]) if base else '.')):
+            if not de_la_misma(i):
+                continue
             nombre_i = normalizar(re.sub(r'\([^)]*\)', '', i.nombre))
             siglas_i = {normalizar(m) for m in re.findall(r'\(([^)]+)\)', i.nombre)}
             if nombre_i == base or (siglas and siglas & siglas_i) or base in siglas_i or (
@@ -499,6 +517,33 @@ class Contexto:
             self._creadas_instituciones = getattr(self, '_creadas_instituciones', 0) + 1
         self._instituciones[clave] = encontrada
         return encontrada
+
+    def en_periodo_reportado(self, valor, periodo, hoja=None, fila=None, que='La fecha'):
+        """El informe es la versión oficial: lo que se reporta en un periodo cuenta en él. Una fecha de poco antes
+        (reportado tarde) o de después del cierre (ya programado) se lleva al inicio o al fin de ese periodo."""
+        inicio = inicio_periodo(periodo)
+        if not inicio or valor is None or valor == SIN_FECHA:
+            return valor
+        fin = date(inicio.year + 1, 6, 30)
+        ajustada = min(max(valor, inicio), fin)
+        if ajustada != valor and hoja is not None:
+            hoja.aviso(fila, f'{que} ({valor:%d/%m/%Y}) cae fuera de {texto(periodo)}, en que se reportó: se fecha '
+                             f'el {ajustada:%d/%m/%Y}.')
+        return ajustada
+
+    def repetido(self, qs, *clave):
+        """Si una fila ya está en el SIA. Cada fila del Excel es un registro: dos filas iguales (dos dictámenes para la
+        misma revista en el mismo mes) son dos registros. La n-ésima fila igual solo es repetida si ya había n."""
+        clave = (qs.model, *clave)
+        self._filas_iguales[clave] += 1
+        return qs.count() >= self._filas_iguales[clave]
+
+    def marcar_extranjera(self, revista):
+        """El Excel da la revista por extranjera: si se creó en esta importación (con México por omisión), pasa a país
+        desconocido. A una que ya estaba en el SIA no se le cambia el país: una sola fila puede equivocarse."""
+        if revista.pk in self._revistas_nuevas and revista.pais_id == self.mexico.pk:
+            revista.pais = Country.objects.filter(name='Desconocido').first() or revista.pais
+            self.guardar(revista)
 
     def revista(self, nombre, pais=None, tipo=Revista.Tipo.CIENTIFICA, abreviado=''):
         t = titulo(nombre)
@@ -520,7 +565,7 @@ class Contexto:
         if encontrada is None:
             encontrada = self.guardar(Revista(nombre=t[:255], tipo=tipo, pais=_pais(pais) or self.mexico,
                                               nombre_abreviado=texto(abreviado)[:255]))
-            self._creadas_revistas = getattr(self, '_creadas_revistas', 0) + 1
+            self._revistas_nuevas.add(encontrada.pk)
         self._revistas[clave] = encontrada
         return encontrada
 

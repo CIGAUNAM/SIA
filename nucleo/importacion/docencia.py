@@ -137,6 +137,8 @@ def formacion(ctx, libro):
             tutor = ctx.persona(f.get('nombre del tutor principal'))
             if tutor is None and otros:
                 tutor = otros[0] if 'direccion de tesis' not in tipo else None
+            if 'direccion de tesis' in tipo and 'concluida' in tipo:
+                fin = ctx.en_periodo_reportado(fin, f['periodo'], hoja, fila, 'El examen')
             if 'direccion de tesis' in tipo:
                 tesis(ctx, hoja, fila, f, usuario.persona if usuario else externo, alumno, nivel_, prog, inst, inicio, fin,
                       titulo_, tutor,

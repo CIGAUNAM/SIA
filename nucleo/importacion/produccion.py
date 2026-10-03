@@ -215,9 +215,8 @@ def articulos(ctx, libro):
             if revista is None:
                 hoja.rechazo(fila, f'«{nombre[:60]}»: no indica la revista.')
                 continue
-            if revista.pais.name == 'México' and internacional:
-                revista.pais = _pais('Desconocido') or revista.pais
-                ctx.guardar(revista)
+            if internacional:
+                ctx.marcar_extranjera(revista)
             issn = texto(f.get('issn'))
             if issn and not (revista.issn_impreso or revista.issn_electronico) and re.fullmatch(r'\d{4}-?\d{3}[\dXx]', issn):
                 revista.issn_impreso = issn
@@ -239,9 +238,15 @@ def articulos(ctx, libro):
             if anio_ and (fi is not None or cuartil in MetricaRevista.Cuartil.values):
                 metrica, _ = MetricaRevista.objects.get_or_create(
                     revista=revista, anio=anio_, fuente=MetricaRevista.Fuente.JCR, defaults={'factor_impacto': fi or 0})
-                if cuartil in MetricaRevista.Cuartil.values and not metrica.cuartil:
+                # Si dos informes dan cuartiles distintos para la revista en el mismo año, queda el del más reciente
+                # (el anterior se consultó antes de que se publicara la clasificación definitiva).
+                clave = (metrica.pk, 'cuartil')
+                if cuartil in MetricaRevista.Cuartil.values and (
+                        not metrica.cuartil or periodo >= ctx.periodo_dato.get(clave, periodo)) and metrica.cuartil != cuartil:
                     metrica.cuartil = cuartil
                     metrica.save()
+                if cuartil in MetricaRevista.Cuartil.values:
+                    ctx.periodo_dato[clave] = max(periodo, ctx.periodo_dato.get(clave, periodo))
     return hoja
 
 
