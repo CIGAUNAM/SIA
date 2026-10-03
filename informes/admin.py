@@ -110,7 +110,8 @@ class NuevoDesdeForm(forms.Form):
 @admin.register(Informe)
 class InformeAdmin(CatalogoAdmin):
     permisos_investigador = ()
-    list_display = ['nombre', 'periodo', 'es_plantilla', 'num_graficas', 'ver']
+    list_display = ['abrir', 'periodo', 'es_plantilla', 'num_graficas', 'version_emitida', 'editar']
+    list_display_links = None  # Al dar clic en un informe se ve con sus gráficas; «Editar» abre el formulario.
     list_filter = ['es_plantilla', 'periodo']
     search_fields = ['nombre', 'descripcion']
     fields = ['nombre', 'periodo', 'es_plantilla', 'descripcion', 'pie']
@@ -126,14 +127,36 @@ class InformeAdmin(CatalogoAdmin):
     def num_graficas(self, obj):
         return obj.n_graficas
 
+    @admin.display(description='informe', ordering='nombre')
+    def abrir(self, obj):
+        return format_html('<a class="text-primary-600 font-semibold" href="{}">{}</a>',
+                           reverse('admin:informes_ver', args=[obj.pk]), obj.nombre)
+
+    @admin.display(description='versión emitida')
+    def version_emitida(self, obj):
+        ultima = obj.emisiones.first()
+        return f'{ultima.version} ({ultima.emitido_en:%d/%m/%Y})' if ultima else '—'
+
     @admin.display(description='')
-    def ver(self, obj):
-        return format_html('<a href="{}">Ver informe</a>', reverse('admin:informes_ver', args=[obj.pk]))
+    def editar(self, obj):
+        return format_html('<a class="text-primary-600" href="{}">Editar</a>',
+                           reverse('admin:informes_informe_change', args=[obj.pk]))
 
     def save_model(self, request, obj, form, change):
         if not change:
             obj.creado_por = request.user
         super().save_model(request, obj, form, change)
+
+    def response_change(self, request, obj):
+        # Al guardar (sin «guardar y seguir editando») se vuelve a ver el informe con sus gráficas.
+        if not any(boton in request.POST for boton in ('_continue', '_addanother', '_saveasnew')):
+            return redirect('admin:informes_ver', obj.pk)
+        return super().response_change(request, obj)
+
+    def response_add(self, request, obj, post_url_continue=None):
+        if not any(boton in request.POST for boton in ('_continue', '_addanother')):
+            return redirect('admin:informes_ver', obj.pk)
+        return super().response_add(request, obj, post_url_continue)
 
     @action(description='Ver informe', icon='bar_chart', url_path='ver-informe')
     def ver_informe(self, request, object_id):
