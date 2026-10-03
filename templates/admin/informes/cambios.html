@@ -1,0 +1,66 @@
+{% extends "admin/base_site.html" %}
+{% load unfold %}
+{% block content %}
+<div class="flex flex-col gap-6">
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <p class="text-font-subtle-light dark:text-font-subtle-dark">
+      Versión {{ emision.version }} emitida el {{ emision.emitido_en|date:"d/m/Y H:i" }} por {{ emision.emitido_por|default:"—" }}{% if emision.motivo %} · «{{ emision.motivo }}»{% endif %}.
+      La versión emitida no cambia; aquí se ve lo que ha cambiado desde entonces.
+    </p>
+    <div class="flex gap-2">
+      {% component "unfold/components/button.html" with href=url_version variant="default" %}Ver la versión emitida{% endcomponent %}
+      {% component "unfold/components/button.html" with href=url_vivo variant="default" %}Ver datos actuales{% endcomponent %}
+    </div>
+  </div>
+
+  <section>
+    <h2 class="font-semibold text-important mb-2">Cifras que ya no son las emitidas ({{ diferencias|length }})</h2>
+    {% if not diferencias %}
+      {% include "unfold/helpers/messages/success.html" with message="Las cifras actuales son iguales a las emitidas." %}
+    {% endif %}
+    {% for titulo, filas in diferencias %}
+      <div class="bg-white border border-base-200 rounded-default shadow-xs p-4 mb-3 dark:bg-base-900 dark:border-base-800">
+        <p class="font-semibold mb-2">{{ titulo }}</p>
+        <table class="w-full text-sm">
+          <thead><tr><th class="text-left px-2 py-1">Emitido</th><th class="text-left px-2 py-1">Actual</th></tr></thead>
+          <tbody>
+          {% for antes, ahora in filas %}
+            <tr class="border-t border-base-200 dark:border-base-800">
+              <td class="px-2 py-1">{{ antes|join:" · "|default:"—" }}</td>
+              <td class="px-2 py-1 font-medium">{{ ahora|join:" · "|default:"—" }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2 class="font-semibold text-important mb-2">Registros modificados desde la emisión ({{ cambios|length }})</h2>
+    <p class="text-sm text-font-subtle-light dark:text-font-subtle-dark mb-2">Todos los cambios en el sistema, del más
+      reciente al más antiguo; no todos afectan las cifras del informe.</p>
+    <div class="bg-white border border-base-200 rounded-default shadow-xs overflow-x-auto dark:bg-base-900 dark:border-base-800">
+      <table class="w-full border-separate border-spacing-none text-sm">
+        <thead><tr class="bg-base-50 dark:bg-base-900">
+          {% for e in encabezados %}<th class="border-b border-base-200 font-semibold px-3 py-2 text-left dark:border-base-800">{{ e }}</th>{% endfor %}
+        </tr></thead>
+        <tbody>
+        {% for c in cambios %}
+          <tr>
+            <td class="border-t border-base-200 px-3 py-2 whitespace-nowrap dark:border-base-800">{{ c.fecha|date:"d/m/Y H:i" }}</td>
+            <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">{{ c.tipo }}</td>
+            <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">{{ c.modelo|capfirst }}</td>
+            <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">{% if c.enlace %}<a class="text-primary-600" href="{{ c.enlace }}">{{ c.registro }}</a>{% else %}{{ c.registro }}{% endif %}</td>
+            <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">{{ c.usuario|default:"—" }}</td>
+            <td class="border-t border-base-200 px-3 py-2 dark:border-base-800">{{ c.motivo }}</td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="6" class="px-3 py-4 text-center text-font-subtle-light">Ningún registro ha cambiado desde la emisión.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+{% endblock %}

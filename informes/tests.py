@@ -60,3 +60,49 @@ class InformesTests(Datos):
         g = Grafica(informe=self.plantilla, indicador='planta', tipo='rosa', titulo='x')
         with self.assertRaises(ValidationError):
             g.full_clean()
+
+
+class EmisionTests(Datos):
+    def setUp(self):
+        super().setUp()
+        plantilla = Informe.objects.get(es_plantilla=True)
+        self.informe = plantilla.duplicar(self.administrativa, nombre='Informe anual', periodo='2025-2026')
+        self.client.force_login(self.administrativa)
+
+    def emitir(self, motivo=''):
+        return self.client.post(reverse('admin:informes_emitir', args=[self.informe.pk]), {'motivo': motivo})
+
+    def test_emitir_congela_las_cifras(self):
+        from nucleo.models import Nombramiento, SituacionAcademica
+
+        self.emitir()
+        emision = self.informe.emisiones.get()
+        self.assertEqual(emision.version, 1)
+        planta = next(g for g in emision.datos['graficas'] if g['indicador'] == 'planta')
+        self.assertEqual(planta['datos']['total'], 0)
+        # Después de emitir llega un académico al periodo: la versión emitida no cambia, pero se avisa.
+        nombramiento, _ = Nombramiento.objects.get_or_create(
+            nombre='Investigador Titular A, Tiempo Completo', defaults={'clave': 'PRUEBA-ITA'})
+        SituacionAcademica.objects.create(usuario=self.ana, anio=2026, nombramiento=nombramiento)
+        respuesta = self.client.get(reverse('admin:informes_ver', args=[self.informe.pk]))
+        planta = next(g for g in respuesta.context['datos']['graficas'] if g['indicador'] == 'planta')
+        self.assertEqual(planta['datos']['total'], 0)
+        self.assertGreater(respuesta.context['diferencias'], 0)
+        vivo = self.client.get(reverse('admin:informes_ver', args=[self.informe.pk]) + '?vivo=1')
+        planta = next(g for g in vivo.context['datos']['graficas'] if g['indicador'] == 'planta')
+        self.assertEqual(planta['datos']['total'], 1)
+        cambios = self.client.get(reverse('admin:informes_cambios', args=[self.informe.pk]))
+        self.assertEqual(cambios.status_code, 200)
+        self.assertTrue(cambios.context['diferencias'])
+
+    def test_la_segunda_version_pide_motivo(self):
+        self.emitir()
+        self.assertEqual(self.emitir().status_code, 200)  # Sin motivo: vuelve al formulario.
+        self.assertEqual(self.informe.emisiones.count(), 1)
+        self.emitir('Se agregaron dos tesis que faltaban')
+        self.assertEqual(list(self.informe.emisiones.values_list('version', flat=True)), [2, 1])
+
+    def test_una_plantilla_no_se_emite(self):
+        plantilla = Informe.objects.get(es_plantilla=True)
+        self.client.post(reverse('admin:informes_emitir', args=[plantilla.pk]), {'motivo': ''})
+        self.assertFalse(plantilla.emisiones.exists())

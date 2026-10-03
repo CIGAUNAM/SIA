@@ -28,7 +28,6 @@
 {% endblock %}
 
 {% block content %}
-{% url 'admin:informes_excel' informe.pk as excel_url %}
 {% url 'admin:informes_informe_change' informe.pk as editar_url %}
 <div id="content-main">
   <div class="informe-barra">
@@ -43,6 +42,33 @@
       <button type="button" data-documento="docx" class="border border-base-200 bg-white font-medium px-3 py-2 rounded-default shadow-xs dark:bg-base-900 dark:border-base-700">Word</button>
     </div>
   </div>
+  {% url 'admin:informes_ver' informe.pk as ver_url %}
+  {% if emision %}
+    <div class="mb-4 px-4 py-3 rounded-default border border-primary-200 bg-primary-50 text-primary-800 dark:bg-base-800 dark:border-base-700 dark:text-base-200 flex flex-wrap items-center gap-x-4 gap-y-2">
+      <span class="material-symbols-outlined">verified</span>
+      <span><b>Versión {{ emision.version }} emitida</b> el {{ emision.emitido_en|date:"d/m/Y H:i" }} por {{ emision.emitido_por|default:"—" }}{% if emision.motivo %} · «{{ emision.motivo }}»{% endif %}. Sus cifras no cambian.</span>
+      {% if diferencias or cambios %}
+        <a class="font-semibold underline" href="{% url 'admin:informes_cambios' informe.pk %}?version={{ emision.version }}">
+          {% if diferencias %}{{ diferencias }} gráfica{{ diferencias|pluralize }} con cifras distintas hoy{% if cambios %} · {% endif %}{% endif %}{% if cambios %}{{ cambios }} cambio{{ cambios|pluralize }} en registros desde la emisión{% endif %}</a>
+      {% endif %}
+      <a class="ml-auto underline" href="{{ ver_url }}?vivo=1">Ver datos actuales</a>
+    </div>
+  {% elif emisiones %}
+    <div class="mb-4 px-4 py-3 rounded-default border border-base-200 bg-base-50 dark:bg-base-800 dark:border-base-700 flex flex-wrap items-center gap-x-4 gap-y-2">
+      <span class="material-symbols-outlined">edit_note</span>
+      <span><b>Datos actuales</b>, sin emitir. La versión oficial es la {{ emisiones.0.version }}.</span>
+      <a class="ml-auto underline" href="{{ ver_url }}">Ver la versión emitida</a>
+    </div>
+  {% elif not informe.es_plantilla %}
+    <div class="mb-4 px-4 py-3 rounded-default border border-base-200 bg-base-50 dark:bg-base-800 dark:border-base-700">
+      <b>Borrador:</b> las cifras se calculan con los datos actuales. Cuando esté listo, usa «Emitir» para guardar la versión oficial.
+    </div>
+  {% endif %}
+  {% if emisiones|length > 1 %}
+    <p class="mb-4 text-sm text-font-subtle-light dark:text-font-subtle-dark">Versiones:
+      {% for e in emisiones %}<a class="text-primary-600" href="{{ ver_url }}?version={{ e.version }}">{{ e.version }}</a>{% if not forloop.last %} · {% endif %}{% endfor %}
+    </p>
+  {% endif %}
   <div id="informe-aviso" class="mb-4"></div>
   <div id="informe">
     {% if not datos.graficas %}
@@ -51,9 +77,11 @@
   </div>
 </div>
 {{ datos|json_script:"datos-informe" }}
+{{ parametros|json_script:"parametros-informe" }}
 <script>
 (async function () {
   const datos = JSON.parse(document.getElementById('datos-informe').textContent);
+  const PARAMETROS = JSON.parse(document.getElementById('parametros-informe').textContent);
   const contenedor = document.getElementById('informe'), aviso = document.getElementById('informe-aviso');
   const BOTON = 'border border-base-200 bg-white font-medium px-3 py-1 rounded-default shadow-xs text-sm dark:bg-base-900 dark:border-base-700';
   const avisar = (texto, ms) => {
@@ -111,7 +139,7 @@
     try {
       const r = await fetch('{% url "admin:informes_documento" informe.pk %}', {method: 'POST',
         headers: {'Content-Type': 'application/json', 'X-CSRFToken': '{{ csrf_token }}'},
-        body: JSON.stringify({formato: formato, imagenes: imagenes})});
+        body: JSON.stringify(Object.assign({formato: formato, imagenes: imagenes}, PARAMETROS))});
       if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.statusText);
       descargar(await r.blob(), `${archivo(datos.nombre + ' ' + datos.periodo)}.${formato}`);
       avisar('Listo.', 2500);

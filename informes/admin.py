@@ -19,7 +19,7 @@ from nucleo.admin_base import CatalogoAdmin
 from nucleo.models import ConfiguracionEntidad
 
 from .indicadores import calcular
-from .models import Grafica, Informe, validar_periodo
+from .models import Emision, Grafica, Informe, validar_periodo
 
 
 def textos(informe, entidad):
@@ -59,6 +59,47 @@ class GraficaInline(TabularInline):
     show_change_link = True
 
 
+class EmisionInline(TabularInline):
+    """Versiones emitidas: solo se consultan (se emiten con el botón «Emitir»)."""
+    model = Emision
+    fields = ['version', 'emitido_en', 'emitido_por', 'motivo', 'ver_version']
+    readonly_fields = fields
+    extra = 0
+    verbose_name_plural = 'versiones emitidas'
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    @admin.display(description='')
+    def ver_version(self, obj):
+        return format_html('<a class="text-primary-600" href="{}?version={}">Ver</a> · <a class="text-primary-600" '
+                           'href="{}?version={}">Cambios desde entonces</a>',
+                           reverse('admin:informes_ver', args=[obj.informe_id]), obj.version,
+                           reverse('admin:informes_cambios', args=[obj.informe_id]), obj.version)
+
+
+class EmitirForm(forms.Form):
+    motivo = forms.CharField(required=False, widget=forms.Textarea(attrs={'rows': 4, 'class': (
+        'border border-base-200 bg-white rounded-default shadow-xs px-3 py-2 w-full dark:bg-base-900 '
+        'dark:border-base-700')}), help_text='Obligatorio si ya hay una versión emitida: qué cambió y por qué.')
+
+    def __init__(self, *args, requiere_motivo=False, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.requiere_motivo = requiere_motivo
+
+    def clean_motivo(self):
+        motivo = self.cleaned_data['motivo'].strip()
+        if self.requiere_motivo and not motivo:
+            raise forms.ValidationError('Explica por qué se emite una nueva versión.')
+        return motivo
+
+
 class NuevoDesdeForm(forms.Form):
     nombre = forms.CharField(max_length=255, widget=UnfoldAdminTextInputWidget)
     periodo = forms.CharField(max_length=9, validators=[validar_periodo], help_text='Por ejemplo «2026-2027».',
@@ -73,8 +114,8 @@ class InformeAdmin(CatalogoAdmin):
     list_filter = ['es_plantilla', 'periodo']
     search_fields = ['nombre', 'descripcion']
     fields = ['nombre', 'periodo', 'es_plantilla', 'descripcion', 'pie']
-    inlines = [GraficaInline]
-    actions_detail = ['ver_informe', 'nuevo_desde']
+    inlines = [GraficaInline, EmisionInline]
+    actions_detail = ['ver_informe', 'emitir', 'nuevo_desde']
 
     def get_queryset(self, request):
         from django.db.models import Count
@@ -98,6 +139,10 @@ class InformeAdmin(CatalogoAdmin):
     def ver_informe(self, request, object_id):
         return redirect('admin:informes_ver', object_id)
 
+    @action(description='Emitir', icon='verified', url_path='emitir')
+    def emitir(self, request, object_id):
+        return redirect('admin:informes_emitir', object_id)
+
     @action(description='Nuevo informe a partir de este', icon='content_copy', url_path='nuevo-desde')
     def nuevo_desde(self, request, object_id):
         return redirect('admin:informes_nuevo_desde', object_id)
@@ -109,6 +154,8 @@ class InformeAdmin(CatalogoAdmin):
             path('<int:pk>/nuevo/', vista(self.nuevo_desde_view), name='informes_nuevo_desde'),
             path('<int:pk>/excel/', vista(self.excel_view), name='informes_excel'),
             path('<int:pk>/documento/', vista(self.documento_view), name='informes_documento'),
+            path('<int:pk>/emitir/', vista(self.emitir_view), name='informes_emitir'),
+            path('<int:pk>/cambios/', vista(self.cambios_view), name='informes_cambios'),
             *super().get_urls(),
         ]
 
@@ -119,13 +166,68 @@ class InformeAdmin(CatalogoAdmin):
             raise PermissionDenied
         return informe
 
+    def _datos(self, request, informe, parametros=None):
+        """Datos a mostrar: los de una versión emitida (por omisión, la última) o los actuales (`vivo`)."""
+        parametros = parametros if parametros is not None else request.GET
+        entidad = ConfiguracionEntidad.actual(request)
+        emision = None
+        if not parametros.get('vivo'):
+            emisiones = informe.emisiones.all()
+            emision = (emisiones.filter(version=parametros.get('version')).first() if parametros.get('version')
+                       else emisiones.first())
+        return (emision.datos if emision else datos_informe(informe, entidad)), emision, entidad
+
     def ver_view(self, request, pk):
         informe = self._informe(request, pk)
-        entidad = ConfiguracionEntidad.actual(request)
+        datos, emision, entidad = self._datos(request, informe)
+        diferencias = cambios = 0
+        if emision and emision == informe.emisiones.first():
+            diferencias = len(diferencias_con_actual(emision, datos_informe(informe, entidad)))
+            cambios = len(cambios_desde(emision.emitido_en, limite=500))
         return TemplateResponse(request, 'admin/informes/ver.html', {
             **self.admin_site.each_context(request), 'title': informe.nombre, 'opts': self.model._meta,
-            'original': informe, 'informe': informe, 'datos': datos_informe(informe, entidad), 'entidad': entidad,
+            'original': informe, 'informe': informe, 'datos': datos, 'entidad': entidad, 'emision': emision,
+            'emisiones': informe.emisiones.all(), 'diferencias': diferencias, 'cambios': cambios,
+            'parametros': {'version': emision.version} if emision else {'vivo': 1},
+            'excel_url': reverse('admin:informes_excel', args=[informe.pk]) +
+                         (f'?version={emision.version}' if emision else '?vivo=1'),
             'puede_editar': self.has_change_permission(request, informe), 'version_js': _version_js()})
+
+    def emitir_view(self, request, pk):
+        informe = self._informe(request, pk, cambiar=True)
+        if informe.es_plantilla:
+            messages.error(request, 'Una plantilla no se emite: crea un informe a partir de ella.')
+            return redirect('admin:informes_informe_change', informe.pk)
+        anterior = informe.emisiones.first()
+        form = EmitirForm(request.POST or None, requiere_motivo=anterior is not None)
+        if request.method == 'POST' and form.is_valid():
+            entidad = ConfiguracionEntidad.actual(request)
+            emision = Emision.objects.create(
+                informe=informe, version=(anterior.version + 1) if anterior else 1, periodo=informe.periodo,
+                emitido_por=request.user, motivo=form.cleaned_data['motivo'], datos=datos_informe(informe, entidad))
+            messages.success(request, f'Se emitió la versión {emision.version} de «{informe}». Sus cifras ya no '
+                                      'cambian aunque se capturen o corrijan registros.')
+            return redirect(f"{reverse('admin:informes_ver', args=[informe.pk])}?version={emision.version}")
+        contexto = {**self.admin_site.each_context(request), 'opts': self.model._meta, 'original': informe,
+                    'title': f'Emitir «{informe}»', 'form': form, 'informe': informe, 'anterior': anterior,
+                    'cambios': len(cambios_desde(anterior.emitido_en, limite=500)) if anterior else None}
+        return TemplateResponse(request, 'admin/informes/emitir.html', contexto)
+
+    def cambios_view(self, request, pk):
+        informe = self._informe(request, pk)
+        emision = informe.emisiones.filter(version=request.GET.get('version')).first() or informe.emisiones.first()
+        if emision is None:
+            messages.info(request, 'Este informe todavía no se ha emitido.')
+            return redirect('admin:informes_ver', informe.pk)
+        actuales = datos_informe(informe, ConfiguracionEntidad.actual(request))
+        contexto = {**self.admin_site.each_context(request), 'opts': self.model._meta, 'original': informe,
+                    'title': f'Cambios desde la versión {emision.version}', 'informe': informe, 'emision': emision,
+                    'diferencias': diferencias_con_actual(emision, actuales),
+                    'cambios': cambios_desde(emision.emitido_en),
+                    'encabezados': ['Fecha', 'Tipo', 'Qué', 'Registro', 'Quién', 'Motivo'],
+                    'url_version': f"{reverse('admin:informes_ver', args=[informe.pk])}?version={emision.version}",
+                    'url_vivo': f"{reverse('admin:informes_ver', args=[informe.pk])}?vivo=1"}
+        return TemplateResponse(request, 'admin/informes/cambios.html', contexto)
 
     def nuevo_desde_view(self, request, pk):
         origen = self._informe(request, pk)
@@ -150,7 +252,7 @@ class InformeAdmin(CatalogoAdmin):
         from openpyxl.styles import Font
 
         informe = self._informe(request, pk)
-        datos = datos_informe(informe, ConfiguracionEntidad.actual(request))
+        datos, emision, _ = self._datos(request, informe)
         libro = Workbook()
         libro.remove(libro.active)
         usados = set()
@@ -171,7 +273,7 @@ class InformeAdmin(CatalogoAdmin):
         libro.save(salida)
         respuesta = HttpResponse(salida.getvalue(), content_type='application/vnd.openxmlformats-officedocument.'
                                                                    'spreadsheetml.sheet')
-        respuesta['Content-Disposition'] = f'attachment; filename="{_archivo(informe)}.xlsx"'
+        respuesta['Content-Disposition'] = f'attachment; filename="{_archivo(informe, emision)}.xlsx"'
         return respuesta
 
     def documento_view(self, request, pk):
@@ -179,9 +281,8 @@ class InformeAdmin(CatalogoAdmin):
         informe = self._informe(request, pk)
         if request.method != 'POST':
             return JsonResponse({'error': 'Usa POST'}, status=405)
-        entidad = ConfiguracionEntidad.actual(request)
-        datos = datos_informe(informe, entidad)
         cuerpo = json.loads(request.body or '{}')
+        datos, emision, entidad = self._datos(request, informe, {k: cuerpo.get(k) for k in ('version', 'vivo')})
         imagenes = {int(k): v for k, v in (cuerpo.get('imagenes') or {}).items()}
         formato = cuerpo.get('formato', 'pdf')
         for g in datos['graficas']:
@@ -201,7 +302,7 @@ class InformeAdmin(CatalogoAdmin):
             except ErrorDocumento as error:
                 return JsonResponse({'error': str(error)}, status=500)
         respuesta = HttpResponse(contenido, content_type=tipo)
-        respuesta['Content-Disposition'] = f'attachment; filename="{_archivo(informe)}.{formato}"'
+        respuesta['Content-Disposition'] = f'attachment; filename="{_archivo(informe, emision)}.{formato}"'
         return respuesta
 
 
@@ -213,8 +314,51 @@ def _version_js():
     return int(archivo.stat().st_mtime) if archivo.exists() else 0
 
 
-def _archivo(informe):
-    return re.sub(r'[^\w\-]+', '_', f'{informe.nombre} {informe.periodo}').strip('_')
+def _archivo(informe, emision=None):
+    version = f' v{emision.version}' if emision else ' borrador'
+    return re.sub(r'[^\w\-]+', '_', f'{informe.nombre} {informe.periodo}{version}').strip('_')
+
+
+def diferencias_con_actual(emision, actuales):
+    """Gráficas cuyas cifras ya no son las emitidas: [(título, [(fila emitida, fila actual), ...])]."""
+    vivas = {g['id']: g for g in actuales['graficas']}
+    resultado = []
+    for g in emision.datos['graficas']:
+        actual = vivas.get(g['id'])
+        if actual is None or json.dumps(g['datos'], sort_keys=True) == json.dumps(actual['datos'], sort_keys=True):
+            continue
+        antes, ahora = tabla_de(g['datos']), tabla_de(actual['datos'])
+        filas = [(a, b) for a, b in zip(antes + [[]] * (len(ahora) - len(antes)), ahora + [[]] * (len(antes) - len(ahora)))
+                 if a != b]
+        resultado.append((g['titulo'], filas))
+    return resultado
+
+
+def cambios_desde(momento, limite=300):
+    """Registros creados, modificados o borrados después de `momento`, según el historial de cada modelo."""
+    from django.apps import apps
+
+    tipos = {'+': 'Alta', '~': 'Cambio', '-': 'Baja'}
+    cambios = []
+    for modelo in apps.get_models():
+        original = getattr(modelo, 'instance_type', None)
+        if not modelo.__name__.startswith('Historical') or original is None or \
+                original._meta.app_label in ('informes', 'auth', 'sessions', 'admin', 'contenttypes'):
+            continue
+        for h in modelo.objects.filter(history_date__gt=momento).select_related('history_user').order_by(
+                '-history_date')[:limite]:
+            enlace = ''
+            if h.history_type != '-':
+                try:
+                    enlace = reverse(f'admin:{original._meta.app_label}_{original._meta.model_name}_change',
+                                     args=[h.id])
+                except Exception:
+                    enlace = ''
+            cambios.append({'fecha': h.history_date, 'tipo': tipos.get(h.history_type, h.history_type),
+                            'modelo': original._meta.verbose_name, 'registro': str(h.instance)[:120],
+                            'usuario': h.history_user, 'motivo': h.history_change_reason or '', 'enlace': enlace})
+    cambios.sort(key=lambda c: c['fecha'], reverse=True)
+    return cambios[:limite]
 
 
 def tabla_de(datos):

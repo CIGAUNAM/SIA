@@ -103,6 +103,28 @@ class Grafica(models.Model):
         return propios + [c for c in PALETA if c not in propios]
 
 
+class Emision(models.Model):
+    """Versión emitida (oficial) de un informe: sus cifras y textos congelados. No cambia aunque después se capturen
+    o corrijan registros; para incorporarlos se emite otra versión, con su motivo."""
+    informe = models.ForeignKey(Informe, on_delete=models.PROTECT, related_name='emisiones')
+    version = models.PositiveSmallIntegerField('versión')
+    periodo = models.CharField(max_length=9)
+    emitido_en = models.DateTimeField('emitido el', auto_now_add=True)
+    emitido_por = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
+                                    related_name='+', verbose_name='emitido por')
+    motivo = models.TextField(blank=True, help_text='Obligatorio desde la segunda versión: qué cambió y por qué.')
+    datos = models.JSONField(editable=False)
+
+    class Meta:
+        ordering = ['informe', '-version']
+        verbose_name = 'emisión'
+        verbose_name_plural = 'emisiones'
+        constraints = [models.UniqueConstraint(fields=['informe', 'version'], name='emision_version_unica')]
+
+    def __str__(self):
+        return f'{self.informe.nombre} {self.periodo} · versión {self.version}'
+
+
 from nucleo.historial import registrar_historial  # noqa: E402
 
 registrar_historial(globals())

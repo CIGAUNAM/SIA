@@ -1,0 +1,25 @@
+{% extends "admin/base_site.html" %}
+{% load unfold %}
+{% block content %}
+<div class="max-w-3xl flex flex-col gap-4">
+  <p>Al emitir se guarda una <b>versión oficial</b> de «{{ informe }}» con todas sus cifras y textos tal como están hoy.
+    Esa versión ya no cambia: si después se capturan o corrigen registros del periodo, el informe lo avisa y se puede
+    emitir una versión nueva.</p>
+  {% if anterior %}
+    {% include "unfold/helpers/messages/warning.html" with message="Ya hay una versión emitida. La nueva no la borra: las dos quedan guardadas, y se pide el motivo." %}
+    <p class="text-font-subtle-light dark:text-font-subtle-dark">
+      Versión {{ anterior.version }} emitida el {{ anterior.emitido_en|date:"d/m/Y H:i" }} por {{ anterior.emitido_por|default:"—" }}.
+      Desde entonces hay {{ cambios }} cambio{{ cambios|pluralize }} en registros del sistema.
+      <a class="text-primary-600" href="{% url 'admin:informes_cambios' informe.pk %}?version={{ anterior.version }}">Ver qué cambió</a>.
+    </p>
+  {% endif %}
+  <form method="post" class="flex flex-col gap-3">
+    {% csrf_token %}
+    <label for="{{ form.motivo.id_for_label }}" class="font-semibold">Motivo{% if anterior %} (obligatorio){% endif %}</label>
+    {{ form.motivo }}
+    <div class="text-sm text-font-subtle-light dark:text-font-subtle-dark">{{ form.motivo.help_text }}</div>
+    {% for e in form.motivo.errors %}<div class="text-sm text-red-600">{{ e }}</div>{% endfor %}
+    <div>{% component "unfold/components/button.html" with submit=1 icon="verified" %}Emitir versión {% if anterior %}{{ anterior.version|add:1 }}{% else %}1{% endif %}{% endcomponent %}</div>
+  </form>
+</div>
+{% endblock %}
