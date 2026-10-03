@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'desarrollo_tecnologico',
     'distinciones',
     'formatos',
+    'informes',
 ]
 
 AUTH_USER_MODEL = 'nucleo.User'

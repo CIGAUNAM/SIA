@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: letter; margin: 1.8cm 1.6cm; @bottom-center { content: "{{ datos.pie }} · " counter(page);
+          font: 9pt sans-serif; color: #6B736C; } }
+  body { font: 10.5pt/1.45 "Poppins", "Helvetica Neue", Arial, sans-serif; color: #2F3A32; }
+  .portada { height: 22cm; display: flex; flex-direction: column; justify-content: center; page-break-after: always; }
+  .portada h1 { font-size: 28pt; color: #2D3A2E; margin: 0 0 8pt; }
+  .portada p { font-size: 13pt; color: #6B736C; margin: 0; }
+  h2 { color: #7A8B3A; font-size: 15pt; margin: 18pt 0 8pt; page-break-after: avoid; }
+  h3 { color: #2D3A2E; font-size: 12pt; margin: 12pt 0 4pt; }
+  .grafica { page-break-inside: avoid; margin: 0 0 16pt; }
+  .grafica img { width: 100%; }
+  .nota { color: #6B736C; font-size: 9.5pt; margin: 4pt 0 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 9pt; }
+  td { border-bottom: 0.5pt solid #DADAD5; padding: 3pt 5pt; text-align: right; }
+  td:first-child { text-align: left; }
+</style>
+</head>
+<body>
+<section class="portada">
+  <h1>{{ informe.nombre }}</h1>
+  <p>{{ entidad.nombre }}</p>
+  <p>Periodo {{ informe.periodo }}</p>
+</section>
+{% regroup datos.graficas by seccion as secciones %}
+{% for s in secciones %}
+  {% if s.grouper %}<h2>{{ s.grouper }}</h2>{% endif %}
+  {% for g in s.list %}
+  <div class="grafica">
+    {% if g.imagen %}<img src="{{ g.imagen }}" alt="{{ g.titulo }}">
+    {% else %}
+      <h3>{{ g.titulo }}</h3>{% if g.subtitulo %}<p class="nota">{{ g.subtitulo }}</p>{% endif %}
+      <table>{% for fila in g.tabla %}<tr>{% for c in fila %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</table>
+    {% endif %}
+    {% if g.nota %}<p class="nota">{{ g.nota }}</p>{% endif %}
+  </div>
+  {% endfor %}
+{% endfor %}
+</body>
+</html>

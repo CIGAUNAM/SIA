@@ -1,0 +1,123 @@
+{% extends "admin/base_site.html" %}
+{% load static unfold %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
+<script src="{% static 'informes/graficas.js' %}?v={{ version_js }}"></script>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+  .informe-barra { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+  .informe-botones { display: flex; flex-wrap: wrap; gap: 8px; }
+  .informe-seccion { font-weight: 600; font-size: 1.1rem; margin: 28px 0 12px; }
+  .informe-grafica { margin-bottom: 20px; }
+  .informe-lienzo { width: 100%; overflow: hidden; border-radius: 8px; }
+  .informe-pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+  .informe-pie .nota { flex: 1 1 360px; margin: 0; }
+  .tabla-informe { border-collapse: collapse; width: 100%; }
+  .tabla-informe th, .tabla-informe td { border-bottom: 1px solid var(--color-base-200); padding: 6px 8px; text-align: right; }
+  .tabla-informe th:first-child, .tabla-informe td:first-child { text-align: left; }
+  #informe-aviso { display: none; }
+</style>
+{% endblock %}
+
+{% block content %}
+{% url 'admin:informes_excel' informe.pk as excel_url %}
+{% url 'admin:informes_informe_change' informe.pk as editar_url %}
+<div id="content-main">
+  <div class="informe-barra">
+    <p class="text-font-subtle-light dark:text-font-subtle-dark">
+      {{ entidad.nombre }} · periodo {{ informe.periodo }}{% if informe.es_plantilla %} · plantilla{% endif %}
+      · {{ datos.graficas|length }} gráficas
+    </p>
+    <div class="informe-botones">
+      {% if puede_editar %}{% component "unfold/components/button.html" with href=editar_url icon="edit" variant="default" %}Editar{% endcomponent %}{% endif %}
+      {% component "unfold/components/button.html" with href=excel_url icon="table_view" variant="default" %}Excel{% endcomponent %}
+      <button type="button" data-documento="pdf" class="border border-base-200 bg-white font-medium px-3 py-2 rounded-default shadow-xs dark:bg-base-900 dark:border-base-700">PDF</button>
+      <button type="button" data-documento="docx" class="border border-base-200 bg-white font-medium px-3 py-2 rounded-default shadow-xs dark:bg-base-900 dark:border-base-700">Word</button>
+    </div>
+  </div>
+  <div id="informe-aviso" class="mb-4"></div>
+  <div id="informe">
+    {% if not datos.graficas %}
+      {% include "unfold/helpers/messages/info.html" with message="Este informe todavía no tiene gráficas visibles. Agrégalas con «Editar»." %}
+    {% endif %}
+  </div>
+</div>
+{{ datos|json_script:"datos-informe" }}
+<script>
+(async function () {
+  const datos = JSON.parse(document.getElementById('datos-informe').textContent);
+  const contenedor = document.getElementById('informe'), aviso = document.getElementById('informe-aviso');
+  const BOTON = 'border border-base-200 bg-white font-medium px-3 py-1 rounded-default shadow-xs text-sm dark:bg-base-900 dark:border-base-700';
+  const avisar = (texto, ms) => {
+    aviso.className = 'mb-4 px-3 py-2 rounded-default bg-primary-50 text-primary-700 dark:bg-base-800 dark:text-base-200';
+    aviso.textContent = texto; aviso.style.display = 'block';
+    if (ms) setTimeout(() => aviso.style.display = 'none', ms);
+  };
+  const descargar = (contenido, nombre, tipo) => {
+    const a = document.createElement('a');
+    a.href = contenido instanceof Blob ? URL.createObjectURL(contenido)
+      : (contenido.startsWith('data:') ? contenido : URL.createObjectURL(new Blob([contenido], {type: tipo})));
+    a.download = nombre; document.body.appendChild(a); a.click(); a.remove();
+  };
+  const archivo = t => (t || 'grafica').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\w]+/g, '_').slice(0, 60);
+  try { await Promise.all(['400', '600', '700'].map(p => document.fonts.load(`${p} 20px Poppins`))); } catch (e) {}
+
+  let seccion = null;
+  datos.graficas.forEach((g, i) => {
+    g.pie = datos.pie;
+    if (g.seccion && g.seccion !== seccion) {
+      seccion = g.seccion;
+      const h = document.createElement('h2');
+      h.className = 'informe-seccion text-primary-600 dark:text-primary-500'; h.textContent = seccion;
+      contenedor.appendChild(h);
+    }
+    const tarjeta = document.createElement('div');
+    tarjeta.className = 'informe-grafica bg-white border border-base-200 rounded-default shadow-xs p-4 dark:bg-base-900 dark:border-base-800';
+    if (g.tipo === 'tabla') {
+      const t = document.createElement('p'); t.className = 'font-semibold text-important mb-2'; t.textContent = g.titulo;
+      tarjeta.appendChild(t);
+    }
+    const lienzo = document.createElement('div'); lienzo.className = 'informe-lienzo'; tarjeta.appendChild(lienzo);
+    const pie = document.createElement('div'); pie.className = 'informe-pie';
+    const nota = document.createElement('p'); nota.className = 'nota text-font-subtle-light dark:text-font-subtle-dark';
+    nota.textContent = g.nota || ''; pie.appendChild(nota);
+    const botones = document.createElement('div'); botones.className = 'informe-botones'; pie.appendChild(botones);
+    tarjeta.appendChild(pie); contenedor.appendChild(tarjeta);
+    GraficasSIA.dibujar(lienzo, g);
+    if (g.tipo !== 'tabla' && !g.datos.error) {
+      const nombre = `${String(i + 1).padStart(2, '0')}_${archivo(g.titulo)}`;
+      [['PNG', () => descargar(GraficasSIA.png(g.id, 3), nombre + '.png')],
+       ['SVG', () => descargar(GraficasSIA.svg(g.id), nombre + '.svg', 'image/svg+xml')]].forEach(([texto, accion]) => {
+        const b = document.createElement('button'); b.type = 'button'; b.className = BOTON; b.textContent = texto;
+        b.onclick = accion; botones.appendChild(b);
+      });
+    }
+  });
+  window.addEventListener('resize', () => GraficasSIA.reescalar());
+
+  document.querySelectorAll('[data-documento]').forEach(boton => boton.onclick = async () => {
+    const formato = boton.dataset.documento, imagenes = {};
+    document.querySelectorAll('[data-documento]').forEach(b => b.disabled = true);
+    avisar('Preparando el documento…');
+    datos.graficas.forEach(g => { const img = GraficasSIA.png(g.id, 2); if (img) imagenes[g.id] = img; });
+    try {
+      const r = await fetch('{% url "admin:informes_documento" informe.pk %}', {method: 'POST',
+        headers: {'Content-Type': 'application/json', 'X-CSRFToken': '{{ csrf_token }}'},
+        body: JSON.stringify({formato: formato, imagenes: imagenes})});
+      if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.statusText);
+      descargar(await r.blob(), `${archivo(datos.nombre + ' ' + datos.periodo)}.${formato}`);
+      avisar('Listo.', 2500);
+    } catch (e) { avisar('No se pudo generar el documento: ' + e.message); }
+    document.querySelectorAll('[data-documento]').forEach(b => b.disabled = false);
+  });
+})();
+</script>
+{% endblock %}

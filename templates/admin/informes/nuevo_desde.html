@@ -1,0 +1,19 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<div class="max-w-2xl">
+  <p class="mb-6 text-base-500">Se copian todas las gráficas de «{{ origen }}» con sus textos, tipos y colores. Después
+    puedes cambiar lo que quieras sin afectar al original.</p>
+  <form method="post" class="flex flex-col gap-4">
+    {% csrf_token %}
+    {% for campo in form %}
+      <div>
+        <label class="block font-semibold mb-1" for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+        {{ campo }}
+        {% if campo.help_text %}<div class="text-sm text-base-500 mt-1">{{ campo.help_text }}</div>{% endif %}
+        {% for e in campo.errors %}<div class="text-sm text-red-600 mt-1">{{ e }}</div>{% endfor %}
+      </div>
+    {% endfor %}
+    <div><button type="submit" class="bg-primary-600 text-white font-semibold px-4 py-2 rounded-md">Crear informe</button></div>
+  </form>
+</div>
+{% endblock %}
