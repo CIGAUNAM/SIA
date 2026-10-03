@@ -34,6 +34,7 @@ REUBICADOS = {('nucleo', 'user'): 'auth'}
 # Modelos que van en el grupo principal del menú (junto a "Avance de captura"), no en su sección.
 EN_PRINCIPAL = [
     ('informes', 'informe', 'Informes', 'bar_chart'),
+    ('informes', 'cifrahistorica', 'Cifras históricas', 'history'),
     ('nucleo', 'periodoinforme', 'Periodos de informe', 'event_available'),
     ('nucleo', 'confirmacioninforme', 'Confirmaciones de informe', 'task_alt'),
     ('nucleo', 'configuracionentidad', 'Configuración de la entidad', 'settings'),

@@ -103,6 +103,33 @@ class Grafica(models.Model):
         return propios + [c for c in PALETA if c not in propios]
 
 
+class CifraHistorica(models.Model):
+    """Cifra agregada de un año sin datos por persona en el SIA (p. ej. el PRIDE de 2020 que trae la hoja de
+    evolución). Los indicadores la usan solo para los años que el SIA no puede calcular."""
+    indicador = models.CharField(max_length=40)
+    anio = models.PositiveSmallIntegerField('año', help_text='Año de corte (agosto); el periodo 2020-2021 es 2021.')
+    panel = models.CharField(max_length=100, blank=True, help_text='P. ej. «Investigadores»; vacío si no aplica.')
+    categoria = models.CharField('categoría', max_length=100)
+    valor = models.DecimalField(max_digits=10, decimal_places=2)
+    fuente = models.CharField(max_length=255, blank=True)
+
+    class Meta:
+        ordering = ['indicador', 'anio', 'panel', 'categoria']
+        verbose_name = 'cifra histórica'
+        verbose_name_plural = 'cifras históricas'
+        constraints = [models.UniqueConstraint(fields=['indicador', 'anio', 'panel', 'categoria'],
+                                               name='cifra_historica_unica')]
+
+    def __str__(self):
+        return f'{self.indicador} {self.anio} {self.panel} {self.categoria}: {self.valor}'.replace('  ', ' ')
+
+    @classmethod
+    def de(cls, indicador, anio, panel=''):
+        """{categoría: valor} de un año, o {} si no hay cifras históricas."""
+        return {c: int(v) if v == int(v) else float(v) for c, v in
+                cls.objects.filter(indicador=indicador, anio=anio, panel=panel).values_list('categoria', 'valor')}
+
+
 class Emision(models.Model):
     """Versión emitida (oficial) de un informe: sus cifras y textos congelados. No cambia aunque después se capturen
     o corrijan registros; para incorporarlos se emite otra versión, con su motivo."""

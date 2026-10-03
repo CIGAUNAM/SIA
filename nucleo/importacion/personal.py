@@ -114,6 +114,62 @@ def importar(ctx, libro):
                 usuario.sni = ultima.sni
                 ctx.guardar(usuario)
     posdoctorantes(ctx)
+    cifras_historicas(ctx, libro)
+    return hoja
+
+
+ARCHIVO_EVOLUCION = 'Eje2_Evolucion PRIDE y SNI.xlsx'
+
+
+def cifras_historicas(ctx, libro):
+    """Totales de años sin datos por persona (evolución de la planta, PRIDE y SNII) para las gráficas históricas."""
+    from informes.models import CifraHistorica
+
+    hoja = ctx.hoja(f'{ARCHIVO} y {ARCHIVO_EVOLUCION} › cifras históricas')
+
+    def guardar(indicador, anio, categoria, valor, fuente, panel=''):
+        valor = numero(valor)
+        if anio and valor is not None:
+            _, creada = CifraHistorica.objects.update_or_create(
+                indicador=indicador, anio=int(anio), panel=panel, categoria=categoria,
+                defaults={'valor': valor, 'fuente': fuente})
+            hoja.filas += 1
+            (hoja.creado if creada else hoja.existente)(CifraHistorica)
+
+    # Planta: año, investigador@s, técnic@s, cátedras/IxM.
+    for fila in libro['Evol plant Acad'].iter_rows(values_only=True):
+        if fila and isinstance(fila[0], (int, float)) and 1990 < fila[0] < 2100:
+            for categoria, valor in zip(['Investigadores', 'Técnicos', 'Cátedras / IxM'], fila[1:4]):
+                guardar('evolucion_planta', fila[0], categoria, valor, 'Evol plant Acad')
+    try:
+        evolucion = ctx.libro(ARCHIVO_EVOLUCION)
+    except FileNotFoundError:
+        return hoja
+    # PRIDE por periodo «2020-2021» → año de corte 2021: la primera tabla es de investigadores; la segunda, de técnicos.
+    tabla, periodos = -1, ()
+    for f in evolucion['Nivel de PRIDE'].iter_rows(values_only=True):
+        if f and any(re.fullmatch(r'\d{4}-\d{4}', str(c or '')) for c in f):
+            tabla, periodos = tabla + 1, f
+            continue
+        nivel = texto(f[0]) if f else ''
+        if 0 <= tabla <= 1 and nivel.upper().startswith('PRIDE'):
+            categoria = 'PRIDE B o equivalencia' if ' B' in nivel.upper() else nivel.split('/')[0].strip()
+            for periodo, valor in zip(periodos[1:], f[1:]):
+                if re.fullmatch(r'\d{4}-\d{4}', str(periodo or '')):
+                    guardar('pride', str(periodo)[5:], categoria, valor, ARCHIVO_EVOLUCION,
+                            ('Investigadores', 'Técnicos')[tabla])
+    # SNII por año de corte: solo la tabla de conteos (debajo vienen porcentajes).
+    anios = ()
+    for f in evolucion['Nivel de SNI'].iter_rows(values_only=True):
+        nivel = texto(f[0]) if f else ''
+        if not anios and f and sum(isinstance(c, (int, float)) and 1990 < c < 2100 for c in f) > 3:
+            anios = f
+        elif anios and nivel.lower().startswith('total'):
+            break
+        elif anios and nivel in ('Candidato', 'Nivel I', 'Nivel II', 'Nivel III', 'Emérito'):
+            for anio, valor in zip(anios[1:], f[1:]):
+                if isinstance(anio, (int, float)):
+                    guardar('snii', anio, nivel, valor, ARCHIVO_EVOLUCION)
     return hoja
 
 

@@ -15,7 +15,7 @@ class InformesTests(Datos):
         self.plantilla = Informe.objects.get(es_plantilla=True)  # La crea la migración con las 14 gráficas.
 
     def test_la_plantilla_trae_las_graficas_del_informe_anual(self):
-        self.assertEqual(self.plantilla.graficas.count(), 14)
+        self.assertEqual(self.plantilla.graficas.count(), 15)
         for g in self.plantilla.graficas.all():
             self.assertIn(g.tipo, INDICADORES[g.indicador].tipos)
 
@@ -23,7 +23,7 @@ class InformesTests(Datos):
         from nucleo.models import ConfiguracionEntidad
 
         datos = datos_informe(self.plantilla, ConfiguracionEntidad.objects.first())
-        self.assertEqual(len(datos['graficas']), 14)
+        self.assertEqual(len(datos["graficas"]), 15)
         for g in datos['graficas']:
             self.assertNotIn('error', g['datos'], g['indicador'])
             self.assertTrue(g['datos'].get('paneles'), g['indicador'])
@@ -35,9 +35,9 @@ class InformesTests(Datos):
                                      {'nombre': 'Informe anual', 'periodo': '2026-2027'})
         nuevo = Informe.objects.get(nombre='Informe anual', periodo='2026-2027')
         self.assertRedirects(respuesta, reverse('admin:informes_informe_change', args=[nuevo.pk]))
-        self.assertEqual(nuevo.graficas.count(), 14)
+        self.assertEqual(nuevo.graficas.count(), 15)
         self.assertEqual(nuevo.basado_en, self.plantilla)
-        self.assertEqual(self.plantilla.graficas.count(), 14)  # La plantilla no cambia.
+        self.assertEqual(self.plantilla.graficas.count(), 15)  # La plantilla no cambia.
 
     def test_los_academicos_no_entran_a_los_informes(self):
         self.client.force_login(self.ana)
@@ -106,3 +106,18 @@ class EmisionTests(Datos):
         plantilla = Informe.objects.get(es_plantilla=True)
         self.client.post(reverse('admin:informes_emitir', args=[plantilla.pk]), {'motivo': ''})
         self.assertFalse(plantilla.emisiones.exists())
+
+
+class CifrasHistoricasTests(Datos):
+    def test_anios_anteriores_de_las_cifras_historicas_y_el_del_informe_calculado(self):
+        from nucleo.cifras_informe import Periodo
+
+        from .indicadores import snii
+        from .models import CifraHistorica
+
+        CifraHistorica.objects.create(indicador='snii', anio=2025, categoria='Nivel I', valor=13)
+        CifraHistorica.objects.create(indicador='snii', anio=2026, categoria='Nivel I', valor=99)  # Se ignora.
+        datos = snii(Periodo.de('2025-2026'), 2)['paneles'][0]
+        self.assertEqual(datos['categorias'], ['2024-2025', '2025-2026'])
+        nivel_i = next(s for s in datos['series'] if s['nombre'] == 'Nivel I')
+        self.assertEqual(nivel_i['valores'], [13, 0])  # 2026 se calcula: aún no hay académicos con SNII.

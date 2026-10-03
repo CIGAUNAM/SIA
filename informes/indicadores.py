@@ -135,34 +135,88 @@ def contratos(periodo, n=4):
     return {'paneles': paneles}
 
 
+def _hay_situaciones(anio):
+    from nucleo.models import SituacionAcademica
+
+    return SituacionAcademica.objects.filter(anio=anio, nombramiento__isnull=False).exists()
+
+
+def _de_historico(indicador, anio, anio_informe, panel=''):
+    """Cifras de un año anterior al del informe tomadas de las históricas (las oficiales de ese año), o None si no hay
+    y hay que calcularlas. El año del informe siempre se calcula con los datos actuales."""
+    if anio == anio_informe:
+        return None
+    cifras = _historica(indicador, anio, panel)
+    return Counter(cifras) if cifras else None
+
+
+def _historica(indicador, anio, panel=''):
+    from .models import CifraHistorica
+
+    return CifraHistorica.de(indicador, anio, panel)
+
+
 def pride(periodo, n=4):
+    """Por nivel del PRIDE; los años anteriores al del informe, de las cifras históricas cuando las hay."""
     from nucleo.models import SituacionAcademica as S
 
     periodos = periodos_hasta(periodo, n)
     niveles = ['PRIDE B o equivalencia', 'PRIDE C', 'PRIDE D']
     paneles = []
     for grupo in ('Investigadores', 'Técnicos'):
-        cuenta = {p.nombre: Counter() for p in periodos}
+        cuenta = {}
         for p in periodos:
+            historico = _de_historico('pride', p.anio_corte, periodo.anio_corte, grupo)
+            if historico is not None:
+                cuenta[p.nombre] = historico
+                continue
+            c = Counter()
             for s in _situaciones(p.anio_corte):
                 if _grupo(s.nombramiento) == grupo and s.pride:
-                    nivel = niveles[0] if s.pride in ('A', 'B', S.Pride.EQUIVALENCIA) else f'PRIDE {s.pride}'
-                    cuenta[p.nombre][nivel] += 1
+                    c[niveles[0] if s.pride in ('A', 'B', S.Pride.EQUIVALENCIA) else f'PRIDE {s.pride}'] += 1
+            cuenta[p.nombre] = c
         paneles.append(_panel(grupo, [p.nombre for p in periodos],
                               [(nv, [cuenta[p.nombre][nv] for p in periodos]) for nv in niveles]))
     return {'paneles': paneles}
 
 
 def snii(periodo, n=4):
+    """Por nivel del SNII; los años anteriores al del informe, de las cifras históricas cuando las hay."""
     from nucleo.models import SituacionAcademica
 
     periodos = periodos_hasta(periodo, n)
     nombres = {'C': 'Candidato', 'I': 'Nivel I', 'II': 'Nivel II', 'III': 'Nivel III', 'E': 'Emérito'}
-    cuenta = {p.nombre: Counter(SituacionAcademica.objects.filter(anio=p.anio_corte).exclude(sni='')
-                                .values_list('sni', flat=True)) for p in periodos}
-    series = [(nombre, [cuenta[p.nombre][clave] for p in periodos]) for clave, nombre in nombres.items()
-              if any(cuenta[p.nombre][clave] for p in periodos)]
+    cuenta = {}
+    for p in periodos:
+        historico = _de_historico('snii', p.anio_corte, periodo.anio_corte)
+        if historico is not None:
+            cuenta[p.nombre] = historico
+            continue
+        c = Counter(SituacionAcademica.objects.filter(anio=p.anio_corte).exclude(sni='').values_list('sni', flat=True))
+        cuenta[p.nombre] = Counter({nombres[k]: v for k, v in c.items()})
+    series = [(nombre, [cuenta[p.nombre][nombre] for p in periodos]) for nombre in nombres.values()
+              if any(cuenta[p.nombre][nombre] for p in periodos)]
     return {'paneles': [_panel('', [p.nombre for p in periodos], series)]}
+
+
+def evolucion_planta(periodo, n=20):
+    """Planta académica por año: investigadores, técnicos y cátedras/IxM (los años anteriores al del informe, de las
+    cifras históricas cuando las hay)."""
+    anios = [p.anio_corte for p in periodos_hasta(periodo, n)]
+    categorias = ['Investigadores', 'Técnicos', 'Cátedras / IxM']
+    cuenta = {}
+    for anio in anios:
+        historico = _de_historico('evolucion_planta', anio, periodo.anio_corte)
+        if historico is not None:
+            cuenta[anio] = historico
+            continue
+        c = Counter()
+        for s in _situaciones(anio):
+            c['Cátedras / IxM' if s.contrato == 'IXM' else _grupo(s.nombramiento)] += 1
+        cuenta[anio] = c
+    anios = [a for a in anios if sum(cuenta[a].values())]  # Solo los años con datos.
+    series = [(c, [cuenta[a][c] for a in anios]) for c in categorias if any(cuenta[a][c] for a in anios)]
+    return {'paneles': [_panel('', [str(a) for a in anios], series)]}
 
 
 # --------------------------------------------------------------------------------------------------- proyectos
@@ -344,6 +398,9 @@ INDICADORES = OrderedDict((i.clave, i) for i in [
     Indicador('cuartiles', 'Cuartil y factor de impacto de las revistas',
               'Todos los artículos del periodo; los que no tienen cuartil, «n/d».',
               ['anillos', 'dona', 'columnas', 'tabla'], cuartiles),
+    Indicador('evolucion_planta', 'Evolución de la planta académica (histórico)',
+              'Investigadores, técnicos y cátedras/IxM por año.', ['columnas', 'barras', 'tabla'], evolucion_planta,
+              historico=True),
     Indicador('pride', 'Planta por nivel del PRIDE (histórico)', 'Por periodo.', ['columnas', 'barras', 'tabla'],
               pride, historico=True),
     Indicador('snii', 'Académicos por nivel del SNII (histórico)', 'Por periodo.', ['columnas', 'barras', 'tabla'],

@@ -19,7 +19,7 @@ from nucleo.admin_base import CatalogoAdmin
 from nucleo.models import ConfiguracionEntidad
 
 from .indicadores import calcular, comparacion
-from .models import Emision, Grafica, Informe, validar_periodo
+from .models import CifraHistorica, Emision, Grafica, Informe, validar_periodo
 
 
 def textos(informe, entidad):
@@ -465,3 +465,13 @@ class GraficaAdmin(CatalogoAdmin):
         if '_continue' not in request.POST and '_addanother' not in request.POST:
             return redirect('admin:informes_informe_change', obj.informe_id)
         return super().response_change(request, obj)
+
+
+@admin.register(CifraHistorica)
+class CifraHistoricaAdmin(CatalogoAdmin):
+    """Totales de años sin datos por persona; Administración los corrige si hace falta."""
+    permisos_investigador = ()
+    list_display = ['indicador', 'anio', 'panel', 'categoria', 'valor', 'fuente']
+    list_filter = ['indicador', 'panel']
+    list_editable = ['valor']
+    search_fields = ['categoria', 'fuente']
